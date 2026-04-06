@@ -893,7 +893,7 @@ button {
 .index-hero-bg {
     position: absolute;
     inset: 0;
-    background: url('../img/bg.jpg') center/cover no-repeat;
+    background: url('./img/bg.jpg') center/cover no-repeat;
     z-index: 0;
 }
 
@@ -1296,7 +1296,7 @@ button {
 .hero-bg {
     position: absolute;
     inset: 0;
-    background: url('../img/demo1-gallery-main.jpg') center/cover no-repeat;
+    background: url('./img/demo1-gallery-main.jpg') center/cover no-repeat;
     transform: scale(1.1);
     filter: brightness(0.4);
 }
@@ -1306,35 +1306,6 @@ button {
     position: absolute;
     inset: 0;
     background: radial-gradient(circle at center, rgba(0,0,0,0.3), rgba(0,0,0,0.9));
-}
-
-/* CENTER TEXT */
-.hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 2;
-}
-
-.hero-text h1 {
-    font-size: 60px;
-    color: #fff;
-}
-
-.hero-text p {
-    color: #94a3b8;
-}
-
-/* ROOMS */
-.room {
-    position: absolute;
-    color: #fff;
-    max-width: 220px;
-    cursor: pointer;
-    z-index: 2;
-    transition: 0.4s ease;
 }
 
 /* POSITIONS */
@@ -1352,16 +1323,6 @@ button {
 .room p {
     font-size: 14px;
     color: #cbd5f5;
-}
-
-/* 🔥 HOVER EFFECT */
-.room:hover {
-    transform: scale(1.1);
-}
-
-.room:hover h2 {
-    color: #22d3ee;
-    text-shadow: 0 0 12px #22d3ee;
 }
 
 @keyframes roomHeadingFloat {
@@ -1400,47 +1361,6 @@ button {
     font-size: 18px;
     margin: 0 auto 12px;
     background: rgba(255,255,255,0.08);
-}
-.experience-bar {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding: 60px 8%;
-    background: #020617;
-}
-
-.exp-box {
-    text-align: center;
-}
-
-.exp-box h3 {
-    color: #22d3ee;
-}
-.page-gallery-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 15px;
-}
-
-.gallery-tile img {
-    width: 100%;
-    border-radius: 15px;
-    transition: 0.4s;
-}
-
-.gallery-tile:hover img {
-    transform: scale(1.05);
-}
-.demo-feature-card {
-    background: rgba(255,255,255,0.03);
-    border-radius: 20px;
-    padding: 30px;
-    transition: 0.3s;
-}
-
-.demo-feature-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 .cta {
     text-align: center;
@@ -1694,7 +1614,7 @@ button {
    ============================================= */
 .hero-dark{
     height:100vh;
-    background: url('../img/dark-bg.jpg') center/cover no-repeat;
+    background: url('./img/dark-bg.jpg') center/cover no-repeat;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -1985,7 +1905,7 @@ button {
 #rooms-hero {
     position: relative;
     min-height: 800px;
-    background: url('../img/bg.jpg') no-repeat center/cover;
+    background: url('./img/bg.jpg') no-repeat center/cover;
     background-attachment: fixed;
     color: white;
     display: flex;
@@ -2188,7 +2108,7 @@ button {
    ============================================= */
 .about-hero{
     height:60vh;
-    background:url('../img/about-bg.jpg') center/cover no-repeat;
+    background:url('./img/about-bg.jpg') center/cover no-repeat;
     display:flex;
     justify-content:center;
     text-align: center; 
@@ -2518,7 +2438,7 @@ button {
    ============================================= */
 .story-hero{
     height:60vh;
-    background:url('../img/story-bg.jpg') center/cover no-repeat;
+    background:url('./img/story-bg.jpg') center/cover no-repeat;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -2752,7 +2672,7 @@ button {
 /* HERO */
 .pricing-hero{
     height:60vh;
-    background:url('../img/pricing-bg.jpg') center/cover no-repeat;
+    background:url('./img/pricing-bg.jpg') center/cover no-repeat;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -2979,7 +2899,7 @@ button {
    ============================================= */
 .faq-hero{
     height:60vh;
-    background:url('../img/faq-bg.jpg') center/cover no-repeat;
+    background:url('./img/faq-bg.jpg') center/cover no-repeat;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -3128,7 +3048,7 @@ button {
    ============================================= */
 .testimonial-hero{
     height:60vh;
-    background:url('../img/testimonial-bg.jpg') center/cover no-repeat;
+    background:url('./img/testimonial-bg.jpg') center/cover no-repeat;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -3353,7 +3273,7 @@ button {
    ============================================= */
 .rooms-hero{
     height:60vh;
-    background:url('../img/rooms-bg.jpg') center/cover no-repeat;
+    background:url('./img/rooms-bg.jpg') center/cover no-repeat;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -3481,7 +3401,7 @@ button {
 /* HERO */
 .room-hero{
     height:60vh;
-    background:url('../img/room1.jpg') center/cover no-repeat;
+    background:url('./img/room1.jpg') center/cover no-repeat;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -3490,7 +3410,7 @@ button {
 }
 
 .room-hero.haunted {
-    background: url('../img/room2.jpg') center/cover no-repeat;
+    background: url('./img/room2.jpg') center/cover no-repeat;
 }
 
 .room-hero .overlay{
@@ -3968,12 +3888,12 @@ button {
 }
 /* LAB HERO */
 .room-hero.lab{
-    background:url('../img/room3.jpg') center/cover no-repeat;
+    background:url('./img/room3.jpg') center/cover no-repeat;
 }
 /* HERO */
 .contact-hero{
     height:60vh;
-    background:url('../img/contact-bg.jpg') center/cover no-repeat;
+    background:url('./img/contact-bg.jpg') center/cover no-repeat;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -4203,7 +4123,7 @@ button {
 /* HERO */
 .news-hero{
     height:60vh;
-    background:url('../img/news-bg.jpg') center/cover no-repeat;
+    background:url('./img/news-bg.jpg') center/cover no-repeat;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -4284,7 +4204,7 @@ button {
    ============================================= */
 .offer-hero{
     height:60vh;
-    background:url('../img/offer-bg.jpg') center/cover no-repeat;
+    background:url('./img/offer-bg.jpg') center/cover no-repeat;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -4348,7 +4268,7 @@ button {
    ============================================= */
 .group-hero{
     height:60vh;
-    background:url('../img/offer-bg.jpg') center/cover no-repeat;
+    background:url('./img/offer-bg.jpg') center/cover no-repeat;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -4468,7 +4388,7 @@ button {
    ============================================= */
 .member-hero{
     height:60vh;
-    background:url('../img/pricing-bg.jpg') center/cover no-repeat;
+    background:url('./img/pricing-bg.jpg') center/cover no-repeat;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -6026,4 +5946,7 @@ body.light-mode footer a {
     color: rgba(255,255,255,0.7) !important;
     line-height: 1.5 !important;
     margin: 0 !important;
+}
+.game-mode h2 {
+    margin-bottom: 30px;
 }
