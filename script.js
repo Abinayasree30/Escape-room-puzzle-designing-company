@@ -3,19 +3,18 @@ const dropdownMenus = document.querySelectorAll(".dropdown");
 const currentPage = window.location.pathname.split("/").pop() || "index.html";
 const searchTargets = [
     { label: "Home", url: "index.html", selector: ".index-hero", keywords: ["home", "index", "main"] },
-    { label: "Demo 1", url: "demo1.html", selector: ".hero", keywords: ["demo 1", "demo1", "hospital", "detective", "puzzles"] },
+    { label: "Demo 1", url: "index.html", selector: ".hero", keywords: ["demo 1", "demo1", "hospital", "detective", "puzzles"] },
     { label: "Demo 2", url: "demo2.html", selector: ".hero-dark", keywords: ["demo 2", "demo2", "dark room", "challenge"] },
     { label: "About Us", url: "about.html", selector: ".about-hero", keywords: ["about", "about us", "mission", "team"] },
     { label: "Login", url: "login.html", selector: ".login-page", keywords: ["login", "sign in", "member access"] },
-    { label: "Game Features", url: "demo1.html", selector: ".demo-features", keywords: ["features", "timer", "hidden clues", "clues"] },
-    { label: "Rooms", url: "demo1.html", selector: ".rooms", keywords: ["rooms", "prison", "haunted", "detective room"] }
+    { label: "Game Features", url: "index.html", selector: ".demo-features", keywords: ["features", "timer", "hidden clues", "clues"] },
+    { label: "Rooms", url: "index.html", selector: ".rooms", keywords: ["rooms", "prison", "haunted", "detective room"] }
     ,{ label: "Room 3", url: "room 3.html", selector: ".room-hero.lab", keywords: ["room 3", "secret lab", "lab", "science puzzles"] }
 ];
 
 function setActiveMenu() {
     const pageMenuMap = {
         "index.html": "demos",
-        "demo1.html": "demos",
         "demo2.html": "demos",
         "about.html": "about",
         "faq.html": "about",
