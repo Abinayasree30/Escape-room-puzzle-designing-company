@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Offers - MystIQ Escape</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo">
+        <img src="./img/logo.png" alt="MystIQ Escape logo">
+    </div>
+
+    <nav class="nav">
+        <div class="nav-item">
+            <a href="#" data-menu="demos">demos <span>▼</span></a>
+            <div class="dropdown">
+                <a href="index.html">Demo 1</a>
+                <a href="demo2.html">Demo 2</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <a href="#" data-menu="about">about <span>▼</span></a>
+            <div class="dropdown">
+                <a href="about.html">About Us</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="faq.html">FAQ</a>
+                <a href="testimonials.html">Testimonials</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <a href="#" data-menu="rooms">rooms <span>▼</span></a>
+            <div class="dropdown">
+                <a href="room 1.html">Room 1</a>
+                <a href="room 2.html">Room 2</a>
+                <a href="room 3.html">Room 3</a>
+            </div>
+        </div>
+        <a href="news.html" data-menu="news">news</a>
+        <a href="offers.html" data-menu="offers">offers</a>
+        <a href="contact us.html" data-menu="contact">contact us</a>
+    </nav>
+
+    <div class="right-section">
+        <button class="icon-btn" id="mq-enable-btn" title="Toggle Enable Mode">🌙</button>
+        <button class="icon-btn dir-toggle" id="mq-dir-btn" title="Switch LTR / RTL">LTR</button>
+        <a href="login.html" class="login-btn">Login</a>
+    </div>
+</header>
+
+<section class="offer-hero">
+    <div class="overlay"></div>
+    <div class="hero-text">
+        <h1>Offers & Special Access</h1>
+        <p>All MystIQ deals, team savings, and member rewards in one place.</p>
+    </div>
+</section>
+
+<section class="offer-section">
+    <div class="offer-box">
+        <h2>Early Bird Deal</h2>
+        <p>Book your escape room at least 24 hours in advance and unlock a fast-moving weekday discount.</p>
+        <ul>
+            <li>20% discount on selected room slots</li>
+            <li>Best for weekday teams and planners</li>
+            <li>Works well for advance group bookings</li>
+        </ul>
+        <h3 class="price">Starting from Rs 399</h3>
+        <button class="btn" onclick="openBookingModal('Early Bird Offer')">Reserve Early</button>
+    </div>
+</section>
+
+<section class="group-section">
+    <div class="group-box">
+        <h2>Group Discount</h2>
+        <p>Bring your crew and scale your savings as the team gets bigger.</p>
+
+        <div class="discount-grid">
+            <div class="discount-card">
+                <h3>2-3 Players</h3>
+                <p>10% OFF</p>
+            </div>
+            <div class="discount-card">
+                <h3>4-5 Players</h3>
+                <p>15% OFF</p>
+            </div>
+            <div class="discount-card highlight">
+                <h3>6+ Players</h3>
+                <p>25% OFF</p>
+            </div>
+        </div>
+
+        <button class="btn" onclick="openBookingModal('Group Discount Offer')">Book for a Team</button>
+    </div>
+</section>
+
+<section class="member-section">
+    <h2>Member Specials</h2>
+
+    <div class="member-grid">
+        <div class="member-card">
+            <h3>Silver</h3>
+            <p class="price">Rs 999 / month</p>
+            <ul>
+                <li>10% Discount</li>
+                <li>Early Access</li>
+                <li>1 Free Hint</li>
+            </ul>
+            <button class="btn" onclick="openBookingModal('Silver Membership')">Join Silver</button>
+        </div>
+
+        <div class="member-card highlight">
+            <h3>Gold</h3>
+            <p class="price">Rs 1999 / month</p>
+            <ul>
+                <li>20% Discount</li>
+                <li>Priority Booking</li>
+                <li>3 Free Hints</li>
+            </ul>
+            <button class="btn" onclick="openBookingModal('Gold Membership')">Join Gold</button>
+        </div>
+
+        <div class="member-card">
+            <h3>Platinum</h3>
+            <p class="price">Rs 2999 / month</p>
+            <ul>
+                <li>Unlimited Access</li>
+                <li>VIP Experience</li>
+                <li>Unlimited Hints</li>
+            </ul>
+            <button class="btn" onclick="openBookingModal('Platinum Membership')">Join Platinum</button>
+        </div>
+    </div>
+</section>
+
+<section class="group-benefits">
+    <h2>Why These Offers Matter</h2>
+    <div class="benefit-grid">
+        <div class="benefit">Plan Ahead & Save More</div>
+        <div class="benefit">Bring Teams Without Overpaying</div>
+        <div class="benefit">Upgrade Into Faster Access</div>
+    </div>
+</section>
+
+<section class="cta">
+    <h2>Pick the offer that fits your next escape</h2>
+    <button class="btn" onclick="openBookingModal('Offers Page Booking')">Book Now</button>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-left">
+            <a href="index.html" class="footer-logo">
+                <img src="./img/logo.png" alt="MystIQ Escape logo">
+            </a>
+            <h2>Are you up for<br>the cool<br>challenge?</h2>
+            <div class="social-links">
+                <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <h3>Demos</h3>
+            <ul>
+                <li><a href="index.html">Demo 1</a></li>
+                <li><a href="demo2.html">Demo 2</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Rooms</h3>
+            <ul>
+                <li><a href="room 1.html">Room 1</a></li>
+                <li><a href="room 2.html">Room 2</a></li>
+                <li><a href="room 3.html">Room 3</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Useful Links</h3>
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="contact us.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>copyright © 2026 MystIQ Escape. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
