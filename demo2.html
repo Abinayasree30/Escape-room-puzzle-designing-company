@@ -10,14 +10,15 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="has-custom-extras">
 <header class="header">
 
     <div class="logo">
         <img src="./img/logo.png" alt="MystIQ Escape logo">
     </div>
 
-    <div class="nav-item">
+    <nav class="nav">
+        <div class="nav-item">
     <a href="#" data-menu="demos">demos <span>▼</span></a>
     <div class="dropdown">
         <a href="index.html">Demo 1</a>
@@ -25,10 +26,9 @@
     </div>
 </div>
         <div class="nav-item">
-            <a href="#about" data-menu="about">about <span>▼</span></a>
+            <a href="about.html">about <span>▼</span></a>
             <div class="dropdown">
                 <a href="about.html">About Us</a>
-                <a href="our story.html">Our Story</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="faq.html">FAQ</a>
                 <a href="testimonials.html">Testimonials</a>
@@ -38,19 +38,12 @@
             <a href="#rooms" data-menu="rooms">rooms <span>▼</span></a>
             <div class="dropdown">
                 <a href="rooms.html">Room 1</a>
-                <a href="#room2">Room 2</a>
+                <a href="room 2.html">Room 2</a>
                 <a href="room 3.html">Room 3</a>
             </div>
         </div>
         <a href="news.html" data-menu="news">news</a>
-        <div class="nav-item">
-            <a href="#offers" data-menu="offers">offers <span>▼</span></a>
-            <div class="dropdown">
-                <a href="early bird.html">Early Bird</a>
-                <a href="group discount.html">Group Discount</a>
-                <a href="member special.html">Member Special</a>
-            </div>
-        </div>
+        <a href="offers.html" data-menu="offers">offers</a>
         <a href="contact us.html" data-menu="contact">contact us</a>
     </nav>
 
@@ -73,7 +66,7 @@
     </div>
 </section>
 
-<section class="page-gallery dark-gallery">
+<section class="page-gallery dark-gallery reveal-section">
     <div class="page-gallery-header">
         <p class="eyebrow">Demo 2 Visuals</p>
         <h2>A darker, sharper experience</h2>
@@ -92,7 +85,7 @@
 </section>
 
 <!-- EXPERIENCE SECTION -->
-<section class="experience">
+<section class="experience reveal-section">
     <h2>What Awaits You?</h2>
 
     <div class="exp-grid">
@@ -117,7 +110,7 @@
 </section>
 
 <!-- GAME STORY -->
-<section class="story">
+<section class="story reveal-section">
     <div class="story-text">
         <h2>The Story Begins...</h2>
         <p>
@@ -129,7 +122,7 @@
 </section>
 
 <!-- ROOMS PREVIEW -->
-<section class="rooms-preview">
+<section class="rooms-preview reveal-section">
     <h2>Choose Your Challenge</h2>
 
     <div class="room-grid">
@@ -160,13 +153,60 @@
     <button class="btn" onclick="openBookingModal('Demo 2 Challenge')">Book Now</button>
 </section>
 
+<section class="fear-level demo2-premium-section">
+    <div class="demo2-section-head">
+        <p class="eyebrow">Fear Scale</p>
+        <h2>Choose Your Fear Level</h2>
+    </div>
+
+    <div class="fear-grid">
+        <div class="fear-card">
+            <h3>Easy</h3>
+            <p>Light puzzles, minimal fear factor for relaxing experience.</p>
+        </div>
+
+        <div class="fear-card">
+            <h3>Medium</h3>
+            <p>Balanced puzzles with thrilling moments of suspense.</p>
+        </div>
+
+        <div class="fear-card extreme">
+            <h3>Extreme</h3>
+            <p>High tension, dark atmosphere, intense experience.</p>
+        </div>
+    </div>
+</section>
+
+<section class="live-actors demo2-premium-section">
+    <div class="actors-content">
+        <div class="actors-text">
+            <p class="eyebrow">Live Horror</p>
+            <h2>Real Actors Inside</h2>
+            <p>
+                Experience real fear with live actors playing roles inside the rooms.
+                Unexpected interactions will keep you on edge!
+            </p>
+        </div>
+
+        <div class="actors-image">
+            <img src="./img/horror-escape-challenge.jpg" alt="Live horror experience">
+        </div>
+    </div>
+</section>
+
+<section class="countdown demo2-premium-section demo2-countdown">
+    <p class="eyebrow">Final Minute</p>
+    <h2>Your Time Is Running Out...</h2>
+    <div id="timer" data-countdown-seconds="3600">60:00</div>
+</section>
+
 <footer>
     <div class="footer-content">
         <div class="footer-left">
             <a href="index.html" class="footer-logo">
                 <img src="./img/logo.png" alt="MystIQ Escape logo">
             </a>
-            <h2>Are you up for<br>the cool<br>challenge?</h2>
+            <h2>Ready to escape<br>the ordinary<br>tonight?</h2>
             <div class="social-links">
                 <a href="#facebook" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="#instagram" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
@@ -175,28 +215,38 @@
         </div>
 
         <div class="footer-column">
-            <h3>Demos</h3>
+            <h3>Explore More</h3>
             <ul>
-                <li><a href="#Demo 1">Demo 1</a></li>
-                <li><a href="#Demo 2">Demo 2</a></li>
+                <li><a href="news.html">Latest News</a></li>
+                <li><a href="offers.html">Current Offers</a></li>
+                <li><a href="faq.html">FAQ</a></li>
             </ul>
         </div>
 
         <div class="footer-column">
             <h3>Rooms</h3>
             <ul>
-                <li><a href="#room1">room 1</a></li>
-                <li><a href="#room2">room 2</a></li>
+                <li><a href="room 1.html">room 1</a></li>
+                <li><a href="room 2.html">room 2</a></li>
                 <li><a href="room 3.html">room 3</a></li>
             </ul>
         </div>
 
         <div class="footer-column">
-            <h3>Useful links</h3>
+            <h3>Plan Your Visit</h3>
             <ul>
-                <li><a href="#about" data-menu="about">about us</a></li>
-                <li><a href="pricing.html">pricing</a></li>
-                <li><a href="contact us.html">contact us</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="contact us.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Visit Us</h3>
+            <ul>
+                <li><a href="contact us.html">Madurai, Tamil Nadu</a></li>
+                <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+                <li><a href="mailto:support@mystiqescape.com">support@mystiqescape.com</a></li>
             </ul>
         </div>
     </div>
@@ -205,7 +255,7 @@
         <p> copyright © 2026 MystIQ Escape. All rights reserved.</p>
     </div>
 </footer>
-<script src="script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
 

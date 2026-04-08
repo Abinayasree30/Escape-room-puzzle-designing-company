@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="has-custom-extras">
 
 <header class="header">
     <div class="logo">
@@ -63,16 +63,148 @@
 </section>
 
 <section class="offer-section">
-    <div class="offer-box">
-        <h2>Early Bird Deal</h2>
-        <p>Book your escape room at least 24 hours in advance and unlock a fast-moving weekday discount.</p>
-        <ul>
-            <li>20% discount on selected room slots</li>
-            <li>Best for weekday teams and planners</li>
-            <li>Works well for advance group bookings</li>
-        </ul>
-        <h3 class="price">Starting from Rs 399</h3>
-        <button class="btn" onclick="openBookingModal('Early Bird Offer')">Reserve Early</button>
+    <div class="offer-box offer-box-premium">
+        <div class="offer-box-copy">
+            <p class="eyebrow">Featured Deal</p>
+            <h2>Early Bird Deal</h2>
+            <p class="offer-lead">Book at least 24 hours early and step into a premium-priced slot with stronger savings, smoother check-in, and earlier room access windows.</p>
+            <ul>
+                <li><i class="fas fa-check-circle"></i><span>20% off on selected weekday slots</span></li>
+                <li><i class="fas fa-check-circle"></i><span>Priority-ready for planners and office teams</span></li>
+                <li><i class="fas fa-check-circle"></i><span>Works best with advance group bookings</span></li>
+            </ul>
+            <div class="offer-box-actions">
+                <h3 class="price">Starting from Rs 399</h3>
+                <button class="btn" onclick="openBookingModal('Early Bird Offer')">Reserve Early</button>
+            </div>
+        </div>
+        <div class="offer-box-side">
+            <span class="offer-badge">Best Value This Week</span>
+            <div class="offer-side-card">
+                <strong data-countup="20" data-countup-format="percent">20%</strong>
+                <span>Instant saving on premium time slots</span>
+            </div>
+            <div class="offer-side-card">
+                <strong data-countup="24" data-countup-format="hours">24 Hrs</strong>
+                <span>Advance window to unlock this deal</span>
+            </div>
+            <div class="offer-side-card">
+                <strong data-countup="6" data-countup-format="plus">6+</strong>
+                <span>Player teams get the strongest value spread</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="offer-timer offers-custom-section">
+    <div class="offers-custom-head">
+        <p class="eyebrow">Flash Window</p>
+        <h2>Offer Ending Soon</h2>
+    </div>
+    <div class="timer-box offer-countdown" data-countdown-seconds="8676">
+        <div class="timer-unit">
+            <span data-countdown-part="hours">02</span>
+            <small>Hours</small>
+        </div>
+        <em>:</em>
+        <div class="timer-unit">
+            <span data-countdown-part="minutes">24</span>
+            <small>Minutes</small>
+        </div>
+        <em>:</em>
+        <div class="timer-unit">
+            <span data-countdown-part="seconds">36</span>
+            <small>Seconds</small>
+        </div>
+    </div>
+    <p class="offer-timer-note">Prices reset after the flash window closes, so lock your slot before the countdown hits zero.</p>
+</section>
+
+<section class="promo-reveal offers-custom-section">
+    <div class="offers-custom-head">
+        <p class="eyebrow">Promo Reveal</p>
+        <h2>Unlock Hidden Deal</h2>
+    </div>
+    <div class="offer-action-panel">
+        <button class="btn" type="button" onclick="this.innerText='CODE: MYSTIQ20'">Reveal Code</button>
+    </div>
+</section>
+
+<section class="mystery-offer offers-custom-section">
+    <div class="offers-custom-head">
+        <p class="eyebrow">Surprise Bonus</p>
+        <h2>Mystery Deal</h2>
+    </div>
+    <div class="mystery-box">
+        <p>Hidden reward waiting</p>
+        <button class="btn" type="button">Unlock Surprise</button>
+    </div>
+</section>
+
+<section class="offer-achievement offers-custom-section">
+    <div class="offers-custom-head">
+        <p class="eyebrow">Reward Path</p>
+        <h2>Unlock Rewards</h2>
+    </div>
+    <div class="achievement-grid">
+        <div class="achievement">Play 3 Games -> Free Hint</div>
+        <div class="achievement">Win Once -> 10% OFF</div>
+        <div class="achievement">Bring 5 Friends -> Bonus Access</div>
+    </div>
+</section>
+
+<section class="offer-popular offers-custom-section">
+    <div class="offers-custom-head">
+        <p class="eyebrow">Most Chosen</p>
+        <h2>Most Chosen</h2>
+    </div>
+    <div class="popular-shell">
+        <div class="popular-bar">
+            <div class="bar-fill" data-progress-target="75"></div>
+        </div>
+        <div class="popular-stat">
+            <strong data-countup="75" data-countup-format="percent">75%</strong>
+            <span>players choose Group Offers</span>
+        </div>
+    </div>
+    <p class="offer-popular-note">75% players choose Group Offers</p>
+</section>
+
+<section class="offer-preview offers-custom-section">
+    <div class="offers-custom-head">
+        <p class="eyebrow">Premium Access</p>
+        <h2>Why Teams Upgrade Fast</h2>
+    </div>
+    <div class="offer-preview-panel">
+        <div class="offer-preview-copy">
+            <span class="offer-badge">Included In Premium Deals</span>
+            <h3>Designed for players who want more than a basic booking</h3>
+            <p>Our upgraded offer bundles combine better pricing with smoother entry, stronger host support, and room access windows that feel more exclusive from the first minute.</p>
+            <div class="offer-preview-points">
+                <article>
+                    <strong>Priority Arrival</strong>
+                    <span>Faster check-in flow for peak-time teams.</span>
+                </article>
+                <article>
+                    <strong>Bonus Hint Credit</strong>
+                    <span>Extra flexibility when the room pressure rises.</span>
+                </article>
+                <article>
+                    <strong>Premium Finale</strong>
+                    <span>Sharper reveal pacing and a better closing moment.</span>
+                </article>
+            </div>
+        </div>
+        <div class="offer-preview-side">
+            <div class="offer-preview-card">
+                <strong data-countup="3" data-countup-format="plus">3+</strong>
+                <span>exclusive value layers inside selected bundles</span>
+            </div>
+            <div class="offer-preview-card">
+                <strong data-countup="15" data-countup-format="minutes">15 Min</strong>
+                <span>faster average entry for pre-booked teams</span>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -159,7 +291,7 @@
             <a href="index.html" class="footer-logo">
                 <img src="./img/logo.png" alt="MystIQ Escape logo">
             </a>
-            <h2>Are you up for<br>the cool<br>challenge?</h2>
+            <h2>Ready to escape<br>the ordinary<br>tonight?</h2>
             <div class="social-links">
                 <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
@@ -168,10 +300,11 @@
         </div>
 
         <div class="footer-column">
-            <h3>Demos</h3>
+            <h3>Explore More</h3>
             <ul>
-                <li><a href="index.html">Demo 1</a></li>
-                <li><a href="demo2.html">Demo 2</a></li>
+                <li><a href="news.html">Latest News</a></li>
+                <li><a href="offers.html">Current Offers</a></li>
+                <li><a href="faq.html">FAQ</a></li>
             </ul>
         </div>
 
@@ -185,11 +318,20 @@
         </div>
 
         <div class="footer-column">
-            <h3>Useful Links</h3>
+            <h3>Plan Your Visit</h3>
             <ul>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="pricing.html">Pricing</a></li>
                 <li><a href="contact us.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Visit Us</h3>
+            <ul>
+                <li><a href="contact us.html">Madurai, Tamil Nadu</a></li>
+                <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+                <li><a href="mailto:support@mystiqescape.com">support@mystiqescape.com</a></li>
             </ul>
         </div>
     </div>

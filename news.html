@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="has-custom-extras">
 
 <header class="header">
     <div class="logo">
@@ -67,7 +67,11 @@
         <img src="img/news1.jpg" alt="New room launch">
         <div class="news-content">
             <span class="date">March 2026</span>
-            <h2>New Escape Room Launched</h2>
+            <h2>Escape Room<br>Launched</h2>
+            <div class="news-card-meta">
+                <span>Room Update</span>
+                <span>2 min read</span>
+            </div>
             <p>We have introduced a brand new horror-themed escape room experience.</p>
             <button class="btn" onclick="openBookingModal('New Room Launch')">Read More</button>
         </div>
@@ -77,8 +81,12 @@
         <img src="img/news2.jpg" alt="Group discount update">
         <div class="news-content">
             <span class="date">February 2026</span>
-            <h2>Special Group Discounts</h2>
-            <p>Enjoy exciting offers for group bookings this season.</p>
+            <h2>Special Group<br>Discounts</h2>
+            <div class="news-card-meta">
+                <span>Offer Alert</span>
+                <span>Teams</span>
+            </div>
+            <p>Enjoy exciting offers for group bookings this season to save even more.</p>
             <button class="btn" onclick="openBookingModal('Group Discount Update')">Read More</button>
         </div>
     </div>
@@ -87,10 +95,143 @@
         <img src="img/news3.jpg" alt="Top rated experience news">
         <div class="news-content">
             <span class="date">January 2026</span>
-            <h2>Top Rated Escape Experience</h2>
+            <h2>Top Rated<br>Experience</h2>
+            <div class="news-card-meta">
+                <span>Top Pick</span>
+                <span>Player Choice</span>
+            </div>
             <p>Our escape rooms are now rated among the top experiences in the city.</p>
             <button class="btn" onclick="openBookingModal('Top Rated Experience')">Read More</button>
         </div>
+    </div>
+</section>
+
+<section class="news-ticker news-custom-section">
+    <div class="news-ticker-rail">
+        <span><i class="fas fa-bullhorn"></i><em>New Haunted Room Now Live</em></span>
+        <span><i class="fas fa-tags"></i><em>Special Discounts Available</em></span>
+        <span><i class="fas fa-trophy"></i><em>Rated Top Experience</em></span>
+    </div>
+</section>
+
+<section class="news-social news-custom-section">
+    <div class="news-split-shell">
+        <div class="news-custom-head news-custom-head-left">
+            <p class="eyebrow">Social Feed</p>
+            <h3>Follow Our Updates</h3>
+        </div>
+        <div class="social-feed">
+            <div class="feed-card">
+                <i class="fab fa-instagram"></i>
+                <span>Latest Instagram Update</span>
+                <p>Fresh behind-the-scenes drops, room visuals, and live player moments.</p>
+            </div>
+            <div class="feed-card">
+                <i class="fab fa-x-twitter"></i>
+                <span>Twitter Announcement Update</span>
+                <p>Fast alerts for launches, limited offers, and important event news updates from our team .</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="news-quick-nav news-custom-section">
+    <div class="news-custom-head">
+        <p class="eyebrow">Quick Links</p>
+        <h3>Explore Quickly</h3>
+    </div>
+    <div class="quick-links quick-links-grid">
+        <a href="#"><i class="fas fa-newspaper"></i><strong>Latest</strong><span>Fresh updates, launches, and current room drops.</span></a>
+        <a href="#"><i class="fas fa-fire"></i><strong>Popular</strong><span>Most viewed stories and player-favorite highlights.</span></a>
+        <a href="#"><i class="fas fa-bell"></i><strong>Announcements</strong><span>Official notices, schedules, and special reveals.</span></a>
+    </div>
+</section>
+
+<section class="news-reading-time news-custom-section">
+    <div class="news-mini-panel">
+        <i class="fas fa-clock"></i>
+        <div>
+            <strong>Quick Read Format</strong>
+            <p>Avg reading time: 2-3 minutes per article</p>
+        </div>
+    </div>
+</section>
+
+<section class="news-pinned news-custom-section">
+    <div class="pinned-card pinned-card-hero">
+        <div class="pinned-copy">
+            <p class="eyebrow">Editor Pick</p>
+            <i class="fas fa-thumbtack"></i>
+            <h3>Pinned Highlight</h3>
+            <p class="pinned-lead">Midnight access is now open for our signature horror run, with upgraded lighting cues, live actor beats, and a tighter final reveal sequence.</p>
+            <div class="pinned-meta">
+                <span><i class="fas fa-bolt"></i> Limited night slots</span>
+                <span><i class="fas fa-users"></i> Best for 4-6 players</span>
+                <span><i class="fas fa-star"></i> Premium host experience</span>
+            </div>
+            <div class="pinned-actions">
+                <button class="btn" type="button" onclick="openBookingModal('Pinned Highlight Booking')">Reserve This Drop</button>
+                <a href="room 3.html" class="hero-link">View Signature Room</a>
+            </div>
+        </div>
+        <div class="pinned-side-panel">
+            <div class="pinned-side-top">
+                <span class="pinned-badge">Featured This Week</span>
+                <strong>After-dark session upgrade</strong>
+                <p>Players now get cinematic sound transitions, sharper clue pacing, and a collector-style finale moment built for team photos.</p>
+            </div>
+            <div class="pinned-stat-grid">
+                <article>
+                    <strong>90 min</strong>
+                    <span>Extended premium format</span>
+                </article>
+                <article>
+                    <strong>3 drops</strong>
+                    <span>Fresh reveal beats added</span>
+                </article>
+                <article>
+                    <strong>VIP</strong>
+                    <span>Priority check-in lane</span>
+                </article>
+                <article>
+                    <strong>Live</strong>
+                    <span>Host-guided finale sequence</span>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="news-actions news-custom-section">
+    <div class="news-custom-head">
+        <p class="eyebrow">Take Action</p>
+        <h3>What Would You Like To Do?</h3>
+    </div>
+    <div class="action-buttons action-buttons-split">
+        <button class="btn" type="button" onclick="openBookingModal('News Booking')"><i class="fas fa-calendar-check"></i><span>Book a Room</span></button>
+        <button class="btn" type="button" onclick="window.location.href='offers.html'"><i class="fas fa-ticket-alt"></i><span>View Offers</span></button>
+    </div>
+</section>
+
+<section class="news-fact news-custom-section">
+    <div class="news-mini-panel">
+        <i class="fas fa-lightbulb"></i>
+        <div>
+            <strong>Fast Team Insight</strong>
+            <p>Did you know? Escape room players solve puzzles 40% faster in teams.</p>
+        </div>
+    </div>
+</section>
+
+<section class="news-poll news-custom-section">
+    <div class="news-custom-head">
+        <p class="eyebrow">Quick Poll</p>
+        <h3>Which Theme Do You Prefer?</h3>
+    </div>
+    <div class="poll-buttons poll-buttons-deck">
+        <button type="button"><i class="fas fa-link"></i><strong>Prison</strong><span>Break locks and beat lockdown.</span></button>
+        <button type="button"><i class="fas fa-ghost"></i><strong>Haunted</strong><span>Face fear inside dark corridors.</span></button>
+        <button type="button"><i class="fas fa-flask"></i><strong>Lab</strong><span>Stop the system before failure.</span></button>
     </div>
 </section>
 
@@ -105,7 +246,7 @@
             <a href="index.html" class="footer-logo">
                 <img src="./img/logo.png" alt="MystIQ Escape logo">
             </a>
-            <h2>Are you up for<br>the cool<br>challenge?</h2>
+            <h2>Ready to escape<br>the ordinary<br>tonight?</h2>
             <div class="social-links">
                 <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
@@ -114,10 +255,11 @@
         </div>
 
         <div class="footer-column">
-            <h3>Demos</h3>
+            <h3>Explore More</h3>
             <ul>
-                <li><a href="index.html">Demo 1</a></li>
-                <li><a href="demo2.html">Demo 2</a></li>
+                <li><a href="news.html">Latest News</a></li>
+                <li><a href="offers.html">Current Offers</a></li>
+                <li><a href="faq.html">FAQ</a></li>
             </ul>
         </div>
 
@@ -131,11 +273,20 @@
         </div>
 
         <div class="footer-column">
-            <h3>Useful Links</h3>
+            <h3>Plan Your Visit</h3>
             <ul>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="pricing.html">Pricing</a></li>
                 <li><a href="contact us.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Visit Us</h3>
+            <ul>
+                <li><a href="contact us.html">Madurai, Tamil Nadu</a></li>
+                <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+                <li><a href="mailto:support@mystiqescape.com">support@mystiqescape.com</a></li>
             </ul>
         </div>
     </div>

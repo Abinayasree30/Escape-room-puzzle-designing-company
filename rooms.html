@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="has-custom-extras">
 
 <!-- HEADER -->
 <header class="header">
@@ -98,6 +98,134 @@
 
 </section>
 
+<section class="room-filter rooms-premium-section">
+    <div class="rooms-custom-head">
+        <p class="eyebrow">Difficulty Guide</p>
+        <h2>Filter By Difficulty</h2>
+    </div>
+
+    <div class="filter-shell">
+        <div class="filter-lead">
+            <i class="fas fa-sliders-h"></i>
+            <p>Browse every room by pace, pressure, and challenge level.</p>
+        </div>
+
+        <div class="filter-buttons">
+            <button type="button"><i class="fas fa-border-all"></i><span>All</span></button>
+            <button type="button"><i class="fas fa-feather-alt"></i><span>Easy</span></button>
+            <button type="button"><i class="fas fa-bolt"></i><span>Medium</span></button>
+            <button type="button"><i class="fas fa-fire"></i><span>Hard</span></button>
+        </div>
+    </div>
+</section>
+
+<section class="room-stats rooms-premium-section">
+    <div class="rooms-custom-head">
+        <p class="eyebrow">Quick Room Info</p>
+        <h2>Quick Room Info</h2>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <i class="fas fa-hourglass-half"></i>
+            <span class="room-card-kicker">Standard Session</span>
+            <h3>60 mins</h3>
+            <p>Game Duration</p>
+        </div>
+
+        <div class="stat-card">
+            <i class="fas fa-user-friends"></i>
+            <span class="room-card-kicker">Best Team Size</span>
+            <h3>2-6</h3>
+            <p>Players</p>
+        </div>
+
+        <div class="stat-card">
+            <i class="fas fa-brain"></i>
+            <span class="room-card-kicker">Challenge Balance</span>
+            <h3>Medium</h3>
+            <p>Difficulty</p>
+        </div>
+    </div>
+</section>
+
+<section class="room-themes rooms-premium-section">
+    <div class="rooms-custom-head">
+        <p class="eyebrow">Theme Selection</p>
+        <h2>Choose Your Theme</h2>
+    </div>
+
+    <div class="themes-grid">
+        <div class="theme-card">
+            <i class="fas fa-user-secret"></i>
+            <span class="room-card-kicker">Clue Driven</span>
+            <h3>Mystery</h3>
+            <p>Uncover secrets and hidden clues.</p>
+        </div>
+
+        <div class="theme-card">
+            <i class="fas fa-ghost"></i>
+            <span class="room-card-kicker">Fear Pulse</span>
+            <h3>Horror</h3>
+            <p>Face fear in dark environments.</p>
+        </div>
+
+        <div class="theme-card">
+            <i class="fas fa-flask"></i>
+            <span class="room-card-kicker">Future Logic</span>
+            <h3>Sci-Fi</h3>
+            <p>Explore futuristic puzzles.</p>
+        </div>
+    </div>
+</section>
+
+<section class="top-rooms rooms-premium-section">
+    <div class="rooms-custom-head">
+        <p class="eyebrow">Top Picks</p>
+        <h2>Top Rated Rooms</h2>
+    </div>
+
+    <div class="top-room-grid">
+        <div class="top-room-card">
+            <i class="fas fa-link"></i>
+            <h3>Prison Escape 4.9</h3>
+        </div>
+
+        <div class="top-room-card">
+            <i class="fas fa-ghost"></i>
+            <h3>Haunted House 4.8</h3>
+        </div>
+    </div>
+</section>
+
+<section class="room-preview rooms-premium-section">
+    <div class="rooms-custom-head">
+        <p class="eyebrow">Sneak Peek</p>
+        <h2>Preview The Experience</h2>
+    </div>
+
+    <div class="preview-box">
+        <i class="fas fa-play-circle"></i>
+        <p>Watch a sneak peek of our rooms</p>
+    </div>
+</section>
+
+<section class="room-group rooms-premium-section">
+    <div class="rooms-custom-head">
+        <p class="eyebrow">Group Events</p>
+        <h2>Coming With A Group?</h2>
+        <p>Perfect for birthdays, college outings, and team events.</p>
+    </div>
+
+    <div class="group-features">
+        <span>Special discounts</span>
+        <span>Custom slots</span>
+        <span>Team challenges</span>
+    </div>
+
+    <button class="btn" type="button" onclick="openBookingModal('Group Booking')">Book Group Now</button>
+</section>
+
 <!-- CLOSING -->
 <section class="rooms-closing">
     <div class="rooms-closing-shell">
@@ -134,7 +262,7 @@
             <a href="index.html" class="footer-logo">
                 <img src="./img/logo.png" alt="MystIQ Escape logo">
             </a>
-            <h2>Are you up for<br>the cool<br>challenge?</h2>
+            <h2>Ready to escape<br>the ordinary<br>tonight?</h2>
             <div class="social-links">
                 <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
@@ -143,10 +271,11 @@
         </div>
 
         <div class="footer-column">
-            <h3>Demos</h3>
+            <h3>Explore More</h3>
             <ul>
-                <li><a href="index.html">Demo 1</a></li>
-                <li><a href="demo2.html">Demo 2</a></li>
+                <li><a href="news.html">Latest News</a></li>
+                <li><a href="offers.html">Current Offers</a></li>
+                <li><a href="faq.html">FAQ</a></li>
             </ul>
         </div>
 
@@ -160,11 +289,20 @@
         </div>
 
         <div class="footer-column">
-            <h3>Useful Links</h3>
+            <h3>Plan Your Visit</h3>
             <ul>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="pricing.html">Pricing</a></li>
                 <li><a href="contact us.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Visit Us</h3>
+            <ul>
+                <li><a href="contact us.html">Madurai, Tamil Nadu</a></li>
+                <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+                <li><a href="mailto:support@mystiqescape.com">support@mystiqescape.com</a></li>
             </ul>
         </div>
     </div>
