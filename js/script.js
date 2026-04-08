@@ -533,19 +533,7 @@ setupContactForm();
 
 function enhanceFooter() {
     document.querySelectorAll(".footer-left").forEach((footerBlock) => {
-        if (footerBlock.querySelector(".footer-copy")) {
-            return;
-        }
-
-        const socialLinks = footerBlock.querySelector(".social-links");
-        if (!socialLinks) {
-            return;
-        }
-
-        const copy = document.createElement("p");
-        copy.className = "footer-copy";
-        copy.textContent = "Story-driven escape rooms built for teamwork, pressure, and unforgettable reveals.";
-        footerBlock.insertBefore(copy, socialLinks);
+        footerBlock.querySelector(".footer-copy")?.remove();
     });
 }
 
@@ -553,33 +541,69 @@ enhanceFooter();
 
 function enhanceFooterColumns() {
     document.querySelectorAll(".footer-column").forEach((column) => {
-        if (column.querySelector(".footer-note")) {
-            return;
-        }
-
         const heading = column.querySelector("h3");
         const list = column.querySelector("ul");
         if (!heading || !list) {
             return;
         }
-
-        const label = heading.textContent.trim().toLowerCase();
-        const note = document.createElement("p");
-        note.className = "footer-note";
-
-        if (label.includes("demos")) {
-            note.textContent = "Explore preview worlds before stepping into the full challenge.";
-        } else if (label.includes("rooms")) {
-            note.textContent = "Choose the atmosphere and pressure level that fits your team.";
-        } else {
-            note.textContent = "Quick links to the most useful pages across the MystIQ experience.";
-        }
-
-        column.insertBefore(note, list);
     });
 }
 
 enhanceFooterColumns();
+
+function reorganizeFooterColumns() {
+    document.querySelectorAll(".footer-content").forEach((footerContent) => {
+        const columns = Array.from(footerContent.querySelectorAll(".footer-column"));
+        if (columns.length < 3) {
+            return;
+        }
+
+        const demosColumn = columns.find((column) => {
+            const heading = column.querySelector("h3");
+            return heading && heading.textContent.trim().toLowerCase().includes("demos");
+        });
+
+        const roomsColumn = columns.find((column) => {
+            const heading = column.querySelector("h3");
+            return heading && heading.textContent.trim().toLowerCase().includes("rooms");
+        });
+
+        if (!demosColumn || !roomsColumn) {
+            return;
+        }
+
+        const existingAddress = footerContent.querySelector(".footer-address-card");
+        if (!existingAddress) {
+            const addressCard = document.createElement("div");
+            addressCard.className = "footer-column footer-address-card";
+            addressCard.innerHTML = `
+                <h3>Address</h3>
+                <p>24, KK Nagar Main Road</p>
+                <p>Near Mattuthavani Bus Stand</p>
+                <p>Madurai, Tamil Nadu 625020</p>
+            `;
+            footerContent.appendChild(addressCard);
+        }
+
+        const usefulLinksColumn = columns.find((column) => {
+            const heading = column.querySelector("h3");
+            return heading && heading.textContent.trim().toLowerCase().includes("useful");
+        });
+
+        if (roomsColumn.nextElementSibling !== demosColumn) {
+            roomsColumn.insertAdjacentElement("afterend", demosColumn);
+        }
+
+        if (usefulLinksColumn) {
+            const addressColumn = footerContent.querySelector(".footer-address-card");
+            if (addressColumn && usefulLinksColumn.nextElementSibling !== addressColumn) {
+                usefulLinksColumn.insertAdjacentElement("afterend", addressColumn);
+            }
+        }
+    });
+}
+
+reorganizeFooterColumns();
 
 function getExtraSectionProfile() {
     const profiles = {
@@ -728,7 +752,7 @@ function renderExtraSection(profile, layout, index) {
 }
 
 function injectGlobalSections() {
-    if (document.querySelector(".site-extras")) {
+    if (document.querySelector(".site-extras") || document.body.classList.contains("has-custom-extras")) {
         return;
     }
 
@@ -761,6 +785,321 @@ function injectGlobalSections() {
 }
 
 injectGlobalSections();
+
+function initSectionReveal() {
+    const revealSections = document.querySelectorAll([
+        ".reveal-section",
+        ".home-premium-section",
+        ".demo2-premium-section",
+        ".aboutus-premium-section",
+        ".pricing-premium-section",
+        ".faq-premium-section",
+        ".testimonial-premium-section",
+        ".rooms-premium-section",
+        ".room-custom-section",
+        ".news-custom-section",
+        ".offers-custom-section",
+        ".contact-help",
+        ".contact-trust"
+    ].join(", "));
+    if (!revealSections.length) {
+        return;
+    }
+
+    if (!("IntersectionObserver" in window)) {
+        revealSections.forEach((section) => section.classList.add("is-visible"));
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries, currentObserver) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+                return;
+            }
+
+            entry.target.classList.add("is-visible");
+            currentObserver.unobserve(entry.target);
+        });
+    }, {
+        threshold: 0.18,
+        rootMargin: "0px 0px -60px 0px"
+    });
+
+    revealSections.forEach((section) => observer.observe(section));
+}
+
+initSectionReveal();
+
+function getAchievementCounterConfig(rawText) {
+    const text = (rawText || "").trim();
+    const numericValue = Number.parseFloat(text.replace(/[^0-9.]/g, ""));
+
+    if (!Number.isFinite(numericValue)) {
+        return null;
+    }
+
+    if (text.includes("K+")) {
+        return {
+            target: numericValue * 1000,
+            format: (value) => `${Math.round(value / 1000)}K+`
+        };
+    }
+
+    if (text.includes("\u2605") || text.includes("★") || text.includes("â˜…") || (numericValue < 10 && /[^\d.\s]/.test(text) && !text.includes("+") && !text.includes("K"))) {
+        return {
+            target: numericValue,
+            format: (value, done) => `${value.toFixed(1)}${done ? "\u2605" : ""}`
+        };
+    }
+
+    if (text.includes("+")) {
+        return {
+            target: numericValue,
+            format: (value) => `${Math.round(value)}+`
+        };
+    }
+
+    return {
+        target: numericValue,
+        format: (value) => `${Math.round(value)}`
+    };
+}
+
+function initAchievementCounters() {
+    const counters = document.querySelectorAll(".achieve-card h3");
+    if (!counters.length) {
+        return;
+    }
+
+    const animateCounter = (element) => {
+        if (element.dataset.counted === "true") {
+            return;
+        }
+
+        const config = getAchievementCounterConfig(element.textContent);
+        if (!config) {
+            return;
+        }
+
+        const duration = 1400;
+        const startTime = performance.now();
+
+        element.dataset.counted = "true";
+
+        const tick = (now) => {
+            const progress = Math.min((now - startTime) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const value = config.target * eased;
+            const isDone = progress >= 1;
+
+            element.textContent = config.format(value, isDone);
+
+            if (!isDone) {
+                window.requestAnimationFrame(tick);
+            }
+        };
+
+        window.requestAnimationFrame(tick);
+    };
+
+    if (!("IntersectionObserver" in window)) {
+        counters.forEach(animateCounter);
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries, currentObserver) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+                return;
+            }
+
+            animateCounter(entry.target);
+            currentObserver.unobserve(entry.target);
+        });
+    }, {
+        threshold: 0.45
+    });
+
+    counters.forEach((counter) => observer.observe(counter));
+}
+
+initAchievementCounters();
+
+function formatCountupValue(value, format) {
+    if (format === "rating") {
+        return value.toFixed(1);
+    }
+
+    if (format === "rating-star") {
+        return `${value.toFixed(1)}\u2605`;
+    }
+
+    if (format === "comma-plus") {
+        return `${Math.round(value).toLocaleString("en-IN")}+`;
+    }
+
+    if (format === "compact-plus") {
+        return `${Math.round(value / 1000)}K+`;
+    }
+
+    if (format === "percent") {
+        return `${Math.round(value)}%`;
+    }
+
+    if (format === "hours") {
+        return `${Math.round(value)} Hrs`;
+    }
+
+    if (format === "minutes") {
+        return `${Math.round(value)} Min`;
+    }
+
+    if (format === "plus") {
+        return `${Math.round(value)}+`;
+    }
+
+    return `${Math.round(value)}`;
+}
+
+function initCountupElements() {
+    const elements = document.querySelectorAll("[data-countup]");
+    if (!elements.length) {
+        return;
+    }
+
+    const animateElement = (element) => {
+        if (element.dataset.counted === "true") {
+            return;
+        }
+
+        const target = Number(element.dataset.countup || 0);
+        if (!Number.isFinite(target) || target <= 0) {
+            return;
+        }
+
+        const format = element.dataset.countupFormat || "";
+        const duration = format === "rating" ? 1100 : 1400;
+        const startTime = performance.now();
+
+        element.dataset.counted = "true";
+
+        const tick = (now) => {
+            const progress = Math.min((now - startTime) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const value = target * eased;
+
+            element.textContent = formatCountupValue(value, format);
+
+            if (progress < 1) {
+                window.requestAnimationFrame(tick);
+            }
+        };
+
+        window.requestAnimationFrame(tick);
+    };
+
+    if (!("IntersectionObserver" in window)) {
+        elements.forEach(animateElement);
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries, currentObserver) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+                return;
+            }
+
+            animateElement(entry.target);
+            currentObserver.unobserve(entry.target);
+        });
+    }, {
+        threshold: 0.45
+    });
+
+    elements.forEach((element) => observer.observe(element));
+}
+
+initCountupElements();
+
+function initProgressBars() {
+    const bars = document.querySelectorAll("[data-progress-target]");
+    if (!bars.length) {
+        return;
+    }
+
+    const animateBar = (bar) => {
+        if (bar.dataset.progressAnimated === "true") {
+            return;
+        }
+
+        const target = Number(bar.dataset.progressTarget || 0);
+        if (!Number.isFinite(target) || target < 0) {
+            return;
+        }
+
+        bar.dataset.progressAnimated = "true";
+        bar.style.width = `${Math.min(target, 100)}%`;
+    };
+
+    window.requestAnimationFrame(() => {
+        bars.forEach(animateBar);
+    });
+}
+
+initProgressBars();
+
+function initCountdownTimer() {
+    const timers = document.querySelectorAll("[data-countdown-seconds]");
+    if (!timers.length) {
+        return;
+    }
+
+    timers.forEach((timer) => {
+        const totalSeconds = Number(timer.dataset.countdownSeconds || 0);
+        if (!Number.isFinite(totalSeconds) || totalSeconds <= 0) {
+            return;
+        }
+
+        let remainingSeconds = totalSeconds;
+        const hoursNode = timer.querySelector("[data-countdown-part='hours']");
+        const minutesNode = timer.querySelector("[data-countdown-part='minutes']");
+        const secondsNode = timer.querySelector("[data-countdown-part='seconds']");
+
+        const renderTime = () => {
+            const hours = Math.floor(remainingSeconds / 3600);
+            const minutes = Math.floor((remainingSeconds % 3600) / 60);
+            const seconds = remainingSeconds % 60;
+
+            if (hoursNode || minutesNode || secondsNode) {
+                if (hoursNode) {
+                    hoursNode.textContent = String(hours).padStart(2, "0");
+                }
+                if (minutesNode) {
+                    minutesNode.textContent = String(minutes).padStart(2, "0");
+                }
+                if (secondsNode) {
+                    secondsNode.textContent = String(seconds).padStart(2, "0");
+                }
+            } else {
+                const displayMinutes = Math.floor(remainingSeconds / 60);
+                timer.textContent = `${String(displayMinutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+            }
+        };
+
+        renderTime();
+
+        window.setInterval(() => {
+            if (remainingSeconds <= 0) {
+                return;
+            }
+
+            remainingSeconds -= 1;
+            renderTime();
+        }, 1000);
+    });
+}
+
+initCountdownTimer();
 
 function togglePasswordVisibility() {
     const passwordInput = document.getElementById("loginPassword");
