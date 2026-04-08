@@ -1,5 +1,5 @@
 /* =============================================
-   MYSTIQ ESCAPE — style.css (CLEAN VERSION)
+   MYSTIQ ESCAPE â€” style.css (CLEAN VERSION)
    Primary: #00e0ff
    ============================================= */
 
@@ -2172,7 +2172,7 @@ button {
     cursor: pointer;
 }
 
-/* 🔥 HOVER FULL EFFECT */
+/* ðŸ”¥ HOVER FULL EFFECT */
 .room:hover {
     transform: scale(1.1) translateY(-5px);
     background: rgba(34,211,238,0.1);
@@ -2299,13 +2299,13 @@ button {
     color: #94a3b8;
 }
 
-/* 🔥 HOVER EFFECT */
+/* ðŸ”¥ HOVER EFFECT */
 .exp-card:hover {
     transform: translateY(-10px) scale(1.05);
     box-shadow: 0 20px 50px rgba(0,0,0,0.5);
 }
 
-/* 🔥 GLOW BORDER */
+/* ðŸ”¥ GLOW BORDER */
 .exp-card::before {
     content: "";
     position: absolute;
@@ -2779,7 +2779,7 @@ button {
 }
 
 .room-cards .room {
-    position: static;        /* ← இதுதான் fix */
+    position: static;        /* â† à®‡à®¤à¯à®¤à®¾à®©à¯ fix */
     width: auto;
     min-width: 180px;
     padding: 20px 30px;
@@ -2856,7 +2856,7 @@ button {
 .faq-hero,
 .testimonial-hero {
     display: flex;
-    justify-content: center;   /* 🔥 CENTER */
+    justify-content: center;   /* ðŸ”¥ CENTER */
     align-items: center;
     text-align: center;
     height: 60vh;
@@ -5227,6 +5227,11 @@ button {
     text-align:center;
 }
 
+.rooms-section .room-info h2{
+    color:#00e0ff !important;
+    -webkit-text-fill-color:#00e0ff;
+}
+
 .room-card:hover{
     transform:scale(1.05);
 }
@@ -5646,6 +5651,15 @@ button {
 .room-preview-note {
     color: #9fb0c3 !important;
     font-size: 14px;
+}
+
+.room-preview-note a {
+    color: #74eaff;
+    font-weight: 600;
+}
+
+.room-preview-status {
+    margin-top: 10px !important;
 }
 
 .room-custom-section {
@@ -7037,16 +7051,6 @@ button {
     line-height: 1.5;
 }
 
-@media (max-width: 900px) {
-    .pinned-card-hero {
-        grid-template-columns: 1fr;
-    }
-
-    .pinned-side-panel {
-        padding: 22px;
-    }
-}
-
 .action-buttons-split .btn {
     min-height: 102px;
     min-width: 240px;
@@ -8312,41 +8316,6 @@ body.light-mode .footer-address-card p {
     flex-direction: row-reverse;
 }
 
-@media (max-width: 900px) {
-    .site-extras {
-        padding: 20px 18px 48px;
-    }
-
-    .site-lead,
-    .site-quote,
-    .site-magazine,
-    .site-duo,
-    .site-rail,
-    .site-stat-grid,
-    .site-cta-band {
-        grid-template-columns: 1fr;
-        flex-direction: column;
-    }
-
-    .site-lead-copy,
-    .site-quote-copy,
-    .site-cta-band,
-    .site-stats {
-        padding-left: 22px;
-        padding-right: 22px;
-    }
-
-    .site-magazine,
-    .site-duo,
-    .site-timeline {
-        padding: 18px;
-    }
-
-    .site-quote-image {
-        min-height: 240px;
-    }
-}
-
 /* =============================================
    ICON TOGGLE BUTTONS (dark mode / direction)
    ============================================= */
@@ -8516,7 +8485,7 @@ body.light-mode .icon-btn:hover {
     color: var(--primary-dark);
 }
 
-/* Typography — all text near-black */
+/* Typography â€” all text near-black */
 body.light-mode h1,
 body.light-mode h2,
 body.light-mode h3 {
@@ -8619,7 +8588,7 @@ body.light-mode .contact-form-status {
     color: #1a2332;
 }
 
-/* Hero overlay sections — keep text white (overlays remain dark) */
+/* Hero overlay sections â€” keep text white (overlays remain dark) */
 body.light-mode .news-hero .hero-text h1,
 body.light-mode .news-hero .hero-text p,
 body.light-mode .about-hero .hero-text h1,
@@ -8673,7 +8642,7 @@ body.light-mode .hero-link:hover {
     border-color: rgba(0, 160, 190, 0.4);
 }
 
-/* Dark cards → white cards */
+/* Dark cards â†’ white cards */
 body.light-mode .news-card,
 body.light-mode .room-card,
 body.light-mode .exp-card,
@@ -8757,7 +8726,7 @@ body.light-mode .trust-item {
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
 }
 
-/* Accent/featured cards — subtle cyan tint */
+/* Accent/featured cards â€” subtle cyan tint */
 body.light-mode .about-highlight-card,
 body.light-mode .faq-side-card,
 body.light-mode .testimonial-side-card,
@@ -9255,11 +9224,11 @@ body.light-mode .date {
 }
 
 /* =============================================
-   LIGHT MODE — FORCE MAXIMUM VISIBILITY
+   LIGHT MODE â€” FORCE MAXIMUM VISIBILITY
    (overrides every hardcoded white/light color)
    ============================================= */
 
-/* All headings → very dark navy, clearest contrast on light bg */
+/* All headings â†’ very dark navy, clearest contrast on light bg */
 body.light-mode h1,
 body.light-mode h2,
 body.light-mode h3,
@@ -9278,7 +9247,7 @@ body.light-mode .faq-answer {
     color: #1e293b !important;
 }
 
-/* Shared cards / panels / forms â€” force readable foregrounds in light mode */
+/* Shared cards / panels / forms Ã¢â‚¬â€ force readable foregrounds in light mode */
 body.light-mode :is(
     .news-card,
     .room-card,
@@ -9443,7 +9412,7 @@ body.light-mode .nav a.active {
     color: var(--primary-dark) !important;
 }
 
-/* Hero / overlay sections — keep WHITE text (dark image overlays behind) */
+/* Hero / overlay sections â€” keep WHITE text (dark image overlays behind) */
 body.light-mode .hero-text h1,
 body.light-mode .hero-text h2,
 body.light-mode .hero-text p,
@@ -10143,332 +10112,6 @@ body.light-mode .news-custom-head-left p {
     flex-direction: row-reverse;
 }
 
-@media (max-width: 900px) {
-    .offer-box-premium,
-    .popular-shell,
-    .offer-preview-panel,
-    .offer-preview-points {
-        grid-template-columns: 1fr;
-    }
-
-    .offer-box-actions {
-        justify-content: flex-start;
-    }
-
-    .timer-box {
-        flex-wrap: wrap;
-    }
-
-    .home-premium-section {
-        padding: 52px 20px;
-    }
-
-    .demo2-premium-section {
-        padding: 72px 20px;
-    }
-
-    .aboutus-premium-section {
-        padding: 72px 20px;
-    }
-
-    .testimonial-container,
-    .choose-grid,
-    .how-it-works .steps,
-    .newsletter-shell,
-    .fear-grid,
-    .actors-content,
-    .team-grid,
-    .mission-container,
-    .achieve-grid,
-    .partner-logos {
-        grid-template-columns: 1fr;
-        flex-direction: column;
-    }
-
-    .newsletter-shell {
-        align-items: flex-start;
-    }
-
-    .newsletter-form {
-        width: 100%;
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .logo {
-        width: 220px;
-    }
-
-    .logo img {
-        width: 210px;
-        transform: translateX(-6px);
-    }
-
-    .site-extras {
-        padding: 20px 18px 48px;
-    }
-
-    .site-extra-shell {
-        padding: 28px 22px;
-    }
-
-    .site-extra-header,
-    .site-cta-section .site-extra-shell {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .site-extra-grid.metrics,
-    .site-extra-grid.flow,
-    .site-extra-grid.perks {
-        grid-template-columns: 1fr;
-    }
-
-    .login-panel {
-        grid-template-columns: 1fr;
-    }
-
-    .login-panel-content {
-        padding: 36px 24px;
-    }
-
-    .login-panel-content h1 {
-        font-size: 40px;
-    }
-
-    .login-side-visual {
-        min-height: 320px;
-    }
-
-    .visual-showcase {
-        display: block;
-    }
-
-    .showcase-text {
-        margin-bottom: 28px;
-    }
-
-    .showcase-grid,
-    .page-gallery-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .showcase-card.tall,
-    .gallery-tile.wide {
-        grid-row: span 1;
-        min-height: 260px;
-    }
-
-    .exp-grid,
-    .room-grid,
-    .about-features-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .demo-feature-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .demo-features {
-        padding: 70px 20px;
-    }
-
-    .demo-features::before {
-        inset: 12px;
-    }
-
-    .about-features-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
-
-    .about-features {
-        padding: 70px 20px;
-    }
-
-    .about-features::before {
-        inset: 14px;
-    }
-
-    .about-section {
-        padding: 24px 20px 0;
-    }
-
-    .about-section-shell,
-    .about-section-shell.reverse {
-        grid-template-columns: 1fr;
-    }
-
-    .about-section-copy,
-    .about-highlight-card,
-    .about-highlight-stats {
-        padding: 28px 22px;
-    }
-
-    .about-inline-points {
-        grid-template-columns: 1fr;
-    }
-
-    .home-feature-grid,
-    .pricing-grid,
-    .pricing-trust,
-    .plan-fit-grid,
-    .review-grid,
-    .include-grid,
-    .trust-grid,
-    .difficulty-grid,
-    .tips-grid,
-    .video-grid,
-    .highlight-grid,
-    .trust-logos,
-    .stats-grid,
-    .themes-grid,
-    .skills-grid,
-    .social-feed,
-    .achievement-grid,
-    .help-grid,
-    .trust-box,
-    .story-layout,
-    .vision-shell,
-    .faq-layout,
-    .testimonial-layout,
-    .testimonial-closing-shell,
-    .testimonial-grid,
-    .contact-grid,
-    .rooms-closing-shell,
-    .room-details-shell,
-    .room-highlight-grid,
-    .room-gallery-grid,
-    .room-preview-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .featured-testimonial {
-        grid-column: span 1;
-    }
-
-    .room-gallery-card,
-    .room-gallery-card-large {
-        aspect-ratio: 16 / 10;
-    }
-
-    .booking-shell {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .booking-shell .btn {
-        min-width: 0;
-        width: auto;
-    }
-
-    .pricing-premium-section {
-        padding: 72px 20px;
-    }
-
-    .faq-premium-section {
-        padding: 72px 20px;
-    }
-
-    .discount-banner-shell {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .faq-form,
-    .review-form,
-    .rules-list {
-        padding: 28px 22px;
-    }
-
-    .testimonial-premium-section {
-        padding: 72px 20px;
-    }
-
-    .rooms-premium-section {
-        padding: 72px 20px;
-    }
-
-    .room-custom-section {
-        padding: 72px 20px;
-    }
-
-    .news-custom-section {
-        padding: 24px 20px;
-    }
-
-    .offers-custom-section {
-        padding: 24px 20px;
-    }
-
-    .contact-help,
-    .contact-trust {
-        padding: 24px 20px;
-    }
-
-    .filter-shell {
-        padding: 24px 20px;
-    }
-
-    .filter-lead {
-        flex-direction: column;
-    }
-
-    .news-ticker-rail,
-    .news-split-shell,
-    .quick-links-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .news-custom-head-left {
-        text-align: center;
-    }
-
-    .news-mini-panel {
-        flex-direction: column;
-    }
-
-    .top-room-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .room-custom-panel {
-        padding: 28px 22px;
-    }
-
-    .contact-mini-cards {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-section,
-    .map {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .contact-form,
-    .contact-info {
-        padding: 30px 24px;
-    }
-
-    .booking-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .room-details,
-    .room-highlights,
-    .room-gallery,
-    .booking {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-}
 .about-hero,
 .story-hero,
 .faq-hero,
@@ -10646,12 +10289,6 @@ body.light-mode .news-custom-head-left p {
     color: #aaa;
     margin: 0;
     line-height: 1.5;
-}
-
-@media (max-width: 768px) {
-    .demo1-room-cards {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
 .hero {
@@ -11081,4 +10718,498 @@ body.light-mode .pricing-premium-section .group-box li {
     color: #1a2332 !important;
     opacity: 1 !important;
     -webkit-text-fill-color: #1a2332 !important;
+}
+
+/* Final rooms heading override */
+.rooms-section .room-card .room-info h2,
+body.light-mode .rooms-section .room-card .room-info h2 {
+    color: #00e0ff !important;
+    opacity: 1 !important;
+    -webkit-text-fill-color: #00e0ff !important;
+    text-shadow: none !important;
+}
+
+@media (max-width: 1024px) {
+    .header {
+        height: auto;
+        padding: 14px 18px;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .logo {
+        width: auto;
+        max-width: 260px;
+        flex: 0 1 auto;
+    }
+
+    .logo img {
+        width: 220px;
+        max-width: 100%;
+        transform: translateX(-6px);
+    }
+
+    .right-section {
+        margin-left: auto;
+        gap: 10px;
+    }
+
+    .nav {
+        order: 3;
+        width: 100%;
+        gap: 18px;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 4px;
+        justify-content: flex-start;
+        scrollbar-width: none;
+    }
+
+    .nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav a {
+        white-space: nowrap;
+    }
+
+    :is(
+        .hero,
+        .news-hero,
+        .about-hero,
+        .story-hero,
+        .pricing-hero,
+        .faq-hero,
+        .testimonial-hero,
+        .rooms-hero,
+        .room-hero,
+        .contact-hero,
+        .offer-hero,
+        .group-hero,
+        .member-hero
+    ) {
+        min-height: 70vh;
+        height: auto;
+    }
+
+    :is(
+        .home-premium-section,
+        .demo2-premium-section,
+        .aboutus-premium-section,
+        .pricing-premium-section,
+        .faq-premium-section,
+        .testimonial-premium-section,
+        .rooms-premium-section,
+        .room-custom-section,
+        .news-premium-section,
+        .offers-premium-section,
+        .contact-premium-section,
+        .group-booking,
+        .member-section,
+        .room-details,
+        .room-highlights,
+        .room-gallery,
+        .rooms-section,
+        .features,
+        .story-section,
+        .newsletter,
+        .demos-section,
+        .pricing,
+        .faq-section,
+        .testimonials,
+        .rooms,
+        .contact,
+        footer
+    ) {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    :is(
+        .choose-grid,
+        .fear-grid,
+        .team-grid,
+        .achieve-grid,
+        .mission-container,
+        .partner-logos,
+        .pricing-grid,
+        .stats-grid,
+        .themes-grid,
+        .top-room-grid,
+        .group-features,
+        .room-highlight-grid,
+        .room-stats-grid,
+        .room-highlight-grid,
+        .site-stat-grid,
+        .site-extra-grid,
+        .demo1-room-cards,
+        .room-grid,
+        .footer-content,
+        .contact-addon-grid,
+        .news-grid,
+        .help-grid,
+        .perks-grid,
+        .offer-box-grid,
+        .actors-content,
+        .trust-logos
+    ) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    :is(
+        .site-lead,
+        .site-quote,
+        .site-magazine,
+        .site-duo,
+        .site-cta-band,
+        .login-panel,
+        .room-details-shell,
+        .room-preview-layout,
+        .testimonial-layout,
+        .faq-layout,
+        .contact-shell,
+        .story-section,
+        .vision-shell,
+        .offer-preview-shell,
+        .offer-box-premium,
+        .newsletter-shell,
+        .feature-shell,
+        .showcase-shell,
+        .room-group-shell,
+        .top-room-grid,
+        .rooms-closing-shell,
+        .about-shell,
+        .pricing-shell,
+        .news-lead-shell
+    ) {
+        grid-template-columns: 1fr;
+    }
+
+    :is(
+        .action-buttons,
+        .action-buttons-split,
+        .filter-buttons,
+        .site-cta-actions,
+        .room-tags,
+        .room-preview-points,
+        .pricing-actions,
+        .offer-box-actions
+    ) {
+        flex-wrap: wrap;
+    }
+
+    .rooms-section {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .room-card {
+        width: min(100%, 320px);
+    }
+
+    .login-panel {
+        max-height: none;
+    }
+
+    .login-side-visual,
+    .site-quote-image,
+    .room-video-card,
+    .preview-box,
+    .offer-preview-panel {
+        min-height: 260px;
+    }
+
+    .footer-content {
+        gap: 24px;
+    }
+
+    .footer-logo,
+    .footer-logo img {
+        width: 260px;
+    }
+}
+
+@media (max-width: 680px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    p,
+    a,
+    button,
+    input,
+    textarea,
+    select {
+        font-size: 14px;
+    }
+
+    .header {
+        padding: 12px 12px 10px;
+        gap: 10px;
+    }
+
+    .logo {
+        max-width: 160px;
+    }
+
+    .logo img {
+        width: 150px;
+        transform: none;
+    }
+
+    .right-section {
+        gap: 6px;
+    }
+
+    .icon-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 13px;
+    }
+
+    .dir-toggle {
+        min-width: 52px;
+        padding: 0 10px;
+        font-size: 11px;
+    }
+
+    .login-btn,
+    .btn {
+        padding: 10px 14px;
+        font-size: 13px;
+    }
+
+    :is(
+        .hero,
+        .news-hero,
+        .about-hero,
+        .story-hero,
+        .pricing-hero,
+        .faq-hero,
+        .testimonial-hero,
+        .rooms-hero,
+        .room-hero,
+        .contact-hero,
+        .offer-hero,
+        .group-hero,
+        .member-hero
+    ) {
+        min-height: 58vh;
+    }
+
+    .hero-text,
+    .rooms-hero-text,
+    .demo1-hero-text,
+    .room-hero-content {
+        padding-left: 16px;
+        padding-right: 16px;
+        text-align: center;
+    }
+
+    .hero-text h1,
+    .rooms-hero-text h1,
+    .demo1-hero-text h1,
+    .room-hero-content h1 {
+        font-size: clamp(30px, 9vw, 40px) !important;
+        line-height: 1.12;
+        white-space: normal !important;
+    }
+
+    .hero-text p,
+    .rooms-hero-text p,
+    .demo1-hero-text p,
+    .room-hero-content p {
+        font-size: 14px !important;
+        line-height: 1.6;
+    }
+
+    :is(
+        .home-premium-section,
+        .demo2-premium-section,
+        .aboutus-premium-section,
+        .pricing-premium-section,
+        .faq-premium-section,
+        .testimonial-premium-section,
+        .rooms-premium-section,
+        .room-custom-section,
+        .news-premium-section,
+        .offers-premium-section,
+        .contact-premium-section,
+        .group-booking,
+        .member-section,
+        .room-details,
+        .room-highlights,
+        .room-gallery,
+        .rooms-section,
+        .features,
+        .story-section,
+        .newsletter,
+        .demos-section,
+        .pricing,
+        .faq-section,
+        .testimonials,
+        .rooms,
+        .contact,
+        footer
+    ) {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    :is(
+        .choose-grid,
+        .fear-grid,
+        .team-grid,
+        .achieve-grid,
+        .mission-container,
+        .partner-logos,
+        .pricing-grid,
+        .stats-grid,
+        .themes-grid,
+        .top-room-grid,
+        .group-features,
+        .room-highlight-grid,
+        .room-stats-grid,
+        .site-stat-grid,
+        .site-extra-grid,
+        .demo1-room-cards,
+        .room-grid,
+        .footer-content,
+        .contact-addon-grid,
+        .news-grid,
+        .help-grid,
+        .perks-grid,
+        .offer-box-grid,
+        .actors-content,
+        .trust-logos,
+        .booking-benefits,
+        .group-benefits,
+        .member-benefits
+    ) {
+        grid-template-columns: 1fr;
+    }
+
+    :is(
+        .site-lead-copy,
+        .site-quote-copy,
+        .site-magazine-main,
+        .site-magazine-side,
+        .site-duo-panel,
+        .site-cta-band,
+        .room-overview-card,
+        .room-custom-panel,
+        .room-preview-copy,
+        .pricing-card,
+        .review-card,
+        .include-card,
+        .trust-card,
+        .faq-item,
+        .testimonial-card,
+        .news-card,
+        .offer-box,
+        .contact-form,
+        .contact-info,
+        .login-panel-content
+    ) {
+        padding: 22px 18px;
+    }
+
+    .room-card,
+    .top-room-card,
+    .theme-card,
+    .stat-card,
+    .room-stat-card,
+    .room-highlight-card,
+    .offer-box,
+    .news-card,
+    .testimonial-card,
+    .faq-item,
+    .group-box,
+    .member-card,
+    .contact-addon-card {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .room-card img,
+    .room-video-card video,
+    .room-video-card img,
+    .preview-box video,
+    .preview-box img,
+    .site-quote-image img,
+    .login-side-visual img {
+        width: 100%;
+        height: auto;
+    }
+
+    .filter-buttons,
+    .action-buttons,
+    .action-buttons-split,
+    .site-cta-actions,
+    .newsletter-form,
+    .offer-box-actions,
+    .contact-pills,
+    .room-tags,
+    .room-preview-points {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-buttons button,
+    .action-buttons .btn,
+    .action-buttons-split .btn,
+    .site-cta-actions .btn,
+    .newsletter-form input,
+    .newsletter-form button {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .rooms-section {
+        padding-top: 36px;
+        padding-bottom: 36px;
+        gap: 20px;
+    }
+
+    .room-details-shell,
+    .room-preview-layout,
+    .testimonial-layout,
+    .faq-layout,
+    .contact-shell,
+    .login-panel,
+    .rooms-closing-shell,
+    .offer-box-premium {
+        gap: 18px;
+    }
+
+    .footer-content {
+        gap: 18px;
+    }
+
+    .footer-logo {
+        width: 220px;
+        height: 64px;
+    }
+
+    .footer-logo img {
+        width: 220px;
+        transform: translate(-35px, -46px);
+    }
+
+    .footer-left h2 {
+        font-size: 26px;
+        max-width: none;
+    }
+
+    .footer-copy {
+        max-width: none;
+    }
 }
