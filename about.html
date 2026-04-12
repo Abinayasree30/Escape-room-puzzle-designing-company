@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Us - MystIQ Escape</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="./img/logo1.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
@@ -16,41 +19,35 @@
 <header class="header">
 
     <div class="logo">
-        <img src="./img/logo.png" alt="MystIQ Escape logo">
+        <a href="index.html" class="logo-link">
+            <img src="./img/logo.png" alt="MystIQ Escape logo">
+        </a>
     </div>
 
-    <nav class="nav">
+        <nav class="nav">
         <div class="nav-item">
-    <a href="#" data-menu="demos">demos <span>▼</span></a>
-    <div class="dropdown">
-        <a href="index.html">Demo 1</a>
-        <a href="demo2.html">Demo 2</a>
-    </div>
-</div>
+            <a href="#" data-menu="home">Home <i class="fas fa-chevron-down nav-chevron"></i></a>
+            <div class="dropdown">
+                <a href="index.html">Home 1</a>
+                <a href="demo2.html">Home 2</a>
+            </div>
+        </div>
         <div class="nav-item">
-            <a href="#" data-menu="about">about <span>▼</span></a>
+            <a href="#" data-menu="about">About <i class="fas fa-chevron-down nav-chevron"></i></a>
             <div class="dropdown">
                 <a href="about.html">About Us</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="faq.html">FAQ</a>
-                <a href="testimonials.html">Testimonials</a>
             </div>
         </div>
-        <div class="nav-item">
-            <a href="#" data-menu="rooms">rooms <span>▼</span></a>
-            <div class="dropdown">
-                <a href="rooms.html">Room 1</a>
-                <a href="room 2.html">Room 2</a>
-                <a href="room 3.html">Room 3</a>
-            </div>
-        </div>
-        <a href="news.html" data-menu="news">news</a>
-        <a href="offers.html" data-menu="offers">offers</a>
-        <a href="contact us.html" data-menu="contact">contact us</a>
+        <a href="rooms.html" data-menu="rooms">Rooms</a>
+        <a href="news.html" data-menu="news">News</a>
+        <a href="offers.html" data-menu="offers">Offers</a>
+        <a href="contact us.html" data-menu="contact">Contact Us</a>
     </nav>
 
     <div class="right-section">
-    <button class="icon-btn" id="mq-enable-btn" title="Toggle Enable Mode">🌙</button>
+    <button class="icon-btn" id="mq-enable-btn" title="Toggle Enable Mode"><i class="fas fa-moon"></i></button>
     <button class="icon-btn dir-toggle" id="mq-dir-btn" title="Switch LTR / RTL">LTR</button>
     <a href="login.html" class="login-btn">Login</a>
 </div>
@@ -260,19 +257,19 @@
 
     <div class="team-grid">
         <div class="team-card">
-            <img src="./img/room1.jpg" alt="Arjun">
+            <img src="./img/team-arjun.jpg?v=2" alt="Arjun">
             <h3>Arjun</h3>
             <p>Game Designer</p>
         </div>
 
         <div class="team-card">
-            <img src="./img/room2.jpg" alt="Priya">
+            <img src="./img/team-priya.jpg?v=2" alt="Priya">
             <h3>Priya</h3>
             <p>Creative Director</p>
         </div>
 
         <div class="team-card">
-            <img src="./img/room3.jpg" alt="Rahul">
+            <img src="./img/team-rahul.jpg?v=2" alt="Rahul">
             <h3>Rahul</h3>
             <p>Puzzle Engineer</p>
         </div>
@@ -382,17 +379,9 @@
         </div>
 
         <div class="footer-column">
-            <h3>Rooms</h3>
-            <ul>
-                <li><a href="room 1.html">Room 1</a></li>
-                <li><a href="room 2.html">Room 2</a></li>
-                <li><a href="room 3.html">Room 3</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-column">
             <h3>Plan Your Visit</h3>
             <ul>
+                <li><a href="rooms.html">Rooms</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="pricing.html">Pricing</a></li>
                 <li><a href="contact us.html">Contact Us</a></li>
@@ -410,7 +399,7 @@
     </div>
 
     <div class="footer-bottom">
-        <p> copyright © 2026 MystIQ Escape. All rights reserved.</p>
+        <p>Copyright &copy; 2026 MystIQ Escape. All rights reserved.</p>
     </div>
 </footer>
 

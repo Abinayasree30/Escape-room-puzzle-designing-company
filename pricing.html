@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pricing - MystIQ Escape</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="./img/logo1.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
@@ -16,41 +19,35 @@
 <header class="header">
 
     <div class="logo">
-        <img src="./img/logo.png" alt="MystIQ Escape logo">
+        <a href="index.html" class="logo-link">
+            <img src="./img/logo.png" alt="MystIQ Escape logo">
+        </a>
     </div>
 
-    <nav class="nav">
+        <nav class="nav">
         <div class="nav-item">
-    <a href="#" data-menu="demos">demos <span>▼</span></a>
-    <div class="dropdown">
-        <a href="index.html">Demo 1</a>
-        <a href="demo2.html">Demo 2</a>
-    </div>
-</div>
+            <a href="#" data-menu="home">Home <i class="fas fa-chevron-down nav-chevron"></i></a>
+            <div class="dropdown">
+                <a href="index.html">Home 1</a>
+                <a href="demo2.html">Home 2</a>
+            </div>
+        </div>
         <div class="nav-item">
-            <a href="#" data-menu="about">about <span>▼</span></a>
+            <a href="#" data-menu="about">About <i class="fas fa-chevron-down nav-chevron"></i></a>
             <div class="dropdown">
                 <a href="about.html">About Us</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="faq.html">FAQ</a>
-                <a href="testimonials.html">Testimonials</a>
             </div>
         </div>
-        <div class="nav-item">
-            <a href="#" data-menu="rooms">rooms <span>▼</span></a>
-            <div class="dropdown">
-                <a href="rooms.html">Room 1</a>
-                <a href="room 2.html">Room 2</a>
-                <a href="room 3.html">Room 3</a>
-            </div>
-        </div>
-        <a href="news.html" data-menu="news">news</a>
-        <a href="offers.html" data-menu="offers">offers</a>
-        <a href="contact us.html" data-menu="contact">contact us</a>
+        <a href="rooms.html" data-menu="rooms">Rooms</a>
+        <a href="news.html" data-menu="news">News</a>
+        <a href="offers.html" data-menu="offers">Offers</a>
+        <a href="contact us.html" data-menu="contact">Contact Us</a>
     </nav>
 
     <div class="right-section">
-    <button class="icon-btn" id="mq-enable-btn" title="Toggle Enable Mode">🌙</button>
+    <button class="icon-btn" id="mq-enable-btn" title="Toggle Enable Mode"><i class="fas fa-moon"></i></button>
     <button class="icon-btn dir-toggle" id="mq-dir-btn" title="Switch LTR / RTL">LTR</button>
     <a href="login.html" class="login-btn">Login</a>
 </div>
@@ -156,21 +153,29 @@
         <h2>Who Is Each Plan For?</h2>
     </div>
 
-    <div class="plan-fit-grid">
-        <div class="plan-fit-card">
+    <div class="plan-fit-rail">
+        <div class="plan-fit-line"></div>
+
+        <article class="plan-fit-stop starter">
+            <span class="plan-fit-index">01</span>
+            <span class="plan-fit-tag">Starter Energy</span>
             <h3>Basic</h3>
-            <p>Perfect for beginners and first-time players.</p>
-        </div>
+            <p>Perfect for first-time players who want a clean, easy entry into the escape room vibe.</p>
+        </article>
 
-        <div class="plan-fit-card">
+        <article class="plan-fit-stop pro">
+            <span class="plan-fit-index">02</span>
+            <span class="plan-fit-tag">Most Balanced</span>
             <h3>Pro</h3>
-            <p>Great for friends who want more challenge and fun.</p>
-        </div>
+            <p>Best for friend groups who want stronger puzzles, more momentum, and a fuller mission feel.</p>
+        </article>
 
-        <div class="plan-fit-card">
+        <article class="plan-fit-stop ultimate">
+            <span class="plan-fit-index">03</span>
+            <span class="plan-fit-tag">Full Send</span>
             <h3>Ultimate</h3>
-            <p>Best for hardcore players and full experience lovers.</p>
-        </div>
+            <p>Made for serious escapers chasing the most intense version of the full MystIQ experience.</p>
+        </article>
     </div>
 </section>
 
@@ -180,21 +185,45 @@
         <h2>What Players Say</h2>
     </div>
 
-    <div class="review-grid">
-        <div class="review-card">
-            <p>"Totally worth the price. Amazing puzzles!"</p>
-            <h4>- Karthik</h4>
-        </div>
+    <div class="pricing-voices-shell">
+        <aside class="voices-sidebar">
+            <span class="voices-score">4.9/5</span>
+            <p>Rated highly for puzzle quality, group fun, and the value players feel after the session.</p>
+            <div class="voices-pills">
+                <span>Worth the price</span>
+                <span>Strong team fun</span>
+                <span>Replay-ready vibes</span>
+            </div>
+        </aside>
 
-        <div class="review-card">
-            <p>"Pro plan is the best! Loved the experience."</p>
-            <h4>- Sneha</h4>
-        </div>
+        <article class="voices-feature">
+            <span class="voices-feature-label">Featured Reaction</span>
+            <p>"Ultimate plan gave us full thrill, strong pacing, and a much better team experience than we expected."</p>
+            <div class="voices-feature-meta">
+                <strong>Ajay</strong>
+                <span>Weekend group booking</span>
+            </div>
+        </article>
 
-        <div class="review-card">
-            <p>"Ultimate plan gave us full thrill and better team experience."</p>
-            <h4>- Ajay</h4>
+        <div class="voices-notes">
+            <article>
+                <p>"Totally worth the price. Amazing puzzles!"</p>
+                <strong>Karthik</strong>
+            </article>
+            <article>
+                <p>"Pro plan is the best. Loved the full experience."</p>
+                <strong>Sneha</strong>
+            </article>
         </div>
+    </div>
+
+    <div class="voices-strip">
+        <span>Quick Takes</span>
+        <p>Fast booking, smooth support, and immersive rooms made the pricing feel fair from start to finish.</p>
+    </div>
+    <div class="voices-strip alt">
+        <span>Team Feedback</span>
+        <p>Players usually choose Pro for balance and Ultimate when they want the most memorable night out.</p>
     </div>
 </section>
 
@@ -322,17 +351,9 @@
         </div>
 
         <div class="footer-column">
-            <h3>Rooms</h3>
-            <ul>
-                <li><a href="rooms.html">Room 1</a></li>
-                <li><a href="room 2.html">Room 2</a></li>
-                <li><a href="room 3.html">Room 3</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-column">
             <h3>Plan Your Visit</h3>
             <ul>
+                <li><a href="rooms.html">Rooms</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="pricing.html">Pricing</a></li>
                 <li><a href="contact us.html">Contact Us</a></li>
@@ -350,7 +371,7 @@
     </div>
 
     <div class="footer-bottom">
-        <p>copyright © 2026 MystIQ Escape. All rights reserved.</p>
+        <p>Copyright &copy; 2026 MystIQ Escape. All rights reserved.</p>
     </div>
 </footer>
 <script src="js/script.js"></script>

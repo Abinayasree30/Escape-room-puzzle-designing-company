@@ -3,52 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MystIQ Escape - Demo 2</title>
+<title>MystIQ Escape - Home 2</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="./img/logo1.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="has-custom-extras">
+<body class="has-custom-extras home-demo2">
 <header class="header">
 
     <div class="logo">
-        <img src="./img/logo.png" alt="MystIQ Escape logo">
+        <a href="index.html" class="logo-link">
+            <img src="./img/logo.png" alt="MystIQ Escape logo">
+        </a>
     </div>
 
-    <nav class="nav">
+        <nav class="nav">
         <div class="nav-item">
-    <a href="#" data-menu="demos">demos <span>▼</span></a>
-    <div class="dropdown">
-        <a href="index.html">Demo 1</a>
-        <a href="demo2.html">Demo 2</a>
-    </div>
-</div>
+            <a href="#" data-menu="home">Home <i class="fas fa-chevron-down nav-chevron"></i></a>
+            <div class="dropdown">
+                <a href="index.html">Home 1</a>
+                <a href="demo2.html">Home 2</a>
+            </div>
+        </div>
         <div class="nav-item">
-            <a href="about.html">about <span>▼</span></a>
+            <a href="#" data-menu="about">About <i class="fas fa-chevron-down nav-chevron"></i></a>
             <div class="dropdown">
                 <a href="about.html">About Us</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="faq.html">FAQ</a>
-                <a href="testimonials.html">Testimonials</a>
             </div>
         </div>
-        <div class="nav-item">
-            <a href="#rooms" data-menu="rooms">rooms <span>▼</span></a>
-            <div class="dropdown">
-                <a href="rooms.html">Room 1</a>
-                <a href="room 2.html">Room 2</a>
-                <a href="room 3.html">Room 3</a>
-            </div>
-        </div>
-        <a href="news.html" data-menu="news">news</a>
-        <a href="offers.html" data-menu="offers">offers</a>
-        <a href="contact us.html" data-menu="contact">contact us</a>
+        <a href="rooms.html" data-menu="rooms">Rooms</a>
+        <a href="news.html" data-menu="news">News</a>
+        <a href="offers.html" data-menu="offers">Offers</a>
+        <a href="contact us.html" data-menu="contact">Contact Us</a>
     </nav>
 
     <div class="right-section">
-    <button class="icon-btn" id="mq-enable-btn" title="Toggle Enable Mode">🌙</button>
+    <button class="icon-btn" id="mq-enable-btn" title="Toggle Enable Mode"><i class="fas fa-moon"></i></button>
     <button class="icon-btn dir-toggle" id="mq-dir-btn" title="Switch LTR / RTL">LTR</button>
     <a href="login.html" class="login-btn">Login</a>
 </div>
@@ -68,7 +63,7 @@
 
 <section class="page-gallery dark-gallery reveal-section">
     <div class="page-gallery-header">
-        <p class="eyebrow">Demo 2 Visuals</p>
+        <p class="eyebrow">Home 2 Visuals</p>
         <h2>A darker, sharper experience</h2>
     </div>
     <div class="page-gallery-grid">
@@ -81,6 +76,50 @@
         <figure class="gallery-tile">
             <img src="./img/demo2-gallery-detail.jpg" alt="MystIQ Escape visual detail">
         </figure>
+    </div>
+</section>
+
+<section class="home2-briefing reveal-section">
+    <div class="home2-briefing-copy">
+        <p class="eyebrow">Mission Briefing</p>
+        <h2>Step inside a room that reacts to every choice.</h2>
+        <p>
+            Home 2 is built like a late-night investigation: locked doors, strange signals,
+            hidden mechanisms, and clues that only make sense when your team connects them together.
+        </p>
+    </div>
+
+    <div class="home2-briefing-panel">
+        <article>
+            <span>01</span>
+            <div class="briefing-visual"><i class="fas fa-search"></i></div>
+            <h3>Search The Dark</h3>
+            <p>Explore props, shadows, and hidden notes to uncover the first thread.</p>
+            <ul class="briefing-points">
+                <li>Inspect dark corners</li>
+                <li>Track object clues</li>
+            </ul>
+        </article>
+        <article>
+            <span>02</span>
+            <div class="briefing-visual"><i class="fas fa-project-diagram"></i></div>
+            <h3>Decode The Pattern</h3>
+            <p>Use logic and teamwork to open each layer of the mystery.</p>
+            <ul class="briefing-points">
+                <li>Connect symbols fast</li>
+                <li>Sync team choices</li>
+            </ul>
+        </article>
+        <article>
+            <span>03</span>
+            <div class="briefing-visual"><i class="fas fa-door-open"></i></div>
+            <h3>Escape The Lockdown</h3>
+            <p>Make the final call before the timer ends and the room turns against you.</p>
+            <ul class="briefing-points">
+                <li>Choose final route</li>
+                <li>Beat the countdown</li>
+            </ul>
+        </article>
     </div>
 </section>
 
@@ -109,6 +148,31 @@
     </div>
 </section>
 
+<section class="home2-evidence demo2-premium-section reveal-section">
+    <div class="demo2-section-head">
+        <p class="eyebrow">Evidence Trail</p>
+        <h2>Every clue has a consequence</h2>
+    </div>
+
+    <div class="home2-evidence-grid">
+        <article class="home2-evidence-card">
+            <i class="fas fa-fingerprint"></i>
+            <h3>Trace Marks</h3>
+            <p>Follow hidden marks and suspicious objects that reveal where the story begins.</p>
+        </article>
+        <article class="home2-evidence-card">
+            <i class="fas fa-wave-square"></i>
+            <h3>Audio Signals</h3>
+            <p>Short sound cues guide your team toward codes, locks, and unexpected reveals.</p>
+        </article>
+        <article class="home2-evidence-card">
+            <i class="fas fa-door-closed"></i>
+            <h3>Final Door</h3>
+            <p>The last puzzle combines everything your team has collected across the room.</p>
+        </article>
+    </div>
+</section>
+
 <!-- GAME STORY -->
 <section class="story reveal-section">
     <div class="story-text">
@@ -118,6 +182,98 @@
             Strange sounds echo around you. The clock is ticking.
             Solve the mystery and escape before it's too late.
         </p>
+    </div>
+</section>
+
+<section class="home2-team demo2-premium-section reveal-section">
+    <div class="home2-team-shell">
+        <div class="home2-team-copy">
+            <p class="eyebrow">Team Strategy</p>
+            <h2>Split roles, share clues, escape faster.</h2>
+            <p>
+                The room rewards teams that communicate clearly. Assign someone to search,
+                someone to decode, and someone to track the timer before the pressure rises.
+            </p>
+        </div>
+
+        <div class="home2-role-list">
+            <article>
+                <i class="fas fa-eye"></i>
+                <div>
+                    <h3>Observer</h3>
+                    <p>Spots visual patterns and hidden symbols.</p>
+                </div>
+            </article>
+            <article>
+                <i class="fas fa-brain"></i>
+                <div>
+                    <h3>Decoder</h3>
+                    <p>Connects clues into locks, numbers, and words.</p>
+                </div>
+            </article>
+            <article>
+                <i class="fas fa-bolt"></i>
+                <div>
+                    <h3>Runner</h3>
+                    <p>Keeps the team moving when the clock gets loud.</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="home2-pressure demo2-premium-section reveal-section">
+    <div class="home2-pressure-shell">
+        <div class="home2-pressure-visual">
+            <img src="./img/dark-room-challenge.jpg" alt="Dark room team challenge">
+        </div>
+        <div class="home2-pressure-copy">
+            <p class="eyebrow">Pressure Design</p>
+            <h2>Every minute changes how the room feels.</h2>
+            <p>
+                Home 2 is not just darker in look. It changes the rhythm of play with shifting pressure,
+                timed discoveries, and sudden clue payoffs that make every room feel alive.
+            </p>
+            <div class="home2-pressure-stats">
+                <article>
+                    <strong>60 Min</strong>
+                    <span>Countdown that keeps every decision urgent.</span>
+                </article>
+                <article>
+                    <strong>Layered</strong>
+                    <span>Clues that connect across sound, space, and hidden objects.</span>
+                </article>
+                <article>
+                    <strong>Final Push</strong>
+                    <span>A closing sequence built to reward calm teamwork.</span>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="home2-night-rules demo2-premium-section reveal-section">
+    <div class="demo2-section-head">
+        <p class="eyebrow">Dark Room Guide</p>
+        <h2>What makes Home 2 feel different</h2>
+    </div>
+
+    <div class="home2-night-grid">
+        <article>
+            <span>01</span>
+            <h3>Reactive Atmosphere</h3>
+            <p>Lighting and sound build tension gradually so your team feels the room changing as you progress.</p>
+        </article>
+        <article>
+            <span>02</span>
+            <h3>Clue Chains</h3>
+            <p>What looks small at first can become the key to the entire final sequence later in the game.</p>
+        </article>
+        <article>
+            <span>03</span>
+            <h3>Role-Based Play</h3>
+            <p>Teams do best when they split tasks, call out discoveries fast, and move together under pressure.</p>
+        </article>
     </div>
 </section>
 
@@ -150,7 +306,7 @@
 <section class="cta">
     <h2>Ready To Escape?</h2>
     <p>Gather your team and start the ultimate challenge today.</p>
-    <button class="btn" onclick="openBookingModal('Demo 2 Challenge')">Book Now</button>
+    <button class="btn" onclick="openBookingModal('Home 2 Challenge')">Book Now</button>
 </section>
 
 <section class="fear-level demo2-premium-section">
@@ -200,6 +356,28 @@
     <div id="timer" data-countdown-seconds="3600">60:00</div>
 </section>
 
+<section class="home2-testimonials demo2-premium-section reveal-section">
+    <div class="demo2-section-head">
+        <p class="eyebrow">Player Stories</p>
+        <h2>Teams Who Entered The Dark</h2>
+    </div>
+
+    <div class="home2-testimonial-grid">
+        <article>
+            <p>"The dark room had the perfect mix of fear and puzzles. We were shouting clues across the room."</p>
+            <h4>- Arjun</h4>
+        </article>
+        <article>
+            <p>"Home 2 felt more intense than a normal escape room. The sound cues made every lock feel urgent."</p>
+            <h4>- Priya</h4>
+        </article>
+        <article>
+            <p>"Best team challenge we tried. The final door reveal was worth the pressure."</p>
+            <h4>- Rahul</h4>
+        </article>
+    </div>
+</section>
+
 <footer>
     <div class="footer-content">
         <div class="footer-left">
@@ -224,17 +402,9 @@
         </div>
 
         <div class="footer-column">
-            <h3>Rooms</h3>
-            <ul>
-                <li><a href="room 1.html">room 1</a></li>
-                <li><a href="room 2.html">room 2</a></li>
-                <li><a href="room 3.html">room 3</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-column">
             <h3>Plan Your Visit</h3>
             <ul>
+                <li><a href="rooms.html">Rooms</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="pricing.html">Pricing</a></li>
                 <li><a href="contact us.html">Contact Us</a></li>
@@ -252,7 +422,7 @@
     </div>
 
     <div class="footer-bottom">
-        <p> copyright © 2026 MystIQ Escape. All rights reserved.</p>
+        <p>Copyright &copy; 2026 MystIQ Escape. All rights reserved.</p>
     </div>
 </footer>
 <script src="js/script.js"></script>

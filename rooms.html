@@ -5,257 +5,271 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rooms - MystIQ Escape</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="./img/logo1.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="has-custom-extras">
 
-<!-- HEADER -->
 <header class="header">
-
     <div class="logo">
-        <img src="./img/logo.png" alt="MystIQ Escape logo">
+        <a href="index.html" class="logo-link">
+            <img src="./img/logo.png" alt="MystIQ Escape logo">
+        </a>
     </div>
 
     <nav class="nav">
         <div class="nav-item">
-    <a href="#" data-menu="demos">demos <span>▼</span></a>
-    <div class="dropdown">
-        <a href="index.html">Demo 1</a>
-        <a href="demo2.html">Demo 2</a>
-    </div>
-</div>
+            <a href="#" data-menu="home">Home <i class="fas fa-chevron-down nav-chevron"></i></a>
+            <div class="dropdown">
+                <a href="index.html">Home 1</a>
+                <a href="demo2.html">Home 2</a>
+            </div>
+        </div>
         <div class="nav-item">
-            <a href="#" data-menu="about">about <span>▼</span></a>
+            <a href="#" data-menu="about">About <i class="fas fa-chevron-down nav-chevron"></i></a>
             <div class="dropdown">
                 <a href="about.html">About Us</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="faq.html">FAQ</a>
-                <a href="testimonials.html">Testimonials</a>
             </div>
         </div>
-        <div class="nav-item">
-            <a href="#" data-menu="rooms">rooms <span>▼</span></a>
-            <div class="dropdown">
-                <a href="room 1.html">Room 1</a>
-                <a href="room 2.html">Room 2</a>
-                <a href="room 3.html">Room 3</a>
-            </div>
-        </div>
-        <a href="news.html" data-menu="news">news</a>
-        <a href="offers.html" data-menu="offers">offers</a>
-        <a href="contact us.html" data-menu="contact">contact us</a>
+        <a href="rooms.html" data-menu="rooms">Rooms</a>
+        <a href="news.html" data-menu="news">News</a>
+        <a href="offers.html" data-menu="offers">Offers</a>
+        <a href="contact us.html" data-menu="contact">Contact Us</a>
     </nav>
 
-   <div class="right-section">
-    <button class="icon-btn" id="mq-enable-btn" title="Toggle Enable Mode">🌙</button>
-    <button class="icon-btn dir-toggle" id="mq-dir-btn" title="Switch LTR / RTL">LTR</button>
-    <a href="login.html" class="login-btn">Login</a>
-</div>
-
+    <div class="right-section">
+        <button class="icon-btn" id="mq-enable-btn" title="Toggle Enable Mode"><i class="fas fa-moon"></i></button>
+        <button class="icon-btn dir-toggle" id="mq-dir-btn" title="Switch LTR / RTL">LTR</button>
+        <a href="login.html" class="login-btn">Login</a>
+    </div>
 </header>
 
-<!-- HERO -->
-<section class="rooms-hero">
+<section class="rooms-hero rooms-hero-pro">
     <div class="overlay"></div>
-    <div class="hero-text">
-        <h1>Choose Your Escape Room</h1>
-        <p>Pick your challenge and test your skills</p>
-    </div>
-</section>
-
-<!-- ROOMS GRID -->
-<section class="rooms-section">
-
-    <div class="room-card">
-        <img src="img/room1.jpg" alt="Room">
-        <div class="room-info">
-            <h2>Prison Escape</h2>
-            <p>Break out before time runs out.</p>
-            <a href="room 1.html" class="btn">Play Now</a>
-        </div>
-    </div>
-
-    <div class="room-card">
-        <img src="img/room2.jpg" alt="Room">
-        <div class="room-info">
-            <h2>Haunted House</h2>
-            <p>Face your fears and escape.</p>
-            <a href="room 2.html" class="btn">Play Now</a>
-        </div>
-    </div>
-
-    <div class="room-card">
-        <img src="img/room3.jpg" alt="Room">
-        <div class="room-info">
-            <h2>Secret Lab</h2>
-            <p>Uncover hidden experiments.</p>
-            <a href="room 3.html" class="btn">Play Now</a>
-        </div>
-    </div>
-
-</section>
-
-<section class="room-filter rooms-premium-section">
-    <div class="rooms-custom-head">
-        <p class="eyebrow">Difficulty Guide</p>
-        <h2>Filter By Difficulty</h2>
-    </div>
-
-    <div class="filter-shell">
-        <div class="filter-lead">
-            <i class="fas fa-sliders-h"></i>
-            <p>Browse every room by pace, pressure, and challenge level.</p>
-        </div>
-
-        <div class="filter-buttons">
-            <button type="button"><i class="fas fa-border-all"></i><span>All</span></button>
-            <button type="button"><i class="fas fa-feather-alt"></i><span>Easy</span></button>
-            <button type="button"><i class="fas fa-bolt"></i><span>Medium</span></button>
-            <button type="button"><i class="fas fa-fire"></i><span>Hard</span></button>
+    <div class="hero-text rooms-hero-copy">
+        <p class="eyebrow">Room Portfolio</p>
+        <h1>Choose Your Mission</h1>
+        <p>Compare difficulty, atmosphere, and player fit in one polished room selection page before you book.</p>
+        <div class="rooms-hero-actions">
+            <a href="#room-collection" class="btn">Explore Rooms</a>
+            <a href="contact us.html" class="btn secondary">Ask For Help</a>
         </div>
     </div>
 </section>
 
-<section class="room-stats rooms-premium-section">
-    <div class="rooms-custom-head">
-        <p class="eyebrow">Quick Room Info</p>
-        <h2>Quick Room Info</h2>
-    </div>
-
-    <div class="stats-grid">
-        <div class="stat-card">
-            <i class="fas fa-hourglass-half"></i>
-            <span class="room-card-kicker">Standard Session</span>
-            <h3>60 mins</h3>
-            <p>Game Duration</p>
-        </div>
-
-        <div class="stat-card">
-            <i class="fas fa-user-friends"></i>
-            <span class="room-card-kicker">Best Team Size</span>
-            <h3>2-6</h3>
-            <p>Players</p>
-        </div>
-
-        <div class="stat-card">
-            <i class="fas fa-brain"></i>
-            <span class="room-card-kicker">Challenge Balance</span>
-            <h3>Medium</h3>
-            <p>Difficulty</p>
-        </div>
+<section class="rooms-overview-band">
+    <div class="rooms-overview-grid">
+        <article>
+            <strong>3 Signature Rooms</strong>
+            <span>Curated around horror, strategy, and logic in different moods.</span>
+        </article>
+        <article>
+            <strong>60-75 Minutes</strong>
+            <span>Fast briefings, cinematic gameplay, full countdown pressure.</span>
+        </article>
+        <article>
+            <strong>2-6 Players</strong>
+            <span>Built for couples, friends, and small group bookings up to 6 players.</span>
+        </article>
+        <article>
+            <strong>Live Support</strong>
+            <span>Game masters guide your session from start to finish with live support.</span>
+        </article>
     </div>
 </section>
 
-<section class="room-themes rooms-premium-section">
-    <div class="rooms-custom-head">
-        <p class="eyebrow">Theme Selection</p>
-        <h2>Choose Your Theme</h2>
+<section class="rooms-showcase-pro" id="room-collection">
+    <div class="rooms-pro-intro">
+        <p class="eyebrow">Featured Rooms</p>
+        <h2>Three distinct experiences with different moods and play styles.</h2>
+        <p>Every room is built to feel cinematic, replay-worthy, and easy to compare before your team commits.</p>
     </div>
 
-    <div class="themes-grid">
-        <div class="theme-card">
-            <i class="fas fa-user-secret"></i>
-            <span class="room-card-kicker">Clue Driven</span>
-            <h3>Mystery</h3>
-            <p>Uncover secrets and hidden clues.</p>
-        </div>
+    <div class="rooms-pro-grid">
+        <article class="rooms-pro-card">
+            <img src="img/room1.jpg" alt="Prison Escape room">
+            <div class="rooms-pro-content">
+                <span class="rooms-pro-label">Medium · 60 min · 2-6 players</span>
+                <h3>Prison Escape</h3>
+                <p>A balanced breakout mission built around layered locks, hidden clues, and fast team communication.</p>
+                <div class="rooms-pro-tags">
+                    <span>Strategy</span>
+                    <span>Search</span>
+                    <span>Teamwork</span>
+                </div>
+                <div class="rooms-card-actions">
+                    <a class="btn" href="room 1.html">View Room</a>
+                    <button class="btn secondary" type="button" onclick="openBookingModal('Prison Escape')">Book Now</button>
+                </div>
+            </div>
+        </article>
 
-        <div class="theme-card">
-            <i class="fas fa-ghost"></i>
-            <span class="room-card-kicker">Fear Pulse</span>
-            <h3>Horror</h3>
-            <p>Face fear in dark environments.</p>
-        </div>
+        <article class="rooms-pro-card featured">
+            <img src="img/room2.jpg" alt="Haunted House room">
+            <div class="rooms-pro-content">
+                <span class="rooms-pro-label">Hard · 60 min · 2-5 players</span>
+                <h3>Haunted House</h3>
+                <p>A darker horror mission with eerie pacing, unsettling details, and a stronger fear-driven atmosphere.</p>
+                <div class="rooms-pro-tags">
+                    <span>Horror</span>
+                    <span>Suspense</span>
+                    <span>Advanced</span>
+                </div>
+                <div class="rooms-card-actions">
+                    <a class="btn" href="room 2.html">View Room</a>
+                    <button class="btn secondary" type="button" onclick="openBookingModal('Haunted House')">Book Now</button>
+                </div>
+            </div>
+        </article>
 
-        <div class="theme-card">
-            <i class="fas fa-flask"></i>
-            <span class="room-card-kicker">Future Logic</span>
-            <h3>Sci-Fi</h3>
-            <p>Explore futuristic puzzles.</p>
-        </div>
+        <article class="rooms-pro-card">
+            <img src="img/room3.jpg" alt="Secret Lab room">
+            <div class="rooms-pro-content">
+                <span class="rooms-pro-label">Hard · 75 min · 2-4 players</span>
+                <h3>Secret Lab</h3>
+                <p>A high-pressure science escape built around system failures, logic chains, and sharp final decisions.</p>
+                <div class="rooms-pro-tags">
+                    <span>Logic</span>
+                    <span>Tech</span>
+                    <span>Pressure</span>
+                </div>
+                <div class="rooms-card-actions">
+                    <a class="btn" href="room 3.html">View Room</a>
+                    <button class="btn secondary" type="button" onclick="openBookingModal('Secret Lab')">Book Now</button>
+                </div>
+            </div>
+        </article>
     </div>
 </section>
 
-<section class="top-rooms rooms-premium-section">
-    <div class="rooms-custom-head">
-        <p class="eyebrow">Top Picks</p>
-        <h2>Top Rated Rooms</h2>
+<section class="rooms-comparison">
+    <div class="rooms-pro-intro">
+        <p class="eyebrow">Quick Comparison</p>
+        <h2>Find the right room faster.</h2>
+        <p>Use this quick matrix to compare atmosphere, challenge level, and ideal player type at a glance.</p>
     </div>
 
-    <div class="top-room-grid">
-        <div class="top-room-card">
-            <i class="fas fa-link"></i>
-            <h3>Prison Escape 4.9</h3>
-        </div>
-
-        <div class="top-room-card">
-            <i class="fas fa-ghost"></i>
-            <h3>Haunted House 4.8</h3>
-        </div>
-    </div>
-</section>
-
-<section class="room-preview rooms-premium-section">
-    <div class="rooms-custom-head">
-        <p class="eyebrow">Sneak Peek</p>
-        <h2>Preview The Experience</h2>
-    </div>
-
-    <div class="preview-box">
-        <i class="fas fa-play-circle"></i>
-        <p>Watch a sneak peek of our rooms</p>
-    </div>
-</section>
-
-<section class="room-group rooms-premium-section">
-    <div class="rooms-custom-head">
-        <p class="eyebrow">Group Events</p>
-        <h2>Coming With A Group?</h2>
-        <p>Perfect for birthdays, college outings, and team events.</p>
-    </div>
-
-    <div class="group-features">
-        <span>Special discounts</span>
-        <span>Custom slots</span>
-        <span>Team challenges</span>
-    </div>
-
-    <button class="btn" type="button" onclick="openBookingModal('Group Booking')">Book Group Now</button>
-</section>
-
-<!-- CLOSING -->
-<section class="rooms-closing">
-    <div class="rooms-closing-shell">
-        <div class="rooms-closing-copy">
-            <p class="about-kicker">Choose Your Style</p>
-            <h2>Every Room Brings A Different Kind Of Pressure</h2>
-            <p>
-                Whether your team wants tension, horror, or puzzle-heavy logic, each experience is
-                built to deliver its own atmosphere, pacing, and unforgettable final reveal.
-            </p>
-        </div>
-
-        <div class="rooms-closing-points">
-            <div class="rooms-point-card">
+    <div class="rooms-compare-grid">
+        <article class="rooms-compare-card">
+            <div class="rooms-compare-card-top">
+                <span class="rooms-compare-kicker">Room 01</span>
                 <strong>Prison Escape</strong>
-                <span>Fast pressure, tight spaces, and a breakout mission feel.</span>
             </div>
-            <div class="rooms-point-card">
+            <p class="rooms-compare-summary">A focused breakout mission built for teams that want momentum, pressure, and a clean first challenge.</p>
+            <div class="rooms-compare-meta">
+                <article><label>Atmosphere</label><span>Urgent, tactical</span></article>
+                <article><label>Difficulty</label><span>Medium</span></article>
+                <article><label>Best For</label><span>First-time teams</span></article>
+                <article><label>Session Time</label><span>60 min</span></article>
+            </div>
+        </article>
+
+        <article class="rooms-compare-card featured">
+            <div class="rooms-compare-card-top">
+                <span class="rooms-compare-kicker">Room 02</span>
                 <strong>Haunted House</strong>
-                <span>Dark atmosphere, eerie tension, and fear-driven exploration.</span>
             </div>
-            <div class="rooms-point-card">
+            <p class="rooms-compare-summary">A darker, suspense-led experience for groups that want stronger atmosphere and horror-driven tension.</p>
+            <div class="rooms-compare-meta">
+                <article><label>Atmosphere</label><span>Dark, horror-heavy</span></article>
+                <article><label>Difficulty</label><span>Hard</span></article>
+                <article><label>Best For</label><span>Fear seekers</span></article>
+                <article><label>Session Time</label><span>60 min</span></article>
+            </div>
+        </article>
+
+        <article class="rooms-compare-card">
+            <div class="rooms-compare-card-top">
+                <span class="rooms-compare-kicker">Room 03</span>
                 <strong>Secret Lab</strong>
-                <span>Sharper logic, high-tech mystery, and controlled chaos.</span>
+            </div>
+            <p class="rooms-compare-summary">A sharper logic experience with technical clues, chain reactions, and more pressure on decision-making.</p>
+            <div class="rooms-compare-meta">
+                <article><label>Atmosphere</label><span>Tech, high-pressure</span></article>
+                <article><label>Difficulty</label><span>Hard</span></article>
+                <article><label>Best For</label><span>Puzzle-focused teams</span></article>
+                <article><label>Session Time</label><span>75 min</span></article>
+            </div>
+        </article>
+    </div>
+</section>
+
+<section class="rooms-advisor-pro">
+    <div class="rooms-advisor-shell">
+        <div>
+            <p class="eyebrow">Choosing Guide</p>
+            <h2>Not sure which room to choose?</h2>
+            <p>Every session includes a full briefing, a game master, and a structured challenge flow. Start with the room that best matches your group mood.</p>
+        </div>
+        <div class="rooms-advisor-grid">
+            <article><strong>Balanced challenge</strong><span>Prison Escape gives teams a smart mix of story, clues, and momentum.</span></article>
+            <article><strong>Fear and tension</strong><span>Haunted House is best for teams who want stronger atmosphere and suspense.</span></article>
+            <article><strong>Logic pressure</strong><span>Secret Lab suits players who enjoy systems, sequencing, and sharper clue chains.</span></article>
+            <article><strong>Group planning</strong><span>Need help deciding? Contact us and we will suggest the best room for your team.</span></article>
+        </div>
+    </div>
+</section>
+
+<section class="rooms-editorial-band">
+    <div class="rooms-editorial-shell">
+        <div class="rooms-editorial-visual">
+            <img src="./img/escape-showcase-main.jpg" alt="MystIQ room planning preview">
+        </div>
+        <div class="rooms-editorial-copy">
+            <p class="eyebrow">Why Teams Book MystIQ</p>
+            <h2>Professional room experiences built for atmosphere, flow, and payoff.</h2>
+            <p>Every mission is structured to feel polished from the first briefing to the final unlock. That means cleaner pacing, stronger clue logic, and a more confident booking experience for every group.</p>
+            <div class="rooms-editorial-points">
+                <article>
+                    <strong>Structured briefings</strong>
+                    <span>Teams know the objective, room tone, and difficulty before the countdown starts.</span>
+                </article>
+                <article>
+                    <strong>Better clue pacing</strong>
+                    <span>Each room is designed to keep momentum moving instead of leaving teams stuck too early.</span>
+                </article>
+                <article>
+                    <strong>Memorable finishes</strong>
+                    <span>Every mission is built around a satisfying last puzzle or final-room decision.</span>
+                </article>
             </div>
         </div>
     </div>
 </section>
 
-<!-- FOOTER -->
+<section class="rooms-flow-pro">
+    <div class="rooms-custom-head">
+        <p class="eyebrow">Booking Flow</p>
+        <h2>A cleaner path from selection to escape.</h2>
+    </div>
+    <div class="rooms-flow-grid">
+        <article><span>01</span><h3>Compare</h3><p>Review each room by atmosphere, player fit, and challenge level.</p></article>
+        <article><span>02</span><h3>Choose</h3><p>Open the room page that matches your team and confirm your slot.</p></article>
+        <article><span>03</span><h3>Play</h3><p>Arrive early, get briefed, and step into a full countdown experience.</p></article>
+    </div>
+</section>
+
+<section class="rooms-cta-panel">
+    <div class="rooms-cta-shell">
+        <div>
+            <p class="eyebrow">Ready To Book?</p>
+            <h2>Need help picking a room, or ready to reserve right now?</h2>
+            <p>We can guide first-time teams, group bookings, and players looking for a sharper challenge.</p>
+        </div>
+        <div class="rooms-cta-actions">
+            <button class="btn" type="button" onclick="openBookingModal('MystIQ Escape Room')">Book A Room</button>
+            <a class="btn secondary" href="contact us.html">Talk To Us</a>
+        </div>
+    </div>
+</section>
+
 <footer>
     <div class="footer-content">
         <div class="footer-left">
@@ -280,17 +294,9 @@
         </div>
 
         <div class="footer-column">
-            <h3>Rooms</h3>
-            <ul>
-                <li><a href="room 1.html">Room 1</a></li>
-                <li><a href="room 2.html">Room 2</a></li>
-                <li><a href="room 3.html">Room 3</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-column">
             <h3>Plan Your Visit</h3>
             <ul>
+                <li><a href="rooms.html">Rooms</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="pricing.html">Pricing</a></li>
                 <li><a href="contact us.html">Contact Us</a></li>
@@ -308,12 +314,11 @@
     </div>
 
     <div class="footer-bottom">
-        <p>copyright © 2026 MystIQ Escape. All rights reserved.</p>
+        <p>Copyright &copy; 2026 MystIQ Escape. All rights reserved.</p>
     </div>
 </footer>
 
 <script src="js/script.js"></script>
-
 
 </body>
 </html>

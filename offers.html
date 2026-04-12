@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Offers - MystIQ Escape</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="./img/logo1.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
@@ -14,41 +17,35 @@
 
 <header class="header">
     <div class="logo">
-        <img src="./img/logo.png" alt="MystIQ Escape logo">
+        <a href="index.html" class="logo-link">
+            <img src="./img/logo.png" alt="MystIQ Escape logo">
+        </a>
     </div>
 
-    <nav class="nav">
+        <nav class="nav">
         <div class="nav-item">
-            <a href="#" data-menu="demos">demos <span>▼</span></a>
+            <a href="#" data-menu="home">Home <i class="fas fa-chevron-down nav-chevron"></i></a>
             <div class="dropdown">
-                <a href="index.html">Demo 1</a>
-                <a href="demo2.html">Demo 2</a>
+                <a href="index.html">Home 1</a>
+                <a href="demo2.html">Home 2</a>
             </div>
         </div>
         <div class="nav-item">
-            <a href="#" data-menu="about">about <span>▼</span></a>
+            <a href="#" data-menu="about">About <i class="fas fa-chevron-down nav-chevron"></i></a>
             <div class="dropdown">
                 <a href="about.html">About Us</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="faq.html">FAQ</a>
-                <a href="testimonials.html">Testimonials</a>
             </div>
         </div>
-        <div class="nav-item">
-            <a href="#" data-menu="rooms">rooms <span>▼</span></a>
-            <div class="dropdown">
-                <a href="room 1.html">Room 1</a>
-                <a href="room 2.html">Room 2</a>
-                <a href="room 3.html">Room 3</a>
-            </div>
-        </div>
-        <a href="news.html" data-menu="news">news</a>
-        <a href="offers.html" data-menu="offers">offers</a>
-        <a href="contact us.html" data-menu="contact">contact us</a>
+        <a href="rooms.html" data-menu="rooms">Rooms</a>
+        <a href="news.html" data-menu="news">News</a>
+        <a href="offers.html" data-menu="offers">Offers</a>
+        <a href="contact us.html" data-menu="contact">Contact Us</a>
     </nav>
 
     <div class="right-section">
-        <button class="icon-btn" id="mq-enable-btn" title="Toggle Enable Mode">🌙</button>
+        <button class="icon-btn" id="mq-enable-btn" title="Toggle Enable Mode"><i class="fas fa-moon"></i></button>
         <button class="icon-btn dir-toggle" id="mq-dir-btn" title="Switch LTR / RTL">LTR</button>
         <a href="login.html" class="login-btn">Login</a>
     </div>
@@ -96,6 +93,46 @@
     </div>
 </section>
 
+<section class="offer-campaigns offers-custom-section">
+    <div class="offers-custom-head">
+        <p class="eyebrow">Current Campaigns</p>
+        <h2>Choose the deal that fits your team</h2>
+        <p>Each offer is designed around a different visit style: early planners, bigger groups, and returning players.</p>
+    </div>
+
+    <div class="offer-campaign-grid">
+        <article class="offer-campaign-card">
+            <img src="./img/demo1-preview.jpg" alt="Early bird escape room offer">
+            <div>
+                <span>Save 20%</span>
+                <h3>Early Bird Access Weekdays</h3>
+                <p>Book ahead and unlock better prices on selected weekday sessions.</p>
+                <button class="btn" type="button" onclick="openBookingModal('Early Bird Access')">Claim Early Deal</button>
+            </div>
+        </article>
+
+        <article class="offer-campaign-card featured">
+            <img src="./img/haunted-house-room.jpg" alt="Group booking offer">
+            <div>
+                <span>Best for 6+</span>
+                <h3>Squad Night Bundle</h3>
+                <p>Bring your crew, split the cost, and get stronger value for group bookings.</p>
+                <button class="btn" type="button" onclick="openBookingModal('Squad Night Bundle')">Book Group Deal</button>
+            </div>
+        </article>
+
+        <article class="offer-campaign-card">
+            <img src="./img/secret-lab-challenge.jpg" alt="Member reward offer">
+            <div>
+                <span>Member Reward</span>
+                <h3>Repeat Player Pass</h3>
+                <p>Return for another room and unlock priority access plus bonus hint support.</p>
+                <button class="btn" type="button" onclick="openBookingModal('Repeat Player Pass')">Unlock Reward</button>
+            </div>
+        </article>
+    </div>
+</section>
+
 <section class="offer-timer offers-custom-section">
     <div class="offers-custom-head">
         <p class="eyebrow">Flash Window</p>
@@ -125,8 +162,21 @@
         <p class="eyebrow">Promo Reveal</p>
         <h2>Unlock Hidden Deal</h2>
     </div>
-    <div class="offer-action-panel">
-        <button class="btn" type="button" onclick="this.innerText='CODE: MYSTIQ20'">Reveal Code</button>
+    <div class="offer-action-panel offer-reveal-shell">
+        <div class="offer-reveal-copy">
+            <span class="offer-badge">One-Tap Voucher</span>
+            <h3>Tap once and unlock a code your team can use tonight.</h3>
+            <p>Perfect for quick planners who want instant value without waiting for a support reply or seasonal promo email.</p>
+            <div class="offer-reveal-points">
+                <span>Instant coupon reveal</span>
+                <span>Works on selected slots</span>
+                <span>Fast checkout advantage</span>
+            </div>
+            <button class="btn" type="button" onclick="this.innerText='CODE: MYSTIQ20'">Reveal Code</button>
+        </div>
+        <div class="offer-reveal-visual">
+            <img src="./img/demo2-gallery-detail.jpg" alt="Promo code reward visual">
+        </div>
     </div>
 </section>
 
@@ -135,9 +185,20 @@
         <p class="eyebrow">Surprise Bonus</p>
         <h2>Mystery Deal</h2>
     </div>
-    <div class="mystery-box">
-        <p>Hidden reward waiting</p>
-        <button class="btn" type="button">Unlock Surprise</button>
+    <div class="mystery-box mystery-shell">
+        <div class="mystery-visual">
+            <img src="./img/demo1-gallery-side.jpg" alt="Mystery reward reveal">
+        </div>
+        <div class="mystery-copy">
+            <span class="offer-badge">Limited Drop</span>
+            <h3>Every unlock gives a different reward path.</h3>
+            <p>Some teams get extra hint support, some get stronger group value, and some unlock priority add-ons for the next mission.</p>
+            <div class="mystery-meta">
+                <article><strong>Hint Boost</strong><span>Extra help if the room gets intense.</span></article>
+                <article><strong>Next Visit Value</strong><span>Surprise bonus for returning teams.</span></article>
+            </div>
+            <button class="btn" type="button">Unlock Surprise</button>
+        </div>
     </div>
 </section>
 
@@ -147,9 +208,30 @@
         <h2>Unlock Rewards</h2>
     </div>
     <div class="achievement-grid">
-        <div class="achievement">Play 3 Games -> Free Hint</div>
-        <div class="achievement">Win Once -> 10% OFF</div>
-        <div class="achievement">Bring 5 Friends -> Bonus Access</div>
+        <article class="achievement">
+            <img src="./img/room1.jpg" alt="Play multiple escape games reward">
+            <div class="achievement-copy">
+                <span class="achievement-step">01</span>
+                <strong>Play 3 Games</strong>
+                <p>Build loyalty fast and unlock a free hint on your next mission.</p>
+            </div>
+        </article>
+        <article class="achievement">
+            <img src="./img/room2.jpg" alt="Winning reward for escape room players">
+            <div class="achievement-copy">
+                <span class="achievement-step">02</span>
+                <strong>Win Once</strong>
+                <p>Successful teams unlock 10% off selected return bookings.</p>
+            </div>
+        </article>
+        <article class="achievement">
+            <img src="./img/news2.jpg" alt="Group reward for bringing friends">
+            <div class="achievement-copy">
+                <span class="achievement-step">03</span>
+                <strong>Bring 5 Friends</strong>
+                <p>Group organizers unlock bonus access perks and smoother entry.</p>
+            </div>
+        </article>
     </div>
 </section>
 
@@ -158,9 +240,18 @@
         <p class="eyebrow">Most Chosen</p>
         <h2>Most Chosen</h2>
     </div>
-    <div class="popular-shell">
-        <div class="popular-bar">
-            <div class="bar-fill" data-progress-target="75"></div>
+    <div class="popular-shell popular-shell-rich">
+        <div class="popular-visual">
+            <img src="./img/haunted-house-room.jpg" alt="Group offer chosen by players">
+        </div>
+        <div class="popular-main">
+            <div class="popular-bar">
+                <div class="bar-fill" data-progress-target="75"></div>
+            </div>
+            <div class="popular-copy">
+                <h3>Group Offers lead the board every weekend.</h3>
+                <p>Friend groups keep choosing bundle-style pricing because it feels easier to plan, easier to split, and better for high-energy night bookings.</p>
+            </div>
         </div>
         <div class="popular-stat">
             <strong data-countup="75" data-countup-format="percent">75%</strong>
@@ -199,11 +290,39 @@
             <div class="offer-preview-card">
                 <strong data-countup="3" data-countup-format="plus">3+</strong>
                 <span>exclusive value layers inside selected bundles</span>
+                <p>Priority entry, smarter support, and a better finish all stack together inside premium-ready bookings.</p>
+                <ul>
+                    <li>Earlier room access</li>
+                    <li>Bonus support perks</li>
+                </ul>
             </div>
             <div class="offer-preview-card">
                 <strong data-countup="15" data-countup-format="minutes">15 Min</strong>
                 <span>faster average entry for pre-booked teams</span>
+                <p>Teams spend less time waiting at the front desk and more time stepping into the actual mission.</p>
+                <ul>
+                    <li>Cleaner arrival flow</li>
+                    <li>Faster briefing start</li>
+                </ul>
             </div>
+        </div>
+    </div>
+</section>
+
+<section class="offer-story-panel offers-custom-section">
+    <div class="offer-story-shell">
+        <div class="offer-story-image">
+            <img src="./img/escape-showcase-main.jpg" alt="MystIQ Escape group offer">
+        </div>
+        <div class="offer-story-copy">
+            <p class="eyebrow">Offer Strategy</p>
+            <h2>More than a discount, each deal improves the visit.</h2>
+            <p>Early arrivals, group bundles, and member upgrades are built to make the whole experience smoother: faster check-in, clearer planning, and better value for the room you choose.</p>
+            <div class="offer-story-stats">
+                <article><strong>15 min</strong><span>faster check-in for pre-booked teams</span></article>
+                <article><strong>25%</strong><span>maximum group saving on selected slots</span></article>
+            </div>
+            <button class="btn" type="button" onclick="window.location.href='pricing.html'">Compare Pricing</button>
         </div>
     </div>
 </section>
@@ -272,11 +391,36 @@
 </section>
 
 <section class="group-benefits">
-    <h2>Why These Offers Matter</h2>
-    <div class="benefit-grid">
-        <div class="benefit">Plan Ahead & Save More</div>
-        <div class="benefit">Bring Teams Without Overpaying</div>
-        <div class="benefit">Upgrade Into Faster Access</div>
+    <div class="offers-custom-head">
+        <p class="eyebrow">Why It Works</p>
+        <h2>Why These Offers Matter</h2>
+        <p>These bundles are built to make planning easier, spending smarter, and the full room experience feel more rewarding from the start.</p>
+    </div>
+    <div class="benefit-grid benefit-grid-rich">
+        <article class="benefit benefit-feature">
+            <img src="./img/demo2-gallery-main.jpg" alt="Plan ahead and save more offer benefit">
+            <div class="benefit-copy">
+                <span class="benefit-label">01</span>
+                <strong>Plan Ahead & Save More</strong>
+                <p>Early planners unlock cleaner pricing, calmer booking, and better access to premium slots.</p>
+            </div>
+        </article>
+        <article class="benefit benefit-feature">
+            <img src="./img/news2.jpg" alt="Bring teams without overpaying offer benefit">
+            <div class="benefit-copy">
+                <span class="benefit-label">02</span>
+                <strong>Bring Teams Without Overpaying</strong>
+                <p>Group offers reduce friction for bigger bookings and make team nights easier to organize.</p>
+            </div>
+        </article>
+        <article class="benefit benefit-feature">
+            <img src="./img/demo1-gallery-detail.jpg" alt="Upgrade into faster access offer benefit">
+            <div class="benefit-copy">
+                <span class="benefit-label">03</span>
+                <strong>Upgrade Into Faster Access</strong>
+                <p>Premium bundles improve entry flow, clue support, and overall room momentum.</p>
+            </div>
+        </article>
     </div>
 </section>
 
@@ -309,17 +453,9 @@
         </div>
 
         <div class="footer-column">
-            <h3>Rooms</h3>
-            <ul>
-                <li><a href="room 1.html">Room 1</a></li>
-                <li><a href="room 2.html">Room 2</a></li>
-                <li><a href="room 3.html">Room 3</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-column">
             <h3>Plan Your Visit</h3>
             <ul>
+                <li><a href="rooms.html">Rooms</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="pricing.html">Pricing</a></li>
                 <li><a href="contact us.html">Contact Us</a></li>
@@ -337,7 +473,7 @@
     </div>
 
     <div class="footer-bottom">
-        <p>copyright © 2026 MystIQ Escape. All rights reserved.</p>
+        <p>Copyright &copy; 2026 MystIQ Escape. All rights reserved.</p>
     </div>
 </footer>
 

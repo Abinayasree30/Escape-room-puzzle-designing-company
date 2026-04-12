@@ -7,51 +7,45 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="./img/logo1.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="has-custom-extras">
+<body class="has-custom-extras home-demo1">
 
 <header class="header">
 
     <div class="logo">
-        <img src="./img/logo.png" alt="MystIQ Escape logo">
+        <a href="index.html" class="logo-link">
+            <img src="./img/logo.png" alt="MystIQ Escape logo">
+        </a>
     </div>
 
-    <nav class="nav">
-    
+            <nav class="nav">
         <div class="nav-item">
-    <a href="#" data-menu="demos">demos <span>▼</span></a>
-    <div class="dropdown">
-        <a href="index.html">Demo 1</a>
-        <a href="demo2.html">Demo 2</a>
-    </div>
-</div>
+            <a href="#" data-menu="home">Home <i class="fas fa-chevron-down nav-chevron"></i></a>
+            <div class="dropdown">
+                <a href="index.html">Home 1</a>
+                <a href="demo2.html">Home 2</a>
+            </div>
+        </div>
         <div class="nav-item">
-            <a href="about.html">about <span>▼</span></a>
+            <a href="#" data-menu="about">About <i class="fas fa-chevron-down nav-chevron"></i></a>
             <div class="dropdown">
                 <a href="about.html">About Us</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="faq.html">FAQ</a>
-                <a href="testimonials.html">Testimonials</a>
             </div>
         </div>
-        <div class="nav-item">
-            <a href="#rooms" data-menu="rooms">rooms <span>▼</span></a>
-            <div class="dropdown">
-                <a href="rooms.html">Room 1</a>
-                <a href="room 2.html">Room 2</a>
-                <a href="room 3.html">Room 3</a>
-            </div>
-        </div>
-        <a href="news.html" data-menu="news">news</a>
-        <a href="offers.html" data-menu="offers">offers</a>
-        <a href="contact us.html" data-menu="contact">contact us</a>
+        <a href="rooms.html" data-menu="rooms">Rooms</a>
+        <a href="news.html" data-menu="news">News</a>
+        <a href="offers.html" data-menu="offers">Offers</a>
+        <a href="contact us.html" data-menu="contact">Contact Us</a>
     </nav>
 
     <div class="right-section">
-    <button class="icon-btn" id="mq-enable-btn" title="Toggle Enable Mode">🌙</button>
+    <button class="icon-btn" id="mq-enable-btn" title="Toggle Enable Mode"><i class="fas fa-moon"></i></button>
     <button class="icon-btn dir-toggle" id="mq-dir-btn" title="Switch LTR / RTL">LTR</button>
     <a href="login.html" class="login-btn">Login</a>
 </div>
@@ -211,11 +205,6 @@
             <div class="story-img">
                 <img src="img/demo1-gallery-side.jpg" alt="">
             </div>
-
-            <p>
-                You and your team will step into a carefully crafted scenario and have a limited time 
-                to solve a series of mind-bending puzzles, riddles, and mysteries to find your way out.
-            </p>
         </div>
 
         <!-- RIGHT IMAGE -->
@@ -234,22 +223,32 @@
 </section>
 
 <section class="game-mode reveal-section">
-    <h2>Select Your Mission</h2>
+    <div class="home-section-head">
+        <p class="eyebrow">Play Styles</p>
+        <h2>Select Your Mission</h2>
+        <p>Pick the mode that matches your team energy, pace, and puzzle style before you step inside.</p>
+    </div>
 
     <div class="mode-grid">
         <div class="mode-card">
-            <h3>🧠 Mystery Mode</h3>
-            <p>Focus on puzzles and clues</p>
+            <span class="mode-card-index">01</span>
+            <span class="mode-card-label">Puzzle First</span>
+            <h3>Mystery Mode</h3>
+            <p>Focus on layered clues, hidden details, and a slower-thinking route through the room.</p>
         </div>
 
         <div class="mode-card">
-            <h3>⚡ Speed Run</h3>
-            <p>Race against time</p>
+            <span class="mode-card-index">02</span>
+            <span class="mode-card-label">Fast Pace</span>
+            <h3>Speed Run</h3>
+            <p>Race the clock with sharper decisions, quicker clues, and more pressure on every second.</p>
         </div>
 
         <div class="mode-card">
-            <h3>👥 Team Mode</h3>
-            <p>Collaborate and escape</p>
+            <span class="mode-card-index">03</span>
+            <span class="mode-card-label">Group Focus</span>
+            <h3>Team Mode</h3>
+            <p>Collaborate, split tasks, and build momentum together for the most social escape experience.</p>
         </div>
     </div>
 </section>
@@ -262,18 +261,66 @@
 
     <div class="testimonial-container">
         <div class="testimonial-card">
+            <span class="testimonial-mark">"</span>
+            <div class="testimonial-rating-row">
+                <span><i class="fas fa-star"></i> 5.0 Rating</span>
+                <span><i class="fas fa-clock"></i> 58 min run</span>
+            </div>
             <p>"Amazing experience! The puzzles were mind-blowing."</p>
-            <h4>- Arjun</h4>
+            <div class="testimonial-tags">
+                <span>Clue Design</span>
+                <span>Atmosphere</span>
+            </div>
+            <div class="testimonial-highlight">
+                <i class="fas fa-brain"></i>
+                <span>Loved the layered puzzle flow and smart reveal moments throughout the room design in Mystery Mode .</span>
+            </div>
+            <div class="testimonial-meta">
+                <h4>Arjun</h4>
+                <span>First-time player</span>
+            </div>
         </div>
 
         <div class="testimonial-card">
+            <span class="testimonial-mark">"</span>
+            <div class="testimonial-rating-row">
+                <span><i class="fas fa-star"></i> 4.9 Rating</span>
+                <span><i class="fas fa-users"></i> 4-player team</span>
+            </div>
             <p>"Perfect for friends outing. We had so much fun!"</p>
-            <h4>- Priya</h4>
+            <div class="testimonial-tags">
+                <span>Group Fun</span>
+                <span>Fast Pace</span>
+            </div>
+            <div class="testimonial-highlight">
+                <i class="fas fa-bolt"></i>
+                <span>Best part was the team energy and pressure-driven final room puzzle for the whole group in Speed Run mode.</span>
+            </div>
+            <div class="testimonial-meta">
+                <h4>Priya</h4>
+                <span>Weekend group booking</span>
+            </div>
         </div>
 
         <div class="testimonial-card">
+            <span class="testimonial-mark">"</span>
+            <div class="testimonial-rating-row">
+                <span><i class="fas fa-star"></i> 5.0 Rating</span>
+                <span><i class="fas fa-repeat"></i> Repeat visit</span>
+            </div>
             <p>"Best escape room in town. Highly recommended!"</p>
-            <h4>- Rahul</h4>
+            <div class="testimonial-tags">
+                <span>Immersive</span>
+                <span>Top Rated</span>
+            </div>
+            <div class="testimonial-highlight">
+                <i class="fas fa-door-open"></i>
+                <span>Came back again for the story build-up and smoother room design in Mystery Mode for the second time.</span>
+            </div>
+            <div class="testimonial-meta">
+                <h4>Rahul</h4>
+                <span>Returning player</span>
+            </div>
         </div>
     </div>
 </section>
@@ -377,17 +424,9 @@
         </div>
 
         <div class="footer-column">
-            <h3>Rooms</h3>
-            <ul>
-                <li><a href="room 1.html">Room 1</a></li>
-                <li><a href="room 2.html">Room 2</a></li>
-                <li><a href="room 3.html">Room 3</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-column">
             <h3>Plan Your Visit</h3>
             <ul>
+                <li><a href="rooms.html">Rooms</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="pricing.html">Pricing</a></li>
                 <li><a href="contact us.html">Contact Us</a></li>
@@ -405,7 +444,7 @@
     </div>
 
     <div class="footer-bottom">
-        <p> copyright © 2026 MystIQ Escape. All rights reserved.</p>
+        <p>Copyright &copy; 2026 MystIQ Escape. All rights reserved.</p>
     </div>
 </footer>
 
