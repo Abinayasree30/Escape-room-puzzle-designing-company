@@ -4,24 +4,23 @@ const currentPage = window.location.pathname.split("/").pop() || "index.html";
 const searchTargets = [
     { label: "Home", url: "index.html", selector: ".index-hero", keywords: ["home", "index", "main"] },
     { label: "Demo 1", url: "index.html", selector: ".hero", keywords: ["demo 1", "demo1", "hospital", "detective", "puzzles"] },
-    { label: "Demo 2", url: "demo2.html", selector: ".hero-dark", keywords: ["demo 2", "demo2", "dark room", "challenge"] },
+    { label: "Home 2", url: "demo2.html", selector: ".hero-dark", keywords: ["home 2", "demo 2", "demo2", "dark room", "challenge"] },
     { label: "About Us", url: "about.html", selector: ".about-hero", keywords: ["about", "about us", "mission", "team"] },
     { label: "Offers", url: "offers.html", selector: ".offer-hero", keywords: ["offers", "discount", "member special", "early bird", "group deal"] },
     { label: "Login", url: "login.html", selector: ".login-page", keywords: ["login", "sign in", "member access"] },
+    { label: "Register", url: "register.html", selector: ".login-page", keywords: ["register", "sign up", "create account", "new member"] },
     { label: "Game Features", url: "index.html", selector: ".demo-features", keywords: ["features", "timer", "hidden clues", "clues"] },
-    { label: "Rooms", url: "index.html", selector: ".rooms", keywords: ["rooms", "prison", "haunted", "detective room"] }
-    ,{ label: "Room 3", url: "room 3.html", selector: ".room-hero.lab", keywords: ["room 3", "secret lab", "lab", "science puzzles"] }
+    { label: "Rooms", url: "rooms.html", selector: ".rooms-hero", keywords: ["rooms", "prison", "haunted", "secret lab", "escape rooms"] }
 ];
 
 function setActiveMenu() {
     const pageMenuMap = {
-        "index.html": "demos",
-        "demo2.html": "demos",
+        "index.html": "home",
+        "demo2.html": "home",
         "about.html": "about",
         "faq.html": "about",
         "pricing.html": "about",
         "our story.html": "about",
-        "testimonials.html": "about",
         "about us.html": "about",
         "contact us.html": "contact",
         "rooms.html": "rooms",
@@ -51,6 +50,94 @@ function closeAllDropdowns(exceptMenu = null) {
             menu.style.display = "none";
         }
     });
+
+    document.querySelectorAll(".nav-item.open").forEach((item) => {
+        if (!exceptMenu || item.querySelector(".dropdown") !== exceptMenu) {
+            item.classList.remove("open");
+        }
+    });
+}
+
+function isMobileNav() {
+    return window.matchMedia("(max-width: 1024px)").matches;
+}
+
+function closeMobileMenu() {
+    const header = document.querySelector(".header");
+    const toggle = document.querySelector(".nav-toggle");
+    if (!header || !toggle) {
+        return;
+    }
+
+    header.classList.remove("menu-open");
+    toggle.setAttribute("aria-expanded", "false");
+}
+
+function toggleMobileMenu() {
+    const header = document.querySelector(".header");
+    const toggle = document.querySelector(".nav-toggle");
+    if (!header || !toggle) {
+        return;
+    }
+
+    const shouldOpen = !header.classList.contains("menu-open");
+    header.classList.toggle("menu-open", shouldOpen);
+    toggle.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
+
+    if (!shouldOpen) {
+        closeAllDropdowns();
+    }
+}
+
+function ensureMobileNavToggle() {
+    const header = document.querySelector(".header");
+    const nav = document.querySelector(".nav");
+    if (!header || !nav || header.querySelector(".nav-toggle")) {
+        return;
+    }
+
+    const toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "nav-toggle";
+    toggle.setAttribute("aria-label", "Toggle navigation menu");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.innerHTML = '<i class="fas fa-bars" aria-hidden="true"></i>';
+    toggle.addEventListener("click", toggleMobileMenu);
+
+    header.insertBefore(toggle, nav);
+}
+
+function syncResponsiveHeaderControls() {
+    const header = document.querySelector(".header");
+    const nav = document.querySelector(".nav");
+    const rightSection = document.querySelector(".right-section");
+
+    if (!header || !nav || !rightSection) {
+        return;
+    }
+
+    let mobileActions = nav.querySelector(".nav-mobile-actions");
+    if (!mobileActions) {
+        mobileActions = document.createElement("div");
+        mobileActions.className = "nav-mobile-actions";
+        nav.appendChild(mobileActions);
+    }
+
+    const controls = Array.from(rightSection.children);
+
+    if (isMobileNav()) {
+        controls.forEach((control) => {
+            mobileActions.appendChild(control);
+        });
+    } else {
+        controls.forEach((control) => {
+            rightSection.appendChild(control);
+        });
+
+        Array.from(mobileActions.children).forEach((control) => {
+            rightSection.appendChild(control);
+        });
+    }
 }
 
 dropdownTriggers.forEach((trigger) => {
@@ -61,6 +148,16 @@ dropdownTriggers.forEach((trigger) => {
 
         if (dropdown && dropdown.classList.contains("dropdown")) {
             e.preventDefault();
+
+             if (isMobileNav()) {
+                const parentItem = trigger.parentElement;
+                const shouldOpen = !parentItem.classList.contains("open");
+                closeAllDropdowns(shouldOpen ? dropdown : null);
+                parentItem.classList.toggle("open", shouldOpen);
+                dropdown.style.display = shouldOpen ? "flex" : "none";
+                return;
+            }
+
             const shouldOpen = dropdown.style.display !== "block";
             closeAllDropdowns(shouldOpen ? dropdown : null);
             dropdown.style.display = shouldOpen ? "block" : "none";
@@ -80,6 +177,7 @@ dropdownTriggers.forEach((trigger) => {
 document.querySelectorAll(".dropdown a").forEach((link) => {
     link.addEventListener("click", () => {
         closeAllDropdowns();
+        closeMobileMenu();
     });
 });
 
@@ -94,7 +192,14 @@ document.querySelectorAll(".nav > a").forEach((link) => {
         if (target) {
             e.preventDefault();
             closeAllDropdowns();
+            closeMobileMenu();
             target.scrollIntoView({ behavior: "smooth" });
+        }
+    });
+
+    link.addEventListener("click", () => {
+        if (!link.closest(".nav-item")) {
+            closeMobileMenu();
         }
     });
 });
@@ -103,9 +208,24 @@ document.addEventListener("click", (e) => {
     if (!e.target.closest(".nav-item")) {
         closeAllDropdowns();
     }
+
+    if (!e.target.closest(".header")) {
+        closeMobileMenu();
+    }
 });
 
 setActiveMenu();
+ensureMobileNavToggle();
+syncResponsiveHeaderControls();
+
+window.addEventListener("resize", () => {
+    syncResponsiveHeaderControls();
+
+    if (!isMobileNav()) {
+        closeMobileMenu();
+        closeAllDropdowns();
+    }
+});
 
 function openLogin() {
     window.location.href = "login.html";
@@ -394,9 +514,8 @@ function toggleDarkMode() {
 }
 
 function initDarkMode() {
-    if (localStorage.getItem('mystiq-theme') === 'light') {
-        document.body.classList.add('light-mode');
-    }
+    const savedTheme = localStorage.getItem('mystiq-theme');
+    document.body.classList.toggle('light-mode', savedTheme !== 'dark');
     updateDarkBtn();
 }
 
@@ -531,6 +650,37 @@ function setupContactForm() {
 
 setupContactForm();
 
+function setupFaqSearch() {
+    const input = document.getElementById("faqSearch");
+    const faqItems = document.querySelectorAll(".faq-list .faq-item");
+    const status = document.querySelector(".faq-search-status");
+
+    if (!input || !faqItems.length) {
+        return;
+    }
+
+    input.addEventListener("input", () => {
+        const query = normalizeValue(input.value);
+        let visibleCount = 0;
+
+        faqItems.forEach((item) => {
+            const matches = !query || normalizeValue(item.textContent || "").includes(query);
+            item.hidden = !matches;
+            if (matches) {
+                visibleCount += 1;
+            }
+        });
+
+        if (status) {
+            status.textContent = query
+                ? `${visibleCount} question${visibleCount === 1 ? "" : "s"} match your search.`
+                : "Search the questions above by topic, room, timing, fear level, or players.";
+        }
+    });
+}
+
+setupFaqSearch();
+
 function enhanceFooter() {
     document.querySelectorAll(".footer-left").forEach((footerBlock) => {
         footerBlock.querySelector(".footer-copy")?.remove();
@@ -608,13 +758,12 @@ reorganizeFooterColumns();
 function getExtraSectionProfile() {
     const profiles = {
         "index.html": { name: "Home", theme: "first-glance discovery", focus: "room browsing", mood: "cinematic energy", audience: "new visitors", tone: "cyan", image: "./img/escape-showcase-main.jpg", alt: "MystIQ hero showcase", layouts: ["lead", "stats", "magazine", "cta"], cta: "Book Demo 1", secondaryHref: "rooms.html", secondaryLabel: "Explore Rooms" },
-        "demo2.html": { name: "Demo 2", theme: "dark suspense", focus: "high-intensity play", mood: "late-night tension", audience: "thrill-seeking teams", tone: "ember", image: "./img/dark-room-challenge.jpg", alt: "Dark challenge room", layouts: ["quote", "lead", "timeline", "cta"], cta: "Book Demo 2", secondaryHref: "offers.html", secondaryLabel: "See Offers" },
+        "demo2.html": { name: "Home 2", theme: "dark suspense", focus: "high-intensity play", mood: "late-night tension", audience: "thrill-seeking teams", tone: "ember", image: "./img/dark-room-challenge.jpg", alt: "Dark challenge room", layouts: ["quote", "lead", "timeline", "cta"], cta: "Book Home 2", secondaryHref: "offers.html", secondaryLabel: "See Offers" },
         "about.html": { name: "About", theme: "brand trust", focus: "MystIQ identity", mood: "warm confidence", audience: "curious guests", tone: "gold", image: "./img/escape-showcase-brand.png", alt: "MystIQ brand visual", layouts: ["magazine", "duo", "lead", "cta"], cta: "Plan A Visit", secondaryHref: "pricing.html", secondaryLabel: "See Pricing" },
         "about us.html": { name: "Studio", theme: "people-first storytelling", focus: "behind-the-scenes detail", mood: "welcoming craft", audience: "first-time explorers", tone: "mint", image: "./img/escape-showcase-side.jpg", alt: "Behind the scenes visual", layouts: ["lead", "duo", "quote", "cta"], cta: "Visit MystIQ", secondaryHref: "about.html", secondaryLabel: "Main About" },
         "our story.html": { name: "Story", theme: "timeline depth", focus: "brand journey", mood: "reflective narrative", audience: "story-driven readers", tone: "rose", image: "./img/escape-showcase-brand.png", alt: "Story-inspired MystIQ visual", layouts: ["timeline", "quote", "magazine", "cta"], cta: "Continue The Story", secondaryHref: "about.html", secondaryLabel: "About MystIQ" },
         "pricing.html": { name: "Pricing", theme: "value clarity", focus: "smarter comparison", mood: "practical planning", audience: "budget-aware teams", tone: "cyan", image: "./img/demo1-gallery-detail.jpg", alt: "Pricing support visual", layouts: ["stats", "duo", "lead", "cta"], cta: "Check Best Price", secondaryHref: "offers.html", secondaryLabel: "See Offers" },
         "faq.html": { name: "FAQ", theme: "clear reassurance", focus: "question solving", mood: "calm guidance", audience: "hesitant visitors", tone: "mint", image: "./img/demo1-gallery-side.jpg", alt: "FAQ support visual", layouts: ["timeline", "duo", "magazine", "cta"], cta: "Ask A Question", secondaryHref: "contact us.html", secondaryLabel: "Contact Us" },
-        "testimonials.html": { name: "Reviews", theme: "social proof", focus: "real reactions", mood: "trust-led excitement", audience: "decision-ready teams", tone: "rose", image: "./img/demo2-gallery-main.jpg", alt: "Guest experience visual", layouts: ["quote", "magazine", "stats", "cta"], cta: "Join The Reviews", secondaryHref: "news.html", secondaryLabel: "Latest News" },
         "rooms.html": { name: "Rooms", theme: "smart selection", focus: "challenge matching", mood: "confident exploration", audience: "groups choosing a mission", tone: "gold", image: "./img/room1.jpg", alt: "Room selection preview", layouts: ["lead", "magazine", "timeline", "cta"], cta: "Choose A Room", secondaryHref: "offers.html", secondaryLabel: "See Offers" },
         "room 1.html": { name: "Prison Escape", theme: "breakout urgency", focus: "lockdown strategy", mood: "escape pressure", audience: "strategy-driven teams", tone: "ember", image: "./img/prison-escape-room.jpg", alt: "Prison escape room", layouts: ["lead", "timeline", "quote", "cta"], cta: "Book Prison Escape", secondaryHref: "room 2.html", secondaryLabel: "View Room 2" },
         "room 2.html": { name: "Haunted House", theme: "spooky tension", focus: "fear and mystery", mood: "eerie suspense", audience: "horror-loving teams", tone: "rose", image: "./img/haunted-house-room.jpg", alt: "Haunted house room", layouts: ["quote", "lead", "duo", "cta"], cta: "Book Haunted House", secondaryHref: "room 3.html", secondaryLabel: "View Room 3" },
@@ -830,7 +979,7 @@ function initSectionReveal() {
 
 initSectionReveal();
 
-function getAchievementCounterConfig(rawText) {
+function getAchievementCounterConfig(rawText, formatHint = "") {
     const text = (rawText || "").trim();
     const numericValue = Number.parseFloat(text.replace(/[^0-9.]/g, ""));
 
@@ -845,7 +994,15 @@ function getAchievementCounterConfig(rawText) {
         };
     }
 
-    if (text.includes("\u2605") || text.includes("★") || text.includes("â˜…") || (numericValue < 10 && /[^\d.\s]/.test(text) && !text.includes("+") && !text.includes("K"))) {
+    if (formatHint === "rating-star") {
+        return {
+            target: numericValue,
+            format: (value, done) => `${value.toFixed(1)}${done ? ' <i class="fas fa-star" aria-hidden="true"></i>' : ""}`,
+            isHtml: true
+        };
+    }
+
+    if (numericValue < 10 && /[^\d.\s]/.test(text) && !text.includes("+") && !text.includes("K")) {
         return {
             target: numericValue,
             format: (value, done) => `${value.toFixed(1)}${done ? "\u2605" : ""}`
@@ -876,7 +1033,7 @@ function initAchievementCounters() {
             return;
         }
 
-        const config = getAchievementCounterConfig(element.textContent);
+        const config = getAchievementCounterConfig(element.textContent, element.dataset.counterFormat || "");
         if (!config) {
             return;
         }
@@ -892,7 +1049,11 @@ function initAchievementCounters() {
             const value = config.target * eased;
             const isDone = progress >= 1;
 
-            element.textContent = config.format(value, isDone);
+            if (config.isHtml) {
+                element.innerHTML = config.format(value, isDone);
+            } else {
+                element.textContent = config.format(value, isDone);
+            }
 
             if (!isDone) {
                 window.requestAnimationFrame(tick);
