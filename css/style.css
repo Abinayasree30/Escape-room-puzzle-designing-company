@@ -967,6 +967,21 @@ button {
     transform: translateY(0);
 }
 
+.reveal-section.is-visible .home-section-head,
+.reveal-section.is-visible .demo2-section-head,
+.reveal-section.is-visible .aboutus-section-head,
+.reveal-section.is-visible .pricing-section-head,
+.reveal-section.is-visible .faq-custom-head,
+.reveal-section.is-visible .testimonial-custom-head,
+.reveal-section.is-visible .rooms-custom-head,
+.reveal-section.is-visible .room-custom-head,
+.reveal-section.is-visible .news-custom-head,
+.reveal-section.is-visible .offers-custom-head,
+.reveal-section.is-visible .contact-addon-head {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .home-premium-section .testimonial-card,
 .home-premium-section .choose-card,
 .home-premium-section .step,
@@ -2528,7 +2543,7 @@ button {
 
 /* CTA */
 .cta{
-    padding:60px;
+    padding:40px 32px;
     text-align:center;
 }
 /* =============================================
@@ -3287,7 +3302,7 @@ button {
 /* CTA */
 .cta{
     text-align:center;
-    padding:60px;
+    padding:40px 32px;
 }
 /* =============================================
    Our Story
@@ -3815,12 +3830,12 @@ button {
 }
 
 .pricing-premium-section {
-    padding: 92px 40px;
+    padding: 68px 40px;
 }
 
 .pricing-section-head {
     max-width: 760px;
-    margin: 0 auto 40px;
+    margin: 0 auto 28px;
     text-align: center;
 }
 
@@ -10361,6 +10376,69 @@ body.light-mode .news-custom-head-left p {
     flex-direction: row-reverse;
 }
 
+/* Footer and offers RTL polish */
+[dir="rtl"] .footer-left {
+    direction: ltr;
+    text-align: center;
+}
+
+[dir="rtl"] .footer-left h2 {
+    direction: ltr;
+    unicode-bidi: plaintext;
+}
+
+[dir="rtl"] .footer-logo,
+[dir="rtl"] .social-links {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+[dir="rtl"] .offer-box-premium {
+    direction: ltr;
+    grid-template-columns: minmax(280px, 0.7fr) minmax(0, 1.3fr);
+}
+
+[dir="rtl"] .offer-box-side {
+    order: 1;
+    text-align: right;
+}
+
+[dir="rtl"] .offer-box-copy {
+    order: 2;
+    text-align: right;
+}
+
+[dir="rtl"] .offer-badge {
+    margin-left: auto;
+}
+
+[dir="rtl"] .offer-box li {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+[dir="rtl"] .offer-box-actions {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .offer-reveal-shell {
+    direction: ltr;
+}
+
+[dir="rtl"] .offer-reveal-copy {
+    text-align: right;
+}
+
+[dir="rtl"] .offer-reveal-points {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+}
+
+[dir="rtl"] .offer-reveal-copy .btn {
+    align-self: flex-end;
+}
+
 .about-hero,
 .story-hero,
 .faq-hero,
@@ -12042,10 +12120,22 @@ body.home-demo1 .experience-bar {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
     align-items: stretch;
+    padding-top: 36px;
+}
+
+body.home-demo1 .cta {
+    padding-top: 72px;
+    padding-bottom: 48px;
+}
+
+body.home-demo1 .game-mode.reveal-section {
+    opacity: 1;
+    transform: none;
 }
 
 body.home-demo1 .experience-bar-intro {
     grid-column: 1 / -1;
+    margin-bottom: 4px;
 }
 
 body.home-demo1 .story-container,
@@ -12352,6 +12442,14 @@ body.home-demo2 .rooms-preview {
     overflow-x: clip;
 }
 
+body.home-demo2 .experience {
+    padding-top: 36px;
+}
+
+body.home-demo2 .experience h2 {
+    margin-bottom: 18px;
+}
+
 body.home-demo2 .exp-grid,
 body.home-demo2 .room-grid {
     min-width: 0;
@@ -12395,14 +12493,14 @@ body.home-demo2 .room-card p {
 @media (max-width: 768px) {
     body.home-demo2 .experience,
     body.home-demo2 .rooms-preview {
-        padding: 64px 20px;
+        padding: 44px 20px 64px;
     }
 
     body.home-demo2 .experience h2,
     body.home-demo2 .rooms-preview h2 {
         font-size: clamp(2rem, 10vw, 3rem);
         line-height: 1.06;
-        margin-bottom: 24px;
+        margin-bottom: 18px;
     }
 
     body.home-demo2 .exp-grid,
@@ -15014,7 +15112,7 @@ body.light-mode :is(
 .news-feature img {
     width: 100%;
     height: 100%;
-    min-height: 460px;
+    min-height: 340px;
     object-fit: cover;
 }
 
@@ -15022,7 +15120,7 @@ body.light-mode :is(
 .news-briefing,
 .news-insider-copy,
 .news-cta-pro {
-    padding: 42px;
+    padding: 30px;
 }
 
 .news-briefing {
@@ -15030,6 +15128,8 @@ body.light-mode :is(
     display: flex;
     flex-direction: column;
     gap: 24px;
+    align-self: stretch;
+    height: 100%;
 }
 
 .news-briefing h3 {
@@ -15478,6 +15578,16 @@ body.light-mode .rooms-compare-kicker {
 
 body.light-mode .rooms-compare-summary,
 body.light-mode .rooms-compare-meta label {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+}
+
+body.light-mode .rooms-advisor-grid strong {
+    color: #06b6d4 !important;
+    -webkit-text-fill-color: #06b6d4 !important;
+}
+
+body.light-mode .rooms-advisor-grid span {
     color: #475569 !important;
     -webkit-text-fill-color: #475569 !important;
 }
