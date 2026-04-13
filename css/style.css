@@ -14760,6 +14760,10 @@ body.light-mode :is(
     color: #ffffff;
 }
 
+.rooms-hero-actions a:last-child {
+    color: #fff !important;
+}
+
 .rooms-overview-band,
 .rooms-comparison,
 .rooms-editorial-band,
