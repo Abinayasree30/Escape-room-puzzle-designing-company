@@ -3,26 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MystIQ Escape - Demo 1</title>
+<title>MystIQ Escape - Live Escape Room</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="./img/logo1.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/site-cyberpunk.css">
+<link rel="stylesheet" href="css/home-cyberpunk.css">
 </head>
 
 <body class="has-custom-extras home-demo1">
 
 <header class="header">
-
     <div class="logo">
         <a href="index.html" class="logo-link">
             <img src="./img/logo.png" alt="MystIQ Escape logo">
         </a>
     </div>
 
-            <nav class="nav">
+    <nav class="nav">
         <div class="nav-item">
             <a href="#" data-menu="home">Home <i class="fas fa-chevron-down nav-chevron"></i></a>
             <div class="dropdown">
@@ -30,14 +31,7 @@
                 <a href="demo2.html">Home 2</a>
             </div>
         </div>
-        <div class="nav-item">
-            <a href="#" data-menu="about">About <i class="fas fa-chevron-down nav-chevron"></i></a>
-            <div class="dropdown">
-                <a href="about.html">About Us</a>
-                <a href="pricing.html">Pricing</a>
-                <a href="faq.html">FAQ</a>
-            </div>
-        </div>
+        <a href="about.html" data-menu="about">About</a>
         <a href="rooms.html" data-menu="rooms">Rooms</a>
         <a href="news.html" data-menu="news">News</a>
         <a href="offers.html" data-menu="offers">Offers</a>
@@ -45,360 +39,243 @@
     </nav>
 
     <div class="right-section">
-    <button class="icon-btn" id="mq-enable-btn" title="Toggle Enable Mode"><i class="fas fa-moon"></i></button>
-    <button class="icon-btn dir-toggle" id="mq-dir-btn" title="Switch LTR / RTL">LTR</button>
-    <a href="login.html" class="login-btn">Login</a>
-</div>
-
+        <button class="icon-btn" id="mq-enable-btn" title="Toggle Enable Mode"><i class="fas fa-moon"></i></button>
+        <button class="icon-btn dir-toggle" id="mq-dir-btn" title="Switch LTR / RTL">LTR</button>
+        <a href="login.html" class="login-btn">Login</a>
+    </div>
 </header>
 
-<section class="hero">
-    <div class="hero-bg"></div>
-    <div class="overlay"></div>
+<main>
+    <section class="hero">
+        <img class="hero-bg-img" src="./img/horror-escape-challenge.jpg" alt="Dark escape room challenge">
+        <div class="overlay"></div>
+        <div class="home-particles" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
 
-    <div class="room left">
-        <div class="room-key"><i class="fas fa-key"></i></div>
-        <h2>Hospital Room</h2>
-        <p>Fun, safe, and engaging experience. Your next great adventure awaits!</p>
-    </div>
+        <div class="hero-text">
+            <p class="hero-kicker">Live Escape Game</p>
+            <h1>Can You Escape Before Time Runs Out?</h1>
+            <p>Enter a dark cinematic puzzle world where every sound, clue, lock, and second pushes your team closer to victory or lockdown.</p>
+            <div class="hero-actions">
+                <a href="booking.html?item=MystIQ%20Escape%20Room" class="btn hero-primary">Book Your Challenge</a>
+                <a href="rooms.html" class="hero-secondary">Explore Rooms</a>
+            </div>
+            <div class="hero-countdown" data-countdown-seconds="3600" aria-label="Challenge countdown">
+                <div><strong data-countdown-part="hours">01</strong><span>Hours</span></div>
+                <div><strong data-countdown-part="minutes">00</strong><span>Minutes</span></div>
+                <div><strong data-countdown-part="seconds">00</strong><span>Seconds</span></div>
+            </div>
+        </div>
+    </section>
 
-    <div class="room left-bottom">
-        <div class="room-key"><i class="fas fa-key"></i></div>
-        <h2>Fantasy Room</h2>
-        <p>Are you up for the challenge? Join us and find out.</p>
-    </div>
-
-    <div class="room right-top">
-        <div class="room-key"><i class="fas fa-key"></i></div>
-        <h2>Detective Room</h2>
-        <p>It's time to put your skills to the test. Real-life puzzle experience.</p>
-    </div>
-
-    <div class="room right-bottom">
-        <div class="room-key"><i class="fas fa-key"></i></div>
-        <h2>Dark Room</h2>
-        <p>Thrilling adventure waiting to be unlocked. Heart-pounding experience.</p>
-    </div>
-
-    <div class="hero-text">
-        <h1>CAN YOU ESCAPE?</h1>
-        <p>It's time to put your problem-solving skills to the test. Are you up for the challenge? Join us and find out.</p>
-    </div>
-</section>
-
-<section class="page-gallery reveal-section">
-    <div class="page-gallery-header">
-        <p class="eyebrow">Demo 1 Visuals</p>
-        <h2>See the world before you enter</h2>
-    </div>
-    <div class="page-gallery-grid">
-        <figure class="gallery-tile wide">
-            <img src="./img/demo1-gallery-main.jpg" alt="Demo 1 main hallway">
+    <section class="about-modern reveal-section">
+        <figure class="about-modern-image">
+            <img src="./img/escape-showcase-main.jpg" alt="Players exploring an immersive escape room">
         </figure>
-        <figure class="gallery-tile">
-            <img src="./img/demo1-gallery-side.jpg" alt="Demo 1 side preview">
+        <div class="about-modern-copy">
+            <p class="eyebrow">Mission Briefing</p>
+            <h2>Not a room. A live puzzle arena.</h2>
+            <p>MystIQ Escape combines cinematic sets, hidden mechanisms, smart clues, and timed missions for teams who want a real challenge.</p>
+            <div class="feature-icon-grid">
+                <article><i class="fas fa-vr-cardboard"></i><span>Immersive Gameplay</span></article>
+                <article><i class="fas fa-users-gear"></i><span>Team Challenges</span></article>
+                <article><i class="fas fa-ghost"></i><span>Horror Adventures</span></article>
+                <article><i class="fas fa-puzzle-piece"></i><span>Live Puzzle Experience</span></article>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section reveal-section">
+        <article>
+            <strong data-countup="5000" data-countup-format="comma-plus">0</strong>
+            <span>Players</span>
+        </article>
+        <article>
+            <strong data-countup="50" data-countup-format="plus">0</strong>
+            <span>Puzzle Rooms</span>
+        </article>
+        <article>
+            <strong data-countup="98" data-countup-format="percent">0</strong>
+            <span>Escape Rate</span>
+        </article>
+        <article>
+            <strong data-countup="24" data-countup-format="hours">0</strong>
+            <span>Support</span>
+        </article>
+    </section>
+
+    <section class="rooms">
+        <div class="home-section-head">
+            <p class="eyebrow">Choose Your Room</p>
+            <h2>Every mission has a different fear.</h2>
+            <p>Separate themes, separate images, separate pressure. Pick the room that fits your team.</p>
+        </div>
+        <div class="room-cards">
+            <article class="room room-card-visual">
+                <img src="./img/horror-escape-challenge.jpg" alt="Horror Escape room">
+                <div class="room-card-content">
+                    <strong class="difficulty">Hard</strong>
+                    <h3>Horror  Escape</h3>
+                    <p>Follow the whispers, decode the symbols, and leave before the final scare locks you in.</p>
+                    <a href="booking.html?item=Horror%20Escape" class="room-link">Book Room</a>
+                </div>
+            </article>
+            <article class="room room-card-visual">
+                <img src="./img/secret-lab-challenge.jpg" alt="Zombie Lab room">
+                <div class="room-card-content">
+                    <strong class="difficulty expert">Expert</strong>
+                    <h3>Zombie  Lab</h3>
+                    <p>Contain the outbreak, restore the lab systems, and solve the protocol before exposure.</p>
+                    <a href="booking.html?item=Zombie%20Lab" class="room-link">Book Room</a>
+                </div>
+            </article>
+            <article class="room room-card-visual">
+                <img src="./img/prison-escape-room.jpg" alt="Prison Break room">
+                <div class="room-card-content">
+                    <strong class="difficulty medium">Medium</strong>
+                    <h3>Prison  Break</h3>
+                    <p>Study the guard route, crack the cell clues, and vanish before the alarm resets for the escape.</p>
+                    <a href="booking.html?item=Prison%20Break" class="room-link">Book Room</a>
+                </div>
+            </article>
+            <article class="room room-card-visual">
+                <img src="./img/haunted-house-room.jpg" alt="Mystery Mansion room">
+                <div class="room-card-content">
+                    <strong class="difficulty hard">Hard</strong>
+                    <h3>Mystery Room</h3>
+                    <p>Old portraits, locked drawers, and a family secret point toward one final hidden door.</p>
+                    <a href="booking.html?item=Mystery%20Mansion" class="room-link">Book Room</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="how-it-works home-premium-section reveal-section">
+        <div class="home-section-head">
+            <p class="eyebrow">How It Works</p>
+            <h2>From booking to breakout.</h2>
+        </div>
+        <div class="steps">
+            <article class="step"><span>01</span><h3>Book A Room</h3><p>Choose your theme, slot, team size, and difficulty level.</p></article>
+            <article class="step"><span>02</span><h3>Enter The Mission</h3><p>Get briefed, step inside, and let the countdown start.</p></article>
+            <article class="step"><span>03</span><h3>Solve And Escape</h3><p>Search, connect clues, unlock secrets, and beat the timer.</p></article>
+        </div>
+    </section>
+
+    <section class="video-preview reveal-section">
+        <div class="video-copy">
+            <p class="eyebrow">Video Preview</p>
+            <h2>Feel the room before you enter.</h2>
+            <p>A cinematic preview zone with motion, sound cues, and quick booking access for players comparing rooms.</p>
+            <a href="booking.html?item=Preview%20Challenge" class="btn">Book Preview Slot</a>
+        </div>
+        <figure class="video-frame">
+            <img src="./img/dark-room-challenge.jpg" alt="Dark escape room video preview">
+            <button type="button" aria-label="Play preview"><i class="fas fa-play"></i></button>
         </figure>
-        <figure class="gallery-tile">
-            <img src="./img/demo1-gallery-detail.jpg" alt="Alternate room preview">
+    </section>
+
+    <section class="gallery-slider reveal-section">
+        <div class="home-section-head">
+            <p class="eyebrow">Gallery</p>
+            <h2>Different scenes. Different tension.</h2>
+        </div>
+        <div class="gallery-track">
+            <figure><img src="./img/demo1-gallery-main.jpg" alt="Escape room hallway"></figure>
+            <figure><img src="./img/demo1-gallery-side.jpg" alt="Escape room detail"></figure>
+            <figure><img src="./img/demo1-gallery-detail.jpg" alt="Puzzle room clue wall"></figure>
+            <figure><img src="./img/detective-room.jpg" alt="Detective room"></figure>
+            <figure><img src="./img/demo2-gallery-main.jpg" alt="Dark challenge room"></figure>
+        </div>
+    </section>
+
+    <section class="offer-section reveal-section">
+        <figure>
+            <img src="./img/news1.jpg" alt="Limited escape room offer">
         </figure>
-    </div>
-</section>
-
-<section class="features demo-features reveal-section">
-    <div class="demo-features-intro">
-        <p class="eyebrow">Inside The Challenge</p>
-        <h2>Game Features</h2>
-        <p class="demo-features-copy">
-            Every escape session mixes pressure, discovery, and teamwork so the whole section feels
-            more like a mission briefing than a simple icon row.
-        </p>
-    </div>
-
-    <div class="demo-feature-grid">
-        <article class="demo-feature-card demo-feature-card-main">
-            <div class="demo-feature-icon">
-                <i class="fas fa-puzzle-piece"></i>
-            </div>
-            <span class="demo-feature-label">Core Challenge</span>
-            <h3>Puzzles</h3>
-            <p>Layered clues and smart mechanisms keep players fully engaged from the first move to the final unlock.</p>
-        </article>
-
-        <article class="demo-feature-card">
-            <div class="demo-feature-icon">
-                <i class="fas fa-clock"></i>
-            </div>
-            <span class="demo-feature-number">01</span>
-            <h3>Timer</h3>
-            <p>The countdown keeps the pressure high and turns every clue, choice, and second into part of the challenge.</p>
-        </article>
-
-        <article class="demo-feature-card">
-            <div class="demo-feature-icon">
-                <i class="fas fa-search"></i>
-            </div>
-            <span class="demo-feature-number">02</span>
-            <h3>Hidden Clues</h3>
-            <p>Small details, secret hints, environmental cues reward careful observation.</p>
-        </article>
-    </div>
-</section>
-
-<section class="rooms">
-    <h2>Other Rooms</h2>
-    <div class="room-cards">
-        <div class="room room-card-visual">
-            <img src="./img/prison-escape-room.jpg" alt="Prison Escape room">
-            <span>Prison Escape</span>
+        <div>
+            <p class="eyebrow">Limited Offer</p>
+            <h2>Squad Night Challenge</h2>
+            <p>Book a team of four or more and unlock a special mission-rate package for late-night slots.</p>
+            <a href="offers.html" class="btn">View Offers</a>
         </div>
-        <div class="room room-card-visual">
-            <img src="./img/haunted-house-room.jpg" alt="Haunted House room">
-            <span>Haunted House</span>
+    </section>
+
+    <section class="testimonials home-premium-section reveal-section">
+        <div class="home-section-head">
+            <p class="eyebrow">Player Stories</p>
+            <h2>Teams who beat the room.</h2>
         </div>
-        <div class="room room-card-visual">
-            <img src="./img/detective-room.jpg" alt="Detective Room">
-            <span>Detective Room</span>
+        <div class="testimonial-container">
+            <article class="testimonial-card">
+                <img src="./img/team-arjun.jpg" alt="Arjun avatar">
+                <div class="stars" aria-label="5 star rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p>"The countdown, clues, and lighting made it feel like a real mission."</p>
+                <div class="testimonial-meta"><h4>Arjun</h4><span>58 minute escape</span></div>
+            </article>
+            <article class="testimonial-card">
+                <img src="./img/team-priya.jpg" alt="Priya avatar">
+                <div class="stars" aria-label="5 star rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p>"Perfect group activity. Every person had something important to solve."</p>
+                <div class="testimonial-meta"><h4>Priya</h4><span>4-player team</span></div>
+            </article>
+            <article class="testimonial-card">
+                <img src="./img/team-rahul.jpg" alt="Rahul avatar">
+                <div class="stars" aria-label="5 star rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i></div>
+                <p>"The room design is intense, polished, & better than normal game night."</p>
+                <div class="testimonial-meta"><h4>Rahul</h4><span>Repeat player</span></div>
+            </article>
         </div>
-    </div>
-</section>
-<section class="experience-bar reveal-section">
-    <div class="experience-bar-intro">
-        <p class="eyebrow">Experience Overview</p>
-        <h2>What To Expect Inside</h2>
-        <p class="section-sub">A quick snapshot of the pace, team format, and immersive energy waiting inside every MystIQ session.</p>
-    </div>
+    </section>
 
-    <div class="exp-card">
-    <div class="exp-icon"><i class="fas fa-clock"></i></div>
-    <h3>60</h3>
-    <p class="main-text">Minutes to Escape</p>
-    <span class="sub-text">Solve clues before time runs out</span>
-</div>
-
-<div class="exp-card">
-    <div class="exp-icon"><i class="fas fa-users"></i></div>
-    <h3>2–6</h3>
-    <p class="main-text">Players per Team</p>
-    <span class="sub-text">Perfect for friends & groups</span>
-</div>
-
-<div class="exp-card">
-    <div class="exp-icon"><i class="fas fa-bolt"></i></div>
-    <h3>100%</h3>
-    <p class="main-text">Immersive Experience</p>
-    <span class="sub-text">Real puzzles, real tension</span>
-</div>
-
-</section>
-
-<section class="story-section reveal-section">
-
-    <div class="story-container">
-
-        <!-- LEFT CONTENT -->
-        <div class="story-left">
-            <h2 class="section-title">
-    Strengthen your bonds,
-    <span>improve communication</span>
-</h2>
-
-            <div class="story-img">
-                <img src="img/demo1-gallery-side.jpg" alt="">
-            </div>
+    <section class="booking-panel reveal-section">
+        <div class="home-section-head">
+            <p class="eyebrow">Fast Booking</p>
+            <h2>Reserve your challenge.</h2>
         </div>
-
-        <!-- RIGHT IMAGE -->
-        <div class="story-right">
-            <img src="img/haunted-house-room.jpg" alt="">
-        </div>
-
-    </div>
-
-</section>
-
-<section class="cta">
-    <h2>Ready to Escape?</h2>
-    <p>Book your experience now and challenge your mind.</p>
-    <a href="pricing.html" class="btn">Book Now</a>
-</section>
-
-<section class="game-mode reveal-section">
-    <div class="home-section-head">
-        <p class="eyebrow">Play Styles</p>
-        <h2>Select Your Mission</h2>
-        <p>Pick the mode that matches your team energy, pace, and puzzle style before you step inside.</p>
-    </div>
-
-    <div class="mode-grid">
-        <div class="mode-card">
-            <span class="mode-card-index">01</span>
-            <span class="mode-card-label">Puzzle First</span>
-            <h3>Mystery Mode</h3>
-            <p>Focus on layered clues, hidden details, and a slower-thinking route through the room.</p>
-        </div>
-
-        <div class="mode-card">
-            <span class="mode-card-index">02</span>
-            <span class="mode-card-label">Fast Pace</span>
-            <h3>Speed Run</h3>
-            <p>Race the clock with sharper decisions, quicker clues, and more pressure on every second.</p>
-        </div>
-
-        <div class="mode-card">
-            <span class="mode-card-index">03</span>
-            <span class="mode-card-label">Group Focus</span>
-            <h3>Team Mode</h3>
-            <p>Collaborate, split tasks, and build momentum together for the most social escape experience.</p>
-        </div>
-    </div>
-</section>
-
-<section class="testimonials home-premium-section">
-    <div class="home-section-head">
-        <p class="eyebrow">Player Stories</p>
-        <h2>What Our Players Say</h2>
-    </div>
-
-    <div class="testimonial-container">
-        <div class="testimonial-card">
-            <span class="testimonial-mark">"</span>
-            <div class="testimonial-rating-row">
-                <span><i class="fas fa-star"></i> 5.0 Rating</span>
-                <span><i class="fas fa-clock"></i> 58 min run</span>
-            </div>
-            <p>"Amazing experience! The puzzles were mind-blowing."</p>
-            <div class="testimonial-tags">
-                <span>Clue Design</span>
-                <span>Atmosphere</span>
-            </div>
-            <div class="testimonial-highlight">
-                <i class="fas fa-brain"></i>
-                <span>Loved the layered puzzle flow and smart reveal moments throughout the room design in Mystery Mode .</span>
-            </div>
-            <div class="testimonial-meta">
-                <h4>Arjun</h4>
-                <span>First-time player</span>
-            </div>
-        </div>
-
-        <div class="testimonial-card">
-            <span class="testimonial-mark">"</span>
-            <div class="testimonial-rating-row">
-                <span><i class="fas fa-star"></i> 4.9 Rating</span>
-                <span><i class="fas fa-users"></i> 4-player team</span>
-            </div>
-            <p>"Perfect for friends outing. We had so much fun!"</p>
-            <div class="testimonial-tags">
-                <span>Group Fun</span>
-                <span>Fast Pace</span>
-            </div>
-            <div class="testimonial-highlight">
-                <i class="fas fa-bolt"></i>
-                <span>Best part was the team energy and pressure-driven final room puzzle for the whole group in Speed Run mode.</span>
-            </div>
-            <div class="testimonial-meta">
-                <h4>Priya</h4>
-                <span>Weekend group booking</span>
-            </div>
-        </div>
-
-        <div class="testimonial-card">
-            <span class="testimonial-mark">"</span>
-            <div class="testimonial-rating-row">
-                <span><i class="fas fa-star"></i> 5.0 Rating</span>
-                <span><i class="fas fa-repeat"></i> Repeat visit</span>
-            </div>
-            <p>"Best escape room in town. Highly recommended!"</p>
-            <div class="testimonial-tags">
-                <span>Immersive</span>
-                <span>Top Rated</span>
-            </div>
-            <div class="testimonial-highlight">
-                <i class="fas fa-door-open"></i>
-                <span>Came back again for the story build-up and smoother room design in Mystery Mode for the second time.</span>
-            </div>
-            <div class="testimonial-meta">
-                <h4>Rahul</h4>
-                <span>Returning player</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="why-choose home-premium-section">
-    <div class="home-section-head">
-        <p class="eyebrow">Why MystIQ</p>
-        <h2>Why Choose MystIQ Escape?</h2>
-    </div>
-
-    <div class="choose-grid">
-        <div class="choose-card">
-            <i class="fas fa-brain"></i>
-            <h3>Creative Puzzles</h3>
-            <p>Unique and challenging puzzles for all skill levels.</p>
-        </div>
-
-        <div class="choose-card">
-            <i class="fas fa-user-friends"></i>
-            <h3>Team Fun</h3>
-            <p>Perfect activity for friends, family, and colleagues.</p>
-        </div>
-
-        <div class="choose-card">
-            <i class="fas fa-lock"></i>
-            <h3>Safe Environment</h3>
-            <p>Fully safe and monitored rooms for all players.</p>
-        </div>
-
-        <div class="choose-card">
-            <i class="fas fa-star"></i>
-            <h3>Top Rated</h3>
-            <p>Highly rated experience with great reviews.</p>
-        </div>
-    </div>
-</section>
-
-<section class="how-it-works home-premium-section">
-    <div class="home-section-head">
-        <p class="eyebrow">Simple Journey</p>
-        <h2>How It Works</h2>
-    </div>
-
-    <div class="steps">
-        <div class="step">
-            <span>1</span>
-            <h3>Book a Room</h3>
-            <p>Pick your room and preferred slot.</p>
-        </div>
-
-        <div class="step">
-            <span>2</span>
-            <h3>Build Your Team</h3>
-            <p>Bring your friends or join a group.</p>
-        </div>
-
-        <div class="step">
-            <span>3</span>
-            <h3>Solve & Escape</h3>
-            <p>Find clues and escape within 60 minutes!</p>
-        </div>
-    </div>
-</section>
-
-<section class="newsletter home-premium-section">
-    <div class="newsletter-shell">
-        <div class="newsletter-copy">
-            <p class="eyebrow">Get Special Offers</p>
-            <h2>Get Special Offers</h2>
-            <p>Subscribe to get updates and exclusive discounts!</p>
-        </div>
-
-        <form class="newsletter-form">
-            <input type="email" placeholder="Enter your email" required>
-            <button type="submit">Subscribe</button>
+        <form class="quick-booking-form">
+            <input type="text" placeholder="Your name" required>
+            <input type="tel" placeholder="Phone number" required>
+            <select required>
+                <option value="">Choose room</option>
+                <option>Horror Escape</option>
+                <option>Zombie Lab</option>
+                <option>Prison Break</option>
+                <option>Mystery Mansion</option>
+            </select>
+            <button type="submit">Book Now</button>
         </form>
-    </div>
-</section>
+    </section>
+
+    <section class="home-faq reveal-section">
+        <div class="home-section-head">
+            <p class="eyebrow">FAQ</p>
+            <h2>Before you enter.</h2>
+        </div>
+        <div class="home-faq-list">
+            <article class="home-faq-item active">
+                <button type="button">How many players are allowed? <i class="fas fa-plus"></i></button>
+                <p>Most rooms work best with 2 to 6 players. Larger groups can split into parallel missions.</p>
+            </article>
+            <article class="home-faq-item">
+                <button type="button">How long is each game? <i class="fas fa-plus"></i></button>
+                <p>Each challenge runs for 60 minutes, with a short briefing before the countdown begins.</p>
+            </article>
+            <article class="home-faq-item">
+                <button type="button">Is it scary? <i class="fas fa-plus"></i></button>
+                <p>Some rooms use horror lighting and sound design. You can choose a lighter mystery theme if needed.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="final-cta reveal-section">
+        <h2>Ready To Test Your Intelligence?</h2>
+        <p>Gather your team, choose the mission, and beat the clock before the final lock seals.</p>
+        <a href="booking.html?item=MystIQ%20Escape%20Room" class="btn">Book Now</a>
+    </section>
+</main>
 
 <footer>
     <div class="footer-content">
@@ -406,43 +283,39 @@
             <a href="index.html" class="footer-logo">
                 <img src="./img/logo.png" alt="MystIQ Escape logo">
             </a>
-            <h2>Ready to escape<br>the ordinary<br>tonight?</h2>
+            <h2>Escape the ordinary tonight.</h2>
+            <p class="footer-note">Dark rooms, smart puzzles, tense clocks, and unforgettable team missions.</p>
             <div class="social-links">
-                <a href="#facebook" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#instagram" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#twitter" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#facebook" class="social-icon facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#instagram" class="social-icon instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#twitter" class="social-icon twitter" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
             </div>
         </div>
-        
         <div class="footer-column">
-            <h3>Explore More</h3>
+            <h3>Quick Links</h3>
             <ul>
-                <li><a href="news.html">Latest News</a></li>
-                <li><a href="offers.html">Current Offers</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
+                <li><a href="offers.html">Offers</a></li>
                 <li><a href="faq.html">FAQ</a></li>
             </ul>
         </div>
-
         <div class="footer-column">
-            <h3>Plan Your Visit</h3>
-            <ul>
-                <li><a href="rooms.html">Rooms</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="contact us.html">Contact Us</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-column">
-            <h3>Visit Us</h3>
+            <h3>Contact</h3>
             <ul>
                 <li><a href="contact us.html">Madurai, Tamil Nadu</a></li>
                 <li><a href="tel:+919876543210">+91 98765 43210</a></li>
                 <li><a href="mailto:support@mystiqescape.com">support@mystiqescape.com</a></li>
             </ul>
         </div>
+        <div class="footer-column footer-newsletter">
+            <h3>Newsletter</h3>
+            <p>Get room drops and special challenge offers.</p>
+            <form>
+                <input type="email" placeholder="Email address" required>
+                <button type="submit" aria-label="Subscribe"><i class="fas fa-arrow-right"></i></button>
+            </form>
+        </div>
     </div>
-
     <div class="footer-bottom">
         <p>Copyright &copy; 2026 MystIQ Escape. All rights reserved.</p>
     </div>
@@ -451,4 +324,3 @@
 <script src="js/script.js"></script>
 </body>
 </html>
-
