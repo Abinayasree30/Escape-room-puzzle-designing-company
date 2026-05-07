@@ -1,11 +1,13 @@
 const dropdownTriggers = document.querySelectorAll(".nav-item > a");
 const dropdownMenus = document.querySelectorAll(".dropdown");
 const currentPage = window.location.pathname.split("/").pop() || "index.html";
+const normalizedCurrentPage = decodeURIComponent(currentPage).trim().toLowerCase();
 const searchTargets = [
     { label: "Home", url: "index.html", selector: ".index-hero", keywords: ["home", "index", "main"] },
     { label: "Demo 1", url: "index.html", selector: ".hero", keywords: ["demo 1", "demo1", "hospital", "detective", "puzzles"] },
     { label: "Home 2", url: "demo2.html", selector: ".hero-dark", keywords: ["home 2", "demo 2", "demo2", "dark room", "challenge"] },
     { label: "About Us", url: "about.html", selector: ".about-hero", keywords: ["about", "about us", "mission", "team"] },
+    { label: "Booking", url: "booking.html", selector: ".booking-page-hero", keywords: ["booking", "book", "reserve", "slot", "reservation"] },
     { label: "Offers", url: "offers.html", selector: ".offer-hero", keywords: ["offers", "discount", "member special", "early bird", "group deal"] },
     { label: "Login", url: "login.html", selector: ".login-page", keywords: ["login", "sign in", "member access"] },
     { label: "Register", url: "register.html", selector: ".login-page", keywords: ["register", "sign up", "create account", "new member"] },
@@ -22,6 +24,7 @@ function setActiveMenu() {
         "pricing.html": "about",
         "our story.html": "about",
         "about us.html": "about",
+        "booking.html": "rooms",
         "contact us.html": "contact",
         "rooms.html": "rooms",
         "room 1.html": "rooms",
@@ -34,13 +37,22 @@ function setActiveMenu() {
         "member special.html": "offers"
     };
 
-    const activeMenu = pageMenuMap[currentPage];
+    const activeMenu = pageMenuMap[normalizedCurrentPage];
     if (!activeMenu) {
+        document.querySelectorAll(".nav .dropdown a").forEach((link) => {
+            const linkPage = (link.getAttribute("href") || "").trim().toLowerCase();
+            link.classList.toggle("is-current-page", linkPage === normalizedCurrentPage);
+        });
         return;
     }
 
     document.querySelectorAll(".nav [data-menu]").forEach((link) => {
         link.classList.toggle("active", link.dataset.menu === activeMenu);
+    });
+
+    document.querySelectorAll(".nav .dropdown a").forEach((link) => {
+        const linkPage = decodeURIComponent(link.getAttribute("href") || "").trim().toLowerCase();
+        link.classList.toggle("is-current-page", linkPage === normalizedCurrentPage);
     });
 }
 
@@ -293,23 +305,20 @@ function closeBookingModal() {
     }
 }
 
+function openBookingPage(selection = "MystIQ Escape Room") {
+    const bookingUrl = new URL("booking.html", window.location.href);
+    bookingUrl.searchParams.set("item", selection);
+
+    const savedMode = localStorage.getItem("mystiq-play-mode");
+    if (savedMode) {
+        bookingUrl.searchParams.set("mode", savedMode);
+    }
+
+    window.location.href = bookingUrl.toString();
+}
+
 function openBookingModal(roomName = "MystIQ Room") {
-    const overlay = ensureBookingModal();
-    const roomInput = overlay.querySelector("#bookingRoom");
-    const nameInput = overlay.querySelector("#bookingName");
-    const dateInput = overlay.querySelector("#bookingDate");
-    const status = overlay.querySelector(".booking-status");
-    const title = overlay.querySelector(".booking-modal-title");
-
-    roomInput.value = roomName;
-    title.textContent = `Book ${roomName}`;
-    status.textContent = "Choose your date and team size to reserve this room.";
-    nameInput.value = "";
-    dateInput.value = "";
-    overlay.querySelector("#bookingTeam").value = "";
-    overlay.classList.add("open");
-
-    setTimeout(() => nameInput.focus(), 0);
+    openBookingPage(roomName);
 }
 
 function setupBookingModal() {
@@ -347,6 +356,170 @@ function setupBookingModal() {
             closeBookingModal();
         }
     });
+}
+
+function ensureBookingSelectOption(select, value) {
+    if (!select || !value) {
+        return;
+    }
+
+    const existingOption = Array.from(select.options).find((option) => option.value === value);
+    if (existingOption) {
+        select.value = value;
+        return;
+    }
+
+    const option = document.createElement("option");
+    option.value = value;
+    option.textContent = value;
+    select.appendChild(option);
+    select.value = value;
+}
+
+function getBookingRate(item) {
+    const rateMap = {
+        "MystIQ Escape Room": 699,
+        "Prison Escape": 699,
+        "Haunted House": 799,
+        "Secret Lab": 899,
+        "Home 2 Challenge": 849,
+        "Book Demo 1": 699,
+        "Book Home 2": 849,
+        "Basic Plan": 499,
+        "Pro Plan": 799,
+        "Ultimate Plan": 1199,
+        "Pro Offer Plan": 719,
+        "Early Bird Offer": 649,
+        "Early Bird Access": 649,
+        "Squad Night Bundle": 599,
+        "Repeat Player Pass": 549,
+        "Group Discount Offer": 579,
+        "Silver Membership": 899,
+        "Gold Membership": 1299,
+        "Platinum Membership": 1799,
+        "New Horror Route": 799,
+        "Top Rated Experience": 749,
+        "News Booking": 699,
+        "Pricing Enquiry": 699,
+        "Offers Page Booking": 699
+    };
+
+    return rateMap[item] || 699;
+}
+
+function formatIndianCurrency(value) {
+    return `Rs ${Number(value || 0).toLocaleString("en-IN")}`;
+}
+
+function setupBookingPage() {
+    const form = document.querySelector(".booking-page-form");
+    if (!form) {
+        return;
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const itemField = form.querySelector("#bookingPageItem");
+    const dateField = form.querySelector("#bookingPageDate");
+    const modeField = form.querySelector("#bookingPageMode");
+    const teamField = form.querySelector("#bookingPageTeam");
+    const title = document.querySelector(".booking-page-heading");
+    const status = document.querySelector(".booking-page-status");
+    const selectedItemNodes = document.querySelectorAll("[data-booking-selected-item]");
+    const rateNode = document.querySelector("[data-booking-rate]");
+    const totalNode = document.querySelector("[data-booking-total]");
+    const teamNode = document.querySelector("[data-booking-team]");
+    const modeNode = document.querySelector("[data-booking-mode]");
+    const dateNode = document.querySelector("[data-booking-date]");
+    const roomButtons = document.querySelectorAll("[data-booking-pick]");
+
+    const requestedItem = params.get("item") || "MystIQ Escape Room";
+    const savedMode = localStorage.getItem("mystiq-play-mode") || "mystery";
+    const requestedMode = params.get("mode") || savedMode;
+    const modeLabels = {
+        mystery: "Mystery Mode",
+        "speed-run": "Speed Run",
+        team: "Team Mode"
+    };
+
+    if (dateField) {
+        dateField.min = new Date().toISOString().split("T")[0];
+    }
+
+    ensureBookingSelectOption(itemField, requestedItem);
+    ensureBookingSelectOption(modeField, requestedMode);
+
+    if (title) {
+        title.textContent = `Book ${requestedItem}`;
+    }
+
+    const updateSummary = () => {
+        const item = itemField ? itemField.value : requestedItem;
+        const teamSize = Number.parseInt(teamField ? teamField.value : "4", 10) || 4;
+        const bookingRate = getBookingRate(item);
+        const selectedMode = modeField ? modeField.value : requestedMode;
+        const selectedDate = dateField && dateField.value ? dateField.value : "Choose a date";
+
+        selectedItemNodes.forEach((node) => {
+            node.textContent = item;
+        });
+
+        if (rateNode) {
+            rateNode.textContent = `${formatIndianCurrency(bookingRate)} / person`;
+        }
+
+        if (totalNode) {
+            totalNode.textContent = formatIndianCurrency(bookingRate * teamSize);
+        }
+
+        if (teamNode) {
+            teamNode.textContent = `${teamSize} players`;
+        }
+
+        if (modeNode) {
+            modeNode.textContent = modeLabels[selectedMode] || "Custom Mode";
+        }
+
+        if (dateNode) {
+            dateNode.textContent = selectedDate;
+        }
+    };
+
+    roomButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const item = button.dataset.bookingPick || "MystIQ Escape Room";
+            ensureBookingSelectOption(itemField, item);
+            if (title) {
+                title.textContent = `Book ${item}`;
+            }
+            updateSummary();
+        });
+    });
+
+    [itemField, dateField, modeField, teamField].forEach((field) => {
+        if (!field) {
+            return;
+        }
+
+        field.addEventListener("change", updateSummary);
+    });
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const formData = new FormData(form);
+        const guestName = (formData.get("name") || "").toString().trim() || "Guest";
+        const item = (formData.get("item") || requestedItem).toString();
+        const date = (formData.get("date") || "").toString();
+        const time = (formData.get("time") || "").toString();
+        const team = (formData.get("team") || "").toString();
+
+        if (status) {
+            status.textContent = `${guestName}, your ${item} booking request for ${date} at ${time} with ${team} players is ready. We will contact you shortly.`;
+        }
+
+        updateSummary();
+    });
+
+    updateSummary();
 }
 
 function ensureSearchOverlay() {
@@ -515,7 +688,7 @@ function toggleDarkMode() {
 
 function initDarkMode() {
     const savedTheme = localStorage.getItem('mystiq-theme');
-    document.body.classList.toggle('light-mode', savedTheme !== 'dark');
+    document.body.classList.toggle('light-mode', savedTheme === 'light');
     updateDarkBtn();
 }
 
@@ -527,25 +700,33 @@ function updateDirBtn() {
     if (!btn) return;
     const currentDir = document.documentElement.getAttribute('dir') || 'ltr';
     const label = btn.querySelector('.dir-label');
+    const buttonLabel = currentDir === 'rtl' ? 'RTL' : 'LTR';
     if (label) {
-        label.textContent = currentDir === 'rtl' ? 'LTR' : 'RTL';
+        label.textContent = buttonLabel;
     } else {
-        btn.textContent = currentDir === 'rtl' ? 'LTR' : 'RTL';
+        btn.textContent = buttonLabel;
     }
     btn.title = currentDir === 'rtl' ? 'Switch to Left-to-Right' : 'Switch to Right-to-Left';
+}
+
+function applyDirection(dir) {
+    document.documentElement.setAttribute('dir', dir);
+    if (document.body) {
+        document.body.setAttribute('dir', dir);
+    }
 }
 
 function toggleDirection() {
     const currentDir = document.documentElement.getAttribute('dir') || 'ltr';
     const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
-    document.documentElement.setAttribute('dir', newDir);
+    applyDirection(newDir);
     localStorage.setItem('mystiq-dir', newDir);
     updateDirBtn();
 }
 
 function initDirection() {
     const savedDir = localStorage.getItem('mystiq-dir') || 'ltr';
-    document.documentElement.setAttribute('dir', savedDir);
+    applyDirection(savedDir);
     updateDirBtn();
 }
 
@@ -558,6 +739,7 @@ function injectToggles() {
 
     if (existingDarkBtn) {
         existingDarkBtn.id = 'darkModeToggle';
+        existingDarkBtn.type = 'button';
         existingDarkBtn.setAttribute('aria-label', 'Toggle dark/light mode');
         existingDarkBtn.onclick = null;
         existingDarkBtn.addEventListener('click', toggleDarkMode);
@@ -565,6 +747,7 @@ function injectToggles() {
 
     if (existingDirBtn) {
         existingDirBtn.id = 'dirToggle';
+        existingDirBtn.type = 'button';
         existingDirBtn.setAttribute('aria-label', 'Toggle text direction');
         if (!existingDirBtn.querySelector('.dir-label')) {
             existingDirBtn.innerHTML = '<span class="dir-label"></span>';
@@ -580,12 +763,14 @@ function injectToggles() {
     }
 
     const darkBtn = document.createElement('button');
+    darkBtn.type = 'button';
     darkBtn.className = 'icon-btn';
     darkBtn.id = 'darkModeToggle';
     darkBtn.setAttribute('aria-label', 'Toggle dark/light mode');
     darkBtn.addEventListener('click', toggleDarkMode);
 
     const dirBtn = document.createElement('button');
+    dirBtn.type = 'button';
     dirBtn.className = 'icon-btn dir-toggle';
     dirBtn.id = 'dirToggle';
     dirBtn.setAttribute('aria-label', 'Toggle text direction');
@@ -621,8 +806,76 @@ initDarkMode();
 initDirection();
 injectToggles();
 
+function initModeSelection() {
+    const cards = document.querySelectorAll('.mode-card[data-mode]');
+    const status = document.querySelector('.mode-selection-status');
+    if (!cards.length) {
+        return;
+    }
+
+    const modeNames = {
+        mystery: 'Mystery Mode',
+        'speed-run': 'Speed Run',
+        team: 'Team Mode'
+    };
+
+    const applyMode = (modeKey) => {
+        cards.forEach((card) => {
+            const isActive = card.dataset.mode === modeKey;
+            const button = card.querySelector('.mode-select-btn');
+            card.classList.toggle('is-active', isActive);
+            card.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+
+            if (button) {
+                button.textContent = isActive ? 'Enabled' : `Enable ${modeNames[card.dataset.mode] || 'Mode'}`;
+                button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+            }
+        });
+
+        if (status) {
+            status.textContent = `${modeNames[modeKey] || 'Selected mode'} is enabled.`;
+        }
+
+        localStorage.setItem('mystiq-play-mode', modeKey);
+    };
+
+    cards.forEach((card) => {
+        const activateCard = () => applyMode(card.dataset.mode || 'mystery');
+        const button = card.querySelector('.mode-select-btn');
+
+        card.addEventListener('click', (event) => {
+            if (event.target.closest('.mode-select-btn')) {
+                return;
+            }
+            activateCard();
+        });
+
+        card.addEventListener('keydown', (event) => {
+            if (event.key !== 'Enter' && event.key !== ' ') {
+                return;
+            }
+
+            event.preventDefault();
+            activateCard();
+        });
+
+        if (button) {
+            button.addEventListener('click', (event) => {
+                event.stopPropagation();
+                activateCard();
+            });
+        }
+    });
+
+    applyMode(localStorage.getItem('mystiq-play-mode') || cards[0].dataset.mode || 'mystery');
+}
+
 setupSearch();
-setupBookingModal();
+if (currentPage !== "booking.html") {
+    setupBookingModal();
+}
+setupBookingPage();
+initModeSelection();
 
 function setupContactForm() {
     const form = document.querySelector(".contact-message-form");
@@ -682,8 +935,46 @@ function setupFaqSearch() {
 setupFaqSearch();
 
 function enhanceFooter() {
-    document.querySelectorAll(".footer-left").forEach((footerBlock) => {
-        footerBlock.querySelector(".footer-copy")?.remove();
+    document.querySelectorAll("footer").forEach((footer) => {
+        footer.innerHTML = `
+            <div class="footer-content">
+                <div class="footer-left">
+                    <a href="index.html" class="footer-logo" aria-label="Escape Room Adventures home">
+                        <img src="./img/logo.png" alt="Escape Room Adventures logo">
+                    </a>
+                    <h2>Escape Room Adventures</h2>
+                    <p class="footer-tagline">Immersive escape room experiences designed to challenge your mind and teamwork.</p>
+                    <p class="footer-note">Cinematic rooms, smart puzzles, tense clocks, and premium team missions built for players who want more than a normal night out.</p>
+                    <div class="social-links" aria-label="Social links">
+                        <a href="#instagram" class="social-icon instagram" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#facebook" class="social-icon facebook" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#discord" class="social-icon discord" aria-label="Discord"><i class="fab fa-discord" aria-hidden="true"></i></a>
+                        <a href="#youtube" class="social-icon youtube" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="rooms.html">Rooms</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact us.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column footer-contact">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="mailto:support@mystiqescape.com"><i class="fas fa-envelope" aria-hidden="true"></i><span>support@mystiqescape.com</span></a></li>
+                        <li><a href="tel:+919876543210"><i class="fas fa-phone" aria-hidden="true"></i><span>+91 98765 43210</span></a></li>
+                        <li><a href="contact us.html"><i class="fas fa-location-dot" aria-hidden="true"></i><span>Madurai, Tamil Nadu</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Escape Room Adventures</p>
+            </div>
+        `;
     });
 }
 
@@ -935,8 +1226,63 @@ function injectGlobalSections() {
 
 injectGlobalSections();
 
+function prepareSitewideMotion() {
+    document.documentElement.classList.add("motion-ready");
+
+    document.querySelectorAll("main > section, body > section, footer").forEach((element, index) => {
+        element.classList.add("site-reveal");
+        if (!element.dataset.reveal) {
+            element.dataset.reveal = index % 5 === 1 ? "fade-left" : index % 5 === 3 ? "zoom-in" : "fade-up";
+        }
+    });
+
+    document.querySelectorAll([
+        ".room-card",
+        ".pricing-card",
+        ".blog-card",
+        ".offer-campaign-card",
+        ".contact-info-item",
+        ".contact-mini-card",
+        ".faq-item",
+        ".faq-side-card",
+        ".difficulty-card",
+        ".tip-card",
+        ".plan-fit-card",
+        ".review-card",
+        ".include-card",
+        ".trust-card",
+        ".theme-card",
+        ".top-room-card",
+        ".stat-card",
+        ".feature-card",
+        ".choose-card",
+        ".testimonial-card",
+        ".home-feature-card",
+        ".demo-card",
+        ".demo-feature-card",
+        ".offer-box",
+        ".blog-featured-story",
+        ".blog-sidebar-card",
+        ".blog-list article",
+        ".site-stat-grid article",
+        ".site-rail article",
+        ".news-trending-list article",
+        ".news-digest-grid article",
+        ".rooms-flow-grid article"
+    ].join(", ")).forEach((element, index) => {
+        element.classList.add("motion-card");
+        if (!element.style.getPropertyValue("--motion-delay")) {
+            element.style.setProperty("--motion-delay", `${Math.min(index % 6, 5) * 70}ms`);
+        }
+    });
+}
+
+prepareSitewideMotion();
+
 function initSectionReveal() {
     const revealSections = document.querySelectorAll([
+        ".site-reveal",
+        ".motion-card",
         ".reveal-section",
         ".home-premium-section",
         ".demo2-premium-section",
@@ -1274,3 +1620,52 @@ function togglePasswordVisibility() {
     passwordInput.type = isPassword ? "text" : "password";
     passwordIcon.className = isPassword ? "fas fa-eye-slash" : "fas fa-eye";
 }
+
+function initCyberpunkHeaderState() {
+    const header = document.querySelector(".header");
+    const setHeaderState = () => {
+        if (!header) {
+            return;
+        }
+        header.classList.toggle("scrolled", window.scrollY > 24);
+    };
+
+    setHeaderState();
+    window.addEventListener("scroll", setHeaderState, { passive: true });
+}
+
+function initHomeCyberpunkEffects() {
+    if (!document.body.classList.contains("home-demo1")) {
+        return;
+    }
+
+    document.querySelectorAll(".home-faq-item button").forEach((button) => {
+        button.addEventListener("click", () => {
+            const item = button.closest(".home-faq-item");
+            if (!item) {
+                return;
+            }
+
+            document.querySelectorAll(".home-faq-item").forEach((faqItem) => {
+                faqItem.classList.toggle("active", faqItem === item ? !faqItem.classList.contains("active") : false);
+            });
+        });
+    });
+
+    const galleryTrack = document.querySelector(".gallery-track");
+    if (galleryTrack && !galleryTrack.dataset.cloned) {
+        galleryTrack.innerHTML += galleryTrack.innerHTML;
+        galleryTrack.dataset.cloned = "true";
+    }
+
+    const bookingForm = document.querySelector(".quick-booking-form");
+    if (bookingForm) {
+        bookingForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            window.location.href = "booking.html?item=MystIQ%20Escape%20Room";
+        });
+    }
+}
+
+initCyberpunkHeaderState();
+initHomeCyberpunkEffects();
