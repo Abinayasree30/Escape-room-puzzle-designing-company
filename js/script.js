@@ -734,6 +734,10 @@ function initDirection() {
    INJECT TOGGLE BUTTONS INTO ALL PAGES
    ============================================= */
 function injectToggles() {
+    if (document.body.classList.contains('login-page-body') || document.body.classList.contains('register-page-body')) {
+        return;
+    }
+
     const existingDarkBtn = document.getElementById('darkModeToggle') || document.getElementById('mq-enable-btn');
     const existingDirBtn = document.getElementById('dirToggle') || document.getElementById('mq-dir-btn');
 
@@ -967,6 +971,8 @@ function enhanceFooter() {
                     <ul>
                         <li><a href="mailto:support@mystiqescape.com"><i class="fas fa-envelope" aria-hidden="true"></i><span>support@mystiqescape.com</span></a></li>
                         <li><a href="tel:+919876543210"><i class="fas fa-phone" aria-hidden="true"></i><span>+91 98765 43210</span></a></li>
+                        <li><a href="https://wa.me/919876543210"><i class="fab fa-whatsapp" aria-hidden="true"></i><span>+91 98765 43210</span></a></li>
+                        <li><a href="https://www.instagram.com/mystiqescape"><i class="fab fa-instagram" aria-hidden="true"></i><span>@mystiqescape</span></a></li>
                         <li><a href="contact us.html"><i class="fas fa-location-dot" aria-hidden="true"></i><span>Madurai, Tamil Nadu</span></a></li>
                     </ul>
                 </div>
