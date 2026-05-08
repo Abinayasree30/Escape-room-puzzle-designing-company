@@ -299,6 +299,26 @@ body.home-demo1 .offer-section {
     gap: 48px !important;
 }
 
+body.home-demo1 .about-modern {
+    row-gap: 34px !important;
+}
+
+body.home-demo1 .about-modern-eyebrow {
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin-bottom: 0 !important;
+}
+
+body.home-demo1 .offer-section {
+    row-gap: 34px !important;
+}
+
+body.home-demo1 .offer-section-eyebrow {
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin-bottom: 0 !important;
+}
+
 body.home-demo1 .about-modern-image,
 body.home-demo1 .video-frame,
 body.home-demo1 .offer-section figure {
@@ -1696,4 +1716,149 @@ body.light-mode.home-demo1 .hero-countdown {
     body.light-mode.home-demo1 .hero-countdown {
         grid-template-columns: 1fr !important;
     }
+}
+
+/* Home 1 video preview content spacing */
+body.home-demo1 .video-copy > p:not(.eyebrow) {
+    margin-bottom: 24px !important;
+}
+
+body.home-demo1 .video-copy .btn {
+    margin-top: 4px !important;
+}
+
+/* Footer logo matches the Home 1 header logo size. */
+body.home-demo1 footer .footer-logo,
+body.light-mode.home-demo1 footer .footer-logo {
+    width: min(312px, 100%) !important;
+    height: 96px !important;
+    overflow: hidden !important;
+}
+
+body.home-demo1 footer .footer-logo img,
+body.light-mode.home-demo1 footer .footer-logo img {
+    width: 380px !important;
+    max-width: none !important;
+    max-height: none !important;
+    transform: translate(-56px, -77px) !important;
+}
+
+body.home-demo1 footer .footer-logo:hover img,
+body.light-mode.home-demo1 footer .footer-logo:hover img {
+    transform: translate(-56px, -77px) scale(1.03) !important;
+}
+
+/* Home 1 button hover follows the site-wide black hover style. */
+html body.home-demo1 :is(
+    .btn,
+    .login-btn,
+    .contact-btn,
+    .booking-confirm,
+    .search-submit,
+    .mode-select-btn,
+    .quick-booking-form button,
+    button[type="submit"]
+):is(:hover, :focus-visible) {
+    background: #050505 !important;
+    background-image: none !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border-color: #8b5cf6 !important;
+    box-shadow: 0 0 28px rgba(139, 92, 246, 0.52) !important;
+}
+
+html body.home-demo1 :is(
+    .btn,
+    .login-btn,
+    .contact-btn,
+    .booking-confirm,
+    .search-submit,
+    .mode-select-btn,
+    .quick-booking-form button,
+    button[type="submit"]
+):is(:hover, :focus-visible)::before {
+    background: #050505 !important;
+    opacity: 1 !important;
+}
+
+/* Home 1 light mode header utility icons use violet on hover. */
+html body.light-mode.home-demo1 :is(.icon-btn, .dir-toggle, .nav-toggle):is(:hover, :focus-visible) {
+    color: #7c3aed !important;
+    -webkit-text-fill-color: #7c3aed !important;
+    border-color: rgba(124, 58, 237, 0.42) !important;
+    background: rgba(124, 58, 237, 0.1) !important;
+    box-shadow: 0 12px 28px rgba(124, 58, 237, 0.14) !important;
+}
+
+html body.light-mode.home-demo1 :is(.icon-btn, .dir-toggle, .nav-toggle):is(:hover, :focus-visible) i {
+    color: #7c3aed !important;
+    -webkit-text-fill-color: #7c3aed !important;
+}
+
+/* Home 1 responsive safety: prevent sideways page scrolling. */
+html:has(body.home-demo1),
+body.home-demo1 {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    overscroll-behavior-x: none !important;
+}
+
+body.home-demo1 :is(.header, main, section, footer, .hero, .footer-content) {
+    max-width: 100vw !important;
+}
+
+body.home-demo1 :is(.header, .hero, main, footer) {
+    overflow-x: clip !important;
+}
+
+body.home-demo1 :is(
+    .hero-text,
+    .home-section-head,
+    .about-modern,
+    .stats-section,
+    .room-cards,
+    .steps,
+    .video-preview,
+    .offer-section,
+    .testimonial-container,
+    .booking-panel,
+    .home-faq-list,
+    .final-cta,
+    .footer-content
+) {
+    min-width: 0 !important;
+}
+
+@media (max-width: 768px) {
+    body.home-demo1 :is(.gallery-slider, .rooms, .about-modern, .video-preview, .offer-section, .booking-panel) {
+        overflow-x: clip !important;
+    }
+
+body.home-demo1 :is(.hero-actions, .quick-booking-form, .footer-newsletter form) {
+        max-width: 100% !important;
+    }
+}
+
+/* Home 1 numbered steps: plain numbers, no badge box. */
+html body.home-demo1 .how-it-works .step > span,
+html body.home-demo1 .step > span,
+html body.light-mode.home-demo1 .how-it-works .step > span,
+html body.light-mode.home-demo1 .step > span {
+    width: auto !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 0 18px !important;
+    display: inline-block !important;
+    background: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    color: #8b5cf6 !important;
+    -webkit-text-fill-color: #8b5cf6 !important;
+    text-shadow: none !important;
+    line-height: 1 !important;
 }

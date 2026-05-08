@@ -10098,6 +10098,21 @@ body.light-mode .about-features::before {
     border-color: rgba(0, 160, 190, 0.1);
 }
 
+body.light-mode .about-features,
+body.light-mode .about-features-grid,
+body.light-mode .about-features::before {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+body.light-mode .about-features::before {
+    content: none !important;
+    opacity: 0 !important;
+}
+
 /* Search overlay */
 body.light-mode .search-overlay {
     background: rgba(200, 210, 220, 0.72);

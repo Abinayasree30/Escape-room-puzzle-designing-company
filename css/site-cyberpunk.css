@@ -3554,3 +3554,1476 @@ body.light-mode .rooms-hero .rooms-hero-actions a:last-child:hover {
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
 }
+
+body.home-demo1 .feature-icon-grid article,
+body.light-mode.home-demo1 .feature-icon-grid article {
+    border: 0 !important;
+}
+
+body.light-mode {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+body.light-mode :is(h1, h2, h3, h4, h5, h6),
+body.light-mode :is(.btn, button, .nav a, .hero-card-label, .about-kicker, .eyebrow, .site-mini-label) {
+    font-family: 'Orbitron', sans-serif !important;
+    letter-spacing: 0 !important;
+}
+
+body.light-mode p,
+body.light-mode li,
+body.light-mode label,
+body.light-mode span {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+body.light-mode :is(.hero-text h1, .hero-content h1, .editorial-hero-copy h1, .booking-page-heading) {
+    font-size: clamp(2.6rem, 7vw, 6.4rem) !important;
+    line-height: 0.98 !important;
+}
+
+@media (max-width: 768px) {
+    body.light-mode :is(.hero-text h1, .hero-content h1, .editorial-hero-copy h1, .booking-page-heading) {
+        font-size: clamp(2.2rem, 12vw, 4rem) !important;
+    }
+}
+
+html body.light-mode.has-custom-extras .about-features .about-features-intro,
+html body.light-mode.has-custom-extras .about-features .about-features-intro * {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+body.home-demo1 .rooms {
+    padding-top: 36px !important;
+    padding-bottom: 76px !important;
+}
+
+body.home-demo1 .rooms .home-section-head {
+    margin-bottom: 24px !important;
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+body.home-demo1 .offer-section > div {
+    max-width: 620px !important;
+}
+
+body.home-demo1 .offer-section > div > p:not(.eyebrow) {
+    max-width: 560px !important;
+    margin-bottom: 30px !important;
+    line-height: 1.6 !important;
+}
+
+body.home-demo1 .offer-section .btn {
+    margin-top: 4px !important;
+}
+
+body.home-demo1 .testimonials .stars {
+    justify-content: flex-start !important;
+    align-self: flex-start !important;
+    width: 100% !important;
+}
+
+/* Final nav active-state lock */
+.nav-item > a.active::after {
+    transform: scaleX(1);
+}
+
+body.light-mode :is(.nav > a.active, .nav-item > a.active, .nav .dropdown a.is-current-page) {
+    color: var(--primary-dark) !important;
+    -webkit-text-fill-color: var(--primary-dark) !important;
+}
+
+body:not(.light-mode) :is(.nav > a.active, .nav-item > a.active, .nav .dropdown a.is-current-page) {
+    color: var(--primary) !important;
+    -webkit-text-fill-color: var(--primary) !important;
+}
+
+/* Home 2 light-mode step numbers */
+body.light-mode.home-demo2 :is(.home2-briefing-panel, .home2-night-grid) article > span {
+    width: auto !important;
+    height: auto !important;
+    min-width: 0 !important;
+    display: inline-flex !important;
+    align-self: flex-start !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    color: #6d28d9 !important;
+    -webkit-text-fill-color: #6d28d9 !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+}
+
+/* Home 2 team strategy desktop spacing */
+@media (min-width: 1025px) {
+    body.home-demo2 .home2-role-list {
+        padding-right: 36px !important;
+        box-sizing: border-box !important;
+    }
+}
+
+/* Home 2 rooms preview heading spacing */
+body.home-demo2 .rooms-preview h2 {
+    margin-bottom: 34px !important;
+}
+
+body.home-demo2 .rooms-preview .room-grid {
+    margin-top: 0 !important;
+}
+
+/* Home 2 live actors added detail */
+body.home-demo2 .actor-cues {
+    display: grid;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+body.home-demo2 .actor-cues article {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 14px;
+    row-gap: 4px;
+    align-items: start;
+    padding: 14px 16px;
+    border: 1px solid rgba(139, 92, 246, 0.22);
+    border-radius: 8px;
+    background: rgba(139, 92, 246, 0.08);
+}
+
+body.home-demo2 .actor-cues span {
+    grid-row: span 2;
+    color: var(--primary);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+body.home-demo2 .actor-cues strong {
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 1.2;
+}
+
+body.home-demo2 .actor-cues p {
+    margin: 0 !important;
+    color: #cbd5e1 !important;
+    font-size: 0.92rem;
+    line-height: 1.55 !important;
+}
+
+body.light-mode.home-demo2 .actor-cues article {
+    background: rgba(139, 92, 246, 0.055);
+    border-color: rgba(139, 92, 246, 0.2);
+}
+
+body.light-mode.home-demo2 .actor-cues span {
+    color: #6d28d9 !important;
+    -webkit-text-fill-color: #6d28d9 !important;
+}
+
+body.light-mode.home-demo2 .actor-cues strong {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
+
+body.light-mode.home-demo2 .actor-cues p {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+}
+
+@media (max-width: 768px) {
+    body.home-demo2 .actor-cues article {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Home 2 final-minute countdown upgrade */
+body.home-demo2 .demo2-countdown {
+    max-width: 1180px !important;
+    margin: 0 auto 10px !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.82fr) !important;
+    gap: 34px !important;
+    align-items: center !important;
+    text-align: left !important;
+    overflow: hidden !important;
+}
+
+body.home-demo2 .countdown-copy h2 {
+    margin: 0 0 18px !important;
+    max-width: 720px !important;
+    font-size: clamp(2.4rem, 5vw, 4.4rem) !important;
+    line-height: 1.04 !important;
+}
+
+body.home-demo2 .countdown-copy > p:not(.eyebrow) {
+    max-width: 620px !important;
+    margin: 0 !important;
+    color: #d4dde8 !important;
+    line-height: 1.8 !important;
+}
+
+body.home-demo2 .countdown-signals {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    margin-top: 26px !important;
+}
+
+body.home-demo2 .countdown-signals span {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    min-height: 38px !important;
+    padding: 8px 12px !important;
+    border: 1px solid rgba(139, 92, 246, 0.28) !important;
+    border-radius: 999px !important;
+    background: rgba(139, 92, 246, 0.1) !important;
+    color: #e9ddff !important;
+    font-size: 0.88rem !important;
+}
+
+body.home-demo2 .countdown-panel {
+    position: relative !important;
+    padding: 30px !important;
+    border: 1px solid rgba(139, 92, 246, 0.36) !important;
+    border-radius: 26px !important;
+    background:
+        radial-gradient(circle at top right, rgba(139, 92, 246, 0.24), transparent 38%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.025)),
+        rgba(7, 10, 19, 0.92) !important;
+    box-shadow: 0 26px 60px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.home-demo2 .countdown-label {
+    display: block !important;
+    margin-bottom: 16px !important;
+    color: #a78bfa !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+}
+
+body.home-demo2 .demo2-countdown #timer {
+    margin: 0 0 18px !important;
+    color: #8b5cf6 !important;
+    -webkit-text-fill-color: #8b5cf6 !important;
+    font-size: clamp(3.6rem, 7vw, 6rem) !important;
+    line-height: 1 !important;
+    letter-spacing: 0.03em !important;
+    text-align: left !important;
+}
+
+body.home-demo2 .countdown-meter {
+    height: 10px !important;
+    overflow: hidden !important;
+    border-radius: 999px !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.home-demo2 .countdown-meter span {
+    display: block !important;
+    width: 82% !important;
+    height: 100% !important;
+    border-radius: inherit !important;
+    background: linear-gradient(90deg, #8b5cf6, #22d3ee) !important;
+    box-shadow: 0 0 22px rgba(139, 92, 246, 0.48) !important;
+}
+
+body.home-demo2 .countdown-status {
+    display: flex !important;
+    justify-content: space-between !important;
+    gap: 16px !important;
+    margin-top: 18px !important;
+    color: #dbeafe !important;
+}
+
+body.home-demo2 .countdown-status span {
+    color: #a7f3d0 !important;
+}
+
+body.light-mode.home-demo2 .demo2-countdown {
+    background:
+        radial-gradient(circle at top right, rgba(139, 92, 246, 0.12), transparent 34%),
+        #ffffff !important;
+}
+
+body.light-mode.home-demo2 .countdown-copy > p:not(.eyebrow) {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+}
+
+body.light-mode.home-demo2 .countdown-signals span,
+body.light-mode.home-demo2 .countdown-panel {
+    background: rgba(139, 92, 246, 0.055) !important;
+    border-color: rgba(139, 92, 246, 0.22) !important;
+}
+
+body.light-mode.home-demo2 .countdown-signals span,
+body.light-mode.home-demo2 .countdown-status {
+    color: #334155 !important;
+    -webkit-text-fill-color: #334155 !important;
+}
+
+body.light-mode.home-demo2 .countdown-status span {
+    color: #047857 !important;
+    -webkit-text-fill-color: #047857 !important;
+}
+
+@media (max-width: 900px) {
+    body.home-demo2 .demo2-countdown {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Light-mode desktop nav: remove boxed Home trigger */
+@media (min-width: 1025px) {
+    body.light-mode .header .nav > a,
+    body.light-mode .header .nav-item > a {
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+}
+
+/* Home 2 light-mode hero image visibility */
+body.light-mode.home-demo2 .hero-dark {
+    background:
+        linear-gradient(180deg, rgba(2, 7, 15, 0.3), rgba(2, 7, 15, 0.58)),
+        url("../img/dark-bg.jpg") center/cover no-repeat !important;
+}
+
+body.light-mode.home-demo2 .hero-dark::before {
+    opacity: 0 !important;
+    background: transparent !important;
+}
+
+body.light-mode.home-demo2 .hero-dark .overlay {
+    background: rgba(0, 0, 0, 0.24) !important;
+    opacity: 1 !important;
+}
+
+/* Home 2 hero image as real media, not only CSS background */
+body.home-demo2 .hero-dark {
+    overflow: hidden !important;
+    isolation: isolate !important;
+}
+
+body.home-demo2 .hero-dark-bg {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+body.home-demo2 .hero-dark .overlay {
+    z-index: 1 !important;
+}
+
+body.home-demo2 .hero-dark .hero-content {
+    z-index: 2 !important;
+}
+
+body.light-mode.home-demo2 .hero-dark-bg {
+    opacity: 1 !important;
+    filter: contrast(1.04) saturate(1.08) brightness(0.82) !important;
+}
+
+/* Home 2 team strategy: remove light-mode section box */
+html body.light-mode.home-demo2 section.home2-team.demo2-premium-section {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+}
+
+html body.light-mode.home-demo2 section.home2-team.demo2-premium-section .home2-team-shell {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+}
+
+/* Home 2 pressure design: remove light-mode box between image and content */
+html body.light-mode.home-demo2 section.home2-pressure.demo2-premium-section {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+}
+
+html body.light-mode.home-demo2 section.home2-pressure.demo2-premium-section .home2-pressure-shell {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+}
+
+/* Home 2 light-mode nav: keep active underline without a filled menu box */
+html body.light-mode.home-demo2 .header .nav > a,
+html body.light-mode.home-demo2 .header .nav-item > a,
+html body.light-mode.home-demo2 .header .nav > a:hover,
+html body.light-mode.home-demo2 .header .nav-item > a:hover,
+html body.light-mode.home-demo2 .header .nav > a.active,
+html body.light-mode.home-demo2 .header .nav-item > a.active {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border-color: transparent !important;
+    outline: 0 !important;
+}
+
+/* About page light mode: keep the hero image visible */
+html body.light-mode .about-hero {
+    background:
+        linear-gradient(rgba(2, 7, 15, 0.30), rgba(2, 7, 15, 0.58)),
+        url("../img/hero.jpg") center/cover no-repeat !important;
+    background-color: #0f0f0f !important;
+}
+
+html body.light-mode .about-hero .overlay {
+    background: rgba(0, 0, 0, 0.26) !important;
+    opacity: 1 !important;
+}
+
+/* Shared inner-page hero image: About, Rooms, News, Offers, Contact only */
+html body :is(
+    .about-hero,
+    .rooms-hero,
+    .editorial-hero.blog-hero,
+    .offer-hero,
+    .contact-hero
+) {
+    background:
+        linear-gradient(rgba(2, 7, 15, 0.44), rgba(2, 7, 15, 0.72)),
+        url("../img/escape-showcase-side.jpg") center/cover no-repeat !important;
+    background-color: #0f0f0f !important;
+}
+
+html body.light-mode :is(
+    .about-hero,
+    .rooms-hero,
+    .editorial-hero.blog-hero,
+    .offer-hero,
+    .contact-hero
+) {
+    background:
+        linear-gradient(rgba(2, 7, 15, 0.34), rgba(2, 7, 15, 0.66)),
+        url("../img/escape-showcase-side.jpg") center/cover no-repeat !important;
+    background-color: #0f0f0f !important;
+}
+
+html body :is(
+    .about-hero,
+    .rooms-hero,
+    .editorial-hero.blog-hero,
+    .offer-hero,
+    .contact-hero
+)::before {
+    content: none !important;
+    background: none !important;
+    opacity: 0 !important;
+}
+
+html body :is(
+    .about-hero .overlay,
+    .rooms-hero .overlay,
+    .editorial-hero.blog-hero .overlay,
+    .offer-hero .overlay,
+    .contact-hero .overlay
+) {
+    background: rgba(0, 0, 0, 0.22) !important;
+    opacity: 1 !important;
+}
+
+html body.light-mode :is(
+    .about-hero .hero-text h1,
+    .about-hero .hero-text p,
+    .rooms-hero .hero-text h1,
+    .rooms-hero .hero-text p,
+    .editorial-hero.blog-hero .eyebrow,
+    .editorial-hero.blog-hero .editorial-hero-copy h1,
+    .editorial-hero.blog-hero .editorial-hero-copy p,
+    .offer-hero .eyebrow,
+    .offer-hero .hero-text h1,
+    .offer-hero .hero-text > p,
+    .contact-hero .hero-text h1,
+    .contact-hero .hero-text p
+) {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    text-shadow: 0 0 24px rgba(139, 92, 246, 0.45), 0 8px 34px rgba(0, 0, 0, 0.45) !important;
+}
+
+/* Real media layer for inner-page heroes so light-mode background resets cannot hide the image */
+html body :is(
+    .about-hero,
+    .rooms-hero,
+    .editorial-hero.blog-hero,
+    .offer-hero,
+    .contact-hero
+) {
+    position: relative !important;
+    overflow: hidden !important;
+    isolation: isolate !important;
+}
+
+html body :is(
+    .about-hero,
+    .rooms-hero,
+    .editorial-hero.blog-hero,
+    .offer-hero,
+    .contact-hero
+) .inner-hero-bg {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    opacity: 1 !important;
+    filter: brightness(0.78) contrast(1.04) saturate(1.06) !important;
+}
+
+html body.light-mode :is(
+    .about-hero,
+    .rooms-hero,
+    .editorial-hero.blog-hero,
+    .offer-hero,
+    .contact-hero
+) .inner-hero-bg {
+    opacity: 1 !important;
+    filter: brightness(0.86) contrast(1.04) saturate(1.08) !important;
+}
+
+html body :is(
+    .about-hero .overlay,
+    .rooms-hero .overlay,
+    .editorial-hero.blog-hero .overlay,
+    .offer-hero .overlay,
+    .contact-hero .overlay
+) {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 1 !important;
+}
+
+html body :is(
+    .about-hero .hero-text,
+    .rooms-hero .hero-text,
+    .editorial-hero.blog-hero .editorial-hero-shell,
+    .offer-hero .offer-hero-shell,
+    .contact-hero .hero-text
+) {
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+/* About page light mode label */
+html body.light-mode .about-highlight-label {
+    background: var(--primary) !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border: 1px solid rgba(139, 92, 246, 0.35) !important;
+    box-shadow: 0 10px 24px rgba(139, 92, 246, 0.18) !important;
+}
+
+/* About features light mode: remove container outline behind cards */
+html body.light-mode .about-features,
+html body.light-mode.has-custom-extras .about-features {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+html body.light-mode .about-features-grid {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+html body.light-mode .about-features::before {
+    content: none !important;
+    border: 0 !important;
+    background: none !important;
+    opacity: 0 !important;
+}
+
+/* Partners light mode: remove logo boxes */
+html body :is(.partners-container img, .partner-logos img) {
+    max-width: 320px !important;
+    height: 180px !important;
+}
+
+html body.light-mode :is(.partners-container img, .partner-logos img) {
+    width: min(100%, 320px) !important;
+    height: 180px !important;
+    padding: 0 !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* News hero light mode: keep hero copy white over image */
+html body.light-mode.has-custom-extras .editorial-hero.blog-hero :is(.eyebrow, .editorial-hero-copy h1, .editorial-hero-copy p) {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    text-shadow: 0 0 24px rgba(139, 92, 246, 0.45), 0 8px 34px rgba(0, 0, 0, 0.45) !important;
+}
+
+/* News hero light mode: restore featured update card */
+html body.light-mode.has-custom-extras .editorial-hero.blog-hero .editorial-hero-card {
+    background: linear-gradient(180deg, rgba(18, 18, 23, 0.86), rgba(12, 12, 16, 0.76)) !important;
+    border: 1px solid rgba(139, 92, 246, 0.36) !important;
+    border-radius: 8px !important;
+    padding: 30px !important;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.36), 0 0 32px rgba(139, 92, 246, 0.14) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+}
+
+html body.light-mode.has-custom-extras .editorial-hero.blog-hero .editorial-hero-card :is(
+    .hero-card-label,
+    h2,
+    .hero-card-price,
+    .hero-card-price span,
+    p,
+    .hero-card-points span
+) {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.has-custom-extras .editorial-hero.blog-hero .hero-card-price {
+    background: linear-gradient(90deg, rgba(139, 92, 246, 0.22), rgba(139, 92, 246, 0.08)) !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+html body.light-mode.has-custom-extras .editorial-hero.blog-hero .hero-card-points span {
+    background: rgba(139, 92, 246, 0.18) !important;
+    border: 1px solid rgba(139, 92, 246, 0.36) !important;
+    box-shadow: none !important;
+}
+
+/* News latest articles light mode subtitle */
+html body.light-mode .blog-grid-section .editorial-heading p:last-child {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    text-shadow: none !important;
+    opacity: 1 !important;
+}
+
+/* Offers hero light mode: keep hero copy white over image */
+html body.light-mode.has-custom-extras.offers-page .offer-hero :is(.eyebrow, .hero-text h1, .hero-text > p) {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    text-shadow: 0 0 24px rgba(139, 92, 246, 0.45), 0 8px 34px rgba(0, 0, 0, 0.45) !important;
+}
+
+/* Offers light mode final lock: keep the same image hero and panel placement as dark mode */
+html body.light-mode.has-custom-extras.offers-page .offer-hero {
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 82vh !important;
+    margin: 0 !important;
+    padding: 148px 8% 78px !important;
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    isolation: isolate !important;
+    background:
+        linear-gradient(90deg, rgba(8, 8, 12, 0.9), rgba(15, 15, 15, 0.64) 48%, rgba(8, 8, 12, 0.88)),
+        url("../img/escape-showcase-side.jpg") center/cover no-repeat !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+}
+
+html body.light-mode.has-custom-extras.offers-page .offer-hero::before,
+html body.light-mode.has-custom-extras.offers-page .offer-hero .overlay {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    opacity: 1 !important;
+    pointer-events: none !important;
+}
+
+html body.light-mode.has-custom-extras.offers-page .offer-hero::before {
+    z-index: 0 !important;
+    background:
+        radial-gradient(circle at 18% 28%, rgba(139, 92, 246, 0.3), transparent 30%),
+        radial-gradient(circle at 82% 22%, rgba(139, 92, 246, 0.12), transparent 28%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.56)) !important;
+}
+
+html body.light-mode.has-custom-extras.offers-page .offer-hero .overlay {
+    z-index: 0 !important;
+    background:
+        linear-gradient(180deg, rgba(15, 15, 15, 0.16), rgba(15, 15, 15, 0.76)),
+        rgba(0, 0, 0, 0.26) !important;
+}
+
+html body.light-mode.has-custom-extras.offers-page .offer-hero-shell {
+    position: relative !important;
+    z-index: 1 !important;
+    width: min(1180px, 100%) !important;
+    max-width: 1180px !important;
+    margin: 0 auto !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr) !important;
+    gap: 42px !important;
+    align-items: end !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+html body.light-mode.has-custom-extras.offers-page .offer-hero-panel {
+    align-self: end !important;
+    justify-self: stretch !important;
+    min-height: 0 !important;
+    padding: 30px !important;
+    background: linear-gradient(180deg, rgba(18, 18, 23, 0.82), rgba(12, 12, 16, 0.72)) !important;
+    border: 1px solid rgba(139, 92, 246, 0.32) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.36), 0 0 32px rgba(139, 92, 246, 0.14) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+}
+
+html body.light-mode.has-custom-extras.offers-page .offer-hero-panel span {
+    color: #8b5cf6 !important;
+    -webkit-text-fill-color: #8b5cf6 !important;
+}
+
+html body.light-mode.has-custom-extras.offers-page .offer-hero-panel strong,
+html body.light-mode.has-custom-extras.offers-page .offer-hero-panel p {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+@media (max-width: 980px) {
+    html body.light-mode.has-custom-extras.offers-page .offer-hero {
+        min-height: auto !important;
+        padding: 138px 24px 64px !important;
+    }
+
+    html body.light-mode.has-custom-extras.offers-page .offer-hero-shell {
+        grid-template-columns: 1fr !important;
+        gap: 28px !important;
+        align-items: start !important;
+    }
+}
+
+@media (max-width: 560px) {
+    html body.light-mode.has-custom-extras.offers-page .offer-hero {
+        padding: 124px 18px 50px !important;
+    }
+
+    html body.light-mode.has-custom-extras.offers-page .offer-hero-panel {
+        padding: 22px !important;
+    }
+}
+
+/* Offers light mode: keep space above the second section, trim the extra gap below */
+html body.light-mode.has-custom-extras.offers-page .offer-section {
+    margin-top: 0 !important;
+    padding-top: 56px !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+html body.light-mode.has-custom-extras.offers-page .offer-box.offer-box-premium {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+html body.light-mode.has-custom-extras.offers-page .offer-box-side {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+html body.light-mode.has-custom-extras.offers-page .offer-campaigns {
+    margin-top: 0 !important;
+    padding-top: 82px !important;
+}
+
+/* Offers Most Chosen: remove the outer wrapper box in both modes */
+html body.offers-page .popular-shell,
+html body.offers-page .popular-shell-rich,
+html body.light-mode.has-custom-extras.offers-page .popular-shell,
+html body.light-mode.has-custom-extras.offers-page .popular-shell-rich {
+    background: none !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+html body:not(.light-mode).offers-page .offer-popular .popular-shell,
+html body:not(.light-mode).offers-page .offer-popular .popular-shell-rich {
+    background: none !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    filter: none !important;
+}
+
+html body.offers-page .offer-popular .popular-shell::before,
+html body.offers-page .offer-popular .popular-shell::after,
+html body.offers-page .offer-popular .popular-shell-rich::before,
+html body.offers-page .offer-popular .popular-shell-rich::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* Offers light mode: make member prices solid violet */
+html body.light-mode.has-custom-extras.offers-page .member-card .price {
+    color: #7c3aed !important;
+    -webkit-text-fill-color: #7c3aed !important;
+    text-shadow: none !important;
+    opacity: 1 !important;
+}
+
+/* Offers Flash Window: richer countdown treatment */
+html body.offers-page .offer-timer {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+html body.offers-page .offer-timer .timer-box {
+    width: min(1120px, 100%) !important;
+    max-width: 1120px !important;
+    padding: 34px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+    gap: 18px !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(139, 92, 246, 0.34) !important;
+    background:
+        radial-gradient(circle at 20% 12%, rgba(139, 92, 246, 0.2), transparent 30%),
+        linear-gradient(135deg, rgba(18, 18, 28, 0.96), rgba(32, 22, 58, 0.9)) !important;
+    box-shadow: 0 28px 74px rgba(0, 0, 0, 0.34), 0 0 30px rgba(139, 92, 246, 0.16) !important;
+}
+
+html body.offers-page .offer-timer .timer-box::before,
+html body.offers-page .offer-timer .timer-box::after {
+    min-width: 180px;
+    min-height: 150px;
+    padding: 22px;
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+    border: 1px solid rgba(139, 92, 246, 0.38);
+    background: rgba(139, 92, 246, 0.14);
+    color: #ffffff;
+    -webkit-text-fill-color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.35;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+html body.offers-page .offer-timer .timer-box::before {
+    content: "20% OFF\A Live Now";
+    white-space: pre-line;
+}
+
+html body.offers-page .offer-timer .timer-box::after {
+    content: "Book Early\A Save More";
+    white-space: pre-line;
+}
+
+html body.offers-page .offer-timer .timer-unit {
+    min-width: 130px !important;
+    padding: 18px 16px !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(139, 92, 246, 0.34) !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+}
+
+html body.offers-page .offer-timer .timer-box span {
+    min-width: auto !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    color: #a78bfa !important;
+    -webkit-text-fill-color: #a78bfa !important;
+    font-size: clamp(2.7rem, 6vw, 4.7rem) !important;
+    line-height: 0.95 !important;
+    text-shadow: 0 0 24px rgba(139, 92, 246, 0.6) !important;
+}
+
+html body.offers-page .offer-timer .timer-unit small {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    opacity: 0.86 !important;
+}
+
+html body.offers-page .offer-timer .timer-box em {
+    align-self: center !important;
+    color: #8b5cf6 !important;
+    -webkit-text-fill-color: #8b5cf6 !important;
+    font-size: 42px !important;
+    font-weight: 800 !important;
+}
+
+html body.offers-page .offer-timer-note {
+    width: fit-content !important;
+    max-width: min(920px, 100%) !important;
+    margin-top: 26px !important;
+    padding: 14px 22px !important;
+    border-radius: 999px !important;
+    border: 1px solid rgba(139, 92, 246, 0.28) !important;
+    background: rgba(139, 92, 246, 0.1) !important;
+}
+
+html body.light-mode.has-custom-extras.offers-page .offer-timer .timer-box {
+    background:
+        radial-gradient(circle at 20% 12%, rgba(139, 92, 246, 0.14), transparent 30%),
+        linear-gradient(135deg, #ffffff, #f2efff) !important;
+    box-shadow: 0 28px 74px rgba(15, 23, 42, 0.1), 0 0 28px rgba(139, 92, 246, 0.1) !important;
+}
+
+html body.light-mode.has-custom-extras.offers-page .offer-timer .timer-box::before,
+html body.light-mode.has-custom-extras.offers-page .offer-timer .timer-box::after {
+    background: #7c3aed !important;
+    border-color: #7c3aed !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+html body.light-mode.has-custom-extras.offers-page .offer-timer .timer-unit {
+    background: #ffffff !important;
+    border-color: rgba(124, 58, 237, 0.28) !important;
+    box-shadow: 0 18px 38px rgba(124, 58, 237, 0.1) !important;
+}
+
+html body.light-mode.has-custom-extras.offers-page .offer-timer .timer-box span {
+    color: #7c3aed !important;
+    -webkit-text-fill-color: #7c3aed !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.has-custom-extras.offers-page .offer-timer .timer-unit small,
+html body.light-mode.has-custom-extras.offers-page .offer-timer .timer-box em,
+html body.light-mode.has-custom-extras.offers-page .offer-timer-note {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
+
+@media (max-width: 760px) {
+    html body.offers-page .offer-timer .timer-box {
+        padding: 22px !important;
+        gap: 12px !important;
+    }
+
+    html body.offers-page .offer-timer .timer-box::before,
+    html body.offers-page .offer-timer .timer-box::after {
+        min-width: 100% !important;
+        min-height: auto !important;
+        padding: 16px !important;
+    }
+
+    html body.offers-page .offer-timer .timer-unit {
+        min-width: 86px !important;
+        flex: 1 1 86px !important;
+    }
+
+    html body.offers-page .offer-timer .timer-box em {
+        display: none !important;
+    }
+}
+
+/* Login/Register: no floating theme or direction buttons */
+body.login-page-body .toggle-float,
+body.register-page-body .toggle-float {
+    display: none !important;
+}
+
+/* Light mode: keep step number badges like normal mode */
+body.light-mode .how-it-works .step span,
+body.light-mode.home-demo1 .how-it-works .step span {
+    background: linear-gradient(135deg, #8b5cf6, #a78bfa) !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+/* Footer logo: crop transparent logo padding so it reads at header scale */
+footer .footer-left,
+body.light-mode footer .footer-left,
+body:not(.light-mode) footer .footer-left {
+    align-items: flex-start !important;
+    text-align: left !important;
+}
+
+footer .footer-logo,
+body.light-mode footer .footer-logo,
+body:not(.light-mode) footer .footer-logo {
+    width: 312px !important;
+    max-width: 100% !important;
+    height: 96px !important;
+    margin: 0 0 22px 0 !important;
+    display: block !important;
+    overflow: hidden !important;
+}
+
+footer .footer-logo img,
+body.light-mode footer .footer-logo img,
+body:not(.light-mode) footer .footer-logo img {
+    width: 380px !important;
+    max-width: none !important;
+    max-height: none !important;
+    height: auto !important;
+    object-fit: contain !important;
+    object-position: left top !important;
+    transform: translate(-56px, -77px) !important;
+}
+
+footer .footer-logo:hover img,
+body.light-mode footer .footer-logo:hover img,
+body:not(.light-mode) footer .footer-logo:hover img {
+    transform: translate(-56px, -77px) scale(1.03) !important;
+}
+
+/* Site-wide button hover: turn black on mouse touch */
+html body :is(
+    .btn,
+    .login-btn,
+    .contact-btn,
+    .booking-confirm,
+    .search-submit,
+    .mode-select-btn,
+    .quick-booking-form button,
+    button[type="submit"]
+):is(:hover, :focus-visible) {
+    background: #050505 !important;
+    background-image: none !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border-color: #8b5cf6 !important;
+    box-shadow: 0 0 28px rgba(139, 92, 246, 0.52) !important;
+}
+
+html body :is(
+    .btn,
+    .login-btn,
+    .contact-btn,
+    .booking-confirm,
+    .search-submit,
+    .mode-select-btn,
+    .quick-booking-form button,
+    button[type="submit"]
+):is(:hover, :focus-visible)::before {
+    background: #050505 !important;
+    opacity: 1 !important;
+}
+
+/* Light mode header utility icons: violet hover instead of blue */
+html body.light-mode :is(.icon-btn, .dir-toggle, .nav-toggle):is(:hover, :focus-visible) {
+    color: #7c3aed !important;
+    -webkit-text-fill-color: #7c3aed !important;
+    border-color: rgba(124, 58, 237, 0.42) !important;
+    background: rgba(124, 58, 237, 0.1) !important;
+    box-shadow: 0 12px 28px rgba(124, 58, 237, 0.14) !important;
+}
+
+html body.light-mode :is(.icon-btn, .dir-toggle, .nav-toggle):is(:hover, :focus-visible) i {
+    color: #7c3aed !important;
+    -webkit-text-fill-color: #7c3aed !important;
+}
+
+/* Rooms featured cards: remove the extra box behind the two action buttons. */
+html body .rooms-showcase-pro .rooms-card-actions,
+html body.light-mode .rooms-showcase-pro .rooms-card-actions {
+    background: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+/* Contact normal mode: keep panel badge text readable on purple pills. */
+html body:not(.light-mode) .contact-section .contact-panel-label {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    background: linear-gradient(135deg, #8b5cf6, #a78bfa) !important;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.32) !important;
+}
+
+/* Rooms comparison cards: remove heading box and keep room tag compact. */
+html body .rooms-compare-card-top,
+html body .rooms-compare-card strong,
+html body.light-mode .rooms-compare-card-top,
+html body.light-mode .rooms-compare-card strong {
+    background: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+html body .rooms-compare-kicker,
+html body.light-mode .rooms-compare-kicker {
+    width: fit-content !important;
+    max-width: max-content !important;
+    min-width: 0 !important;
+    align-self: flex-start !important;
+    justify-self: start !important;
+    padding: 7px 16px !important;
+    line-height: 1 !important;
+}
+
+/* Site-wide numbered steps: show plain numbers without badge boxes. */
+html body :is(
+    .how-it-works .step > span,
+    .rooms-flow-grid article > span,
+    .home2-briefing-panel article > span,
+    .home2-night-grid article > span,
+    .news-briefing-list article > span,
+    .demo-feature-number,
+    .feature-count,
+    .story-step,
+    .achievement-step,
+    .benefit-label
+) {
+    width: auto !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 0 18px !important;
+    display: inline-block !important;
+    background: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    color: #8b5cf6 !important;
+    -webkit-text-fill-color: #8b5cf6 !important;
+    text-shadow: none !important;
+    line-height: 1 !important;
+}
+
+html body.light-mode :is(
+    .how-it-works .step > span,
+    .rooms-flow-grid article > span,
+    .home2-briefing-panel article > span,
+    .home2-night-grid article > span,
+    .news-briefing-list article > span,
+    .demo-feature-number,
+    .feature-count,
+    .story-step,
+    .achievement-step,
+    .benefit-label
+) {
+    background: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    color: #7c3aed !important;
+    -webkit-text-fill-color: #7c3aed !important;
+}
+
+/* Replacement news page layout */
+html body .news-hero {
+    min-height: clamp(620px, 84vh, 860px) !important;
+    padding: 150px 8% 96px !important;
+    display: flex !important;
+    align-items: center !important;
+    position: relative !important;
+    overflow: hidden !important;
+    isolation: isolate !important;
+    background:
+        linear-gradient(90deg, rgba(8, 8, 12, 0.92), rgba(15, 15, 15, 0.56), rgba(8, 8, 12, 0.9)),
+        url("../img/escape-showcase-side.jpg") center/cover no-repeat !important;
+}
+
+html body .news-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 28% 38%, rgba(139, 92, 246, 0.22), transparent 30%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.08), #0f0f0f 100%);
+}
+
+html body .news-hero-content {
+    width: min(900px, 100%);
+    position: relative;
+    z-index: 1;
+}
+
+html body .news-tag,
+html body .section-title span,
+html body .featured-content > span,
+html body .news-overlay span {
+    display: inline-flex;
+    width: fit-content;
+    margin-bottom: 18px;
+    color: #c4b5fd !important;
+    -webkit-text-fill-color: #c4b5fd !important;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+html body .news-hero h1 {
+    max-width: 960px;
+    margin: 0 0 24px;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    font-size: clamp(3rem, 6.5vw, 6.8rem);
+    line-height: 0.98;
+    text-shadow: 0 0 30px rgba(139, 92, 246, 0.55);
+}
+
+html body .news-hero p {
+    max-width: 760px;
+    margin: 0;
+    color: #e5e7eb !important;
+    -webkit-text-fill-color: #e5e7eb !important;
+    font-size: clamp(1rem, 1.5vw, 1.24rem);
+    line-height: 1.8;
+}
+
+html body .hero-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 34px;
+}
+
+html body .news-btn {
+    min-height: 54px;
+    padding: 0 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    border: 1px solid rgba(139, 92, 246, 0.68);
+    background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    box-shadow: 0 18px 42px rgba(139, 92, 246, 0.3);
+}
+
+html body .news-btn.secondary-btn {
+    background: rgba(15, 15, 15, 0.7);
+    color: #c4b5fd !important;
+    -webkit-text-fill-color: #c4b5fd !important;
+}
+
+html body .news-btn:hover,
+html body .news-btn:focus-visible {
+    background: #050505 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    box-shadow: 0 0 28px rgba(139, 92, 246, 0.52);
+}
+
+html body :is(.featured-news, .latest-news, .news-stats, .news-cta) {
+    padding: 96px 8% !important;
+    background:
+        radial-gradient(circle at 88% 0%, rgba(139, 92, 246, 0.1), transparent 30%),
+        #0f0f0f !important;
+}
+
+html body .featured-news {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+    gap: 42px;
+    align-items: center;
+}
+
+html body .featured-image,
+html body .news-card {
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid rgba(139, 92, 246, 0.26);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+}
+
+html body .featured-image img,
+html body .news-card img {
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    display: block;
+    object-fit: cover;
+}
+
+html body .featured-content h2,
+html body .section-title h2,
+html body .news-cta h2 {
+    margin: 0 0 18px;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    font-size: clamp(2.2rem, 4.8vw, 4.8rem);
+    line-height: 1.05;
+}
+
+html body .featured-content p,
+html body .news-cta p {
+    max-width: 680px;
+    margin: 0 0 28px;
+    color: #cbd5e1 !important;
+    -webkit-text-fill-color: #cbd5e1 !important;
+    line-height: 1.8;
+}
+
+html body .section-title {
+    max-width: 840px;
+    margin: 0 auto 42px;
+    text-align: center;
+}
+
+html body .news-grid,
+html body .news-stats {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px;
+}
+
+html body .news-card {
+    position: relative;
+    min-height: 420px;
+}
+
+html body .news-overlay {
+    position: absolute;
+    inset: auto 0 0;
+    padding: 32px;
+    background: linear-gradient(180deg, transparent, rgba(8, 8, 12, 0.94));
+}
+
+html body .news-overlay h3 {
+    max-width: 560px;
+    margin: 0;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    font-size: clamp(1.5rem, 2.5vw, 2.35rem);
+    line-height: 1.18;
+}
+
+html body .news-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+html body .stat-box {
+    padding: 34px 28px;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid rgba(139, 92, 246, 0.26);
+    background: rgba(255, 255, 255, 0.055);
+    box-shadow: 0 18px 52px rgba(0, 0, 0, 0.28);
+}
+
+html body .stat-box h2 {
+    margin: 0 0 10px;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    font-size: clamp(2.2rem, 4vw, 4rem);
+}
+
+html body .stat-box p {
+    margin: 0;
+    color: #cbd5e1 !important;
+    -webkit-text-fill-color: #cbd5e1 !important;
+}
+
+html body .news-cta {
+    text-align: center;
+}
+
+html body .news-cta p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body.light-mode :is(.featured-news, .latest-news, .news-stats, .news-cta) {
+    background:
+        radial-gradient(circle at 88% 0%, rgba(139, 92, 246, 0.08), transparent 30%),
+        #f8fafc !important;
+}
+
+body.light-mode :is(.featured-content h2, .section-title h2, .news-cta h2, .stat-box h2) {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
+
+body.light-mode :is(.featured-content p, .news-cta p, .stat-box p) {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+}
+
+body.light-mode .stat-box {
+    background: #ffffff;
+    border-color: rgba(139, 92, 246, 0.18);
+    box-shadow: 0 18px 44px rgba(15, 23, 42, 0.08);
+}
+
+@media (max-width: 900px) {
+    html body .featured-news,
+    html body .news-grid,
+    html body .news-stats {
+        grid-template-columns: 1fr;
+    }
+
+    html body .news-hero {
+        padding: 132px 24px 72px !important;
+    }
+}
+
+@media (max-width: 560px) {
+    html body :is(.featured-news, .latest-news, .news-stats, .news-cta) {
+        padding: 72px 20px !important;
+    }
+
+    html body .hero-btns,
+    html body .news-btn {
+        width: 100%;
+    }
+}
