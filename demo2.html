@@ -46,6 +46,7 @@
 
 <!-- HERO SECTION -->
 <section class="hero-dark">
+    <img class="hero-dark-bg" src="./img/dark-bg.jpg" alt="Dark escape room hallway">
     <div class="overlay"></div>
 
     <div class="hero-content">
@@ -85,7 +86,7 @@
 
     <div class="home2-briefing-panel">
         <article>
-            <span>01</span>
+            <span>1</span>
             <div class="briefing-visual"><i class="fas fa-search"></i></div>
             <h3>Search The Dark</h3>
             <p>Explore props, shadows, hidden notes to uncover the first thread.</p>
@@ -95,7 +96,7 @@
             </ul>
         </article>
         <article>
-            <span>02</span>
+            <span>2</span>
             <div class="briefing-visual"><i class="fas fa-project-diagram"></i></div>
             <h3>Decode The Pattern</h3>
             <p>Use logic and teamwork to open each layer of the mystery.</p>
@@ -105,7 +106,7 @@
             </ul>
         </article>
         <article>
-            <span>03</span>
+            <span>3</span>
             <div class="briefing-visual"><i class="fas fa-door-open"></i></div>
             <h3>Escape The Lockdown</h3>
             <p>Make the final call before the timer ends and the room turns against you.</p>
@@ -235,7 +236,7 @@
                 </article>
                 <article>
                     <strong>Layered</strong>
-                    <span>Clues that connect across sound, space, and hidden objects.</span>
+                    <span>Clues that connect across sound, space,hidden objects.</span>
                 </article>
                 <article>
                     <strong>Final Push</strong>
@@ -254,17 +255,17 @@
 
     <div class="home2-night-grid">
         <article>
-            <span>01</span>
+            <span>1</span>
             <h3>Reactive Atmosphere</h3>
             <p>Lighting and sound build tension gradually so your team feels the room changing as you progress.</p>
         </article>
         <article>
-            <span>02</span>
+            <span>2</span>
             <h3>Clue Chains</h3>
             <p>What looks small at first can become the key to the entire final sequence later in the game.</p>
         </article>
         <article>
-            <span>03</span>
+            <span>3</span>
             <h3>Role-Based Play</h3>
             <p>Teams do best when they split tasks, call out discoveries fast, and move together under pressure.</p>
         </article>
@@ -336,6 +337,23 @@
                 Experience real fear with live actors playing roles inside the rooms.
                 Unexpected interactions will keep you on edge!
             </p>
+            <div class="actor-cues">
+                <article>
+                    <span>1</span>
+                    <strong>Story Roles</strong>
+                    <p>Actors guide tension through clues, warnings, and sudden room moments.</p>
+                </article>
+                <article>
+                    <span>2</span>
+                    <strong>Surprise Entries</strong>
+                    <p>Timed appearances happen when your team unlocks key discoveries.</p>
+                </article>
+                <article>
+                    <span>3</span>
+                    <strong>Safe Scares</strong>
+                    <p>Every interaction is controlled so the fear stays thrilling, not chaotic.</p>
+                </article>
+            </div>
         </div>
 
         <div class="actors-image">
@@ -345,9 +363,29 @@
 </section>
 
 <section class="countdown demo2-premium-section demo2-countdown">
-    <p class="eyebrow">Final Minute</p>
-    <h2>Your Time Is Running Out...</h2>
-    <div id="timer" data-countdown-seconds="3600">60:00</div>
+    <div class="countdown-copy">
+        <p class="eyebrow">Final Minute</p>
+        <h2>Your Time Is Running Out...</h2>
+        <p>
+            The last door only opens when the team stays calm. Watch the clock,
+            confirm every clue, and make one final call before lockdown.
+        </p>
+        <div class="countdown-signals">
+            <span><i class="fas fa-lock"></i> Lockdown Armed</span>
+            <span><i class="fas fa-wave-square"></i> Audio Cues Active</span>
+            <span><i class="fas fa-users"></i> Team Sync Required</span>
+        </div>
+    </div>
+
+    <div class="countdown-panel">
+        <span class="countdown-label">Escape Clock</span>
+        <div id="timer" data-countdown-seconds="3600">60:00</div>
+        <div class="countdown-meter" aria-hidden="true"><span></span></div>
+        <div class="countdown-status">
+            <strong>Final Sequence</strong>
+            <span>3 clues left</span>
+        </div>
+    </div>
 </section>
 
 <section class="home2-testimonials demo2-premium-section reveal-section">

@@ -12,18 +12,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/site-cyberpunk.css">
-<style>
-body.light-mode .editorial-hero.blog-hero .eyebrow,
-body.light-mode .editorial-hero.blog-hero .editorial-hero-copy h1,
-body.light-mode .editorial-hero.blog-hero .editorial-hero-copy p {
-    color: #6d28d9 !important;
-    -webkit-text-fill-color: #6d28d9 !important;
-    -webkit-text-stroke: 0 transparent !important;
-    text-shadow: none !important;
-    filter: none !important;
-    opacity: 1 !important;
-}
-</style>
 </head>
 
 <body class="has-custom-extras">
@@ -58,6 +46,7 @@ body.light-mode .editorial-hero.blog-hero .editorial-hero-copy p {
 </header>
 
 <section class="editorial-hero blog-hero">
+    <img class="inner-hero-bg" src="./img/escape-showcase-side.jpg" alt="Escape room interior">
     <div class="overlay"></div>
     <div class="editorial-hero-shell">
         <div class="editorial-hero-copy">
@@ -93,7 +82,7 @@ body.light-mode .editorial-hero.blog-hero .editorial-hero-copy p {
         <div class="blog-featured-copy">
             <span class="blog-tag">Featured Story</span>
             <span class="blog-date">April 2026</span>
-            <h2>New midnight horror route opens with darker beats, smarter clue pacing, and fuller team suspense.</h2>
+            <h2>New midnight horror route opens with darker beats, smarter clue,team suspense.</h2>
             <p>
                 The newest MystIQ update was designed to feel more cinematic from the opening briefing to the final reveal,
                 giving night-session players a sharper, richer escape-room journey.
@@ -123,14 +112,6 @@ body.light-mode .editorial-hero.blog-hero .editorial-hero-copy p {
             <span>Peak-slot occupancy across Fridays and Saturdays</span>
         </div>
     </aside>
-</section>
-
-<section class="blog-categories">
-    <span>Room Launches</span>
-    <span>Player Picks</span>
-    <span>Offers</span>
-    <span>Events</span>
-    <span>Behind The Scenes</span>
 </section>
 
 <section class="blog-grid-section">
@@ -181,12 +162,12 @@ body.light-mode .editorial-hero.blog-hero .editorial-hero-copy p {
     </div>
     <div class="blog-editorial-stats">
         <article>
-            <strong>12+</strong>
-            <span>major content drops this year</span>
+            <strong>12+ Rooms</strong>
+            <span>major content drops this year including new rooms and themes</span>
         </article>
         <article>
-            <strong>Top Pick</strong>
-            <span>night horror route with finale upgrade</span>
+            <strong>Top Pick upgrade</strong>
+            <span>night horror route with finale upgrade to dark room</span>
         </article>
         <article>
             <strong>Fast Rise</strong>
@@ -203,21 +184,21 @@ body.light-mode .editorial-hero.blog-hero .editorial-hero-copy p {
 
     <div class="blog-list">
         <article>
-            <span>01</span>
+            <span>1</span>
             <div>
                 <h3>Weekend prime-time slots are filling faster than expected.</h3>
                 <p>Friday and Saturday sessions after 7 PM are now the first to close for premium routes.</p>
             </div>
         </article>
         <article>
-            <span>02</span>
+            <span>2</span>
             <div>
                 <h3>Birthday groups are choosing Pro packages for better balance.</h3>
                 <p>The mix of value, timing, and room quality is making Pro the easiest recommendation.</p>
             </div>
         </article>
         <article>
-            <span>03</span>
+            <span>3</span>
             <div>
                 <h3>Story-led rooms are outperforming standard puzzle-first formats.</h3>
                 <p>Visitors want stronger atmosphere and more memorable finale moments, not just clues alone.</p>
@@ -293,9 +274,9 @@ body.light-mode .editorial-hero.blog-hero .editorial-hero-copy p {
         const isLight = document.body.classList.contains("light-mode");
         document.querySelectorAll(targets).forEach((element) => {
             if (isLight) {
-                element.style.setProperty("color", "#6d28d9", "important");
-                element.style.setProperty("-webkit-text-fill-color", "#6d28d9", "important");
-                element.style.setProperty("text-shadow", "none", "important");
+                element.style.setProperty("color", "#ffffff", "important");
+                element.style.setProperty("-webkit-text-fill-color", "#ffffff", "important");
+                element.style.setProperty("text-shadow", "0 0 24px rgba(139, 92, 246, 0.45), 0 8px 34px rgba(0, 0, 0, 0.45)", "important");
                 element.style.setProperty("filter", "none", "important");
                 element.style.setProperty("opacity", "1", "important");
             } else {

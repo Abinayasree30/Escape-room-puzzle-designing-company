@@ -12,18 +12,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/site-cyberpunk.css">
-<style>
-body.light-mode .offer-hero .eyebrow,
-body.light-mode .offer-hero .hero-text h1,
-body.light-mode .offer-hero .hero-text > p {
-    color: #6d28d9 !important;
-    -webkit-text-fill-color: #6d28d9 !important;
-    -webkit-text-stroke: 0 transparent !important;
-    text-shadow: none !important;
-    filter: none !important;
-    opacity: 1 !important;
-}
-</style>
 </head>
 
 <body class="has-custom-extras offers-page">
@@ -58,6 +46,7 @@ body.light-mode .offer-hero .hero-text > p {
 </header>
 
 <section class="offer-hero">
+    <img class="inner-hero-bg" src="./img/escape-showcase-side.jpg" alt="Escape room interior">
     <div class="overlay"></div>
     <div class="offer-hero-shell">
         <div class="hero-text">
@@ -229,7 +218,7 @@ body.light-mode .offer-hero .hero-text > p {
         <article class="achievement">
             <img src="./img/room1.jpg" alt="Play multiple escape games reward">
             <div class="achievement-copy">
-                <span class="achievement-step">01</span>
+                <span class="achievement-step">1</span>
                 <strong>Play 3 Games</strong>
                 <p>Build loyalty fast and unlock a free hint on your next mission at the same time.</p>
             </div>
@@ -237,7 +226,7 @@ body.light-mode .offer-hero .hero-text > p {
         <article class="achievement">
             <img src="./img/room2.jpg" alt="Winning reward for escape room players">
             <div class="achievement-copy">
-                <span class="achievement-step">02</span>
+                <span class="achievement-step">2</span>
                 <strong>Win Once</strong>
                 <p>Successful teams unlock 10% off selected return bookings.</p>
             </div>
@@ -245,7 +234,7 @@ body.light-mode .offer-hero .hero-text > p {
         <article class="achievement">
             <img src="./img/news2.jpg" alt="Group reward for bringing friends">
             <div class="achievement-copy">
-                <span class="achievement-step">03</span>
+                <span class="achievement-step">3</span>
                 <strong> 5 Friends</strong>
                 <p>Group organizers unlock bonus access perks and smoother entry.</p>
             </div>
@@ -418,7 +407,7 @@ body.light-mode .offer-hero .hero-text > p {
         <article class="benefit benefit-feature">
             <img src="./img/demo2-gallery-main.jpg" alt="Plan ahead and save more offer benefit">
             <div class="benefit-copy">
-                <span class="benefit-label">01</span>
+                <span class="benefit-label">1</span>
                 <strong>Plan Ahead & Save More</strong>
                 <p>Early planners unlock cleaner pricing, calmer booking, and better access to premium slots.</p>
             </div>
@@ -426,7 +415,7 @@ body.light-mode .offer-hero .hero-text > p {
         <article class="benefit benefit-feature">
             <img src="./img/news2.jpg" alt="Bring teams without overpaying offer benefit">
             <div class="benefit-copy">
-                <span class="benefit-label">02</span>
+                <span class="benefit-label">2</span>
                 <strong>Bring Teams Without Overpaying</strong>
                 <p>Group offers reduce friction for bigger bookings and make team nights easier to organize.</p>
             </div>
@@ -434,7 +423,7 @@ body.light-mode .offer-hero .hero-text > p {
         <article class="benefit benefit-feature">
             <img src="./img/demo1-gallery-detail.jpg" alt="Upgrade into faster access offer benefit">
             <div class="benefit-copy">
-                <span class="benefit-label">03</span>
+                <span class="benefit-label">3</span>
                 <strong>Upgrade Into Faster Access</strong>
                 <p>Premium bundles improve entry flow, clue support, and overall room momentum.</p>
             </div>
@@ -503,9 +492,9 @@ body.light-mode .offer-hero .hero-text > p {
         const isLight = document.body.classList.contains("light-mode");
         document.querySelectorAll(targets).forEach((element) => {
             if (isLight) {
-                element.style.setProperty("color", "#6d28d9", "important");
-                element.style.setProperty("-webkit-text-fill-color", "#6d28d9", "important");
-                element.style.setProperty("text-shadow", "none", "important");
+                element.style.setProperty("color", "#ffffff", "important");
+                element.style.setProperty("-webkit-text-fill-color", "#ffffff", "important");
+                element.style.setProperty("text-shadow", "0 0 24px rgba(139, 92, 246, 0.45), 0 8px 34px rgba(0, 0, 0, 0.45)", "important");
                 element.style.setProperty("filter", "none", "important");
                 element.style.setProperty("opacity", "1", "important");
             } else {
