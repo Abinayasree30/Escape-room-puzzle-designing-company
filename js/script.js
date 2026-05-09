@@ -1614,9 +1614,11 @@ function initCountdownTimer() {
 
 initCountdownTimer();
 
-function togglePasswordVisibility() {
-    const passwordInput = document.getElementById("loginPassword");
-    const passwordIcon = document.querySelector(".password-toggle i");
+function togglePasswordVisibility(inputId = "loginPassword", toggleButton = null) {
+    const passwordInput = document.getElementById(inputId);
+    const passwordIcon = toggleButton
+        ? toggleButton.querySelector("i")
+        : document.querySelector(".password-toggle i");
 
     if (!passwordInput || !passwordIcon) {
         return;
@@ -1625,6 +1627,10 @@ function togglePasswordVisibility() {
     const isPassword = passwordInput.type === "password";
     passwordInput.type = isPassword ? "text" : "password";
     passwordIcon.className = isPassword ? "fas fa-eye-slash" : "fas fa-eye";
+
+    if (toggleButton) {
+        toggleButton.setAttribute("aria-label", isPassword ? "Hide password" : "Show password");
+    }
 }
 
 function initCyberpunkHeaderState() {
@@ -1644,6 +1650,10 @@ function initHomeCyberpunkEffects() {
     if (!document.body.classList.contains("home-demo1")) {
         return;
     }
+
+    document.querySelectorAll(".home-faq-item").forEach((item) => {
+        item.classList.remove("active");
+    });
 
     document.querySelectorAll(".home-faq-item button").forEach((button) => {
         button.addEventListener("click", () => {
