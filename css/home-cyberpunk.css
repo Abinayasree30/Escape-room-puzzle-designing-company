@@ -1862,3 +1862,250 @@ html body.light-mode.home-demo1 .step > span {
     text-shadow: none !important;
     line-height: 1 !important;
 }
+
+/* Home 1 final sitewide polish mirror */
+html body.home-demo1 .home-section-head,
+html body.home-demo1 .section-heading,
+html body.home-demo1 .section-title {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+
+html body.home-demo1 :is(.home-section-head h2, .section-heading h2, .section-title h2) {
+    max-width: 920px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    text-wrap: balance;
+}
+
+html body.home-demo1 :is(.home-section-head p, .section-heading p, .section-title p) {
+    max-width: 720px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+}
+
+@media (min-width: 1025px) {
+    html body.home-demo1 .header .nav > a,
+    html body.home-demo1 .header .nav-item > a,
+    html body.home-demo1 .header .nav > a:hover,
+    html body.home-demo1 .header .nav-item > a:hover,
+    html body.home-demo1 .header .nav > a.active,
+    html body.home-demo1 .header .nav-item > a.active {
+        background: transparent !important;
+        background-color: transparent !important;
+        background-image: none !important;
+        border-color: transparent !important;
+        box-shadow: none !important;
+        outline: 0 !important;
+    }
+}
+
+html body.light-mode.home-demo1 .header .nav [data-menu="home"],
+html body.light-mode.home-demo1 .header .nav [data-menu="home"]:hover,
+html body.light-mode.home-demo1 .header .nav [data-menu="home"]:focus,
+html body.light-mode.home-demo1 .header .nav [data-menu="home"]:focus-visible,
+html body.light-mode.home-demo1 .header .nav [data-menu="home"].active {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+    outline: 0 !important;
+}
+
+html body.home-demo1 main,
+html body.light-mode.home-demo1 main {
+    background: #0f0f0f !important;
+}
+
+html body.home-demo1 .hero,
+html body.light-mode.home-demo1 .hero {
+    margin-top: -2px !important;
+    border-top: 0 !important;
+    box-shadow: none !important;
+}
+
+html body.home-demo1 .hero-bg,
+html body.home-demo1 .hero-bg-img,
+html body.light-mode.home-demo1 .hero-bg,
+html body.light-mode.home-demo1 .hero-bg-img {
+    top: -2px !important;
+    height: calc(100% + 2px) !important;
+}
+
+html body.home-demo1 .hero .overlay,
+html body.light-mode.home-demo1 .hero .overlay {
+    top: -2px !important;
+    height: calc(100% + 2px) !important;
+}
+
+html body.home-demo1 :is(.cta, .home-cta, .final-cta, .site-cta-band) {
+    position: relative !important;
+    overflow: hidden !important;
+    isolation: isolate !important;
+    border: 1px solid rgba(139, 92, 246, 0.26) !important;
+    background:
+        linear-gradient(135deg, rgba(5, 8, 18, 0.92), rgba(17, 10, 28, 0.78)),
+        url("../img/escape-showcase-side.jpg") center/cover no-repeat !important;
+    box-shadow: 0 28px 76px rgba(0, 0, 0, 0.34) !important;
+}
+
+html body.home-demo1 :is(.cta, .home-cta, .final-cta, .site-cta-band)::before,
+html body.home-demo1 :is(.cta, .home-cta, .final-cta, .site-cta-band)::after {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    pointer-events: none !important;
+}
+
+html body.home-demo1 :is(.cta, .home-cta, .final-cta, .site-cta-band)::before {
+    z-index: 0 !important;
+    background: url("../img/escape-showcase-side.jpg") center/cover no-repeat !important;
+    opacity: 1 !important;
+}
+
+html body.home-demo1 :is(.cta, .home-cta, .final-cta, .site-cta-band)::after {
+    z-index: 1 !important;
+    background: linear-gradient(135deg, rgba(5, 8, 18, 0.9), rgba(17, 10, 28, 0.74)) !important;
+}
+
+html body.home-demo1 :is(.cta, .home-cta, .final-cta, .site-cta-band) > * {
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+html body.light-mode.home-demo1 :is(.cta, .home-cta, .final-cta, .site-cta-band) {
+    background:
+        linear-gradient(135deg, rgba(7, 12, 24, 0.86), rgba(88, 48, 140, 0.62)),
+        url("../img/escape-showcase-side.jpg") center/cover no-repeat !important;
+}
+
+html body.light-mode.home-demo1 :is(.cta, .home-cta, .final-cta, .site-cta-band)::before {
+    background: url("../img/escape-showcase-side.jpg") center/cover no-repeat !important;
+    opacity: 1 !important;
+}
+
+html body.light-mode.home-demo1 :is(.cta, .home-cta, .final-cta, .site-cta-band)::after {
+    background: linear-gradient(135deg, rgba(7, 12, 24, 0.82), rgba(88, 48, 140, 0.58)) !important;
+}
+
+html body.home-demo1 :is(.cta, .home-cta, .final-cta, .site-cta-band) :is(h2, h3, p, .eyebrow) {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    text-shadow: 0 10px 28px rgba(0, 0, 0, 0.36) !important;
+}
+
+/* Absolute final nav fix for Home 1 light mode. */
+html body.light-mode.home-demo1 .header .nav .nav-item > a[data-menu="home"],
+html body.light-mode.home-demo1 .header .nav .nav-item > a[data-menu="home"]:hover,
+html body.light-mode.home-demo1 .header .nav .nav-item > a[data-menu="home"]:focus,
+html body.light-mode.home-demo1 .header .nav .nav-item > a[data-menu="home"]:focus-visible,
+html body.light-mode.home-demo1 .header .nav .nav-item > a[data-menu="home"].active,
+html body.light-mode.home-demo1 .header .nav .nav-item:hover > a[data-menu="home"],
+html body.light-mode.home-demo1 .header .nav .nav-item.open > a[data-menu="home"] {
+    padding: 0 !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    outline: 0 !important;
+    filter: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.home-demo1 .header .nav .nav-item > a[data-menu="home"]::before,
+html body.light-mode.home-demo1 .header .nav .nav-item > a[data-menu="home"]:hover::before,
+html body.light-mode.home-demo1 .header .nav .nav-item > a[data-menu="home"]:focus::before,
+html body.light-mode.home-demo1 .header .nav .nav-item > a[data-menu="home"]:focus-visible::before,
+html body.light-mode.home-demo1 .header .nav .nav-item > a[data-menu="home"].active::before {
+    content: none !important;
+    display: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+html body.light-mode.home-demo1 .header .nav .nav-item > a[data-menu="home"]::after,
+html body.light-mode.home-demo1 .header .nav .nav-item > a[data-menu="home"]:hover::after,
+html body.light-mode.home-demo1 .header .nav .nav-item > a[data-menu="home"]:focus::after,
+html body.light-mode.home-demo1 .header .nav .nav-item > a[data-menu="home"]:focus-visible::after,
+html body.light-mode.home-demo1 .header .nav .nav-item > a[data-menu="home"].active::after,
+html body.light-mode.home-demo1 .header .nav .nav-item:hover > a[data-menu="home"]::after,
+html body.light-mode.home-demo1 .header .nav .nav-item.open > a[data-menu="home"]::after {
+    height: 2px !important;
+    background: #8b5cf6 !important;
+    box-shadow: none !important;
+    filter: none !important;
+}
+
+html body.light-mode.home-demo1 .header .nav .nav-item > a[data-menu="home"] *,
+html body.light-mode.home-demo1 .header .nav .nav-item > a[data-menu="home"]:hover *,
+html body.light-mode.home-demo1 .header .nav .nav-item > a[data-menu="home"].active * {
+    background: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+}
+
+html body.light-mode.home-demo1 .header .nav .nav-item:has(> a[data-menu="home"]),
+html body.light-mode.home-demo1 .header .nav .nav-item:has(> a[data-menu="home"]):hover,
+html body.light-mode.home-demo1 .header .nav .nav-item.open:has(> a[data-menu="home"]) {
+    position: relative !important;
+    padding: 0 !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    filter: none !important;
+    outline: 0 !important;
+}
+
+html body.light-mode.home-demo1 .header .nav .nav-item:has(> a[data-menu="home"])::before {
+    content: none !important;
+    display: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+html body.light-mode.home-demo1 .header .nav .nav-item:has(> a[data-menu="home"]) > a[data-menu="home"]::selection,
+html body.light-mode.home-demo1 .header .nav .nav-item:has(> a[data-menu="home"]) > a[data-menu="home"] *::selection {
+    background: transparent !important;
+    color: #7c3aed !important;
+}
+
+/* Home feature cards: keep the first icon from stretching into a line. */
+html body.home-demo1 .feature-icon-grid article:first-child i,
+html body.light-mode.home-demo1 .feature-icon-grid article:first-child i {
+    width: 34px !important;
+    max-width: 34px !important;
+    height: 34px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    line-height: 1 !important;
+}
+
+html body.home-demo1 .feature-icon-grid article:first-child i::before,
+html body.light-mode.home-demo1 .feature-icon-grid article:first-child i::before {
+    display: inline-block !important;
+    width: auto !important;
+    max-width: 34px !important;
+    overflow: hidden !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
