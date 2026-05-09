@@ -31,8 +31,18 @@
                 <input type="text" placeholder="Full name" required>
                 <input type="email" placeholder="Email address" required>
                 <input type="tel" placeholder="Phone number" required>
-                <input type="password" placeholder="Create password" required>
-                <input type="password" placeholder="Confirm password" required>
+                <div class="password-field">
+                    <input type="password" id="registerPassword" placeholder="Create password" required>
+                    <button type="button" class="password-toggle" aria-label="Show create password" onclick="togglePasswordVisibility('registerPassword', this)">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </div>
+                <div class="password-field">
+                    <input type="password" id="registerConfirmPassword" placeholder="Confirm password" required>
+                    <button type="button" class="password-toggle" aria-label="Show confirm password" onclick="togglePasswordVisibility('registerConfirmPassword', this)">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </div>
                 <label class="register-consent" for="registerConsent">
                     <input type="checkbox" id="registerConsent" required>
                     <span>I agree to receive booking updates and member offer alerts.</span>
