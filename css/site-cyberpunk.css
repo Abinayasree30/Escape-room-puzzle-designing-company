@@ -7156,3 +7156,272 @@ body {
         overflow-wrap: anywhere !important;
     }
 }
+
+/* Final priority: keep the header logo the same on every shared-header page. */
+html body .header .logo {
+    width: min(220px, 42vw) !important;
+    max-width: min(220px, 42vw) !important;
+    flex: 0 0 auto !important;
+    overflow: hidden !important;
+}
+
+html body .header .logo-link {
+    width: 100% !important;
+}
+
+html body .header .logo img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    transform: none !important;
+}
+
+/* Offers hero secondary CTA needs a visible box outline over the image. */
+html body .offer-hero .offer-hero-actions .btn.secondary,
+html body.light-mode .offer-hero .offer-hero-actions .btn.secondary {
+    border: 2px solid rgba(139, 92, 246, 0.9) !important;
+    background: rgba(15, 15, 15, 0.62) !important;
+    color: #b875ff !important;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 14px 32px rgba(139, 92, 246, 0.22) !important;
+}
+
+html body .offer-hero .offer-hero-actions .btn.secondary:hover,
+html body.light-mode .offer-hero .offer-hero-actions .btn.secondary:hover {
+    background: rgba(139, 92, 246, 0.18) !important;
+    border-color: #b875ff !important;
+    color: #ffffff !important;
+}
+
+/* Offers featured deal: keep text and CTA away from the card edges. */
+html body.light-mode.has-custom-extras.offers-page .offer-box.offer-box-premium {
+    padding: 34px 36px !important;
+    gap: 42px !important;
+    border: 1px solid rgba(139, 92, 246, 0.14) !important;
+    border-radius: 18px !important;
+    background: rgba(255, 255, 255, 0.78) !important;
+    box-shadow: 0 22px 60px rgba(15, 23, 42, 0.08) !important;
+}
+
+html body.light-mode.has-custom-extras.offers-page .offer-box-copy {
+    padding: 0 !important;
+    min-width: 0 !important;
+}
+
+html body.light-mode.has-custom-extras.offers-page .offer-box-actions {
+    padding-right: 10px !important;
+    gap: 24px !important;
+}
+
+html body.light-mode.has-custom-extras.offers-page .offer-box-side {
+    min-width: 0 !important;
+}
+
+@media (max-width: 768px) {
+    html body.light-mode.has-custom-extras.offers-page .offer-box.offer-box-premium {
+        padding: 26px 20px !important;
+        gap: 28px !important;
+    }
+
+    html body.light-mode.has-custom-extras.offers-page .offer-box-actions {
+        padding-right: 0 !important;
+    }
+}
+
+/* Rooms CTA mobile centering */
+@media (max-width: 768px) {
+    html body .rooms-cta-shell {
+        grid-template-columns: 1fr !important;
+        justify-items: center !important;
+        text-align: center !important;
+    }
+
+    html body .rooms-cta-shell > div:first-child,
+    html body .rooms-cta-shell p,
+    html body .rooms-cta-shell h2 {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+
+    html body .rooms-cta-actions {
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    html body .rooms-cta-actions .btn {
+        max-width: 260px !important;
+    }
+}
+
+/* News CTA mobile centering */
+@media (max-width: 768px) {
+    html body .news-cta-pro.blog-cta-pro {
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+
+    html body .news-cta-pro.blog-cta-pro > div:first-child,
+    html body .news-cta-pro.blog-cta-pro h2,
+    html body .news-cta-pro.blog-cta-pro .eyebrow {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+
+    html body .news-cta-actions {
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    html body .news-cta-actions .btn {
+        max-width: 260px !important;
+    }
+}
+
+/* Offers mobile spacing cleanup */
+@media (max-width: 768px) {
+    html body.offers-page .offer-hero {
+        min-height: auto !important;
+        padding: 96px 16px 28px !important;
+    }
+
+    html body.offers-page .offer-hero-shell {
+        gap: 18px !important;
+    }
+
+    html body.offers-page :is(
+        .offer-section,
+        .offer-campaigns,
+        .offer-timer,
+        .promo-reveal,
+        .mystery-offer,
+        .offer-achievement,
+        .offer-popular,
+        .offer-preview,
+        .offer-story-panel,
+        .group-section,
+        .member-section,
+        .group-benefits
+    ) {
+        padding-top: 42px !important;
+        padding-bottom: 42px !important;
+    }
+
+    html body.offers-page .offers-custom-head {
+        margin-bottom: 22px !important;
+    }
+}
+
+/* About mobile overlay/card containment */
+@media (max-width: 768px) {
+    html body .about-features {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    html body .about-features::before {
+        inset: 12px !important;
+        border-radius: 22px !important;
+    }
+
+    html body .about-features-intro,
+    html body .about-features-grid,
+    html body .about-feature-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    html body .about-features-intro {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+
+    html body .about-features :is(h2, h3, p, span) {
+        max-width: 100% !important;
+        overflow-wrap: anywhere !important;
+        word-break: normal !important;
+    }
+
+    html body .about-feature-card {
+        overflow: hidden !important;
+    }
+}
+
+/* Tablet grids: center a single orphan card/image in the last row. */
+@media (min-width: 721px) and (max-width: 1024px) {
+    html body :is(
+        .team-grid .team-card,
+        .fear-grid .fear-card,
+        .exp-grid .exp-card,
+        .room-grid .room-card,
+        .achievement-grid .achievement,
+        .benefit-grid-rich .benefit,
+        .home2-evidence-grid > *,
+        .home2-night-grid article,
+        .home2-testimonial-grid article,
+        .rooms-flow-grid > *,
+        .rooms-pro-grid > *,
+        .offer-campaign-grid > *,
+        .blog-grid > *
+    ):last-child:nth-child(odd) {
+        grid-column: 1 / -1 !important;
+        width: calc((100% - 24px) / 2) !important;
+        max-width: 100% !important;
+        justify-self: center !important;
+    }
+}
+
+/* Tablet CTA centering for Rooms and News pages */
+@media (min-width: 721px) and (max-width: 1024px) {
+    html body .rooms-cta-shell,
+    html body .news-cta-pro.blog-cta-pro {
+        grid-template-columns: 1fr !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        justify-items: center !important;
+        text-align: center !important;
+    }
+
+    html body .rooms-cta-shell > div:first-child,
+    html body .news-cta-pro.blog-cta-pro > div:first-child {
+        width: 100% !important;
+        max-width: 760px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+
+    html body .rooms-cta-shell :is(.eyebrow, h2, p),
+    html body .news-cta-pro.blog-cta-pro :is(.eyebrow, h2, p) {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+
+    html body .rooms-cta-actions,
+    html body .news-cta-actions {
+        width: min(100%, 640px) !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        justify-items: center !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 12px !important;
+    }
+
+    html body .rooms-cta-actions .btn,
+    html body .news-cta-actions .btn {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+}

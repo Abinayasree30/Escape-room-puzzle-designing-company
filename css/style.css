@@ -11180,6 +11180,13 @@ body.home-demo1 .logo img {
     transform: none !important;
 }
 
+.header .logo,
+.header .logo img {
+    width: min(220px, 42vw) !important;
+    max-width: min(220px, 42vw) !important;
+    transform: none !important;
+}
+
 body.home-demo1 .nav a {
     position: relative;
     font-size: 13px !important;
@@ -21739,4 +21746,23 @@ body.home-demo1 .testimonial-mark {
     body.home-demo1 .room-card-visual img {
         min-height: 320px !important;
     }
+}
+
+/* Final header logo lock: same size across all pages. */
+.header .logo {
+    width: min(220px, 42vw) !important;
+    max-width: min(220px, 42vw) !important;
+    flex: 0 0 auto !important;
+    overflow: hidden !important;
+}
+
+.header .logo-link {
+    width: 100% !important;
+}
+
+.header .logo img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    transform: none !important;
 }

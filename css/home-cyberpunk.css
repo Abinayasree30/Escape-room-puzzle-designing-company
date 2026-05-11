@@ -2418,3 +2418,22 @@ body.light-mode.home-demo1 .about-modern-copy h2 {
         grid-row: auto !important;
     }
 }
+
+/* Home 1 tablet grids: center a single orphan card in the last row. */
+@media (min-width: 721px) and (max-width: 1180px) {
+    html body.home-demo1 .steps,
+    html body.home-demo1 .testimonial-container,
+    html body.light-mode.home-demo1 .steps,
+    html body.light-mode.home-demo1 .testimonial-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    html body.home-demo1 .steps .step:last-child:nth-child(odd),
+    html body.home-demo1 .testimonial-container .testimonial-card:last-child,
+    html body.light-mode.home-demo1 .steps .step:last-child:nth-child(odd),
+    html body.light-mode.home-demo1 .testimonial-container .testimonial-card:last-child {
+        grid-column: 1 / -1 !important;
+        width: calc((100% - 24px) / 2) !important;
+        justify-self: center !important;
+    }
+}
