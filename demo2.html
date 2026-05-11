@@ -11,6 +11,42 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/site-cyberpunk.css">
+<style>
+body.light-mode.home-demo2 .cta h1,
+body.light-mode.home-demo2 .cta h2,
+body.light-mode.home-demo2 .cta h3,
+body.light-mode.home-demo2 .site-cta-band h1,
+body.light-mode.home-demo2 .site-cta-band h2,
+body.light-mode.home-demo2 .site-cta-band h3,
+body.light-mode.home-demo2 section[class*="cta"] h1,
+body.light-mode.home-demo2 section[class*="cta"] h2,
+body.light-mode.home-demo2 section[class*="cta"] h3 {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    background: transparent !important;
+    background-image: none !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    mix-blend-mode: normal !important;
+    filter: none !important;
+    opacity: 1 !important;
+    text-shadow: 0 12px 34px rgba(0, 0, 0, 0.9), 0 0 30px rgba(139, 92, 246, 0.5) !important;
+}
+
+body.light-mode.home-demo2 .cta::after,
+body.light-mode.home-demo2 .site-cta-band::after,
+body.light-mode.home-demo2 section[class*="cta"]::after {
+    background: linear-gradient(135deg, rgba(2, 6, 15, 0.9), rgba(50, 20, 96, 0.75)) !important;
+    z-index: 1 !important;
+}
+
+body.light-mode.home-demo2 .cta > *,
+body.light-mode.home-demo2 .site-cta-band > *,
+body.light-mode.home-demo2 section[class*="cta"] > * {
+    position: relative !important;
+    z-index: 2 !important;
+}
+</style>
 </head>
 <body class="has-custom-extras home-demo2">
 <header class="header">
@@ -125,7 +161,7 @@
     <div class="exp-grid">
         <div class="exp-card">
             <i class="fas fa-lightbulb exp-icon"></i>
-            <h3>Mind Bending Puzzles</h3>
+            <h3> Bending Puzzles</h3>
             <p>Crack codes and solve mysteries under pressure.</p>
         </div>
 
@@ -177,6 +213,28 @@
             Strange sounds echo around you. The clock is ticking.
             Solve the mystery and escape before it's too late.
         </p>
+        <div class="story-aside">
+            <figure class="story-aside-visual">
+                <img src="./img/demo2-gallery-detail.jpg" alt="Locked dark room detail">
+            </figure>
+            <div class="story-aside-list">
+                <article>
+                    <span>01</span>
+                    <strong>Locked In</strong>
+                    <p>The first door only opens when the team finds the hidden starting clue.</p>
+                </article>
+                <article>
+                    <span>02</span>
+                    <strong>Signal Trail</strong>
+                    <p>Audio cues and strange marks guide the next move under pressure.</p>
+                </article>
+                <article>
+                    <span>03</span>
+                    <strong>Final Choice</strong>
+                    <p>Every clue comes back together before the room reaches lockdown.</p>
+                </article>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -297,13 +355,6 @@
     </div>
 </section>
 
-<!-- FINAL CTA -->
-<section class="cta">
-    <h2>Ready To Escape?</h2>
-    <p>Gather your team and start the ultimate challenge today.</p>
-    <button class="btn" onclick="openBookingModal('Home 2 Challenge')">Book Now</button>
-</section>
-
 <section class="fear-level demo2-premium-section">
     <div class="demo2-section-head">
         <p class="eyebrow">Fear Scale</p>
@@ -408,6 +459,13 @@
             <h4>- Rahul</h4>
         </article>
     </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta">
+    <h2>Ready To Escape?</h2>
+    <p>Gather your team and start the ultimate challenge today.</p>
+    <button class="btn" onclick="openBookingModal('Home 2 Challenge')">Book Now</button>
 </section>
 
 <footer>
