@@ -13654,7 +13654,7 @@ body.light-mode .site-extras {
     background: #ffffff !important;
 }
 
-body.light-mode :is(
+:is(
     .home-premium-section,
     .demo2-premium-section,
     .aboutus-premium-section,
@@ -21765,4 +21765,436 @@ body.home-demo1 .testimonial-mark {
     max-width: 100% !important;
     height: auto !important;
     transform: none !important;
+}
+
+/* Theme switch layout lock: light/dark changes should repaint colors only. */
+html.theme-switching,
+html.theme-switching *,
+html.theme-switching *::before,
+html.theme-switching *::after {
+    transition: none !important;
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+}
+
+body.light-mode {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+}
+
+body.light-mode :is(p, a, button, input, textarea, select, label, li) {
+    font-family: inherit !important;
+}
+
+body.light-mode :is(.icon-btn, #darkModeToggle, #mq-enable-btn, .search) {
+    width: 42px !important;
+    min-width: 42px !important;
+    height: 42px !important;
+    min-height: 42px !important;
+    padding: 0 !important;
+    flex: 0 0 42px !important;
+    line-height: 1 !important;
+}
+
+body.light-mode :is(.icon-btn i, #darkModeToggle i, #mq-enable-btn i, .search i) {
+    width: 1em !important;
+    height: 1em !important;
+    line-height: 1 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+@media (min-width: 1025px) {
+    body.light-mode .header {
+        height: 96px !important;
+        min-height: 96px !important;
+        padding: 0 40px !important;
+        align-items: center !important;
+    }
+
+    body.light-mode .nav {
+        gap: 30px !important;
+    }
+
+    body.light-mode .right-section {
+        gap: 20px !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    body.light-mode .header {
+        height: auto !important;
+        padding: 14px 18px !important;
+        gap: 12px !important;
+        align-items: center !important;
+    }
+}
+
+@media (max-width: 768px) {
+    body.light-mode .header {
+        padding: 12px 16px 10px !important;
+    }
+}
+
+:is(
+    .home-premium-section,
+    .demo2-premium-section,
+    .aboutus-premium-section,
+    .pricing-premium-section,
+    .faq-premium-section,
+    .testimonial-premium-section,
+    .rooms-premium-section,
+    .room-custom-section,
+    .news-custom-section,
+    .offers-custom-section,
+    .contact-help,
+    .contact-trust,
+    .page-gallery,
+    .features,
+    .rooms,
+    .experience-bar,
+    .story-section,
+    .cta,
+    .game-mode,
+    .room-details,
+    .room-highlights,
+    .room-gallery,
+    .booking,
+    .contact-section,
+    .contact-map,
+    .about-section,
+    .newsletter,
+    .faq-section,
+    .faq-premium-section,
+    .rooms-showcase-pro,
+    .rooms-advisor-pro,
+    .rooms-flow-pro,
+    .rooms-overview-band,
+    .rooms-comparison,
+    .rooms-editorial-band,
+    .rooms-cta-panel,
+    .news-editorial,
+    .news-digest,
+    .news-insider,
+    .news-trending-pro,
+    .news-trending,
+    .news-tags,
+    .news-archive,
+    .news-cta-pro,
+    .offer-section,
+    .offer-campaigns,
+    .group-section,
+    .member-section,
+    .group-benefits,
+    .offer-timer,
+    .promo-reveal,
+    .mystery-offer,
+    .offer-achievement,
+    .offer-popular,
+    .offer-preview
+) {
+    border-top: 1px solid transparent !important;
+}
+
+body.light-mode :is(
+    .home-premium-section,
+    .demo2-premium-section,
+    .aboutus-premium-section,
+    .pricing-premium-section,
+    .faq-premium-section,
+    .testimonial-premium-section,
+    .rooms-premium-section,
+    .room-custom-section,
+    .news-custom-section,
+    .offers-custom-section,
+    .contact-help,
+    .contact-trust,
+    .page-gallery,
+    .features,
+    .rooms,
+    .experience-bar,
+    .story-section,
+    .cta,
+    .game-mode,
+    .room-details,
+    .room-highlights,
+    .room-gallery,
+    .booking,
+    .contact-section,
+    .contact-map,
+    .about-section,
+    .newsletter,
+    .faq-section,
+    .faq-premium-section,
+    .rooms-showcase-pro,
+    .rooms-advisor-pro,
+    .rooms-flow-pro,
+    .rooms-overview-band,
+    .rooms-comparison,
+    .rooms-editorial-band,
+    .rooms-cta-panel,
+    .news-editorial,
+    .news-digest,
+    .news-insider,
+    .news-trending-pro,
+    .news-trending,
+    .news-tags,
+    .news-archive,
+    .news-cta-pro,
+    .offer-section,
+    .offer-campaigns,
+    .group-section,
+    .member-section,
+    .group-benefits,
+    .offer-timer,
+    .promo-reveal,
+    .mystery-offer,
+    .offer-achievement,
+    .offer-popular,
+    .offer-preview
+) {
+    border-top-color: #edf2f7 !important;
+}
+
+:is(
+    .exp-card,
+    .home-feature-card,
+    .demo-feature-card,
+    .about-feature-card,
+    .testimonial-card,
+    .choose-card,
+    .step,
+    .fear-card,
+    .team-card,
+    .mission-box,
+    .achieve-card,
+    .room-card,
+    .room-overview-card,
+    .room-stat-card,
+    .room-highlight-card,
+    .room-preview-copy,
+    .room-custom-panel,
+    .offer-box,
+    .news-card,
+    .feed-card,
+    .pinned-card,
+    .pinned-card-hero,
+    .pinned-side-panel,
+    .news-mini-panel,
+    .pricing-card,
+    .group-box,
+    .discount-card,
+    .member-card,
+    .benefit,
+    .plan-fit-card,
+    .review-card,
+    .include-card,
+    .trust-card,
+    .contact-info,
+    .contact-form,
+    .help-card,
+    .trust-item,
+    .newsletter-shell,
+    .booking-shell,
+    .faq-item,
+    .mode-card,
+    .quick-links-grid a,
+    .poll-buttons-deck button,
+    .action-buttons-split .btn,
+    .timer-box,
+    .offer-action-panel,
+    .mystery-box,
+    .achievement,
+    .popular-stat,
+    .offer-preview-panel,
+    .offer-preview-points article,
+    .offer-preview-card,
+    .offer-side-card,
+    .room-haunt-panel-featured,
+    .voices-sidebar,
+    .voices-feature,
+    .voices-notes article,
+    .voices-strip,
+    .rooms-compare-meta article,
+    .rooms-editorial-points article,
+    .news-trending-pulse article,
+    .news-trending-list article
+) {
+    border-width: 1px !important;
+    border-style: solid !important;
+}
+
+body:not(.light-mode) :is(
+    .exp-card,
+    .home-feature-card,
+    .demo-feature-card,
+    .about-feature-card,
+    .testimonial-card,
+    .choose-card,
+    .step,
+    .fear-card,
+    .team-card,
+    .mission-box,
+    .achieve-card,
+    .room-card,
+    .room-overview-card,
+    .room-stat-card,
+    .room-highlight-card,
+    .room-preview-copy,
+    .room-custom-panel,
+    .offer-box,
+    .news-card,
+    .feed-card,
+    .pinned-card,
+    .pinned-card-hero,
+    .pinned-side-panel,
+    .news-mini-panel,
+    .pricing-card,
+    .group-box,
+    .discount-card,
+    .member-card,
+    .benefit,
+    .plan-fit-card,
+    .review-card,
+    .include-card,
+    .trust-card,
+    .contact-info,
+    .contact-form,
+    .help-card,
+    .trust-item,
+    .newsletter-shell,
+    .booking-shell,
+    .faq-item,
+    .mode-card,
+    .quick-links-grid a,
+    .poll-buttons-deck button,
+    .action-buttons-split .btn,
+    .timer-box,
+    .offer-action-panel,
+    .mystery-box,
+    .achievement,
+    .popular-stat,
+    .offer-preview-panel,
+    .offer-preview-points article,
+    .offer-preview-card,
+    .offer-side-card,
+    .room-haunt-panel-featured,
+    .voices-sidebar,
+    .voices-feature,
+    .voices-notes article,
+    .voices-strip,
+    .rooms-compare-meta article,
+    .rooms-editorial-points article,
+    .news-trending-pulse article,
+    .news-trending-list article
+) {
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+body.light-mode :is(
+    .exp-card,
+    .home-feature-card,
+    .demo-feature-card,
+    .about-feature-card,
+    .testimonial-card,
+    .choose-card,
+    .step,
+    .fear-card,
+    .team-card,
+    .mission-box,
+    .achieve-card,
+    .room-card,
+    .room-overview-card,
+    .room-stat-card,
+    .room-highlight-card,
+    .room-preview-copy,
+    .room-custom-panel,
+    .offer-box,
+    .news-card,
+    .feed-card,
+    .pinned-card,
+    .pinned-card-hero,
+    .pinned-side-panel,
+    .news-mini-panel,
+    .pricing-card,
+    .group-box,
+    .discount-card,
+    .member-card,
+    .benefit,
+    .plan-fit-card,
+    .review-card,
+    .include-card,
+    .trust-card,
+    .contact-info,
+    .contact-form,
+    .help-card,
+    .trust-item,
+    .newsletter-shell,
+    .booking-shell,
+    .faq-item,
+    .mode-card,
+    .quick-links-grid a,
+    .poll-buttons-deck button,
+    .action-buttons-split .btn,
+    .timer-box,
+    .offer-action-panel,
+    .mystery-box,
+    .achievement,
+    .popular-stat,
+    .offer-preview-panel,
+    .offer-preview-points article,
+    .offer-preview-card,
+    .offer-side-card,
+    .room-haunt-panel-featured,
+    .voices-sidebar,
+    .voices-feature,
+    .voices-notes article,
+    .voices-strip,
+    .rooms-compare-meta article,
+    .rooms-editorial-points article,
+    .news-trending-pulse article,
+    .news-trending-list article
+) {
+    border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+body.light-mode .contact-form h2,
+body.light-mode .contact-info h2 {
+    font-size: clamp(1.45rem, 2.6vw, 2rem) !important;
+    line-height: 1.2 !important;
+}
+
+body.light-mode .footer-left h2,
+body.light-mode .footer-column h3 {
+    font-family: 'Orbitron', sans-serif !important;
+}
+
+@media (max-width: 768px) {
+    .contact-form h2,
+    .contact-info h2,
+    body.light-mode .contact-form h2,
+    body.light-mode .contact-info h2 {
+        font-size: clamp(1.75rem, 7vw, 2.2rem) !important;
+        line-height: 1.18 !important;
+    }
+}
+
+/* Hide page scrollbar/scroll widget only on pages that should not show the right-side scroll rail. */
+html:has(body.no-scroll-widget),
+body.no-scroll-widget {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+
+html:has(body.no-scroll-widget)::-webkit-scrollbar,
+body.no-scroll-widget::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
+}
+
+body.no-scroll-widget .scroll-top-btn {
+    display: none !important;
 }
