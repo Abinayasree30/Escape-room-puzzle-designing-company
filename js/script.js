@@ -1646,6 +1646,30 @@ function initCyberpunkHeaderState() {
     window.addEventListener("scroll", setHeaderState, { passive: true });
 }
 
+function initScrollTopButton() {
+    if (document.querySelector(".scroll-top-btn")) {
+        return;
+    }
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "scroll-top-btn";
+    button.setAttribute("aria-label", "Scroll to top");
+    button.innerHTML = '<i class="fas fa-arrow-up" aria-hidden="true"></i>';
+
+    const syncButtonState = () => {
+        button.classList.toggle("is-visible", window.scrollY > 420);
+    };
+
+    button.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    document.body.appendChild(button);
+    syncButtonState();
+    window.addEventListener("scroll", syncButtonState, { passive: true });
+}
+
 function initHomeCyberpunkEffects() {
     if (!document.body.classList.contains("home-demo1")) {
         return;
@@ -1684,4 +1708,5 @@ function initHomeCyberpunkEffects() {
 }
 
 initCyberpunkHeaderState();
+initScrollTopButton();
 initHomeCyberpunkEffects();
