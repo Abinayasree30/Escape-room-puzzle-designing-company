@@ -2109,3 +2109,312 @@ html body.light-mode.home-demo1 .feature-icon-grid article:first-child i::before
     box-shadow: none !important;
     text-shadow: none !important;
 }
+
+/* Home 1 RTL responsive navbar lock: 360px, 768px, and 1024px */
+@media (max-width: 1024px) {
+    html[dir="rtl"] body.home-demo1 .header,
+    html[dir="rtl"] body.light-mode.home-demo1 .header {
+        height: 76px !important;
+        min-height: 76px !important;
+        padding: 12px 20px !important;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        direction: rtl !important;
+        overflow: visible !important;
+    }
+
+    html[dir="rtl"] body.home-demo1 .header .logo {
+        order: 1 !important;
+        width: min(220px, 54vw) !important;
+        max-width: min(220px, 54vw) !important;
+        margin: 0 !important;
+        justify-content: flex-end !important;
+        overflow: hidden !important;
+    }
+
+    html[dir="rtl"] body.home-demo1 .header .logo-link {
+        justify-content: flex-end !important;
+    }
+
+    html[dir="rtl"] body.home-demo1 .header .logo img {
+        width: min(210px, 54vw) !important;
+        max-width: 100% !important;
+        height: auto !important;
+        transform: none !important;
+        object-fit: contain !important;
+    }
+
+    html[dir="rtl"] body.home-demo1 .header .nav-toggle {
+        order: 2 !important;
+        width: 44px !important;
+        min-width: 44px !important;
+        height: 44px !important;
+        margin: 0 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    html[dir="rtl"] body.home-demo1 .header .right-section {
+        display: none !important;
+    }
+
+    html[dir="rtl"] body.home-demo1 .header .nav,
+    html[dir="rtl"] body.light-mode.home-demo1 .header .nav,
+    html[dir="rtl"] body.home-demo1 .header.menu-open .nav,
+    html[dir="rtl"] body.light-mode.home-demo1 .header.menu-open .nav {
+        position: absolute !important;
+        top: calc(100% + 10px) !important;
+        left: 16px !important;
+        right: 16px !important;
+        width: auto !important;
+        max-width: none !important;
+        max-height: calc(100vh - 100px) !important;
+        margin: 0 !important;
+        padding: 14px !important;
+        display: none !important;
+        grid-template-columns: 1fr !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 10px !important;
+        direction: rtl !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        border-radius: 18px !important;
+        z-index: 1100 !important;
+    }
+
+    html[dir="rtl"] body.home-demo1 .header.menu-open .nav,
+    html[dir="rtl"] body.light-mode.home-demo1 .header.menu-open .nav {
+        display: flex !important;
+    }
+
+    html[dir="rtl"] body.home-demo1 .header .nav > a,
+    html[dir="rtl"] body.home-demo1 .header .nav-item > a,
+    html[dir="rtl"] body.light-mode.home-demo1 .header .nav > a,
+    html[dir="rtl"] body.light-mode.home-demo1 .header .nav-item > a,
+    html[dir="rtl"] body.light-mode.home-demo1 .header .nav .nav-item > a[data-menu="home"] {
+        width: 100% !important;
+        min-width: 0 !important;
+        min-height: 46px !important;
+        padding: 12px 14px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        text-align: right !important;
+        white-space: normal !important;
+        border-radius: 12px !important;
+        background: rgba(255, 255, 255, 0.055) !important;
+        border: 1px solid rgba(139, 92, 246, 0.22) !important;
+    }
+
+    html[dir="rtl"] body.light-mode.home-demo1 .header .nav > a,
+    html[dir="rtl"] body.light-mode.home-demo1 .header .nav-item > a,
+    html[dir="rtl"] body.light-mode.home-demo1 .header .nav .nav-item > a[data-menu="home"] {
+        background: rgba(124, 58, 237, 0.08) !important;
+        border-color: rgba(124, 58, 237, 0.14) !important;
+    }
+
+    html[dir="rtl"] body.home-demo1 .header .nav-item {
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    html[dir="rtl"] body.home-demo1 .header .nav .dropdown {
+        position: static !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        margin: 8px 0 0 !important;
+        padding: 8px !important;
+        display: none;
+        flex-direction: column !important;
+        text-align: right !important;
+    }
+
+    html[dir="rtl"] body.home-demo1 .header .nav-item.open .dropdown {
+        display: flex !important;
+    }
+
+    html[dir="rtl"] body.home-demo1 .header .nav-mobile-actions,
+    html[dir="rtl"] body.light-mode.home-demo1 .header .nav-mobile-actions {
+        width: 100% !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px !important;
+        margin-top: 4px !important;
+        padding-top: 12px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    html[dir="rtl"] body.home-demo1 .header,
+    html[dir="rtl"] body.light-mode.home-demo1 .header {
+        padding-inline: 16px !important;
+    }
+
+    html[dir="rtl"] body.home-demo1 .header .nav,
+    html[dir="rtl"] body.light-mode.home-demo1 .header .nav,
+    html[dir="rtl"] body.home-demo1 .header.menu-open .nav,
+    html[dir="rtl"] body.light-mode.home-demo1 .header.menu-open .nav {
+        left: 12px !important;
+        right: 12px !important;
+        padding: 12px !important;
+    }
+}
+
+@media (max-width: 360px) {
+    html[dir="rtl"] body.home-demo1 .header,
+    html[dir="rtl"] body.light-mode.home-demo1 .header {
+        padding-inline: 12px !important;
+    }
+
+    html[dir="rtl"] body.home-demo1 .header .logo {
+        width: min(170px, 52vw) !important;
+        max-width: min(170px, 52vw) !important;
+    }
+
+    html[dir="rtl"] body.home-demo1 .header .logo img {
+        width: min(165px, 52vw) !important;
+    }
+
+    html[dir="rtl"] body.home-demo1 .header .nav-mobile-actions,
+    html[dir="rtl"] body.light-mode.home-demo1 .header .nav-mobile-actions {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Header login typography matches the Home 1 navbar links */
+html body.home-demo1 .header .login-btn,
+html body.light-mode.home-demo1 .header .login-btn,
+html body.home-demo1 .header .nav-mobile-actions .login-btn,
+html body.light-mode.home-demo1 .header .nav-mobile-actions .login-btn {
+    font-family: 'Orbitron', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0 !important;
+    text-transform: uppercase !important;
+}
+
+/* Home 1 footer logo size matches the Home 1 header logo */
+html body.home-demo1 footer .footer-left > .footer-logo,
+html body.light-mode.home-demo1 footer .footer-left > .footer-logo {
+    width: min(220px, 42vw) !important;
+    max-width: 100% !important;
+    min-height: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+}
+
+html body.home-demo1 footer .footer-left > .footer-logo img,
+html body.light-mode.home-demo1 footer .footer-left > .footer-logo img {
+    width: min(220px, 42vw) !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    transform: none !important;
+    object-fit: contain !important;
+}
+
+html body.home-demo1 footer .footer-left > .footer-logo:hover img,
+html body.light-mode.home-demo1 footer .footer-left > .footer-logo:hover img {
+    transform: scale(1.03) !important;
+}
+
+/* Home 1 banner: remove any internal scrollbar */
+html body.home-demo1 .hero,
+html body.light-mode.home-demo1 .hero {
+    overflow: hidden !important;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+
+html body.home-demo1 .hero::-webkit-scrollbar,
+html body.light-mode.home-demo1 .hero::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
+}
+
+html body.home-demo1 .hero :is(.hero-bg-img, .overlay, .home-particles),
+html body.light-mode.home-demo1 .hero :is(.hero-bg-img, .overlay, .home-particles) {
+    max-width: 100% !important;
+    overflow: hidden !important;
+}
+
+/* Home 1: hide the visible page scrollbar while keeping scroll enabled */
+html:has(body.home-demo1),
+html:has(body.light-mode.home-demo1),
+body.home-demo1,
+body.light-mode.home-demo1 {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+
+html:has(body.home-demo1)::-webkit-scrollbar,
+html:has(body.light-mode.home-demo1)::-webkit-scrollbar,
+body.home-demo1::-webkit-scrollbar,
+body.light-mode.home-demo1::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
+}
+
+/* Home 1 mission briefing: keep badge and copy beside the image */
+body.home-demo1 .about-modern,
+body.light-mode.home-demo1 .about-modern {
+    grid-template-columns: minmax(320px, 0.92fr) minmax(360px, 1fr) !important;
+    grid-template-rows: auto 1fr !important;
+    align-items: start !important;
+    column-gap: 54px !important;
+    row-gap: 22px !important;
+}
+
+body.home-demo1 .about-modern-eyebrow,
+body.light-mode.home-demo1 .about-modern-eyebrow {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    justify-self: start !important;
+    align-self: end !important;
+    margin: 0 !important;
+}
+
+body.home-demo1 .about-modern-image,
+body.light-mode.home-demo1 .about-modern-image {
+    grid-column: 1 !important;
+    grid-row: 1 / span 2 !important;
+    align-self: start !important;
+}
+
+body.home-demo1 .about-modern-copy,
+body.light-mode.home-demo1 .about-modern-copy {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+    align-self: start !important;
+}
+
+body.home-demo1 .about-modern-copy h2,
+body.light-mode.home-demo1 .about-modern-copy h2 {
+    margin-top: 0 !important;
+}
+
+@media (max-width: 900px) {
+    body.home-demo1 .about-modern,
+    body.light-mode.home-demo1 .about-modern {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: auto !important;
+    }
+
+    body.home-demo1 .about-modern-eyebrow,
+    body.light-mode.home-demo1 .about-modern-eyebrow,
+    body.home-demo1 .about-modern-image,
+    body.light-mode.home-demo1 .about-modern-image,
+    body.home-demo1 .about-modern-copy,
+    body.light-mode.home-demo1 .about-modern-copy {
+        grid-column: 1 !important;
+        grid-row: auto !important;
+    }
+}
