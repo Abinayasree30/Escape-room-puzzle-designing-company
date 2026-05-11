@@ -671,24 +671,148 @@ function setupSearch() {
 /* =============================================
    DARK MODE TOGGLE
    ============================================= */
+function ensureThemeLightStyles() {
+    if (document.getElementById('themeLightPaintOnly')) return;
+
+    const style = document.createElement('style');
+    style.id = 'themeLightPaintOnly';
+    style.textContent = `
+html.theme-switching,
+html.theme-switching *,
+html.theme-switching *::before,
+html.theme-switching *::after {
+    transition: none !important;
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+}
+
+body.theme-light {
+    background: #f7f9fc !important;
+    color: #0f172a !important;
+}
+
+body.theme-light::before,
+body.theme-light .overlay,
+body.theme-light .hero::after,
+body.theme-light #rooms-hero::before {
+    opacity: 0 !important;
+}
+
+body.theme-light :is(section:not(.hero):not(.hero-dark):not(.about-hero):not(.contact-hero):not(.faq-hero):not(.offer-hero):not(.rooms-hero):not(.room-hero):not(.booking-page-hero):not(.editorial-hero), .site-extras) {
+    background: #ffffff !important;
+    background-image: none !important;
+}
+
+body.theme-light :is(.header, .header.scrolled, .header.menu-open) {
+    background: rgba(255, 255, 255, 0.94) !important;
+    border-color: rgba(15, 23, 42, 0.1) !important;
+    box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08) !important;
+}
+
+body.theme-light :is(h1, h2, h3, h4, h5, h6, a, .nav a, .dropdown a) {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    text-shadow: none !important;
+}
+
+body.theme-light :is(p, li, label, span, small, em) {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    text-shadow: none !important;
+}
+
+body.theme-light :is(.hero, .hero-dark, .about-hero, .contact-hero, .faq-hero, .offer-hero, .rooms-hero, .room-hero, .booking-page-hero, .editorial-hero, .index-hero, #rooms-hero) :is(h1, h2, h3, p, span, .eyebrow, .about-kicker) {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+body.theme-light :is(.news-card, .room-card, .exp-card, .why-card, .timeline-box, .offer-box, .home-feature-card, .demo-feature-card, .about-feature-card, .about-section-copy, .about-highlight-card, .about-highlight-stats, .story-block, .story-side-card, .faq-item, .faq-side-card, .testimonial-card, .testimonial-side-card, .testimonial-highlight-card, .pricing-card, .pricing-trust-item, .group-box, .discount-card, .member-card, .room-overview-card, .room-stat-card, .room-highlight-card, .room-video-card, .room-preview-copy, .room-custom-panel, .news-mini-panel, .feed-card, .pinned-card, .pinned-side-panel, .plan-fit-card, .review-card, .include-card, .trust-card, .difficulty-card, .tip-card, .video-card, .highlight-card, .logo-box, .stat-card, .theme-card, .top-room-card, .preview-box, .contact-info, .contact-form, .help-card, .trust-item, .booking-shell, .booking-modal, .search-panel, .login-panel, .newsletter-shell, .mode-card, .choose-card, .step, .team-card, .mission-box, .achieve-card, .fear-card, .benefit, .mystery-box, .timer-box, .popular-stat, .offer-preview-panel, .offer-preview-card, .offer-side-card) {
+    background: #ffffff !important;
+    background-image: none !important;
+    border-color: rgba(15, 23, 42, 0.1) !important;
+    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08) !important;
+    color: #1e293b !important;
+}
+
+body.theme-light :is(.news-card, .room-card, .exp-card, .home-feature-card, .demo-feature-card, .about-feature-card, .story-block, .faq-item, .testimonial-card, .pricing-card, .contact-info, .contact-form, .booking-shell, .login-panel, .mode-card, .choose-card, .step) :is(h1, h2, h3, h4, h5, h6, strong) {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
+
+body.theme-light :is(.news-card, .room-card, .exp-card, .home-feature-card, .demo-feature-card, .about-feature-card, .story-block, .faq-item, .testimonial-card, .pricing-card, .contact-info, .contact-form, .booking-shell, .login-panel, .mode-card, .choose-card, .step) :is(p, li, span, small, label) {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+}
+
+body.theme-light :is(input, select, textarea, .search-input) {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    border-color: rgba(15, 23, 42, 0.14) !important;
+}
+
+body.theme-light :is(.btn, .login-btn, .contact-btn, .booking-confirm, .search-submit, .mode-select-btn, button[type="submit"]) {
+    background: linear-gradient(135deg, #7c3aed, #a78bfa) !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border-color: rgba(124, 58, 237, 0.28) !important;
+}
+
+body.theme-light :is(.icon-btn, .dir-toggle, .nav-toggle, .search, .social-links a, .social-icon) {
+    background: rgba(15, 23, 42, 0.04) !important;
+    color: #0f172a !important;
+    border-color: rgba(15, 23, 42, 0.14) !important;
+}
+
+body.theme-light .dropdown {
+    background: rgba(255, 255, 255, 0.98) !important;
+    border-color: rgba(124, 58, 237, 0.24) !important;
+}
+
+body.theme-light footer {
+    background: #0f0f0f !important;
+    color: #d8d8e2 !important;
+}
+
+body.theme-light footer :is(h2, h3) {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+body.theme-light footer :is(p, a, li, span) {
+    color: #d8d8e2 !important;
+    -webkit-text-fill-color: #d8d8e2 !important;
+}
+`;
+    document.head.appendChild(style);
+}
+
 function updateDarkBtn() {
+    ensureThemeLightStyles();
     const btn = document.getElementById('darkModeToggle') || document.getElementById('mq-enable-btn');
     if (!btn) return;
-    const isLight = document.body.classList.contains('light-mode');
+    const isLight = document.body.classList.contains('theme-light');
     btn.innerHTML = isLight ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
     btn.title = isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode';
 }
 
 function toggleDarkMode() {
-    document.body.classList.toggle('light-mode');
-    const isLight = document.body.classList.contains('light-mode');
+    ensureThemeLightStyles();
+    document.documentElement.classList.add('theme-switching');
+    document.body.classList.remove('light-mode');
+    document.body.classList.toggle('theme-light');
+    const isLight = document.body.classList.contains('theme-light');
     localStorage.setItem('mystiq-theme', isLight ? 'light' : 'dark');
     updateDarkBtn();
+    window.setTimeout(() => {
+        document.documentElement.classList.remove('theme-switching');
+    }, 80);
 }
 
 function initDarkMode() {
+    ensureThemeLightStyles();
     const savedTheme = localStorage.getItem('mystiq-theme');
-    document.body.classList.toggle('light-mode', savedTheme === 'light');
+    document.body.classList.remove('light-mode');
+    document.body.classList.toggle('theme-light', savedTheme === 'light');
     updateDarkBtn();
 }
 
@@ -1647,6 +1771,10 @@ function initCyberpunkHeaderState() {
 }
 
 function initScrollTopButton() {
+    if (document.body.classList.contains("no-scroll-widget")) {
+        return;
+    }
+
     if (document.querySelector(".scroll-top-btn")) {
         return;
     }
