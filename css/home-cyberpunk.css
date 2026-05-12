@@ -2437,3 +2437,431 @@ body.light-mode.home-demo1 .about-modern-copy h2 {
         justify-self: center !important;
     }
 }
+
+/* Home 1 loads this file last, so repeat the site-wide header logo lock here. */
+html body.home-demo1,
+html body.light-mode.home-demo1 {
+    --site-header-logo-width: 220px;
+    --site-header-logo-height: 58px;
+}
+
+html body.home-demo1 .header .logo,
+html[dir="rtl"] body.home-demo1 .header .logo,
+html body.light-mode.home-demo1 .header .logo {
+    width: min(var(--site-header-logo-width), 42vw) !important;
+    max-width: min(var(--site-header-logo-width), 42vw) !important;
+    height: var(--site-header-logo-height) !important;
+    min-height: var(--site-header-logo-height) !important;
+    flex: 0 0 min(var(--site-header-logo-width), 42vw) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    overflow: hidden !important;
+}
+
+html body.home-demo1 .header .logo-link,
+html[dir="rtl"] body.home-demo1 .header .logo-link,
+html body.light-mode.home-demo1 .header .logo-link {
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+}
+
+html body.home-demo1 .header .logo img,
+html[dir="rtl"] body.home-demo1 .header .logo img,
+html body.light-mode.home-demo1 .header .logo img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    display: block !important;
+    object-fit: contain !important;
+    object-position: left center !important;
+    transform: none !important;
+}
+
+@media (max-width: 480px) {
+    html body.home-demo1,
+    html body.light-mode.home-demo1 {
+        --site-header-logo-width: 170px;
+        --site-header-logo-height: 46px;
+    }
+}
+
+/* Final Home 1 light-mode contrast fix. */
+html body.home-demo1 .hero-secondary,
+html body.light-mode.home-demo1 .hero-secondary {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    background: rgba(15, 23, 42, 0.58) !important;
+    border: 1px solid rgba(255, 255, 255, 0.42) !important;
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.28) !important;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.72) !important;
+}
+
+html body.light-mode.home-demo1 .stats-section {
+    background:
+        radial-gradient(circle at 20% 0%, rgba(139, 92, 246, 0.08), transparent 32%),
+        #f8fafc !important;
+}
+
+html body.light-mode.home-demo1 .stats-section article {
+    background: #ffffff !important;
+    border: 1px solid rgba(109, 40, 217, 0.14) !important;
+    box-shadow: 0 22px 58px rgba(15, 23, 42, 0.14) !important;
+}
+
+html body.light-mode.home-demo1 .stats-section strong {
+    color: #6d28d9 !important;
+    -webkit-text-fill-color: #6d28d9 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.home-demo1 .stats-section span {
+    color: #334155 !important;
+    -webkit-text-fill-color: #334155 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.home-demo1 :is(
+    .about-modern,
+    .rooms,
+    .how-it-works,
+    .video-preview,
+    .gallery-slider,
+    .offer-section,
+    .testimonials,
+    .booking-panel
+) {
+    background:
+        radial-gradient(circle at 12% 0%, rgba(139, 92, 246, 0.06), transparent 30%),
+        #f8fafc !important;
+    color: #0f172a !important;
+}
+
+html body.light-mode.home-demo1 :is(
+    .home-section-head h2,
+    .about-modern-copy h2,
+    .video-copy h2,
+    .offer-section h2,
+    .booking-panel h2,
+    .step h3,
+    .testimonial-card h4
+) {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.home-demo1 :is(
+    .home-section-head p,
+    .about-modern-copy p,
+    .video-copy p,
+    .offer-section p,
+    .booking-panel p,
+    .step p,
+    .testimonial-card p,
+    .testimonial-meta span,
+    .feature-icon-grid span
+) {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.home-demo1 :is(.eyebrow, .about-modern-eyebrow, .home-section-head .eyebrow) {
+    color: #6d28d9 !important;
+    -webkit-text-fill-color: #6d28d9 !important;
+    opacity: 1 !important;
+}
+
+html body.light-mode.home-demo1 :is(.feature-icon-grid article, .step, .testimonial-card, .booking-panel) {
+    background: #ffffff !important;
+    border-color: rgba(109, 40, 217, 0.14) !important;
+    color: #0f172a !important;
+}
+
+html body.light-mode.home-demo1 .room-card-content :is(h3, p, a, .difficulty) {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+html body.theme-light.home-demo1 .room-card-content {
+    background: linear-gradient(180deg, rgba(15, 15, 15, 0), rgba(15, 15, 15, 0.86) 24%, rgba(15, 15, 15, 0.96)) !important;
+}
+
+html body.theme-light.home-demo1 .room-card-content :is(h3, p, a) {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9) !important;
+}
+
+html body.theme-light.home-demo1 .room-card-content .difficulty {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Highest-priority fix: hero secondary CTA text must stay white. */
+html body.home-demo1 main .hero .hero-actions a#heroExploreRooms.hero-secondary,
+html body.light-mode.home-demo1 main .hero .hero-actions a#heroExploreRooms.hero-secondary,
+html body.home-demo1 main .hero .hero-actions a#heroExploreRooms.hero-secondary:hover,
+html body.light-mode.home-demo1 main .hero .hero-actions a#heroExploreRooms.hero-secondary:hover,
+html body.home-demo1 main .hero .hero-actions a#heroExploreRooms.hero-secondary:focus,
+html body.light-mode.home-demo1 main .hero .hero-actions a#heroExploreRooms.hero-secondary:focus {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    background: rgba(0, 0, 0, 0.62) !important;
+    border-color: rgba(255, 255, 255, 0.46) !important;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9) !important;
+}
+
+/* Light mode stats numbers must stay visible on white cards. */
+html body.light-mode.home-demo1 main #homeStats.stats-section article strong,
+html body.light-mode.home-demo1 main #homeStats.stats-section article strong[data-countup],
+html body.theme-light.home-demo1 main #homeStats.stats-section article strong,
+html body.theme-light.home-demo1 main #homeStats.stats-section article strong[data-countup] {
+    color: #7c3aed !important;
+    -webkit-text-fill-color: #7c3aed !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    text-shadow: none !important;
+    filter: none !important;
+}
+
+html body.light-mode.home-demo1 main #homeStats.stats-section article span,
+html body.theme-light.home-demo1 main #homeStats.stats-section article span {
+    color: #334155 !important;
+    -webkit-text-fill-color: #334155 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Light mode How It Works: white section and readable text. */
+html body.theme-light.home-demo1 main .how-it-works.home-premium-section,
+html body.light-mode.home-demo1 main .how-it-works.home-premium-section {
+    background: #ffffff !important;
+    background-image: none !important;
+    color: #0f172a !important;
+    border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+html body.theme-light.home-demo1 main .how-it-works.home-premium-section::before,
+html body.theme-light.home-demo1 main .how-it-works.home-premium-section::after,
+html body.light-mode.home-demo1 main .how-it-works.home-premium-section::before,
+html body.light-mode.home-demo1 main .how-it-works.home-premium-section::after {
+    opacity: 0 !important;
+    background: none !important;
+}
+
+html body.theme-light.home-demo1 main .how-it-works .home-section-head h2,
+html body.light-mode.home-demo1 main .how-it-works .home-section-head h2 {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.theme-light.home-demo1 main .how-it-works .home-section-head .eyebrow,
+html body.light-mode.home-demo1 main .how-it-works .home-section-head .eyebrow,
+html body.theme-light.home-demo1 main .how-it-works .step > span,
+html body.light-mode.home-demo1 main .how-it-works .step > span {
+    color: #7c3aed !important;
+    -webkit-text-fill-color: #7c3aed !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.theme-light.home-demo1 main .how-it-works .step,
+html body.light-mode.home-demo1 main .how-it-works .step {
+    background: #ffffff !important;
+    background-image: none !important;
+    border: 1px solid rgba(124, 58, 237, 0.16) !important;
+    box-shadow: 0 18px 46px rgba(15, 23, 42, 0.08) !important;
+    color: #0f172a !important;
+}
+
+html body.theme-light.home-demo1 main .how-it-works .step h3,
+html body.light-mode.home-demo1 main .how-it-works .step h3 {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.theme-light.home-demo1 main .how-it-works .step p,
+html body.light-mode.home-demo1 main .how-it-works .step p {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+/* Light mode Player Stories: white section and readable cards. */
+html body.theme-light.home-demo1 main .testimonials.home-premium-section,
+html body.light-mode.home-demo1 main .testimonials.home-premium-section {
+    background: #ffffff !important;
+    background-image: none !important;
+    color: #0f172a !important;
+    border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+html body.theme-light.home-demo1 main .testimonials.home-premium-section::before,
+html body.theme-light.home-demo1 main .testimonials.home-premium-section::after,
+html body.light-mode.home-demo1 main .testimonials.home-premium-section::before,
+html body.light-mode.home-demo1 main .testimonials.home-premium-section::after {
+    opacity: 0 !important;
+    background: none !important;
+}
+
+html body.theme-light.home-demo1 main .testimonials .home-section-head h2,
+html body.light-mode.home-demo1 main .testimonials .home-section-head h2,
+html body.theme-light.home-demo1 main .testimonials .testimonial-card h4,
+html body.light-mode.home-demo1 main .testimonials .testimonial-card h4 {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.theme-light.home-demo1 main .testimonials .home-section-head .eyebrow,
+html body.light-mode.home-demo1 main .testimonials .home-section-head .eyebrow,
+html body.theme-light.home-demo1 main .testimonials .stars i,
+html body.light-mode.home-demo1 main .testimonials .stars i {
+    color: #7c3aed !important;
+    -webkit-text-fill-color: #7c3aed !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.theme-light.home-demo1 main .testimonials .testimonial-card,
+html body.light-mode.home-demo1 main .testimonials .testimonial-card {
+    background: #ffffff !important;
+    background-image: none !important;
+    border: 1px solid rgba(124, 58, 237, 0.16) !important;
+    box-shadow: 0 18px 46px rgba(15, 23, 42, 0.08) !important;
+    color: #0f172a !important;
+}
+
+html body.theme-light.home-demo1 main .testimonials .testimonial-card p,
+html body.light-mode.home-demo1 main .testimonials .testimonial-card p,
+html body.theme-light.home-demo1 main .testimonials .testimonial-meta span,
+html body.light-mode.home-demo1 main .testimonials .testimonial-meta span {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+/* Light mode FAQ: black questions on white cards. */
+html body.theme-light.home-demo1 main .home-faq,
+html body.light-mode.home-demo1 main .home-faq {
+    background: #ffffff !important;
+    background-image: none !important;
+    color: #0f172a !important;
+}
+
+html body.theme-light.home-demo1 main .home-faq .home-section-head h2,
+html body.light-mode.home-demo1 main .home-faq .home-section-head h2 {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.theme-light.home-demo1 main .home-faq .home-section-head .eyebrow,
+html body.light-mode.home-demo1 main .home-faq .home-section-head .eyebrow,
+html body.theme-light.home-demo1 main .home-faq-item i,
+html body.light-mode.home-demo1 main .home-faq-item i {
+    color: #7c3aed !important;
+    -webkit-text-fill-color: #7c3aed !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.theme-light.home-demo1 main .home-faq-item,
+html body.light-mode.home-demo1 main .home-faq-item {
+    background: #ffffff !important;
+    background-image: none !important;
+    border: 1px solid rgba(124, 58, 237, 0.16) !important;
+    box-shadow: 0 16px 44px rgba(15, 23, 42, 0.08) !important;
+}
+
+html body.theme-light.home-demo1 main .home-faq-item button,
+html body.light-mode.home-demo1 main .home-faq-item button {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.theme-light.home-demo1 main .home-faq-item p,
+html body.light-mode.home-demo1 main .home-faq-item p {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+/* Light mode footer: white background and readable text. */
+html body.theme-light.home-demo1 footer,
+html body.light-mode.home-demo1 footer {
+    background: #ffffff !important;
+    background-image: none !important;
+    color: #0f172a !important;
+    border-top: 1px solid rgba(15, 23, 42, 0.08) !important;
+    box-shadow: 0 -12px 34px rgba(15, 23, 42, 0.06) !important;
+}
+
+html body.theme-light.home-demo1 footer::before,
+html body.theme-light.home-demo1 footer::after,
+html body.light-mode.home-demo1 footer::before,
+html body.light-mode.home-demo1 footer::after {
+    opacity: 0 !important;
+    background: none !important;
+}
+
+html body.theme-light.home-demo1 footer :is(h2, h3),
+html body.light-mode.home-demo1 footer :is(h2, h3) {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.theme-light.home-demo1 footer :is(p, li, span, a),
+html body.light-mode.home-demo1 footer :is(p, li, span, a),
+html body.theme-light.home-demo1 .footer-bottom p,
+html body.light-mode.home-demo1 .footer-bottom p {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.theme-light.home-demo1 footer :is(a:hover, .footer-contact i, .social-links a, .social-icon i),
+html body.light-mode.home-demo1 footer :is(a:hover, .footer-contact i, .social-links a, .social-icon i) {
+    color: #7c3aed !important;
+    -webkit-text-fill-color: #7c3aed !important;
+    opacity: 1 !important;
+}
+
+html body.theme-light.home-demo1 .footer-bottom,
+html body.light-mode.home-demo1 .footer-bottom {
+    border-top: 1px solid rgba(124, 58, 237, 0.18) !important;
+}

@@ -22198,3 +22198,430 @@ body.no-scroll-widget::-webkit-scrollbar {
 body.no-scroll-widget .scroll-top-btn {
     display: none !important;
 }
+
+/* Keep Home 2 evidence and story sections readable in light mode. */
+html body.light-mode.home-demo2 .home2-evidence,
+html body.theme-light.home-demo2 .home2-evidence,
+html body.theme-light.home-demo2 .story {
+    background: #f8fafc !important;
+    background-image: none !important;
+}
+
+html body.light-mode.home-demo2 .home2-evidence-card,
+html body.theme-light.home-demo2 .home2-evidence-card {
+    background: #ffffff !important;
+    background-image: none !important;
+    border-color: rgba(15, 23, 42, 0.1) !important;
+    box-shadow: 0 18px 46px rgba(15, 23, 42, 0.08) !important;
+}
+
+html body.light-mode.home-demo2 .home2-evidence-card h3,
+html body.theme-light.home-demo2 .home2-evidence-card h3 {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.home-demo2 .home2-evidence-card p,
+html body.theme-light.home-demo2 .home2-evidence-card p {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.home-demo2 .home2-role-list article,
+html body.theme-light.home-demo2 .home2-role-list article {
+    background: #ffffff !important;
+    background-image: none !important;
+    border-color: rgba(15, 23, 42, 0.1) !important;
+    box-shadow: 0 18px 46px rgba(15, 23, 42, 0.08) !important;
+}
+
+html body.light-mode.home-demo2 .home2-role-list article h3,
+html body.theme-light.home-demo2 .home2-role-list article h3 {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.home-demo2 .home2-role-list article p,
+html body.theme-light.home-demo2 .home2-role-list article p {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.home-demo2 section.home2-pressure.demo2-premium-section,
+html body.theme-light.home-demo2 section.home2-pressure.demo2-premium-section {
+    background: #f8fafc !important;
+    background-image: none !important;
+}
+
+html body.light-mode.home-demo2 .home2-pressure-copy,
+html body.theme-light.home-demo2 .home2-pressure-copy {
+    background: #ffffff !important;
+    background-image: none !important;
+    border-color: rgba(15, 23, 42, 0.1) !important;
+    box-shadow: 0 18px 46px rgba(15, 23, 42, 0.08) !important;
+}
+
+html body.light-mode.home-demo2 .home2-pressure-copy h2,
+html body.theme-light.home-demo2 .home2-pressure-copy h2,
+html body.light-mode.home-demo2 .home2-pressure-stats strong,
+html body.theme-light.home-demo2 .home2-pressure-stats strong {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.home-demo2 .home2-pressure-copy p,
+html body.theme-light.home-demo2 .home2-pressure-copy p,
+html body.light-mode.home-demo2 .home2-pressure-stats span,
+html body.theme-light.home-demo2 .home2-pressure-stats span {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.home-demo2 .home2-pressure-stats article,
+html body.theme-light.home-demo2 .home2-pressure-stats article {
+    background: #ffffff !important;
+    background-image: none !important;
+    border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+html body.light-mode.home-demo2 section.home2-night-rules.demo2-premium-section,
+html body.theme-light.home-demo2 section.home2-night-rules.demo2-premium-section {
+    background: #f8fafc !important;
+    background-image: none !important;
+}
+
+html body.light-mode.home-demo2 .home2-night-grid article,
+html body.theme-light.home-demo2 .home2-night-grid article {
+    background: #ffffff !important;
+    background-image: none !important;
+    border-color: rgba(15, 23, 42, 0.1) !important;
+    box-shadow: 0 18px 46px rgba(15, 23, 42, 0.08) !important;
+}
+
+html body.light-mode.home-demo2 .home2-night-grid h3,
+html body.theme-light.home-demo2 .home2-night-grid h3 {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.home-demo2 .home2-night-grid p,
+html body.theme-light.home-demo2 .home2-night-grid p {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.home-demo2 section.live-actors.demo2-premium-section,
+html body.theme-light.home-demo2 section.live-actors.demo2-premium-section {
+    background: #f8fafc !important;
+    background-image: none !important;
+}
+
+html body.light-mode.home-demo2 .actors-text,
+html body.theme-light.home-demo2 .actors-text,
+html body.light-mode.home-demo2 .actor-cues article,
+html body.theme-light.home-demo2 .actor-cues article {
+    background: #ffffff !important;
+    background-image: none !important;
+    border-color: rgba(15, 23, 42, 0.1) !important;
+    box-shadow: 0 18px 46px rgba(15, 23, 42, 0.08) !important;
+}
+
+html body.light-mode.home-demo2 .actors-text h2,
+html body.theme-light.home-demo2 .actors-text h2,
+html body.light-mode.home-demo2 .actor-cues strong,
+html body.theme-light.home-demo2 .actor-cues strong {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.home-demo2 .actors-text > p,
+html body.theme-light.home-demo2 .actors-text > p,
+html body.light-mode.home-demo2 .actor-cues p,
+html body.theme-light.home-demo2 .actor-cues p {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.home-demo2 .demo2-countdown,
+html body.theme-light.home-demo2 .demo2-countdown,
+html body.light-mode.home-demo2 .countdown-panel,
+html body.theme-light.home-demo2 .countdown-panel {
+    background: #ffffff !important;
+    background-image: none !important;
+    border-color: rgba(15, 23, 42, 0.1) !important;
+    box-shadow: 0 18px 46px rgba(15, 23, 42, 0.08) !important;
+}
+
+html body.light-mode.home-demo2 .countdown-label,
+html body.theme-light.home-demo2 .countdown-label,
+html body.light-mode.home-demo2 .countdown-status strong,
+html body.theme-light.home-demo2 .countdown-status strong {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.home-demo2 .countdown-status,
+html body.theme-light.home-demo2 .countdown-status,
+html body.light-mode.home-demo2 .countdown-status span,
+html body.theme-light.home-demo2 .countdown-status span {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.home-demo2 .countdown-meter,
+html body.theme-light.home-demo2 .countdown-meter {
+    background: rgba(15, 23, 42, 0.1) !important;
+}
+
+html body.light-mode.home-demo2 .home2-testimonials,
+html body.theme-light.home-demo2 .home2-testimonials {
+    background: #f8fafc !important;
+    background-image: none !important;
+}
+
+html body.light-mode.home-demo2 .home2-testimonial-grid article,
+html body.theme-light.home-demo2 .home2-testimonial-grid article {
+    background: #ffffff !important;
+    background-image: none !important;
+    border-color: rgba(15, 23, 42, 0.1) !important;
+    box-shadow: 0 18px 46px rgba(15, 23, 42, 0.08) !important;
+}
+
+html body.light-mode.home-demo2 .home2-testimonial-grid article::before,
+html body.theme-light.home-demo2 .home2-testimonial-grid article::before {
+    color: rgba(15, 23, 42, 0.12) !important;
+}
+
+html body.light-mode.home-demo2 .home2-testimonial-grid p,
+html body.theme-light.home-demo2 .home2-testimonial-grid p {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.home-demo2 .home2-testimonial-grid h4,
+html body.theme-light.home-demo2 .home2-testimonial-grid h4 {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.about-page .about-inline-points span,
+html body.theme-light.about-page .about-inline-points span {
+    background: #ffffff !important;
+    background-image: none !important;
+    border: 1px solid rgba(15, 23, 42, 0.14) !important;
+    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08) !important;
+    color: #334155 !important;
+    -webkit-text-fill-color: #334155 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.about-page :is(.feature-meta span, .story-side-points span),
+html body.theme-light.about-page :is(.feature-meta span, .story-side-points span) {
+    background: #ffffff !important;
+    background-image: none !important;
+    border: 1px solid rgba(15, 23, 42, 0.14) !important;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08) !important;
+    color: #334155 !important;
+    -webkit-text-fill-color: #334155 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.about-page .vision,
+html body.theme-light.about-page .vision {
+    background: #f8fafc !important;
+    background-image: none !important;
+}
+
+html body.light-mode.about-page :is(.vision-copy, .vision-stats, .vision-stat),
+html body.theme-light.about-page :is(.vision-copy, .vision-stats, .vision-stat) {
+    background: #ffffff !important;
+    background-image: none !important;
+    border-color: rgba(15, 23, 42, 0.14) !important;
+    box-shadow: 0 18px 46px rgba(15, 23, 42, 0.08) !important;
+}
+
+html body.light-mode.about-page :is(.vision-copy h2, .vision-stat strong),
+html body.theme-light.about-page :is(.vision-copy h2, .vision-stat strong) {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.about-page :is(.vision-copy p, .vision-copy-note, .vision-stat span, .vision-stat p),
+html body.theme-light.about-page :is(.vision-copy p, .vision-copy-note, .vision-stat span, .vision-stat p) {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.about-page :is(.vision-copy-tags span, .vision-stat-tags span),
+html body.theme-light.about-page :is(.vision-copy-tags span, .vision-stat-tags span) {
+    background: #ffffff !important;
+    background-image: none !important;
+    border: 1px solid rgba(15, 23, 42, 0.14) !important;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08) !important;
+    color: #334155 !important;
+    -webkit-text-fill-color: #334155 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode .rooms-overview-band,
+html body.theme-light .rooms-overview-band {
+    background: #f8fafc !important;
+    background-image: none !important;
+}
+
+html body.light-mode .rooms-overview-grid article,
+html body.theme-light .rooms-overview-grid article {
+    background: #ffffff !important;
+    background-image: none !important;
+    border-color: rgba(15, 23, 42, 0.14) !important;
+    box-shadow: 0 18px 46px rgba(15, 23, 42, 0.08) !important;
+}
+
+html body.light-mode .rooms-overview-grid strong,
+html body.theme-light .rooms-overview-grid strong {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode .rooms-overview-grid span,
+html body.theme-light .rooms-overview-grid span {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode .rooms-showcase-pro,
+html body.theme-light .rooms-showcase-pro {
+    background: #f8fafc !important;
+    background-image: none !important;
+}
+
+html body.light-mode .rooms-pro-card,
+html body.theme-light .rooms-pro-card,
+html body.light-mode .rooms-pro-card.featured,
+html body.theme-light .rooms-pro-card.featured {
+    background: #ffffff !important;
+    background-image: none !important;
+    border-color: rgba(15, 23, 42, 0.14) !important;
+    box-shadow: 0 18px 46px rgba(15, 23, 42, 0.08) !important;
+}
+
+html body.light-mode .rooms-pro-content h3,
+html body.theme-light .rooms-pro-content h3 {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode .rooms-pro-content p,
+html body.theme-light .rooms-pro-content p {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode :is(.rooms-pro-label, .rooms-pro-tags span),
+html body.theme-light :is(.rooms-pro-label, .rooms-pro-tags span) {
+    background: #ffffff !important;
+    background-image: none !important;
+    border: 1px solid rgba(15, 23, 42, 0.14) !important;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08) !important;
+    color: #334155 !important;
+    -webkit-text-fill-color: #334155 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+/* Absolute logo size lock for every page entry. */
+:root {
+    --site-header-logo-width: 220px;
+    --site-header-logo-height: 58px;
+}
+
+.header > .logo,
+.login-top-logo {
+    width: min(var(--site-header-logo-width), 42vw) !important;
+    max-width: min(var(--site-header-logo-width), 42vw) !important;
+    height: var(--site-header-logo-height) !important;
+    min-height: var(--site-header-logo-height) !important;
+    flex: 0 0 min(var(--site-header-logo-width), 42vw) !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    overflow: hidden !important;
+}
+
+.login-top-logo {
+    margin: 18px auto 6px !important;
+    position: static !important;
+}
+
+.header > .logo > .logo-link,
+.login-top-logo > .logo-link {
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    overflow: hidden !important;
+}
+
+.header > .logo > .logo-link > img,
+.login-top-logo > .logo-link > img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    display: block !important;
+    object-fit: contain !important;
+    object-position: left center !important;
+    transform: none !important;
+}
+
+@media (max-width: 480px) {
+    :root {
+        --site-header-logo-width: 170px;
+        --site-header-logo-height: 46px;
+    }
+}

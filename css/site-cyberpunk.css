@@ -7425,3 +7425,947 @@ html body.light-mode.has-custom-extras.offers-page .offer-box-side {
         text-align: center !important;
     }
 }
+
+/* Site-wide header logo size matches Home 1. */
+html body .header .logo {
+    width: min(220px, 42vw) !important;
+    max-width: min(220px, 42vw) !important;
+    flex: 0 0 auto !important;
+    overflow: hidden !important;
+}
+
+html body .header .logo-link {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+html body .header .logo img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    object-fit: contain !important;
+    transform: none !important;
+}
+
+/* Absolute header logo lock: identical size on every shared-header page. */
+html body {
+    --site-header-logo-width: 220px;
+    --site-header-logo-height: 58px;
+}
+
+html body .header .logo,
+html[dir="rtl"] body .header .logo,
+html body.light-mode .header .logo,
+html body:not(.light-mode) .header .logo {
+    width: min(var(--site-header-logo-width), 42vw) !important;
+    max-width: min(var(--site-header-logo-width), 42vw) !important;
+    height: var(--site-header-logo-height) !important;
+    min-height: var(--site-header-logo-height) !important;
+    flex: 0 0 min(var(--site-header-logo-width), 42vw) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    overflow: hidden !important;
+}
+
+html body .header .logo-link,
+html[dir="rtl"] body .header .logo-link,
+html body.light-mode .header .logo-link,
+html body:not(.light-mode) .header .logo-link {
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+}
+
+html body .header .logo img,
+html[dir="rtl"] body .header .logo img,
+html body.light-mode .header .logo img,
+html body:not(.light-mode) .header .logo img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    display: block !important;
+    object-fit: contain !important;
+    object-position: left center !important;
+    transform: none !important;
+}
+
+@media (max-width: 480px) {
+    html body {
+        --site-header-logo-width: 170px;
+        --site-header-logo-height: 46px;
+    }
+}
+
+/* Login/register use a top logo instead of the shared header. Keep it identical too. */
+html body .login-top-logo,
+html body.light-mode .login-top-logo,
+html body:not(.light-mode) .login-top-logo {
+    width: min(var(--site-header-logo-width), 42vw) !important;
+    max-width: min(var(--site-header-logo-width), 42vw) !important;
+    height: var(--site-header-logo-height) !important;
+    min-height: var(--site-header-logo-height) !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    overflow: hidden !important;
+}
+
+html body .login-top-logo .logo-link,
+html body.light-mode .login-top-logo .logo-link,
+html body:not(.light-mode) .login-top-logo .logo-link {
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    overflow: hidden !important;
+}
+
+html body .login-top-logo img,
+html body.light-mode .login-top-logo img,
+html body:not(.light-mode) .login-top-logo img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    display: block !important;
+    object-fit: contain !important;
+    object-position: left center !important;
+    transform: none !important;
+}
+
+/* Home 2 role cards should become white/readable in light mode. */
+html body.light-mode.home-demo2 .home2-evidence,
+html body.theme-light.home-demo2 .home2-evidence,
+html body.theme-light.home-demo2 .story {
+    background: #f8fafc !important;
+    background-image: none !important;
+}
+
+html body.light-mode.home-demo2 .home2-evidence-card,
+html body.theme-light.home-demo2 .home2-evidence-card {
+    background: #ffffff !important;
+    background-image: none !important;
+    border-color: rgba(15, 23, 42, 0.1) !important;
+    box-shadow: 0 18px 46px rgba(15, 23, 42, 0.08) !important;
+}
+
+html body.light-mode.home-demo2 .home2-evidence-card h3,
+html body.theme-light.home-demo2 .home2-evidence-card h3 {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.home-demo2 .home2-evidence-card p,
+html body.theme-light.home-demo2 .home2-evidence-card p {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.theme-light.home-demo2 .story-text {
+    background: #ffffff !important;
+    background-image: none !important;
+    border-color: rgba(15, 23, 42, 0.1) !important;
+    box-shadow: 0 18px 46px rgba(15, 23, 42, 0.08) !important;
+}
+
+html body.theme-light.home-demo2 .story-text h2,
+html body.theme-light.home-demo2 .story-aside-list strong {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.theme-light.home-demo2 .story-text p,
+html body.theme-light.home-demo2 .story-aside-list p {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.theme-light.home-demo2 .story-aside-list article {
+    background: #ffffff !important;
+    background-image: none !important;
+    border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+html body.light-mode.home-demo2 .home2-role-list article,
+html body.theme-light.home-demo2 .home2-role-list article {
+    background: #ffffff !important;
+    background-image: none !important;
+    border-color: rgba(15, 23, 42, 0.1) !important;
+    box-shadow: 0 18px 46px rgba(15, 23, 42, 0.08) !important;
+}
+
+html body.light-mode.home-demo2 .home2-role-list article h3,
+html body.theme-light.home-demo2 .home2-role-list article h3 {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.home-demo2 .home2-role-list article p,
+html body.theme-light.home-demo2 .home2-role-list article p {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+/* Home 2 pressure panel should be white/readable in the actual theme-light mode. */
+html body.light-mode.home-demo2 section.home2-pressure.demo2-premium-section,
+html body.theme-light.home-demo2 section.home2-pressure.demo2-premium-section {
+    background: #f8fafc !important;
+    background-image: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+html body.light-mode.home-demo2 .home2-pressure-copy,
+html body.theme-light.home-demo2 .home2-pressure-copy {
+    background: #ffffff !important;
+    background-image: none !important;
+    border-color: rgba(15, 23, 42, 0.1) !important;
+    box-shadow: 0 18px 46px rgba(15, 23, 42, 0.08) !important;
+}
+
+html body.light-mode.home-demo2 .home2-pressure-copy h2,
+html body.theme-light.home-demo2 .home2-pressure-copy h2,
+html body.light-mode.home-demo2 .home2-pressure-stats strong,
+html body.theme-light.home-demo2 .home2-pressure-stats strong {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.home-demo2 .home2-pressure-copy p,
+html body.theme-light.home-demo2 .home2-pressure-copy p,
+html body.light-mode.home-demo2 .home2-pressure-stats span,
+html body.theme-light.home-demo2 .home2-pressure-stats span {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.home-demo2 .home2-pressure-stats article,
+html body.theme-light.home-demo2 .home2-pressure-stats article {
+    background: #ffffff !important;
+    background-image: none !important;
+    border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+/* Home 2 dark room guide cards should be white/readable in light mode. */
+html body.light-mode.home-demo2 section.home2-night-rules.demo2-premium-section,
+html body.theme-light.home-demo2 section.home2-night-rules.demo2-premium-section {
+    background: #f8fafc !important;
+    background-image: none !important;
+}
+
+html body.light-mode.home-demo2 .home2-night-grid article,
+html body.theme-light.home-demo2 .home2-night-grid article {
+    background: #ffffff !important;
+    background-image: none !important;
+    border-color: rgba(15, 23, 42, 0.1) !important;
+    box-shadow: 0 18px 46px rgba(15, 23, 42, 0.08) !important;
+}
+
+html body.light-mode.home-demo2 .home2-night-grid h3,
+html body.theme-light.home-demo2 .home2-night-grid h3 {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.home-demo2 .home2-night-grid p,
+html body.theme-light.home-demo2 .home2-night-grid p {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+/* Home 2 live actors panel should be white/readable in light mode. */
+html body.light-mode.home-demo2 section.live-actors.demo2-premium-section,
+html body.theme-light.home-demo2 section.live-actors.demo2-premium-section {
+    background: #f8fafc !important;
+    background-image: none !important;
+}
+
+html body.light-mode.home-demo2 .actors-text,
+html body.theme-light.home-demo2 .actors-text,
+html body.light-mode.home-demo2 .actor-cues article,
+html body.theme-light.home-demo2 .actor-cues article {
+    background: #ffffff !important;
+    background-image: none !important;
+    border-color: rgba(15, 23, 42, 0.1) !important;
+    box-shadow: 0 18px 46px rgba(15, 23, 42, 0.08) !important;
+}
+
+html body.light-mode.home-demo2 .actors-text h2,
+html body.theme-light.home-demo2 .actors-text h2,
+html body.light-mode.home-demo2 .actor-cues strong,
+html body.theme-light.home-demo2 .actor-cues strong {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.home-demo2 .actors-text > p,
+html body.theme-light.home-demo2 .actors-text > p,
+html body.light-mode.home-demo2 .actor-cues p,
+html body.theme-light.home-demo2 .actor-cues p {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+/* Home 2 escape clock panel should be white/readable in light mode. */
+html body.light-mode.home-demo2 .demo2-countdown,
+html body.theme-light.home-demo2 .demo2-countdown,
+html body.light-mode.home-demo2 .countdown-panel,
+html body.theme-light.home-demo2 .countdown-panel {
+    background: #ffffff !important;
+    background-image: none !important;
+    border-color: rgba(15, 23, 42, 0.1) !important;
+    box-shadow: 0 18px 46px rgba(15, 23, 42, 0.08) !important;
+}
+
+html body.light-mode.home-demo2 .countdown-label,
+html body.theme-light.home-demo2 .countdown-label,
+html body.light-mode.home-demo2 .countdown-status strong,
+html body.theme-light.home-demo2 .countdown-status strong {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.home-demo2 .countdown-status,
+html body.theme-light.home-demo2 .countdown-status,
+html body.light-mode.home-demo2 .countdown-status span,
+html body.theme-light.home-demo2 .countdown-status span {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.home-demo2 .countdown-meter,
+html body.theme-light.home-demo2 .countdown-meter {
+    background: rgba(15, 23, 42, 0.1) !important;
+}
+
+/* Home 2 testimonials should be white/readable in light mode. */
+html body.light-mode.home-demo2 .home2-testimonials,
+html body.theme-light.home-demo2 .home2-testimonials {
+    background: #f8fafc !important;
+    background-image: none !important;
+}
+
+html body.light-mode.home-demo2 .home2-testimonial-grid article,
+html body.theme-light.home-demo2 .home2-testimonial-grid article {
+    background: #ffffff !important;
+    background-image: none !important;
+    border-color: rgba(15, 23, 42, 0.1) !important;
+    box-shadow: 0 18px 46px rgba(15, 23, 42, 0.08) !important;
+}
+
+html body.light-mode.home-demo2 .home2-testimonial-grid article::before,
+html body.theme-light.home-demo2 .home2-testimonial-grid article::before {
+    color: rgba(15, 23, 42, 0.12) !important;
+}
+
+html body.light-mode.home-demo2 .home2-testimonial-grid p,
+html body.theme-light.home-demo2 .home2-testimonial-grid p {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.home-demo2 .home2-testimonial-grid h4,
+html body.theme-light.home-demo2 .home2-testimonial-grid h4 {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+/* About mission point boxes need visible cards in the actual theme-light mode. */
+html body.light-mode.about-page .about-inline-points span,
+html body.theme-light.about-page .about-inline-points span {
+    background: #ffffff !important;
+    background-image: none !important;
+    border: 1px solid rgba(15, 23, 42, 0.14) !important;
+    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08) !important;
+    color: #334155 !important;
+    -webkit-text-fill-color: #334155 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.about-page :is(.feature-meta span, .story-side-points span),
+html body.theme-light.about-page :is(.feature-meta span, .story-side-points span) {
+    background: #ffffff !important;
+    background-image: none !important;
+    border: 1px solid rgba(15, 23, 42, 0.14) !important;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08) !important;
+    color: #334155 !important;
+    -webkit-text-fill-color: #334155 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.about-page .vision,
+html body.theme-light.about-page .vision {
+    background: #f8fafc !important;
+    background-image: none !important;
+}
+
+html body.light-mode.about-page :is(.vision-copy, .vision-stats, .vision-stat),
+html body.theme-light.about-page :is(.vision-copy, .vision-stats, .vision-stat) {
+    background: #ffffff !important;
+    background-image: none !important;
+    border-color: rgba(15, 23, 42, 0.14) !important;
+    box-shadow: 0 18px 46px rgba(15, 23, 42, 0.08) !important;
+}
+
+html body.light-mode.about-page :is(.vision-copy h2, .vision-stat strong),
+html body.theme-light.about-page :is(.vision-copy h2, .vision-stat strong) {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.about-page :is(.vision-copy p, .vision-copy-note, .vision-stat span, .vision-stat p),
+html body.theme-light.about-page :is(.vision-copy p, .vision-copy-note, .vision-stat span, .vision-stat p) {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode.about-page :is(.vision-copy-tags span, .vision-stat-tags span),
+html body.theme-light.about-page :is(.vision-copy-tags span, .vision-stat-tags span) {
+    background: #ffffff !important;
+    background-image: none !important;
+    border: 1px solid rgba(15, 23, 42, 0.14) !important;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08) !important;
+    color: #334155 !important;
+    -webkit-text-fill-color: #334155 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+/* Rooms overview stats should be white/readable in theme-light mode. */
+html body.light-mode .rooms-overview-band,
+html body.theme-light .rooms-overview-band {
+    background: #f8fafc !important;
+    background-image: none !important;
+}
+
+html body.light-mode .rooms-overview-grid article,
+html body.theme-light .rooms-overview-grid article {
+    background: #ffffff !important;
+    background-image: none !important;
+    border-color: rgba(15, 23, 42, 0.14) !important;
+    box-shadow: 0 18px 46px rgba(15, 23, 42, 0.08) !important;
+}
+
+html body.light-mode .rooms-overview-grid strong,
+html body.theme-light .rooms-overview-grid strong {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode .rooms-overview-grid span,
+html body.theme-light .rooms-overview-grid span {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+/* Rooms featured cards should be white/readable in theme-light mode. */
+html body.light-mode .rooms-showcase-pro,
+html body.theme-light .rooms-showcase-pro {
+    background: #f8fafc !important;
+    background-image: none !important;
+}
+
+html body.light-mode .rooms-pro-card,
+html body.theme-light .rooms-pro-card,
+html body.light-mode .rooms-pro-card.featured,
+html body.theme-light .rooms-pro-card.featured {
+    background: #ffffff !important;
+    background-image: none !important;
+    border-color: rgba(15, 23, 42, 0.14) !important;
+    box-shadow: 0 18px 46px rgba(15, 23, 42, 0.08) !important;
+}
+
+html body.light-mode .rooms-pro-content h3,
+html body.theme-light .rooms-pro-content h3 {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode .rooms-pro-content p,
+html body.theme-light .rooms-pro-content p {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode :is(.rooms-pro-label, .rooms-pro-tags span),
+html body.theme-light :is(.rooms-pro-label, .rooms-pro-tags span) {
+    background: #ffffff !important;
+    background-image: none !important;
+    border: 1px solid rgba(15, 23, 42, 0.14) !important;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08) !important;
+    color: #334155 !important;
+    -webkit-text-fill-color: #334155 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+/* Rooms, news, and offers: final readable light theme cleanup. */
+html body.theme-light:is(.rooms-page, .news-page, .offers-page),
+html body.light-mode:is(.rooms-page, .news-page, .offers-page) {
+    background: #f8fafc !important;
+    color: #0f172a !important;
+}
+
+html body.theme-light:is(.rooms-page, .news-page, .offers-page)::before,
+html body.light-mode:is(.rooms-page, .news-page, .offers-page)::before {
+    opacity: 0 !important;
+    background: none !important;
+}
+
+html body.theme-light:is(.rooms-page, .news-page, .offers-page) :is(
+    .rooms-overview-band,
+    .rooms-showcase-pro,
+    .rooms-comparison,
+    .rooms-advisor-pro,
+    .rooms-editorial-band,
+    .rooms-flow-pro,
+    .rooms-cta-panel,
+    .blog-hub,
+    .blog-grid-section,
+    .blog-editorial-strip,
+    .blog-list-section,
+    .news-cta-pro,
+    .offer-section,
+    .offer-campaigns,
+    .offer-timer,
+    .promo-reveal,
+    .mystery-offer,
+    .offer-achievement,
+    .offer-popular,
+    .offer-preview,
+    .offer-story-panel,
+    .group-section,
+    .member-section,
+    .group-benefits,
+    .cta
+),
+html body.light-mode:is(.rooms-page, .news-page, .offers-page) :is(
+    .rooms-overview-band,
+    .rooms-showcase-pro,
+    .rooms-comparison,
+    .rooms-advisor-pro,
+    .rooms-editorial-band,
+    .rooms-flow-pro,
+    .rooms-cta-panel,
+    .blog-hub,
+    .blog-grid-section,
+    .blog-editorial-strip,
+    .blog-list-section,
+    .news-cta-pro,
+    .offer-section,
+    .offer-campaigns,
+    .offer-timer,
+    .promo-reveal,
+    .mystery-offer,
+    .offer-achievement,
+    .offer-popular,
+    .offer-preview,
+    .offer-story-panel,
+    .group-section,
+    .member-section,
+    .group-benefits,
+    .cta
+) {
+    background: #f8fafc !important;
+    background-image: none !important;
+    color: #0f172a !important;
+}
+
+html body.theme-light:is(.rooms-page, .news-page, .offers-page) :is(
+    .rooms-overview-grid article,
+    .rooms-pro-card,
+    .rooms-pro-card.featured,
+    .rooms-compare-card,
+    .rooms-compare-card.featured,
+    .rooms-compare-meta article,
+    .rooms-advisor-shell,
+    .rooms-advisor-card,
+    .rooms-editorial-shell,
+    .rooms-editorial-points article,
+    .rooms-flow-grid article,
+    .rooms-cta-shell,
+    .blog-featured-story,
+    .blog-sidebar-card,
+    .blog-card,
+    .blog-editorial-stats article,
+    .blog-list article,
+    .news-cta-pro,
+    .editorial-hero-card,
+    .offer-box,
+    .offer-box-premium,
+    .offer-side-card,
+    .offer-campaign-card,
+    .offer-campaign-card.featured,
+    .timer-box,
+    .offer-action-panel,
+    .mystery-box,
+    .achievement,
+    .popular-shell,
+    .popular-stat,
+    .offer-preview-panel,
+    .offer-preview-points article,
+    .offer-preview-card,
+    .offer-story-copy,
+    .group-box,
+    .discount-card,
+    .member-card,
+    .benefit,
+    .benefit-feature
+),
+html body.light-mode:is(.rooms-page, .news-page, .offers-page) :is(
+    .rooms-overview-grid article,
+    .rooms-pro-card,
+    .rooms-pro-card.featured,
+    .rooms-compare-card,
+    .rooms-compare-card.featured,
+    .rooms-compare-meta article,
+    .rooms-advisor-shell,
+    .rooms-advisor-card,
+    .rooms-editorial-shell,
+    .rooms-editorial-points article,
+    .rooms-flow-grid article,
+    .rooms-cta-shell,
+    .blog-featured-story,
+    .blog-sidebar-card,
+    .blog-card,
+    .blog-editorial-stats article,
+    .blog-list article,
+    .news-cta-pro,
+    .editorial-hero-card,
+    .offer-box,
+    .offer-box-premium,
+    .offer-side-card,
+    .offer-campaign-card,
+    .offer-campaign-card.featured,
+    .timer-box,
+    .offer-action-panel,
+    .mystery-box,
+    .achievement,
+    .popular-shell,
+    .popular-stat,
+    .offer-preview-panel,
+    .offer-preview-points article,
+    .offer-preview-card,
+    .offer-story-copy,
+    .group-box,
+    .discount-card,
+    .member-card,
+    .benefit,
+    .benefit-feature
+) {
+    background: #ffffff !important;
+    background-image: none !important;
+    border: 1px solid rgba(15, 23, 42, 0.12) !important;
+    box-shadow: 0 18px 46px rgba(15, 23, 42, 0.08) !important;
+    color: #0f172a !important;
+    text-shadow: none !important;
+}
+
+html body.theme-light:is(.rooms-page, .news-page, .offers-page) :is(
+    .rooms-overview-grid strong,
+    .rooms-pro-intro h2,
+    .rooms-pro-content h3,
+    .rooms-compare-card h3,
+    .rooms-advisor-copy h2,
+    .rooms-advisor-card h3,
+    .rooms-editorial-copy h2,
+    .rooms-editorial-points strong,
+    .rooms-flow-grid h3,
+    .rooms-cta-title,
+    .blog-featured-copy h2,
+    .blog-sidebar-card h3,
+    .blog-sidebar-card strong,
+    .blog-grid-section .editorial-heading h2,
+    .blog-card h3,
+    .blog-editorial-copy h2,
+    .blog-editorial-stats strong,
+    .blog-list h3,
+    .news-cta-pro h2,
+    .offer-box h2,
+    .offer-box .price,
+    .offer-side-card strong,
+    .offers-custom-head h2,
+    .offer-campaign-card h3,
+    .timer-unit strong,
+    .offer-reveal-copy h2,
+    .mystery-copy h2,
+    .achievement h3,
+    .popular-copy h3,
+    .popular-stat strong,
+    .offer-preview-copy h2,
+    .offer-preview-card strong,
+    .offer-story-copy h2,
+    .group-box h2,
+    .discount-card h3,
+    .member-section h2,
+    .member-card h3,
+    .benefit-feature strong,
+    .cta h2
+),
+html body.light-mode:is(.rooms-page, .news-page, .offers-page) :is(
+    .rooms-overview-grid strong,
+    .rooms-pro-intro h2,
+    .rooms-pro-content h3,
+    .rooms-compare-card h3,
+    .rooms-advisor-copy h2,
+    .rooms-advisor-card h3,
+    .rooms-editorial-copy h2,
+    .rooms-editorial-points strong,
+    .rooms-flow-grid h3,
+    .rooms-cta-title,
+    .blog-featured-copy h2,
+    .blog-sidebar-card h3,
+    .blog-sidebar-card strong,
+    .blog-grid-section .editorial-heading h2,
+    .blog-card h3,
+    .blog-editorial-copy h2,
+    .blog-editorial-stats strong,
+    .blog-list h3,
+    .news-cta-pro h2,
+    .offer-box h2,
+    .offer-box .price,
+    .offer-side-card strong,
+    .offers-custom-head h2,
+    .offer-campaign-card h3,
+    .timer-unit strong,
+    .offer-reveal-copy h2,
+    .mystery-copy h2,
+    .achievement h3,
+    .popular-copy h3,
+    .popular-stat strong,
+    .offer-preview-copy h2,
+    .offer-preview-card strong,
+    .offer-story-copy h2,
+    .group-box h2,
+    .discount-card h3,
+    .member-section h2,
+    .member-card h3,
+    .benefit-feature strong,
+    .cta h2
+) {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.theme-light:is(.rooms-page, .news-page, .offers-page) :is(
+    .rooms-overview-grid span,
+    .rooms-pro-intro p,
+    .rooms-pro-content p,
+    .rooms-compare-summary,
+    .rooms-compare-meta article span,
+    .rooms-advisor-copy p,
+    .rooms-advisor-card p,
+    .rooms-editorial-copy p,
+    .rooms-editorial-points p,
+    .rooms-flow-grid p,
+    .rooms-cta-shell p,
+    .blog-featured-copy p,
+    .blog-inline-meta span,
+    .blog-sidebar-card li,
+    .blog-sidebar-card p,
+    .blog-grid-section .editorial-heading p,
+    .blog-card p,
+    .blog-editorial-copy p,
+    .blog-list p,
+    .news-cta-pro p,
+    .offer-lead,
+    .offer-box li,
+    .offer-box li span,
+    .offer-side-card span,
+    .offers-custom-head p,
+    .offer-campaign-card p,
+    .offer-timer-note,
+    .offer-reveal-copy p,
+    .offer-reveal-points span,
+    .mystery-copy p,
+    .mystery-meta span,
+    .achievement p,
+    .popular-copy p,
+    .offer-popular-note,
+    .offer-preview-copy p,
+    .offer-preview-points p,
+    .offer-preview-card span,
+    .offer-story-copy p,
+    .discount-card p,
+    .member-card li,
+    .benefit-feature p,
+    .cta p
+),
+html body.light-mode:is(.rooms-page, .news-page, .offers-page) :is(
+    .rooms-overview-grid span,
+    .rooms-pro-intro p,
+    .rooms-pro-content p,
+    .rooms-compare-summary,
+    .rooms-compare-meta article span,
+    .rooms-advisor-copy p,
+    .rooms-advisor-card p,
+    .rooms-editorial-copy p,
+    .rooms-editorial-points p,
+    .rooms-flow-grid p,
+    .rooms-cta-shell p,
+    .blog-featured-copy p,
+    .blog-inline-meta span,
+    .blog-sidebar-card li,
+    .blog-sidebar-card p,
+    .blog-grid-section .editorial-heading p,
+    .blog-card p,
+    .blog-editorial-copy p,
+    .blog-list p,
+    .news-cta-pro p,
+    .offer-lead,
+    .offer-box li,
+    .offer-box li span,
+    .offer-side-card span,
+    .offers-custom-head p,
+    .offer-campaign-card p,
+    .offer-timer-note,
+    .offer-reveal-copy p,
+    .offer-reveal-points span,
+    .mystery-copy p,
+    .mystery-meta span,
+    .achievement p,
+    .popular-copy p,
+    .offer-popular-note,
+    .offer-preview-copy p,
+    .offer-preview-points p,
+    .offer-preview-card span,
+    .offer-story-copy p,
+    .discount-card p,
+    .member-card li,
+    .benefit-feature p,
+    .cta p
+) {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.theme-light:is(.rooms-page, .news-page, .offers-page) :is(
+    .eyebrow,
+    .rooms-pro-label,
+    .rooms-pro-tags span,
+    .rooms-compare-kicker,
+    .blog-tag,
+    .blog-date,
+    .hero-card-label,
+    .offer-badge,
+    .campaign-tag,
+    .achievement-step,
+    .benefit-label
+),
+html body.light-mode:is(.rooms-page, .news-page, .offers-page) :is(
+    .eyebrow,
+    .rooms-pro-label,
+    .rooms-pro-tags span,
+    .rooms-compare-kicker,
+    .blog-tag,
+    .blog-date,
+    .hero-card-label,
+    .offer-badge,
+    .campaign-tag,
+    .achievement-step,
+    .benefit-label
+) {
+    color: #6d28d9 !important;
+    -webkit-text-fill-color: #6d28d9 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.theme-light:is(.rooms-page, .news-page, .offers-page) :is(
+    .rooms-pro-label,
+    .rooms-pro-tags span,
+    .rooms-compare-kicker,
+    .blog-tag,
+    .blog-date,
+    .offer-badge,
+    .campaign-tag
+),
+html body.light-mode:is(.rooms-page, .news-page, .offers-page) :is(
+    .rooms-pro-label,
+    .rooms-pro-tags span,
+    .rooms-compare-kicker,
+    .blog-tag,
+    .blog-date,
+    .offer-badge,
+    .campaign-tag
+) {
+    background: #f8fafc !important;
+    background-image: none !important;
+    border: 1px solid rgba(109, 40, 217, 0.16) !important;
+    box-shadow: none !important;
+}
+
+html body.theme-light:is(.rooms-page, .news-page, .offers-page) :is(.btn, .login-btn, .contact-btn, button[type="submit"]),
+html body.light-mode:is(.rooms-page, .news-page, .offers-page) :is(.btn, .login-btn, .contact-btn, button[type="submit"]) {
+    background: linear-gradient(135deg, #8b5cf6, #a78bfa) !important;
+    border-color: rgba(109, 40, 217, 0.42) !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+html body.theme-light:is(.rooms-page, .news-page, .offers-page) :is(.btn.secondary, .rooms-card-actions .btn.secondary),
+html body.light-mode:is(.rooms-page, .news-page, .offers-page) :is(.btn.secondary, .rooms-card-actions .btn.secondary) {
+    background: rgba(139, 92, 246, 0.08) !important;
+    border-color: rgba(109, 40, 217, 0.22) !important;
+    color: #6d28d9 !important;
+    -webkit-text-fill-color: #6d28d9 !important;
+}
