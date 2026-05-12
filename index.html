@@ -9,9 +9,26 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="./img/logo1.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/site-cyberpunk.css">
-<link rel="stylesheet" href="css/home-cyberpunk.css">
+<link rel="stylesheet" href="css/style.css?v=footer-white-fix-1">
+<link rel="stylesheet" href="css/site-cyberpunk.css?v=footer-white-fix-1">
+<link rel="stylesheet" href="css/home-cyberpunk.css?v=footer-white-fix-1">
+<style>
+body.light-mode.home-demo1 #homeStats strong,
+body.theme-light.home-demo1 #homeStats strong {
+    color: #6d28d9 !important;
+    -webkit-text-fill-color: #6d28d9 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    text-shadow: none !important;
+}
+
+body.light-mode.home-demo1 #homeStats span,
+body.theme-light.home-demo1 #homeStats span {
+    color: #334155 !important;
+    -webkit-text-fill-color: #334155 !important;
+}
+</style>
 </head>
 
 <body class="has-custom-extras home-demo1">
@@ -60,7 +77,7 @@
             <p>Enter a dark cinematic puzzle world where every sound, clue, lock, and second pushes your team closer to victory or lockdown.</p>
             <div class="hero-actions">
                 <a href="booking.html?item=MystIQ%20Escape%20Room" class="btn hero-primary">Book Your Challenge</a>
-                <a href="rooms.html" class="hero-secondary">Explore Rooms</a>
+                <a href="rooms.html" class="hero-secondary" id="heroExploreRooms">Explore Rooms</a>
             </div>
             <div class="hero-countdown" data-countdown-seconds="3600" aria-label="Challenge countdown">
                 <div><strong data-countdown-part="hours">01</strong><span>Hours</span></div>
@@ -87,21 +104,21 @@
         </div>
     </section>
 
-    <section class="stats-section reveal-section">
+    <section class="stats-section reveal-section" id="homeStats">
         <article>
-            <strong data-countup="5000" data-countup-format="comma-plus">0</strong>
+            <strong data-countup="5000" data-countup-format="comma-plus" style="color: #7c3aed !important; -webkit-text-fill-color: #7c3aed !important;">0</strong>
             <span>Players</span>
         </article>
         <article>
-            <strong data-countup="50" data-countup-format="plus">0</strong>
+            <strong data-countup="50" data-countup-format="plus" style="color: #7c3aed !important; -webkit-text-fill-color: #7c3aed !important;">0</strong>
             <span>Puzzle Rooms</span>
         </article>
         <article>
-            <strong data-countup="98" data-countup-format="percent">0</strong>
+            <strong data-countup="98" data-countup-format="percent" style="color: #7c3aed !important; -webkit-text-fill-color: #7c3aed !important;">0</strong>
             <span>Escape Rate</span>
         </article>
         <article>
-            <strong data-countup="24" data-countup-format="hours">0</strong>
+            <strong data-countup="24" data-countup-format="hours" style="color: #7c3aed !important; -webkit-text-fill-color: #7c3aed !important;">0</strong>
             <span>Support</span>
         </article>
     </section>
