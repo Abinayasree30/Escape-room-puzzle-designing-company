@@ -1362,26 +1362,374 @@ function initDarkMode() {
 function updateDirBtn() {
     const btn = document.getElementById('dirToggle') || document.getElementById('mq-dir-btn');
     if (!btn) return;
-    const currentDir = document.documentElement.getAttribute('dir') || 'ltr';
+    const currentDir = (
+        document.documentElement.getAttribute('dir') === 'rtl' ||
+        document.body?.getAttribute('dir') === 'rtl' ||
+        document.documentElement.classList.contains('dir-rtl') ||
+        document.body?.classList.contains('dir-rtl')
+    ) ? 'rtl' : 'ltr';
     const label = btn.querySelector('.dir-label');
-    const buttonLabel = currentDir === 'rtl' ? 'RTL' : 'LTR';
+    const buttonLabel = currentDir === 'rtl' ? 'LTR' : 'RTL';
     if (label) {
         label.textContent = buttonLabel;
     } else {
         btn.textContent = buttonLabel;
     }
+    btn.dataset.direction = currentDir;
+    btn.setAttribute('aria-pressed', currentDir === 'rtl' ? 'true' : 'false');
     btn.title = currentDir === 'rtl' ? 'Switch to Left-to-Right' : 'Switch to Right-to-Left';
 }
 
-function applyDirection(dir) {
-    document.documentElement.setAttribute('dir', dir);
+function setDirectionalStyle(selector, styles) {
+    document.querySelectorAll(selector).forEach((element) => {
+        Object.entries(styles).forEach(([property, value]) => {
+            element.style.setProperty(property, value, 'important');
+        });
+    });
+}
+
+function setDirectionalChildOrder(selector, dir) {
+    document.querySelectorAll(selector).forEach((element) => {
+        const children = Array.from(element.children);
+        children.forEach((child, index) => {
+            const order = dir === 'rtl' ? children.length - index : index + 1;
+            child.style.setProperty('order', String(order), 'important');
+        });
+    });
+}
+
+function setDirectionalDomOrder(selector, dir) {
+    document.querySelectorAll(selector).forEach((element) => {
+        Array.from(element.children).forEach((child, index) => {
+            if (!child.dataset.directionOriginalIndex) {
+                child.dataset.directionOriginalIndex = String(index);
+            }
+        });
+
+        const orderedChildren = Array.from(element.children).sort((first, second) => {
+            const firstIndex = Number(first.dataset.directionOriginalIndex || 0);
+            const secondIndex = Number(second.dataset.directionOriginalIndex || 0);
+            return dir === 'rtl' ? secondIndex - firstIndex : firstIndex - secondIndex;
+        });
+
+        orderedChildren.forEach((child) => element.appendChild(child));
+    });
+}
+
+function applyDirectionalComponents(dir) {
+    const isRtl = dir === 'rtl';
+    const textAlign = isRtl ? 'right' : 'left';
+    const inlineStart = isRtl ? 'flex-end' : 'flex-start';
+    const rowFlow = isRtl ? 'row-reverse' : 'row';
+
     if (document.body) {
-        document.body.setAttribute('dir', dir);
+        document.body.dataset.direction = dir;
     }
+    document.documentElement.dataset.direction = dir;
+
+    setDirectionalStyle('html, body', {
+        direction: dir,
+        'text-align': textAlign
+    });
+
+    setDirectionalStyle('.header', {
+        direction: dir,
+        'flex-direction': window.matchMedia('(max-width: 768px)').matches ? 'row' : rowFlow
+    });
+
+    setDirectionalStyle('.header > .logo, .header > .logo > .logo-link', {
+        'justify-content': inlineStart
+    });
+
+    setDirectionalStyle('.header > .logo > .logo-link > img', {
+        'object-position': isRtl ? 'right center' : 'left center'
+    });
+
+    setDirectionalStyle([
+        '.nav',
+        '.right-section',
+        '.nav-mobile-actions',
+        '.hero-actions',
+        '.index-hero-actions',
+        '.editorial-hero-actions',
+        '.offer-hero-actions',
+        '.news-cta-actions',
+        '.site-cta-actions',
+        '.offer-box-actions',
+        '.offer-reveal-points',
+        '.room-tags',
+        '.feature-meta',
+        '.blog-inline-meta',
+        '.social-links'
+    ].join(','), {
+        direction: dir,
+        'flex-direction': rowFlow
+    });
+
+    if (window.matchMedia('(max-width: 768px)').matches) {
+        setDirectionalStyle([
+            '.header .nav',
+            '.header.menu-open .nav',
+            '.hero-actions',
+            '.index-hero-actions',
+            '.editorial-hero-actions',
+            '.offer-hero-actions',
+            '.news-cta-actions',
+            '.site-cta-actions'
+        ].join(','), {
+            'flex-direction': 'column'
+        });
+    }
+
+    setDirectionalStyle([
+        '.editorial-hero-shell',
+        '.offer-hero-shell',
+        '.blog-hub',
+        '.blog-featured-story',
+        '.blog-editorial-strip',
+        '.news-trending-shell',
+        '.news-cta-pro',
+        '.blog-cta-pro',
+        '.offer-box-premium',
+        '.offer-reveal-shell',
+        '.mystery-shell',
+        '.popular-shell',
+        '.offer-preview-panel',
+        '.offer-story-shell',
+        '.room-preview-layout',
+        '.rooms-editorial-shell',
+        '.contact-shell',
+        '.site-duo',
+        '.site-quote',
+        '.site-cta-band',
+        '.blog-grid',
+        '.offer-campaign-grid',
+        '.achievement-grid',
+        '.rooms-grid',
+        '.rooms-pro-grid'
+    ].join(','), {
+        direction: dir
+    });
+
+    setDirectionalStyle([
+        '.editorial-hero-copy',
+        '.editorial-hero-card',
+        '.offer-hero .hero-text',
+        '.offer-hero-panel',
+        '.section-heading',
+        '.editorial-heading',
+        '.offers-custom-head',
+        '.rooms-custom-head',
+        '.news-custom-head',
+        '.blog-featured-copy',
+        '.blog-sidebar-card',
+        '.blog-card-copy',
+        '.blog-editorial-copy',
+        '.blog-editorial-stats article',
+        '.blog-list article',
+        '.blog-list article div',
+        '.news-trending-copy',
+        '.news-trending-pulse article',
+        '.news-trending-list article',
+        '.news-cta-pro > div',
+        '.offer-box-copy',
+        '.offer-box-side',
+        '.offer-campaign-card',
+        '.offer-campaign-card div',
+        '.offer-reveal-copy',
+        '.mystery-copy',
+        '.achievement',
+        '.achievement-copy',
+        '.popular-copy',
+        '.popular-stat',
+        '.offer-preview-copy',
+        '.offer-preview-card',
+        '.offer-story-copy',
+        '.room-card',
+        '.rooms-pro-card',
+        '.contact-form',
+        '.contact-info',
+        '.footer-column'
+    ].join(','), {
+        direction: dir,
+        'text-align': textAlign
+    });
+
+    setDirectionalStyle('.blog-tag, .blog-date, .campaign-tag, .offer-campaign-card span, .offer-badge, .achievement-step', {
+        'align-self': inlineStart
+    });
+
+    setDirectionalStyle('.dropdown', {
+        left: isRtl ? 'auto' : '0',
+        right: isRtl ? '0' : 'auto',
+        'text-align': textAlign
+    });
+
+    if (window.matchMedia('(max-width: 980px)').matches) {
+        setDirectionalStyle('.editorial-hero-shell, .offer-hero-shell', {
+            'grid-template-columns': '1fr'
+        });
+
+        setDirectionalStyle('.editorial-hero-copy, .editorial-hero-card, .offer-hero .hero-text, .offer-hero-panel', {
+            'grid-column': '1',
+            'justify-self': 'center',
+            'text-align': 'center'
+        });
+    } else {
+        setDirectionalStyle('.editorial-hero-shell, .offer-hero-shell', {
+            'grid-template-columns': isRtl ? 'minmax(300px, 420px) minmax(0, 1fr)' : 'minmax(0, 1.15fr) minmax(280px, 0.85fr)'
+        });
+
+        setDirectionalStyle('.editorial-hero-card, .offer-hero-panel', {
+            'grid-column': isRtl ? '1' : '2',
+            'justify-self': isRtl ? 'start' : 'end'
+        });
+
+        setDirectionalStyle('.editorial-hero-copy, .offer-hero .hero-text', {
+            'grid-column': isRtl ? '2' : '1',
+            'justify-self': isRtl ? 'end' : 'start',
+            'text-align': textAlign
+        });
+    }
+
+    setDirectionalStyle('.blog-list article', {
+        'grid-template-columns': isRtl ? '1fr auto' : 'auto 1fr'
+    });
+
+    setDirectionalStyle('.blog-list article > span', {
+        'grid-column': isRtl ? '2' : '1'
+    });
+
+    setDirectionalStyle('.blog-list article > div', {
+        'grid-column': isRtl ? '1' : '2'
+    });
+
+    setDirectionalStyle('.offer-box li', {
+        direction: dir,
+        'text-align': textAlign,
+        'flex-direction': rowFlow
+    });
+
+    setDirectionalStyle('.offer-preview-card li, .news-trending li, .blog-sidebar-card li', {
+        direction: dir,
+        'text-align': textAlign
+    });
+
+    const componentOrderSelectors = [
+        '.header',
+        '.nav',
+        '.right-section',
+        '.editorial-hero-shell',
+        '.offer-hero-shell',
+        '.blog-hub',
+        '.blog-featured-story',
+        '.blog-editorial-strip',
+        '.blog-editorial-stats',
+        '.blog-list article',
+        '.blog-grid',
+        '.news-cta-pro',
+        '.offer-box-premium',
+        '.offer-campaign-grid',
+        '.offer-reveal-shell',
+        '.mystery-shell',
+        '.mystery-meta',
+        '.achievement-grid',
+        '.popular-shell',
+        '.offer-preview-panel',
+        '.offer-preview-points',
+        '.offer-preview-side',
+        '.offer-story-shell',
+        '.offer-story-stats',
+        '.footer-content'
+    ].join(',');
+
+    setDirectionalDomOrder(componentOrderSelectors, dir);
+    setDirectionalChildOrder(componentOrderSelectors, dir);
+
+    setDirectionalStyle([
+        '.editorial-hero-shell > *',
+        '.offer-hero-shell > *',
+        '.blog-hub > *',
+        '.blog-featured-story > *',
+        '.blog-editorial-strip > *',
+        '.news-cta-pro > *',
+        '.offer-box-premium > *',
+        '.offer-reveal-shell > *',
+        '.mystery-shell > *',
+        '.popular-shell > *',
+        '.offer-preview-panel > *',
+        '.offer-story-shell > *',
+        '.offer-campaign-grid > *',
+        '.achievement-grid > *',
+        '.blog-grid > *'
+    ].join(','), {
+        'grid-column': 'auto',
+        'grid-row': 'auto'
+    });
+
+    setDirectionalStyle('.editorial-hero-shell, .offer-hero-shell', {
+        'grid-template-areas': isRtl ? '"panel copy"' : '"copy panel"',
+        'align-items': 'center'
+    });
+
+    setDirectionalStyle('.editorial-hero-copy, .offer-hero .hero-text', {
+        position: 'relative',
+        top: 'auto',
+        left: 'auto',
+        right: 'auto',
+        width: '100%',
+        'grid-area': 'copy',
+        'grid-column': 'auto',
+        'grid-row': 'auto'
+    });
+
+    setDirectionalStyle('.editorial-hero-card, .offer-hero-panel', {
+        'grid-area': 'panel',
+        'grid-column': 'auto',
+        'grid-row': 'auto'
+    });
+
+    setDirectionalStyle('.offer-box-premium', {
+        'grid-template-areas': isRtl ? '"side copy"' : '"copy side"'
+    });
+
+    setDirectionalStyle('.offer-box-copy', {
+        'grid-area': 'copy',
+        'grid-column': 'auto',
+        'grid-row': 'auto'
+    });
+
+    setDirectionalStyle('.offer-box-side', {
+        'grid-area': 'side',
+        'grid-column': 'auto',
+        'grid-row': 'auto'
+    });
+}
+
+function applyDirection(dir) {
+    const nextDir = dir === 'rtl' ? 'rtl' : 'ltr';
+    document.documentElement.setAttribute('dir', nextDir);
+    document.documentElement.classList.toggle('dir-rtl', nextDir === 'rtl');
+    document.documentElement.classList.toggle('dir-ltr', nextDir === 'ltr');
+
+    if (document.body) {
+        document.body.setAttribute('dir', nextDir);
+        document.body.classList.toggle('dir-rtl', nextDir === 'rtl');
+        document.body.classList.toggle('dir-ltr', nextDir === 'ltr');
+        document.body.style.direction = nextDir;
+    }
+
+    document.documentElement.style.direction = nextDir;
+    applyDirectionalComponents(nextDir);
 }
 
 function toggleDirection() {
-    const currentDir = document.documentElement.getAttribute('dir') || 'ltr';
+    const currentDir = (
+        document.documentElement.getAttribute('dir') === 'rtl' ||
+        document.body?.getAttribute('dir') === 'rtl' ||
+        document.documentElement.classList.contains('dir-rtl') ||
+        document.body?.classList.contains('dir-rtl')
+    ) ? 'rtl' : 'ltr';
     const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
     applyDirection(newDir);
     localStorage.setItem('mystiq-dir', newDir);
@@ -1394,14 +1742,15 @@ function initDirection() {
     updateDirBtn();
 }
 
+window.addEventListener('resize', () => {
+    const currentDir = document.documentElement.getAttribute('dir') === 'rtl' ? 'rtl' : 'ltr';
+    applyDirectionalComponents(currentDir);
+});
+
 /* =============================================
    INJECT TOGGLE BUTTONS INTO ALL PAGES
    ============================================= */
 function injectToggles() {
-    if (document.body.classList.contains('login-page-body') || document.body.classList.contains('register-page-body')) {
-        return;
-    }
-
     const existingDarkBtn = document.getElementById('darkModeToggle') || document.getElementById('mq-enable-btn');
     const existingDirBtn = document.getElementById('dirToggle') || document.getElementById('mq-dir-btn');
 
