@@ -74,6 +74,22 @@ function isMobileNav() {
     return window.matchMedia("(max-width: 1024px)").matches;
 }
 
+function syncHeaderOffsetVar() {
+    const root = document.documentElement;
+    if (!root) {
+        return;
+    }
+
+    const header = document.querySelector(".header");
+    if (!header) {
+        root.style.setProperty("--site-header-offset", "0px");
+        return;
+    }
+
+    const height = Math.ceil(header.getBoundingClientRect().height);
+    root.style.setProperty("--site-header-offset", `${height}px`);
+}
+
 function closeMobileMenu() {
     const header = document.querySelector(".header");
     const toggle = document.querySelector(".nav-toggle");
@@ -83,6 +99,7 @@ function closeMobileMenu() {
 
     header.classList.remove("menu-open");
     toggle.setAttribute("aria-expanded", "false");
+    syncHeaderOffsetVar();
 }
 
 function toggleMobileMenu() {
@@ -99,6 +116,8 @@ function toggleMobileMenu() {
     if (!shouldOpen) {
         closeAllDropdowns();
     }
+
+    syncHeaderOffsetVar();
 }
 
 function ensureMobileNavToggle() {
@@ -150,6 +169,8 @@ function syncResponsiveHeaderControls() {
             rightSection.appendChild(control);
         });
     }
+
+    syncHeaderOffsetVar();
 }
 
 dropdownTriggers.forEach((trigger) => {
@@ -1264,6 +1285,43 @@ body.theme-light footer :is(a:hover, .footer-contact i, .social-links a, .social
     -webkit-text-fill-color: #7c3aed !important;
     opacity: 1 !important;
 }
+
+body.theme-light.home-demo1 .hero .hero-text .hero-kicker {
+    width: fit-content !important;
+    margin: 0 auto 16px !important;
+    padding: 8px 13px !important;
+    border: 1px solid rgba(0, 224, 255, 0.34) !important;
+    border-radius: 999px !important;
+    background: rgba(0, 224, 255, 0.1) !important;
+    color: var(--game-cyan) !important;
+    -webkit-text-fill-color: var(--game-cyan) !important;
+    font-family: 'Orbitron', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0.14em !important;
+    text-transform: uppercase !important;
+    text-shadow: none !important;
+}
+
+body.theme-light.offers-page :is(.offer-action-panel, .mystery-box) .offer-badge,
+body.theme-light.offers-page .promo-reveal .offer-badge,
+body.theme-light.offers-page .one-tap-voucher-badge,
+body.theme-light.offers-page .limited-drop-badge,
+body.theme-light.offers-page :is(.group-offers-popular-copy h3, .group-offers-popular-copy p, .group-offers-popular-stat strong, .group-offers-popular-stat span),
+body.theme-light.offers-page .offer-popular :is(.popular-copy h3, .popular-copy p, .popular-stat strong, .popular-stat span, .offer-popular-note) {
+    color: #050505 !important;
+    -webkit-text-fill-color: #050505 !important;
+    text-shadow: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+    mix-blend-mode: normal !important;
+}
+
+body.theme-light.offers-page .offer-popular :is(.popular-copy, .popular-stat) {
+    background: #ffffff !important;
+    background-image: none !important;
+}
 `;
     document.head.appendChild(style);
 }
@@ -2219,6 +2277,8 @@ function initCountdownTimer() {
 }
 
 initCountdownTimer();
+syncHeaderOffsetVar();
+window.addEventListener("resize", syncHeaderOffsetVar);
 
 function togglePasswordVisibility(inputId = "loginPassword", toggleButton = null) {
     const passwordInput = document.getElementById(inputId);
