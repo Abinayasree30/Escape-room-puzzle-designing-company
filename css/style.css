@@ -10,6 +10,7 @@
     --white: #ffffff;
     --text-light: #d0d0d0;
     --bg-dark: rgba(0,0,0,0.95);
+    --site-header-offset: 96px;
 }
 
 /* Hero clipping fix */
@@ -3491,6 +3492,16 @@ button {
     padding:56px 40px 0;
 }
 
+/* About page: add spacing between the 2nd (about-section) and 3rd (about-features) sections. */
+.about-section + .about-features {
+    margin-top: 48px;
+}
+
+/* About page: add spacing between consecutive about sections. */
+body.about-page .about-section + .about-section {
+    margin-top: 48px;
+}
+
 .about-section-shell {
     max-width: 1180px;
     margin: 0 auto;
@@ -3788,6 +3799,12 @@ button {
         rgba(9, 15, 26, 0.92);
 }
 
+/* About page: remove bottom shadow on the left (featured) card. */
+.about-features-grid .about-feature-card.featured-card,
+.about-features-grid .about-feature-card.featured-card:hover {
+    box-shadow: none;
+}
+
 .feature-tag,
 .feature-count {
     display: inline-flex;
@@ -3884,6 +3901,15 @@ button {
     grid-template-columns: 1.2fr 0.9fr;
     gap: 28px;
     align-items: start;
+}
+
+/* About page: vertically center the right "Why It Matters" card relative to the timeline. */
+body.about-page .story-layout {
+    align-items: center;
+}
+
+body.about-page .story-side-card {
+    align-self: center;
 }
 
 .story-layout > * {
@@ -10366,6 +10392,13 @@ body.light-mode .about-kicker {
     color: var(--primary-dark);
 }
 
+/* Home 2 (light mode): keep section eyebrow fully readable. */
+body.light-mode.home-demo2 .demo2-section-head .eyebrow {
+    color: #3b0764 !important;
+    -webkit-text-fill-color: #3b0764 !important;
+    opacity: 1 !important;
+}
+
 /* Section sub */
 body.light-mode .section-sub {
     color: #5a6a7a;
@@ -11158,8 +11191,8 @@ body.home-demo1 section:not(.hero) {
 }
 
 body.home-demo1 .header {
-    height: 86px !important;
-    padding: 0 5vw !important;
+    height: 96px !important;
+    padding: 0 40px !important;
     background: rgba(15, 15, 15, 0.28) !important;
     border-bottom: 1px solid rgba(139, 92, 246, 0.12) !important;
     backdrop-filter: blur(0) !important;
@@ -11828,7 +11861,7 @@ body.home-demo1 footer a:hover {
 
 @media (max-width: 1024px) {
     body.home-demo1 .header {
-        height: 76px !important;
+        height: 96px !important;
     }
 
     body.home-demo1 .nav {
@@ -12147,8 +12180,8 @@ body.home-demo1 footer a:hover {
     justify-content: center !important;
     align-items: center !important;
     text-align: center !important;
-    margin-top: 96px !important;
-    min-height: calc(100vh - 96px) !important;
+    margin-top: var(--site-header-offset, 96px) !important;
+    min-height: calc(100vh - var(--site-header-offset, 96px)) !important;
     padding-top: 24px !important;
     padding-bottom: 24px !important;
 }
@@ -14953,6 +14986,11 @@ body.home-demo1 .newsletter-form input {
     margin: 0 auto 28px;
 }
 
+/* News page: add breathing room after the hero */
+body.news-page .blog-hub {
+    margin-top: 44px;
+}
+
 .packages-overview {
     margin-top: -54px;
     position: relative;
@@ -15172,6 +15210,12 @@ body.home-demo1 .newsletter-form input {
 .blog-sidebar-card h3 {
     color: #fff;
     margin-bottom: 10px;
+}
+
+/* News page (dark mode): remove black background behind the blog list items. */
+body.news-page:not(.light-mode):not(.theme-light) .blog-list article {
+    background: transparent !important;
+    background-image: none !important;
 }
 
 .packages-concierge-panel {
@@ -16197,7 +16241,8 @@ body.light-mode .nav-toggle:hover {
         border-radius: 14px;
     }
 
-    body.light-mode .header.menu-open .nav {
+    body.light-mode .header.menu-open .nav,
+    body.theme-light .header.menu-open .nav {
         border-color: rgba(0, 184, 213, 0.18);
         background:
             linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(246, 250, 255, 0.98));
@@ -16205,7 +16250,9 @@ body.light-mode .nav-toggle:hover {
     }
 
     body.light-mode .nav > a,
-    body.light-mode .nav-item > a {
+    body.light-mode .nav-item > a,
+    body.theme-light .nav > a,
+    body.theme-light .nav-item > a {
         background: rgba(15, 23, 42, 0.05);
         color: #0f172a !important;
     }
@@ -16213,28 +16260,37 @@ body.light-mode .nav-toggle:hover {
     body.light-mode .nav-item > a:hover,
     body.light-mode .nav-item > a.active,
     body.light-mode .nav > a:hover,
-    body.light-mode .nav > a.active {
+    body.light-mode .nav > a.active,
+    body.theme-light .nav-item > a:hover,
+    body.theme-light .nav-item > a.active,
+    body.theme-light .nav > a:hover,
+    body.theme-light .nav > a.active {
         background: rgba(0, 184, 213, 0.1);
         color: #007f98 !important;
     }
 
-    body.light-mode .dropdown {
+    body.light-mode .dropdown,
+    body.theme-light .dropdown {
         background: rgba(15, 23, 42, 0.04);
         border-color: rgba(0, 184, 213, 0.12);
     }
 
-    body.light-mode .nav-mobile-actions {
+    body.light-mode .nav-mobile-actions,
+    body.theme-light .nav-mobile-actions {
         border-top-color: rgba(15, 23, 42, 0.08);
     }
 
     body.light-mode .nav-mobile-actions .icon-btn,
-    body.light-mode .nav-mobile-actions .dir-toggle {
+    body.light-mode .nav-mobile-actions .dir-toggle,
+    body.theme-light .nav-mobile-actions .icon-btn,
+    body.theme-light .nav-mobile-actions .dir-toggle {
         border-color: rgba(15, 23, 42, 0.1);
         background: rgba(15, 23, 42, 0.04);
         color: #0f172a;
     }
 
-    body.light-mode .nav-mobile-actions .login-btn {
+    body.light-mode .nav-mobile-actions .login-btn,
+    body.theme-light .nav-mobile-actions .login-btn {
         color: #041018;
     }
 
@@ -16329,6 +16385,18 @@ body.light-mode .nav-toggle:hover {
         min-height: 520px;
         padding-top: 140px;
         padding-bottom: 56px;
+    }
+
+    /* Mobile: remove extra gap below the fixed header on inner pages. */
+    .rooms-hero,
+    .room-hero,
+    .contact-hero,
+    .offer-hero,
+    .group-hero,
+    .member-hero,
+    .news-hero {
+        margin-top: 0 !important;
+        min-height: 100vh !important;
     }
 
     .rooms-hero-actions .btn,
@@ -18383,7 +18451,7 @@ body.light-mode :is(
     color: #ffffff;
 }
 
-.rooms-hero-actions a:last-child {
+.rooms-hero-actions .btn.secondary {
     color: #fff !important;
 }
 

@@ -39,8 +39,8 @@ body.home-demo1 section:not(.hero) {
 }
 
 body.home-demo1 .header {
-    height: 86px !important;
-    padding: 0 5vw !important;
+    height: 96px !important;
+    padding: 0 40px !important;
     background: rgba(15, 15, 15, 0.28) !important;
     border-bottom: 1px solid rgba(139, 92, 246, 0.12) !important;
     backdrop-filter: blur(0) !important;
@@ -305,7 +305,8 @@ body.home-demo1 .about-modern {
 
 body.home-demo1 .about-modern-eyebrow {
     grid-column: 1 / -1;
-    justify-self: center;
+    justify-self: start;
+    text-align: left;
     margin-bottom: 0 !important;
 }
 
@@ -315,7 +316,8 @@ body.home-demo1 .offer-section {
 
 body.home-demo1 .offer-section-eyebrow {
     grid-column: 1 / -1;
-    justify-self: center;
+    justify-self: start;
+    text-align: left;
     margin-bottom: 0 !important;
 }
 
@@ -408,6 +410,11 @@ body.home-demo1 .stats-section article {
     border-radius: 8px;
     padding: 32px 22px;
     text-align: center;
+}
+
+/* Home 1 (dark mode): remove the glass shadow behind stats text. */
+body.home-demo1:not(.light-mode):not(.theme-light) #homeStats.stats-section article {
+    box-shadow: none !important;
 }
 
 body.home-demo1 .rooms {
@@ -742,7 +749,7 @@ body.home-demo1 footer a:hover {
 
 @media (max-width: 1024px) {
     body.home-demo1 .header {
-        height: 76px !important;
+        height: 96px !important;
     }
 
     body.home-demo1 .nav {
@@ -2083,11 +2090,10 @@ html body.light-mode.home-demo1 .header .nav .nav-item:has(> a[data-menu="home"]
     color: #7c3aed !important;
 }
 
-/* Home feature cards: keep the first icon from stretching into a line. */
-html body.home-demo1 .feature-icon-grid article:first-child i,
-html body.light-mode.home-demo1 .feature-icon-grid article:first-child i {
+/* Home feature cards: normalize icon box so the label spacing matches across cards. */
+html body.home-demo1 .feature-icon-grid i,
+html body.light-mode.home-demo1 .feature-icon-grid i {
     width: 34px !important;
-    max-width: 34px !important;
     height: 34px !important;
     display: inline-flex !important;
     align-items: center !important;
@@ -2097,17 +2103,6 @@ html body.light-mode.home-demo1 .feature-icon-grid article:first-child i {
     box-shadow: none !important;
     text-shadow: none !important;
     line-height: 1 !important;
-}
-
-html body.home-demo1 .feature-icon-grid article:first-child i::before,
-html body.light-mode.home-demo1 .feature-icon-grid article:first-child i::before {
-    display: inline-block !important;
-    width: auto !important;
-    max-width: 34px !important;
-    overflow: hidden !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
 }
 
 /* Home 1 RTL responsive navbar lock: 360px, 768px, and 1024px */
@@ -2864,4 +2859,83 @@ html body.light-mode.home-demo1 footer :is(a:hover, .footer-contact i, .social-l
 html body.theme-light.home-demo1 .footer-bottom,
 html body.light-mode.home-demo1 .footer-bottom {
     border-top: 1px solid rgba(124, 58, 237, 0.18) !important;
+}
+
+/* Home 1 hero: prevent vertical jump when toggling light/dark mode. */
+html body.home-demo1 .hero,
+html body.light-mode.home-demo1 .hero,
+html body.theme-light.home-demo1 .hero {
+    min-height: 100svh !important;
+    height: auto !important;
+    margin-top: -2px !important;
+    padding: 132px 40px 70px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    transform: none !important;
+}
+
+html body.home-demo1 .hero-text,
+html body.light-mode.home-demo1 .hero-text,
+html body.theme-light.home-demo1 .hero-text {
+    width: min(100%, 880px) !important;
+    max-width: 880px !important;
+    margin: 0 auto !important;
+    padding: 0 12px !important;
+    transform: none !important;
+}
+
+html body.home-demo1 .hero-text h1,
+html body.light-mode.home-demo1 .hero-text h1,
+html body.theme-light.home-demo1 .hero-text h1 {
+    max-width: 820px !important;
+    margin: 0 auto 20px !important;
+    font-size: clamp(3rem, 5.6vw, 5.9rem) !important;
+    line-height: 0.98 !important;
+    letter-spacing: 0 !important;
+}
+
+html body.home-demo1 .hero-text > p:not(.hero-kicker),
+html body.light-mode.home-demo1 .hero-text > p:not(.hero-kicker),
+html body.theme-light.home-demo1 .hero-text > p:not(.hero-kicker) {
+    max-width: 680px !important;
+    margin: 0 auto !important;
+    font-size: clamp(1rem, 1.7vw, 1.22rem) !important;
+    line-height: 1.75 !important;
+}
+
+html body.home-demo1 .hero-actions,
+html body.light-mode.home-demo1 .hero-actions,
+html body.theme-light.home-demo1 .hero-actions {
+    margin-top: 30px !important;
+}
+
+html body.home-demo1 .hero-countdown,
+html body.light-mode.home-demo1 .hero-countdown,
+html body.theme-light.home-demo1 .hero-countdown {
+    margin-top: 26px !important;
+}
+
+html.theme-switching body.home-demo1 .hero,
+html.theme-switching body.home-demo1 .hero * {
+    transition: none !important;
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+}
+
+@media (max-width: 768px) {
+    html body.home-demo1 .hero,
+    html body.light-mode.home-demo1 .hero,
+    html body.theme-light.home-demo1 .hero {
+        min-height: auto !important;
+        padding: 118px 16px 50px !important;
+    }
+
+    html body.home-demo1 .hero-text h1,
+    html body.light-mode.home-demo1 .hero-text h1,
+    html body.theme-light.home-demo1 .hero-text h1 {
+        font-size: clamp(2.35rem, 12vw, 3.6rem) !important;
+        line-height: 1.08 !important;
+    }
 }

@@ -24,7 +24,7 @@ body:not(.light-mode)::before {
 }
 
 body:not(.light-mode) :is(h1, h2, h3, h4, h5, h6),
-body:not(.light-mode) :is(.btn, button, .nav a, .hero-card-label, .about-kicker, .eyebrow, .site-mini-label) {
+body:not(.light-mode):not(.theme-light) :is(.btn, button, .nav a, .hero-card-label, .about-kicker, .eyebrow, .site-mini-label) {
     font-family: 'Orbitron', sans-serif !important;
     letter-spacing: 0 !important;
 }
@@ -65,15 +65,15 @@ body:not(.light-mode) .logo img {
     filter: drop-shadow(0 0 14px rgba(139, 92, 246, 0.38));
 }
 
-body:not(.light-mode) .nav a {
+body:not(.light-mode):not(.theme-light) .nav a {
     position: relative;
     text-transform: uppercase;
     font-size: 13px !important;
     color: #ffffff !important;
 }
 
-body:not(.light-mode) .nav > a::after,
-body:not(.light-mode) .nav-item > a::after {
+body:not(.light-mode):not(.theme-light) .nav > a::after,
+body:not(.light-mode):not(.theme-light) .nav-item > a::after {
     content: "";
     position: absolute;
     left: 0;
@@ -86,14 +86,14 @@ body:not(.light-mode) .nav-item > a::after {
     transition: transform 0.3s ease;
 }
 
-body:not(.light-mode) .nav > a:hover::after,
-body:not(.light-mode) .nav-item:hover > a::after,
-body:not(.light-mode) .nav a.active::after {
+body:not(.light-mode):not(.theme-light) .nav > a:hover::after,
+body:not(.light-mode):not(.theme-light) .nav-item:hover > a::after,
+body:not(.light-mode):not(.theme-light) .nav a.active::after {
     transform: scaleX(1);
 }
 
-body:not(.light-mode) .nav a:hover,
-body:not(.light-mode) .nav a.active {
+body:not(.light-mode):not(.theme-light) .nav a:hover,
+body:not(.light-mode):not(.theme-light) .nav a.active {
     color: #ffffff !important;
     text-shadow: 0 0 14px rgba(139, 92, 246, 0.75);
 }
@@ -444,7 +444,7 @@ body:not(.light-mode) .footer-bottom {
 }
 
 @media (max-width: 1024px) {
-    body:not(.light-mode) .nav {
+    body:not(.light-mode):not(.theme-light) .nav {
         background: rgba(15, 15, 15, 0.97) !important;
         border: 1px solid rgba(139, 92, 246, 0.35) !important;
         backdrop-filter: blur(14px);
@@ -1933,6 +1933,11 @@ body.light-mode :is(.btn, .login-btn, .contact-btn, .booking-confirm, .search-su
     text-shadow: 0 0 16px rgba(139, 92, 246, 0.42) !important;
 }
 
+/* Offers page (dark mode): remove the glow shadow behind the left text in the 2nd section box. */
+body.offers-page:not(.light-mode):not(.theme-light) .offer-section .offer-box-copy :is(h2, h3) {
+    text-shadow: none !important;
+}
+
 .offers-page :is(
     .offer-lead,
     .offers-custom-head p,
@@ -2467,9 +2472,126 @@ body.light-mode.offers-page :is(.offer-box.offer-box-premium, .offer-campaign-ca
     color: #0f172a !important;
 }
 
+body.theme-light.offers-page :is(.offer-box.offer-box-premium, .offer-campaign-card, .offer-preview-panel, .group-box, .member-card, .benefit-feature) {
+    background:
+        radial-gradient(circle at top right, rgba(139, 92, 246, 0.08), transparent 34%),
+        #ffffff !important;
+    color: #0f172a !important;
+}
+
 body.light-mode.offers-page :is(.offer-box.offer-box-premium h2, .offer-campaign-card h3, .offer-preview-copy h3, .group-box h2, .member-card h3, .benefit-feature strong) {
     color: #0f172a !important;
     -webkit-text-fill-color: #0f172a !important;
+}
+
+body.theme-light.offers-page :is(.offer-box.offer-box-premium h2, .offer-campaign-card h3, .offer-preview-copy h3, .group-box h2, .member-card h3, .benefit-feature strong) {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
+
+/* Offers page (theme-light): keep "dark image panels" readable with bright text */
+html body.theme-light.has-custom-extras.offers-page :is(
+    .offer-action-panel,
+    .offer-reveal-shell,
+    .mystery-box,
+    .mystery-shell,
+    .popular-shell,
+    .popular-shell-rich,
+    .cta
+) :is(.eyebrow, h2, h3, p, li, span, small, em, strong) {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    opacity: 1 !important;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.55) !important;
+}
+
+/* Offers page (theme-light): on white cards, avoid low-contrast lavender headings */
+html body.theme-light.has-custom-extras.offers-page :is(.achievement, .member-card, .group-box, .benefit, .discount-card) :is(h2, h3, strong, p, li, span, small, em) {
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.theme-light.has-custom-extras.offers-page .achievement :is(strong, p),
+html body.theme-light.has-custom-extras.offers-page .achievement-step {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
+
+html body.theme-light.has-custom-extras.offers-page .member-card .price {
+    color: #7c3aed !important;
+    -webkit-text-fill-color: #7c3aed !important;
+}
+
+html body.theme-light.has-custom-extras.offers-page .offer-preview-card strong {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
+
+/* Offers page (theme-light): match the existing light-mode (white card) readability rules. */
+html body.theme-light.has-custom-extras.offers-page :is(.offer-story-image, .offer-story-copy, .offer-story-stats article, .discount-card, .member-card, .benefit, .benefit-feature, .achievement) {
+    background: #ffffff !important;
+    background-image: none !important;
+    border-color: rgba(15, 23, 42, 0.12) !important;
+    box-shadow: 0 18px 44px rgba(15, 23, 42, 0.08) !important;
+}
+
+html body.theme-light.has-custom-extras.offers-page :is(
+    .offers-custom-head h2,
+    .offer-story-copy h2,
+    .offer-story-stats strong,
+    .group-box h2,
+    .member-section h2,
+    .discount-card h3,
+    .member-card h3,
+    .achievement strong,
+    .benefit-feature strong
+) {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.theme-light.has-custom-extras.offers-page :is(
+    .offers-custom-head p,
+    .offer-story-copy p,
+    .offer-story-stats span,
+    .offer-preview-copy p,
+    .offer-preview-card span,
+    .offer-preview-card p,
+    .offer-preview-card li,
+    .group-box p,
+    .discount-card p,
+    .member-card li,
+    .achievement p,
+    .benefit-feature p
+) {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.theme-light.has-custom-extras.offers-page .offer-preview-points strong {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.theme-light.has-custom-extras.offers-page .offer-preview-points span {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+/* Offers "Most Chosen" stat box: keep readable in theme-light. */
+html body.theme-light.has-custom-extras.offers-page .popular-stat :is(strong, span) {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
 }
 
 /* Final light-mode screenshot cleanup pass */
@@ -2777,8 +2899,7 @@ body.light-mode :is(
     -webkit-text-fill-color: rgba(255, 255, 255, 0.84) !important;
 }
 /* Final light-mode hero and CTA screenshot fixes */
-.rooms-hero-actions .btn.secondary,
-.rooms-hero-actions a:last-child {
+.rooms-hero-actions .btn.secondary {
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
     background: rgba(255, 255, 255, .14) !important;
@@ -2787,12 +2908,19 @@ body.light-mode :is(
     text-shadow: 0 0 12px rgba(139, 92, 246, .55) !important;
 }
 
-.rooms-hero-actions .btn.secondary:hover,
-.rooms-hero-actions a:last-child:hover {
+.rooms-hero-actions .btn.secondary:hover {
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
     background: #8b5cf6 !important;
     border-color: #8b5cf6 !important;
+}
+
+/* Rooms hero: make both CTAs use the same primary gradient */
+html body .rooms-hero .rooms-hero-actions :is(.btn, .btn.secondary) {
+    background: linear-gradient(135deg, #8b5cf6, #a78bfa) !important;
+    border-color: rgba(255, 255, 255, 0.18) !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
 }
 
 body.light-mode .editorial-hero.blog-hero,
@@ -3537,20 +3665,20 @@ html body.light-mode.has-custom-extras.offers-page .offer-hero .hero-text > p {
 }
 
 /* Rooms light-mode hero secondary CTA readability */
-body.light-mode .rooms-hero .rooms-hero-actions .btn.secondary,
-body.light-mode .rooms-hero .rooms-hero-actions a:last-child {
+body.theme-light .rooms-hero .rooms-hero-actions .btn.secondary,
+body.light-mode .rooms-hero .rooms-hero-actions .btn.secondary {
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
-    background: #6d28d9 !important;
-    border-color: #6d28d9 !important;
+    background: linear-gradient(135deg, #8b5cf6, #a78bfa) !important;
+    border-color: rgba(255, 255, 255, 0.18) !important;
     box-shadow: 0 16px 36px rgba(109, 40, 217, 0.28) !important;
     text-shadow: none !important;
 }
 
-body.light-mode .rooms-hero .rooms-hero-actions .btn.secondary:hover,
-body.light-mode .rooms-hero .rooms-hero-actions a:last-child:hover {
-    background: #5b21b6 !important;
-    border-color: #5b21b6 !important;
+body.theme-light .rooms-hero .rooms-hero-actions .btn.secondary:hover,
+body.light-mode .rooms-hero .rooms-hero-actions .btn.secondary:hover {
+    background: linear-gradient(135deg, #7c3aed, #8b5cf6) !important;
+    border-color: rgba(255, 255, 255, 0.18) !important;
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
 }
@@ -3570,10 +3698,27 @@ body.light-mode :is(.btn, button, .nav a, .hero-card-label, .about-kicker, .eyeb
     letter-spacing: 0 !important;
 }
 
+body.theme-light {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+body.theme-light :is(h1, h2, h3, h4, h5, h6),
+body.theme-light :is(.btn, button, .nav a, .hero-card-label, .about-kicker, .eyebrow, .site-mini-label) {
+    font-family: 'Orbitron', sans-serif !important;
+    letter-spacing: 0 !important;
+}
+
 body.light-mode p,
 body.light-mode li,
 body.light-mode label,
 body.light-mode span {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+body.theme-light p,
+body.theme-light li,
+body.theme-light label,
+body.theme-light span {
     font-family: 'Poppins', sans-serif !important;
 }
 
@@ -4569,8 +4714,23 @@ html body.light-mode.has-custom-extras.offers-page .offer-timer .timer-box {
     box-shadow: 0 28px 74px rgba(15, 23, 42, 0.1), 0 0 28px rgba(139, 92, 246, 0.1) !important;
 }
 
+html body.theme-light.has-custom-extras.offers-page .offer-timer .timer-box {
+    background:
+        radial-gradient(circle at 20% 12%, rgba(139, 92, 246, 0.14), transparent 30%),
+        linear-gradient(135deg, #ffffff, #f2efff) !important;
+    box-shadow: 0 28px 74px rgba(15, 23, 42, 0.1), 0 0 28px rgba(139, 92, 246, 0.1) !important;
+}
+
 html body.light-mode.has-custom-extras.offers-page .offer-timer .timer-box::before,
 html body.light-mode.has-custom-extras.offers-page .offer-timer .timer-box::after {
+    background: #7c3aed !important;
+    border-color: #7c3aed !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+html body.theme-light.has-custom-extras.offers-page .offer-timer .timer-box::before,
+html body.theme-light.has-custom-extras.offers-page .offer-timer .timer-box::after {
     background: #7c3aed !important;
     border-color: #7c3aed !important;
     color: #ffffff !important;
@@ -4583,7 +4743,19 @@ html body.light-mode.has-custom-extras.offers-page .offer-timer .timer-unit {
     box-shadow: 0 18px 38px rgba(124, 58, 237, 0.1) !important;
 }
 
+html body.theme-light.has-custom-extras.offers-page .offer-timer .timer-unit {
+    background: #ffffff !important;
+    border-color: rgba(124, 58, 237, 0.28) !important;
+    box-shadow: 0 18px 38px rgba(124, 58, 237, 0.1) !important;
+}
+
 html body.light-mode.has-custom-extras.offers-page .offer-timer .timer-box span {
+    color: #7c3aed !important;
+    -webkit-text-fill-color: #7c3aed !important;
+    text-shadow: none !important;
+}
+
+html body.theme-light.has-custom-extras.offers-page .offer-timer .timer-box span {
     color: #7c3aed !important;
     -webkit-text-fill-color: #7c3aed !important;
     text-shadow: none !important;
@@ -4592,6 +4764,13 @@ html body.light-mode.has-custom-extras.offers-page .offer-timer .timer-box span 
 html body.light-mode.has-custom-extras.offers-page .offer-timer .timer-unit small,
 html body.light-mode.has-custom-extras.offers-page .offer-timer .timer-box em,
 html body.light-mode.has-custom-extras.offers-page .offer-timer-note {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
+
+html body.theme-light.has-custom-extras.offers-page .offer-timer .timer-unit small,
+html body.theme-light.has-custom-extras.offers-page .offer-timer .timer-box em,
+html body.theme-light.has-custom-extras.offers-page .offer-timer-note {
     color: #0f172a !important;
     -webkit-text-fill-color: #0f172a !important;
 }
@@ -6356,6 +6535,20 @@ html body.light-mode.home-demo2 .story-text {
     box-shadow: 0 26px 70px rgba(15, 23, 42, 0.12) !important;
 }
 
+html body.light-mode.home-demo2 .story-text::before {
+    color: #3b0764 !important;
+    -webkit-text-fill-color: #3b0764 !important;
+    background: rgba(124, 58, 237, 0.08) !important;
+    border-color: rgba(124, 58, 237, 0.22) !important;
+}
+
+html body.theme-light.home-demo2 .story-text::before {
+    color: #3b0764 !important;
+    -webkit-text-fill-color: #3b0764 !important;
+    background: rgba(124, 58, 237, 0.08) !important;
+    border-color: rgba(124, 58, 237, 0.22) !important;
+}
+
 html body.light-mode.home-demo2 .story-text h2 {
     color: #0f172a !important;
     -webkit-text-fill-color: #0f172a !important;
@@ -6436,11 +6629,27 @@ html body.light-mode.home-demo2 .cta p {
     text-shadow: 0 8px 28px rgba(0, 0, 0, 0.58), 0 0 26px rgba(139, 92, 246, 0.38) !important;
 }
 
+html body.theme-light.home-demo2 .cta h2,
+html body.theme-light.home-demo2 .cta p {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    opacity: 1 !important;
+    text-shadow: 0 8px 28px rgba(0, 0, 0, 0.58), 0 0 26px rgba(139, 92, 246, 0.38) !important;
+}
+
 html body.light-mode.home-demo2 .cta h2 {
     font-weight: 700 !important;
 }
 
+html body.theme-light.home-demo2 .cta h2 {
+    font-weight: 700 !important;
+}
+
 html body.light-mode.home-demo2 .cta::after {
+    background: linear-gradient(135deg, rgba(5, 8, 18, 0.78), rgba(88, 48, 140, 0.56)) !important;
+}
+
+html body.theme-light.home-demo2 .cta::after {
     background: linear-gradient(135deg, rgba(5, 8, 18, 0.78), rgba(88, 48, 140, 0.56)) !important;
 }
 
@@ -8036,6 +8245,8 @@ html body.theme-light:is(.rooms-page, .news-page, .offers-page) :is(
     .rooms-advisor-shell,
     .rooms-advisor-card,
     .rooms-editorial-shell,
+    .rooms-editorial-visual,
+    .rooms-editorial-copy,
     .rooms-editorial-points article,
     .rooms-flow-grid article,
     .rooms-cta-shell,
@@ -8077,6 +8288,8 @@ html body.light-mode:is(.rooms-page, .news-page, .offers-page) :is(
     .rooms-advisor-shell,
     .rooms-advisor-card,
     .rooms-editorial-shell,
+    .rooms-editorial-visual,
+    .rooms-editorial-copy,
     .rooms-editorial-points article,
     .rooms-flow-grid article,
     .rooms-cta-shell,
@@ -8114,6 +8327,32 @@ html body.light-mode:is(.rooms-page, .news-page, .offers-page) :is(
     box-shadow: 0 18px 46px rgba(15, 23, 42, 0.08) !important;
     color: #0f172a !important;
     text-shadow: none !important;
+}
+
+/* Rooms CTA (theme-light): keep the background image, but increase overlay + force light text for readability. */
+html body.theme-light .rooms-cta-panel,
+html body.theme-light .rooms-cta-shell {
+    background:
+        linear-gradient(135deg, rgba(7, 12, 24, 0.82), rgba(88, 48, 140, 0.60)),
+        url("../img/escape-showcase-side.jpg") center/cover no-repeat !important;
+    border-color: rgba(139, 92, 246, 0.22) !important;
+    box-shadow: 0 28px 76px rgba(0, 0, 0, 0.26) !important;
+}
+
+html body.theme-light :is(.rooms-cta-panel, .rooms-cta-shell)::before {
+    opacity: 1 !important;
+}
+
+html body.theme-light :is(.rooms-cta-panel, .rooms-cta-shell)::after {
+    opacity: 1 !important;
+    background: linear-gradient(135deg, rgba(7, 12, 24, 0.86), rgba(88, 48, 140, 0.64)) !important;
+}
+
+html body.theme-light :is(.rooms-cta-panel, .rooms-cta-shell) :is(.eyebrow, h2, h3, p) {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    opacity: 1 !important;
+    text-shadow: 0 10px 28px rgba(0, 0, 0, 0.36) !important;
 }
 
 html body.theme-light:is(.rooms-page, .news-page, .offers-page) :is(
@@ -8368,4 +8607,270 @@ html body.light-mode:is(.rooms-page, .news-page, .offers-page) :is(.btn.secondar
     border-color: rgba(109, 40, 217, 0.22) !important;
     color: #6d28d9 !important;
     -webkit-text-fill-color: #6d28d9 !important;
+}
+
+/* Rooms CTA: keep text readable in theme-light/light-mode even when global light-mode text rules apply later. */
+html body.theme-light :is(.rooms-cta-panel, .rooms-cta-shell) :is(.eyebrow, h2, h3, p),
+html body.light-mode :is(.rooms-cta-panel, .rooms-cta-shell) :is(.eyebrow, h2, h3, p) {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    opacity: 1 !important;
+    text-shadow: 0 10px 28px rgba(0, 0, 0, 0.36) !important;
+}
+
+html body.theme-light .rooms-cta-shell > div:first-child,
+html body.light-mode .rooms-cta-shell > div:first-child {
+    background: rgba(2, 6, 23, 0.55) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    border-radius: 22px !important;
+    padding: 20px 22px !important;
+    box-shadow: 0 18px 46px rgba(0, 0, 0, 0.28) !important;
+}
+
+html body.theme-light .rooms-cta-shell > div:first-child :is(.eyebrow, h1, h2, h3, p, span, small, em, strong),
+html body.light-mode .rooms-cta-shell > div:first-child :is(.eyebrow, h1, h2, h3, p, span, small, em, strong) {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    opacity: 1 !important;
+    text-shadow: 0 10px 28px rgba(0, 0, 0, 0.42) !important;
+}
+
+/* News hero (theme-light): keep the featured update card readable over the image. */
+html body.theme-light.has-custom-extras.news-page .editorial-hero.blog-hero .editorial-hero-card {
+    background: linear-gradient(180deg, rgba(18, 18, 23, 0.86), rgba(12, 12, 16, 0.76)) !important;
+    border: 1px solid rgba(139, 92, 246, 0.36) !important;
+    border-radius: 8px !important;
+    padding: 30px !important;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.36), 0 0 32px rgba(139, 92, 246, 0.14) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+}
+
+html body.theme-light.has-custom-extras.news-page .editorial-hero.blog-hero .editorial-hero-card :is(
+    .hero-card-label,
+    h2,
+    .hero-card-price,
+    .hero-card-price span,
+    p,
+    .hero-card-points span
+) {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+html body.theme-light.has-custom-extras.news-page .editorial-hero.blog-hero .hero-card-price {
+    background: linear-gradient(90deg, rgba(139, 92, 246, 0.22), rgba(139, 92, 246, 0.08)) !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+html body.theme-light.has-custom-extras.news-page .editorial-hero.blog-hero .hero-card-points span {
+    background: rgba(139, 92, 246, 0.18) !important;
+    border: 1px solid rgba(139, 92, 246, 0.36) !important;
+    box-shadow: none !important;
+}
+
+/* News CTA (theme-light): keep CTA copy readable over the image background. */
+html body.theme-light.news-page :is(.news-cta-pro, .news-cta-pro.blog-cta-pro) :is(.eyebrow, h2, h3, p, span, small, em, strong) {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    opacity: 1 !important;
+    text-shadow: 0 10px 28px rgba(0, 0, 0, 0.42) !important;
+}
+
+/* Offers page (theme-light): improve contrast for badges, stats, and discount cards. */
+html body.theme-light.has-custom-extras.offers-page :is(.offer-badge, .campaign-tag) {
+    background: rgba(109, 40, 217, 0.12) !important;
+    border: 1px solid rgba(109, 40, 217, 0.22) !important;
+    color: #6d28d9 !important;
+    -webkit-text-fill-color: #6d28d9 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.theme-light.has-custom-extras.offers-page .popular-stat {
+    background: #ffffff !important;
+    border-color: rgba(15, 23, 42, 0.12) !important;
+    box-shadow: 0 18px 44px rgba(15, 23, 42, 0.08) !important;
+}
+
+html body.theme-light.has-custom-extras.offers-page .popular-stat strong {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.theme-light.has-custom-extras.offers-page .popular-stat span {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.theme-light.has-custom-extras.offers-page .discount-card::before {
+    background: rgba(109, 40, 217, 0.12) !important;
+    border: 1px solid rgba(109, 40, 217, 0.22) !important;
+    color: #6d28d9 !important;
+    -webkit-text-fill-color: #6d28d9 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body.theme-light.has-custom-extras.offers-page .discount-card p {
+    color: #6d28d9 !important;
+    -webkit-text-fill-color: #6d28d9 !important;
+    text-shadow: none !important;
+    opacity: 1 !important;
+}
+
+/* Offers "Most Chosen" stat: force dark text (extra-specific to beat other !important rules). */
+html body.theme-light.offers-page .offer-popular .popular-stat {
+    background: #ffffff !important;
+}
+
+html body.theme-light.offers-page .offer-popular .popular-stat :is(strong, span) {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+    mix-blend-mode: normal !important;
+    filter: none !important;
+}
+
+/* Offers reveal/mystery badges: keep readable on light pills in theme-light. */
+html body.theme-light.offers-page :is(.offer-action-panel, .mystery-box) .offer-badge,
+html body.light-mode.offers-page :is(.offer-action-panel, .mystery-box) .offer-badge {
+    background: #ffffff !important;
+    border: 1px solid rgba(15, 23, 42, 0.14) !important;
+    color: #050505 !important;
+    -webkit-text-fill-color: #050505 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+/* Offers light mode: keep the Most Chosen panel readable on white cards. */
+html body.offers-page:is(.theme-light, .light-mode) .offer-popular {
+    background: #ffffff !important;
+    background-image: none !important;
+}
+
+html body.offers-page:is(.theme-light, .light-mode) .offer-popular :is(.popular-copy, .popular-stat) {
+    background: #ffffff !important;
+    background-image: none !important;
+    border-color: rgba(15, 23, 42, 0.12) !important;
+    box-shadow: 0 18px 44px rgba(15, 23, 42, 0.08) !important;
+    text-shadow: none !important;
+    opacity: 1 !important;
+}
+
+html body.offers-page:is(.theme-light, .light-mode) .offer-popular .popular-copy h3,
+html body.offers-page:is(.theme-light, .light-mode) .offer-popular .popular-stat strong {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    text-shadow: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+    mix-blend-mode: normal !important;
+}
+
+html body.offers-page:is(.theme-light, .light-mode) .offer-popular .popular-copy p,
+html body.offers-page:is(.theme-light, .light-mode) .offer-popular .popular-stat span,
+html body.offers-page:is(.theme-light, .light-mode) .offer-popular .offer-popular-note {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    text-shadow: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+    mix-blend-mode: normal !important;
+}
+
+/* Offers Most Chosen: keep copy readable when the section is rendered on light cards. */
+html body.offers-page .offer-popular .popular-copy h3,
+html body.offers-page .offer-popular .popular-stat strong {
+    color: #050505 !important;
+    -webkit-text-fill-color: #050505 !important;
+    text-shadow: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+    mix-blend-mode: normal !important;
+}
+
+html body.offers-page .offer-popular .popular-copy p,
+html body.offers-page .offer-popular .popular-stat span,
+html body.offers-page .offer-popular .offer-popular-note {
+    color: #111111 !important;
+    -webkit-text-fill-color: #111111 !important;
+    text-shadow: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+    mix-blend-mode: normal !important;
+}
+
+html body.theme-light.offers-page .offer-popular :is(.popular-copy, .popular-stat),
+html body.light-mode.offers-page .offer-popular :is(.popular-copy, .popular-stat) {
+    background: #ffffff !important;
+    background-image: none !important;
+}
+
+html body.theme-light.offers-page .offer-popular :is(.popular-copy h3, .popular-copy p, .popular-stat strong, .popular-stat span, .offer-popular-note),
+html body.light-mode.offers-page .offer-popular :is(.popular-copy h3, .popular-copy p, .popular-stat strong, .popular-stat span, .offer-popular-note) {
+    color: #050505 !important;
+    -webkit-text-fill-color: #050505 !important;
+    text-shadow: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+    mix-blend-mode: normal !important;
+}
+
+html body.theme-light.offers-page :is(.group-offers-popular-copy h3, .group-offers-popular-copy p, .group-offers-popular-stat strong, .group-offers-popular-stat span),
+html body.light-mode.offers-page :is(.group-offers-popular-copy h3, .group-offers-popular-copy p, .group-offers-popular-stat strong, .group-offers-popular-stat span) {
+    color: #050505 !important;
+    -webkit-text-fill-color: #050505 !important;
+    text-shadow: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+    mix-blend-mode: normal !important;
+}
+
+/* One-Tap Voucher pill: black label in light mode. */
+html body.theme-light.offers-page .promo-reveal .offer-badge,
+html body.light-mode.offers-page .promo-reveal .offer-badge {
+    color: #050505 !important;
+    -webkit-text-fill-color: #050505 !important;
+    text-shadow: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+    mix-blend-mode: normal !important;
+}
+
+html body.theme-light.offers-page :is(.one-tap-voucher-badge, .limited-drop-badge),
+html body.light-mode.offers-page :is(.one-tap-voucher-badge, .limited-drop-badge),
+html body.offers-page.theme-light :is(.one-tap-voucher-badge, .limited-drop-badge),
+html body.offers-page.light-mode :is(.one-tap-voucher-badge, .limited-drop-badge) {
+    color: #050505 !important;
+    -webkit-text-fill-color: #050505 !important;
+    text-shadow: none !important;
+    opacity: 1 !important;
+}
+
+/* Home hero kicker: keep the same sci-fi badge typography after light-mode/theme-light toggles. */
+html body.home-demo1:is(.theme-light, .light-mode) .hero-kicker,
+html body:is(.theme-light, .light-mode).home-demo1 .hero .hero-text .hero-kicker {
+    width: fit-content !important;
+    margin: 0 auto 16px !important;
+    padding: 8px 13px !important;
+    border: 1px solid rgba(0, 224, 255, 0.34) !important;
+    border-radius: 999px !important;
+    background: rgba(0, 224, 255, 0.1) !important;
+    color: var(--game-cyan) !important;
+    -webkit-text-fill-color: var(--game-cyan) !important;
+    font-family: 'Orbitron', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0.14em !important;
+    text-transform: uppercase !important;
+    text-shadow: none !important;
 }
