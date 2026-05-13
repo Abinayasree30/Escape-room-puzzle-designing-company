@@ -2939,3 +2939,81 @@ html.theme-switching body.home-demo1 .hero * {
         line-height: 1.08 !important;
     }
 }
+
+/* Home 1 gallery: keep English heading punctuation and moving image strip stable in RTL mode. */
+html[dir="rtl"] body.home-demo1 .gallery-slider,
+html[dir="rtl"] body.light-mode.home-demo1 .gallery-slider,
+html[dir="rtl"] body.theme-light.home-demo1 .gallery-slider {
+    direction: ltr !important;
+    text-align: center !important;
+}
+
+html[dir="rtl"] body.home-demo1 .gallery-slider .home-section-head,
+html[dir="rtl"] body.light-mode.home-demo1 .gallery-slider .home-section-head,
+html[dir="rtl"] body.theme-light.home-demo1 .gallery-slider .home-section-head {
+    direction: ltr !important;
+    text-align: center !important;
+}
+
+html[dir="rtl"] body.home-demo1 .gallery-slider .home-section-head :is(.eyebrow, h2),
+html[dir="rtl"] body.light-mode.home-demo1 .gallery-slider .home-section-head :is(.eyebrow, h2),
+html[dir="rtl"] body.theme-light.home-demo1 .gallery-slider .home-section-head :is(.eyebrow, h2) {
+    direction: ltr !important;
+    unicode-bidi: isolate !important;
+    text-align: center !important;
+}
+
+html[dir="rtl"] body.home-demo1 .gallery-track,
+html[dir="rtl"] body.light-mode.home-demo1 .gallery-track,
+html[dir="rtl"] body.theme-light.home-demo1 .gallery-track {
+    direction: ltr !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    margin-inline-start: 0 !important;
+    margin-inline-end: auto !important;
+    animation-name: gallerySlide !important;
+    transform-origin: left center !important;
+}
+
+html[dir="rtl"] body.home-demo1 .gallery-track figure,
+html[dir="rtl"] body.light-mode.home-demo1 .gallery-track figure,
+html[dir="rtl"] body.theme-light.home-demo1 .gallery-track figure {
+    direction: ltr !important;
+    flex: 0 0 auto !important;
+}
+
+/* Home 1 testimonials: keep English review cards readable in RTL mode. */
+html[dir="rtl"] body.home-demo1 .testimonials,
+html[dir="rtl"] body.light-mode.home-demo1 .testimonials,
+html[dir="rtl"] body.theme-light.home-demo1 .testimonials {
+    direction: ltr !important;
+}
+
+html[dir="rtl"] body.home-demo1 .testimonial-container,
+html[dir="rtl"] body.light-mode.home-demo1 .testimonial-container,
+html[dir="rtl"] body.theme-light.home-demo1 .testimonial-container {
+    direction: ltr !important;
+}
+
+html[dir="rtl"] body.home-demo1 .testimonial-card,
+html[dir="rtl"] body.light-mode.home-demo1 .testimonial-card,
+html[dir="rtl"] body.theme-light.home-demo1 .testimonial-card {
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+html[dir="rtl"] body.home-demo1 .testimonial-card :is(p, h4, span),
+html[dir="rtl"] body.light-mode.home-demo1 .testimonial-card :is(p, h4, span),
+html[dir="rtl"] body.theme-light.home-demo1 .testimonial-card :is(p, h4, span) {
+    direction: ltr !important;
+    unicode-bidi: isolate !important;
+    text-align: left !important;
+}
+
+html[dir="rtl"] body.home-demo1 .testimonial-rating-row,
+html[dir="rtl"] body.light-mode.home-demo1 .testimonial-rating-row,
+html[dir="rtl"] body.theme-light.home-demo1 .testimonial-rating-row {
+    direction: ltr !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+}

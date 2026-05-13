@@ -670,6 +670,524 @@ body.light-mode.home-demo2 .exp-card p {
     }
 }
 
+/* Direction toggle component layer: let LTR/RTL change layout, not only text flow. */
+html[dir="rtl"] body {
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+html[dir="rtl"] body :is(
+    .header,
+    .footer-content,
+    .site-lead,
+    .site-duo,
+    .site-quote,
+    .site-cta-band,
+    .editorial-hero-shell,
+    .offer-hero-shell,
+    .offer-box-premium,
+    .offer-reveal-shell,
+    .mystery-shell,
+    .popular-shell,
+    .offer-preview-panel,
+    .offer-story-shell
+) {
+    direction: rtl !important;
+}
+
+html[dir="rtl"] body :is(.header .nav, .header .right-section) {
+    direction: rtl !important;
+    flex-direction: row-reverse !important;
+}
+
+html[dir="rtl"] body .dropdown {
+    left: auto !important;
+    right: 0 !important;
+    text-align: right !important;
+}
+
+html[dir="rtl"] body :is(
+    .editorial-hero-copy,
+    .offer-hero .hero-text,
+    .offer-hero-panel,
+    .offer-box-copy,
+    .offer-box-side,
+    .offer-campaign-card,
+    .offer-campaign-card div,
+    .offer-reveal-copy,
+    .mystery-copy,
+    .popular-copy,
+    .popular-stat,
+    .offer-preview-copy,
+    .offer-preview-card,
+    .offer-story-copy
+) {
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+html[dir="rtl"] body :is(.editorial-hero-shell, .offer-hero-shell) {
+    grid-template-columns: minmax(300px, 420px) minmax(0, 1fr) !important;
+}
+
+html[dir="rtl"] body :is(.editorial-hero-card, .offer-hero-panel) {
+    grid-column: 1 !important;
+    justify-self: start !important;
+}
+
+html[dir="rtl"] body :is(.editorial-hero-copy, .offer-hero .hero-text) {
+    grid-column: 2 !important;
+    justify-self: end !important;
+}
+
+html[dir="rtl"] body :is(
+    .editorial-hero-actions,
+    .hero-card-points,
+    .offer-hero-actions,
+    .offer-box-actions,
+    .offer-reveal-points,
+    .mystery-meta,
+    .offer-story-stats,
+    .offer-preview-points
+) {
+    direction: rtl !important;
+    flex-direction: row-reverse !important;
+    justify-content: flex-start !important;
+}
+
+html[dir="rtl"] body :is(.offer-box li, .offer-preview-card li) {
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+html[dir="rtl"] body .offer-box li {
+    flex-direction: row-reverse !important;
+}
+
+html[dir="rtl"] body :is(.campaign-tag, .offer-campaign-card span, .offer-badge, .achievement-step) {
+    align-self: flex-end !important;
+}
+
+html[dir="rtl"] body .offer-box.offer-box-premium {
+    grid-template-columns: minmax(280px, 0.7fr) minmax(0, 1.3fr) !important;
+    background-position: left center !important;
+}
+
+html[dir="rtl"] body .offer-box-side {
+    order: 1 !important;
+}
+
+html[dir="rtl"] body .offer-box-copy {
+    order: 2 !important;
+}
+
+html[dir="rtl"] body :is(.offer-reveal-visual, .mystery-visual, .popular-visual, .offer-preview-side, .offer-story-image) {
+    direction: ltr !important;
+}
+
+html[dir="ltr"] body {
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+html[dir="ltr"] body :is(
+    .editorial-hero-copy,
+    .offer-hero .hero-text,
+    .offer-hero-panel,
+    .offer-box-copy,
+    .offer-box-side,
+    .offer-campaign-card,
+    .offer-campaign-card div,
+    .offer-reveal-copy,
+    .mystery-copy,
+    .popular-copy,
+    .popular-stat,
+    .offer-preview-copy,
+    .offer-preview-card,
+    .offer-story-copy
+) {
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+html[dir="ltr"] body :is(.editorial-hero-shell, .offer-hero-shell) {
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr) !important;
+}
+
+html[dir="ltr"] body :is(.editorial-hero-copy, .offer-hero .hero-text) {
+    grid-column: 1 !important;
+    justify-self: start !important;
+}
+
+html[dir="ltr"] body :is(.editorial-hero-card, .offer-hero-panel) {
+    grid-column: 2 !important;
+    justify-self: end !important;
+}
+
+html[dir="ltr"] body :is(.campaign-tag, .offer-campaign-card span, .offer-badge, .achievement-step) {
+    align-self: flex-start !important;
+}
+
+@media (max-width: 980px) {
+    html[dir="rtl"] body :is(.editorial-hero-shell, .offer-hero-shell),
+    html[dir="ltr"] body :is(.editorial-hero-shell, .offer-hero-shell) {
+        grid-template-columns: 1fr !important;
+    }
+
+    html[dir="rtl"] body :is(.editorial-hero-copy, .editorial-hero-card, .offer-hero .hero-text, .offer-hero-panel),
+    html[dir="ltr"] body :is(.editorial-hero-copy, .editorial-hero-card, .offer-hero .hero-text, .offer-hero-panel) {
+        grid-column: 1 !important;
+        justify-self: center !important;
+        text-align: center !important;
+    }
+
+    html[dir="rtl"] body :is(.editorial-hero-actions, .hero-card-points, .offer-hero-actions),
+    html[dir="ltr"] body :is(.editorial-hero-actions, .hero-card-points, .offer-hero-actions) {
+        justify-content: center !important;
+    }
+}
+
+@media (max-width: 768px) {
+    html[dir="rtl"] body :is(.header .nav, .header.menu-open .nav),
+    html[dir="ltr"] body :is(.header .nav, .header.menu-open .nav) {
+        flex-direction: column !important;
+    }
+}
+
+/* Site-wide direction override: shared pages must mirror whole components. */
+html[dir="rtl"] body {
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+html[dir="ltr"] body {
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+html[dir="rtl"] body .header {
+    direction: rtl !important;
+    flex-direction: row-reverse !important;
+}
+
+html[dir="ltr"] body .header {
+    direction: ltr !important;
+    flex-direction: row !important;
+}
+
+html[dir="rtl"] body .header > .logo,
+html[dir="rtl"] body .header > .logo > .logo-link {
+    justify-content: flex-end !important;
+}
+
+html[dir="rtl"] body .header > .logo > .logo-link > img {
+    object-position: right center !important;
+}
+
+html[dir="rtl"] body :is(
+    .nav,
+    .right-section,
+    .nav-mobile-actions,
+    .hero-actions,
+    .index-hero-actions,
+    .editorial-hero-actions,
+    .offer-hero-actions,
+    .news-cta-actions,
+    .site-cta-actions,
+    .offer-box-actions,
+    .offer-reveal-points,
+    .room-tags,
+    .feature-meta,
+    .blog-inline-meta,
+    .social-links
+) {
+    direction: rtl !important;
+    flex-direction: row-reverse !important;
+}
+
+html[dir="ltr"] body :is(
+    .nav,
+    .right-section,
+    .nav-mobile-actions,
+    .hero-actions,
+    .index-hero-actions,
+    .editorial-hero-actions,
+    .offer-hero-actions,
+    .news-cta-actions,
+    .site-cta-actions,
+    .offer-box-actions,
+    .offer-reveal-points,
+    .room-tags,
+    .feature-meta,
+    .blog-inline-meta,
+    .social-links
+) {
+    direction: ltr !important;
+    flex-direction: row !important;
+}
+
+html[dir="rtl"] body :is(
+    .editorial-hero-shell,
+    .offer-hero-shell,
+    .blog-hub,
+    .blog-featured-story,
+    .blog-editorial-strip,
+    .news-trending-shell,
+    .news-cta-pro,
+    .blog-cta-pro,
+    .offer-box-premium,
+    .offer-reveal-shell,
+    .mystery-shell,
+    .popular-shell,
+    .offer-preview-panel,
+    .offer-story-shell,
+    .room-preview-layout,
+    .rooms-editorial-shell,
+    .contact-shell,
+    .site-duo,
+    .site-quote,
+    .site-cta-band
+) {
+    direction: rtl !important;
+}
+
+html[dir="ltr"] body :is(
+    .editorial-hero-shell,
+    .offer-hero-shell,
+    .blog-hub,
+    .blog-featured-story,
+    .blog-editorial-strip,
+    .news-trending-shell,
+    .news-cta-pro,
+    .blog-cta-pro,
+    .offer-box-premium,
+    .offer-reveal-shell,
+    .mystery-shell,
+    .popular-shell,
+    .offer-preview-panel,
+    .offer-story-shell,
+    .room-preview-layout,
+    .rooms-editorial-shell,
+    .contact-shell,
+    .site-duo,
+    .site-quote,
+    .site-cta-band
+) {
+    direction: ltr !important;
+}
+
+html[dir="rtl"] body :is(
+    .editorial-hero-copy,
+    .editorial-hero-card,
+    .offer-hero .hero-text,
+    .offer-hero-panel,
+    .section-heading,
+    .editorial-heading,
+    .offers-custom-head,
+    .rooms-custom-head,
+    .news-custom-head,
+    .blog-featured-copy,
+    .blog-sidebar-card,
+    .blog-card-copy,
+    .blog-editorial-copy,
+    .blog-editorial-stats article,
+    .blog-list article,
+    .blog-list article div,
+    .news-trending-copy,
+    .news-trending-pulse article,
+    .news-trending-list article,
+    .news-cta-pro > div,
+    .offer-box-copy,
+    .offer-box-side,
+    .offer-campaign-card,
+    .offer-campaign-card div,
+    .offer-reveal-copy,
+    .mystery-copy,
+    .achievement,
+    .achievement-copy,
+    .popular-copy,
+    .popular-stat,
+    .offer-preview-copy,
+    .offer-preview-card,
+    .offer-story-copy,
+    .room-card,
+    .rooms-pro-card,
+    .contact-form,
+    .contact-info,
+    .footer-column
+) {
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+html[dir="ltr"] body :is(
+    .editorial-hero-copy,
+    .editorial-hero-card,
+    .offer-hero .hero-text,
+    .offer-hero-panel,
+    .section-heading,
+    .editorial-heading,
+    .offers-custom-head,
+    .rooms-custom-head,
+    .news-custom-head,
+    .blog-featured-copy,
+    .blog-sidebar-card,
+    .blog-card-copy,
+    .blog-editorial-copy,
+    .blog-editorial-stats article,
+    .blog-list article,
+    .blog-list article div,
+    .news-trending-copy,
+    .news-trending-pulse article,
+    .news-trending-list article,
+    .news-cta-pro > div,
+    .offer-box-copy,
+    .offer-box-side,
+    .offer-campaign-card,
+    .offer-campaign-card div,
+    .offer-reveal-copy,
+    .mystery-copy,
+    .achievement,
+    .achievement-copy,
+    .popular-copy,
+    .popular-stat,
+    .offer-preview-copy,
+    .offer-preview-card,
+    .offer-story-copy,
+    .room-card,
+    .rooms-pro-card,
+    .contact-form,
+    .contact-info,
+    .footer-column
+) {
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+html[dir="rtl"] body :is(.blog-grid, .offer-campaign-grid, .achievement-grid, .rooms-grid, .rooms-pro-grid) {
+    direction: rtl !important;
+}
+
+html[dir="ltr"] body :is(.blog-grid, .offer-campaign-grid, .achievement-grid, .rooms-grid, .rooms-pro-grid) {
+    direction: ltr !important;
+}
+
+html[dir="rtl"] body :is(.blog-tag, .blog-date, .campaign-tag, .offer-campaign-card span, .offer-badge, .achievement-step) {
+    align-self: flex-end !important;
+}
+
+html[dir="ltr"] body :is(.blog-tag, .blog-date, .campaign-tag, .offer-campaign-card span, .offer-badge, .achievement-step) {
+    align-self: flex-start !important;
+}
+
+html[dir="rtl"] body .blog-list article {
+    grid-template-columns: 1fr auto !important;
+}
+
+html[dir="rtl"] body .blog-list article > span {
+    grid-column: 2 !important;
+}
+
+html[dir="rtl"] body .blog-list article > div {
+    grid-column: 1 !important;
+}
+
+html[dir="ltr"] body .blog-list article {
+    grid-template-columns: auto 1fr !important;
+}
+
+html[dir="ltr"] body .blog-list article > span {
+    grid-column: 1 !important;
+}
+
+html[dir="ltr"] body .blog-list article > div {
+    grid-column: 2 !important;
+}
+
+html[dir="rtl"] body :is(.editorial-hero-shell, .offer-hero-shell) {
+    grid-template-columns: minmax(300px, 420px) minmax(0, 1fr) !important;
+}
+
+html[dir="rtl"] body :is(.editorial-hero-card, .offer-hero-panel) {
+    grid-column: 1 !important;
+    justify-self: start !important;
+}
+
+html[dir="rtl"] body :is(.editorial-hero-copy, .offer-hero .hero-text) {
+    grid-column: 2 !important;
+    justify-self: end !important;
+}
+
+html[dir="ltr"] body :is(.editorial-hero-shell, .offer-hero-shell) {
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr) !important;
+}
+
+html[dir="ltr"] body :is(.editorial-hero-copy, .offer-hero .hero-text) {
+    grid-column: 1 !important;
+    justify-self: start !important;
+}
+
+html[dir="ltr"] body :is(.editorial-hero-card, .offer-hero-panel) {
+    grid-column: 2 !important;
+    justify-self: end !important;
+}
+
+html[dir="rtl"] body .dropdown {
+    left: auto !important;
+    right: 0 !important;
+    text-align: right !important;
+}
+
+html[dir="ltr"] body .dropdown {
+    left: 0 !important;
+    right: auto !important;
+    text-align: left !important;
+}
+
+html[dir="rtl"] body :is(.offer-box li, .offer-preview-card li, .news-trending li, .blog-sidebar-card li) {
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+html[dir="rtl"] body .offer-box li {
+    flex-direction: row-reverse !important;
+}
+
+html[dir="rtl"] body :is(.offer-reveal-visual, .mystery-visual, .popular-visual, .offer-preview-side, .offer-story-image, .blog-featured-story img) {
+    direction: ltr !important;
+}
+
+@media (max-width: 980px) {
+    html[dir="rtl"] body :is(.editorial-hero-shell, .offer-hero-shell),
+    html[dir="ltr"] body :is(.editorial-hero-shell, .offer-hero-shell) {
+        grid-template-columns: 1fr !important;
+    }
+
+    html[dir="rtl"] body :is(.editorial-hero-copy, .editorial-hero-card, .offer-hero .hero-text, .offer-hero-panel),
+    html[dir="ltr"] body :is(.editorial-hero-copy, .editorial-hero-card, .offer-hero .hero-text, .offer-hero-panel) {
+        grid-column: 1 !important;
+        justify-self: center !important;
+        text-align: center !important;
+    }
+}
+
+@media (max-width: 768px) {
+    html[dir="rtl"] body .header,
+    html[dir="ltr"] body .header {
+        flex-direction: row !important;
+    }
+
+    html[dir="rtl"] body :is(.header .nav, .header.menu-open .nav),
+    html[dir="ltr"] body :is(.header .nav, .header.menu-open .nav) {
+        flex-direction: column !important;
+    }
+
+    html[dir="rtl"] body :is(.hero-actions, .index-hero-actions, .editorial-hero-actions, .offer-hero-actions, .news-cta-actions, .site-cta-actions),
+    html[dir="ltr"] body :is(.hero-actions, .index-hero-actions, .editorial-hero-actions, .offer-hero-actions, .news-cta-actions, .site-cta-actions) {
+        flex-direction: column !important;
+    }
+}
+
 /* About and pricing final light-mode cleanup */
 body.light-mode .about-features,
 body.light-mode .story-section,
@@ -8834,6 +9352,24 @@ html body.light-mode.offers-page :is(.group-offers-popular-copy h3, .group-offer
     mix-blend-mode: normal !important;
 }
 
+html body.offers-page:not(.theme-light):not(.light-mode) .offer-popular :is(.group-offers-popular-copy h3, .group-offers-popular-stat strong) {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    text-shadow: 0 0 18px rgba(139, 92, 246, 0.42) !important;
+    opacity: 1 !important;
+    filter: none !important;
+    mix-blend-mode: normal !important;
+}
+
+html body.offers-page:not(.theme-light):not(.light-mode) .offer-popular :is(.group-offers-popular-copy p, .group-offers-popular-stat span, .offer-popular-note) {
+    color: rgba(255, 255, 255, 0.84) !important;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.84) !important;
+    text-shadow: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+    mix-blend-mode: normal !important;
+}
+
 /* One-Tap Voucher pill: black label in light mode. */
 html body.theme-light.offers-page .promo-reveal .offer-badge,
 html body.light-mode.offers-page .promo-reveal .offer-badge {
@@ -8873,4 +9409,463 @@ html body:is(.theme-light, .light-mode).home-demo1 .hero .hero-text .hero-kicker
     letter-spacing: 0.14em !important;
     text-transform: uppercase !important;
     text-shadow: none !important;
+}
+
+/* RTL mode: keep English editorial/offers hero layouts from mirroring into overlaps. */
+html[dir="rtl"] body.news-page .editorial-hero.blog-hero,
+html[dir="rtl"] body.offers-page .offer-hero {
+    direction: ltr !important;
+}
+
+html[dir="rtl"] body.news-page .editorial-hero.blog-hero .editorial-hero-shell,
+html[dir="rtl"] body.offers-page .offer-hero .offer-hero-shell {
+    direction: ltr !important;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 420px) !important;
+    align-items: center !important;
+    gap: clamp(32px, 6vw, 72px) !important;
+}
+
+html[dir="rtl"] body.news-page .editorial-hero.blog-hero .editorial-hero-copy,
+html[dir="rtl"] body.offers-page .offer-hero .hero-text {
+    direction: ltr !important;
+    text-align: left !important;
+    grid-column: 1 !important;
+    justify-self: start !important;
+    max-width: 760px !important;
+    z-index: 2 !important;
+}
+
+html[dir="rtl"] body.news-page .editorial-hero.blog-hero .editorial-hero-card,
+html[dir="rtl"] body.offers-page .offer-hero .offer-hero-panel {
+    direction: ltr !important;
+    text-align: left !important;
+    grid-column: 2 !important;
+    justify-self: end !important;
+    width: min(420px, 100%) !important;
+    max-width: 420px !important;
+    margin: 0 !important;
+    transform: none !important;
+    z-index: 3 !important;
+}
+
+html[dir="rtl"] body.news-page .editorial-hero.blog-hero :is(.eyebrow, h1, h2, p, span, strong, .hero-card-price),
+html[dir="rtl"] body.offers-page .offer-hero :is(.eyebrow, h1, p, span, strong) {
+    direction: ltr !important;
+    unicode-bidi: isolate !important;
+}
+
+html[dir="rtl"] body.news-page .editorial-hero.blog-hero :is(.editorial-hero-actions, .hero-card-points),
+html[dir="rtl"] body.offers-page .offer-hero .offer-hero-actions {
+    direction: ltr !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+}
+
+@media (max-width: 980px) {
+    html[dir="rtl"] body.news-page .editorial-hero.blog-hero .editorial-hero-shell,
+    html[dir="rtl"] body.offers-page .offer-hero .offer-hero-shell {
+        grid-template-columns: 1fr !important;
+    }
+
+    html[dir="rtl"] body.news-page .editorial-hero.blog-hero .editorial-hero-copy,
+    html[dir="rtl"] body.news-page .editorial-hero.blog-hero .editorial-hero-card,
+    html[dir="rtl"] body.offers-page .offer-hero .hero-text,
+    html[dir="rtl"] body.offers-page .offer-hero .offer-hero-panel {
+        grid-column: 1 !important;
+        justify-self: center !important;
+        text-align: center !important;
+    }
+
+    html[dir="rtl"] body.news-page .editorial-hero.blog-hero :is(.editorial-hero-actions, .hero-card-points),
+    html[dir="rtl"] body.offers-page .offer-hero .offer-hero-actions {
+        justify-content: center !important;
+    }
+}
+
+/* Direction toggle hard reset: when LTR is selected, remove any inherited RTL behavior. */
+html.dir-ltr,
+html.dir-ltr body,
+html[dir="ltr"],
+html[dir="ltr"] body {
+    direction: ltr !important;
+}
+
+html.dir-ltr body :is(
+    .header,
+    .nav,
+    .right-section,
+    .dropdown,
+    .hero-text,
+    .editorial-hero-shell,
+    .offer-hero-shell,
+    .footer-content,
+    .footer-left,
+    .site-lead,
+    .site-duo,
+    .site-quote,
+    .site-cta-band
+),
+html[dir="ltr"] body :is(
+    .header,
+    .nav,
+    .right-section,
+    .dropdown,
+    .hero-text,
+    .editorial-hero-shell,
+    .offer-hero-shell,
+    .footer-content,
+    .footer-left,
+    .site-lead,
+    .site-duo,
+    .site-quote,
+    .site-cta-band
+) {
+    direction: ltr !important;
+}
+
+html.dir-ltr body :is(.nav, .right-section, .hero-actions, .editorial-hero-actions, .offer-hero-actions),
+html[dir="ltr"] body :is(.nav, .right-section, .hero-actions, .editorial-hero-actions, .offer-hero-actions) {
+    flex-direction: row !important;
+}
+
+html.dir-ltr body :is(.hero-text, .editorial-hero-copy, .offer-hero .hero-text, .contact-form, .contact-info, .login-panel-content),
+html[dir="ltr"] body :is(.hero-text, .editorial-hero-copy, .offer-hero .hero-text, .contact-form, .contact-info, .login-panel-content) {
+    text-align: left !important;
+}
+
+/* Site-wide production stability layer: responsive direction, media, grids, and toggles. */
+html,
+body {
+    max-width: 100% !important;
+    overflow-x: clip !important;
+}
+
+img,
+video,
+canvas,
+svg {
+    max-width: 100%;
+}
+
+html.dir-ltr body.home-demo1 .hero-text,
+html[dir="ltr"] body.home-demo1 .hero-text,
+html.dir-ltr body :is(.home-section-head, .offers-custom-head, .rooms-custom-head, .news-custom-head, .pricing-section-head, .testimonial-custom-head, .faq-custom-head),
+html[dir="ltr"] body :is(.home-section-head, .offers-custom-head, .rooms-custom-head, .news-custom-head, .pricing-section-head, .testimonial-custom-head, .faq-custom-head) {
+    text-align: center !important;
+}
+
+html.dir-ltr body :is(.header .nav, .header .right-section),
+html[dir="ltr"] body :is(.header .nav, .header .right-section) {
+    direction: ltr !important;
+}
+
+html.dir-ltr body .header .nav,
+html[dir="ltr"] body .header .nav {
+    flex-direction: row !important;
+}
+
+html.dir-ltr body .header .right-section,
+html[dir="ltr"] body .header .right-section {
+    flex-direction: row !important;
+}
+
+body.login-page-body .toggle-float,
+body.register-page-body .toggle-float {
+    position: fixed !important;
+    top: max(16px, env(safe-area-inset-top)) !important;
+    right: max(16px, env(safe-area-inset-right)) !important;
+    left: auto !important;
+    z-index: 9999 !important;
+    display: flex !important;
+    gap: 10px !important;
+}
+
+html[dir="rtl"] body.login-page-body .toggle-float,
+html[dir="rtl"] body.register-page-body .toggle-float {
+    right: auto !important;
+    left: max(16px, env(safe-area-inset-left)) !important;
+}
+
+html.dir-ltr body.login-page-body .toggle-float,
+html.dir-ltr body.register-page-body .toggle-float,
+html[dir="ltr"] body.login-page-body .toggle-float,
+html[dir="ltr"] body.register-page-body .toggle-float {
+    left: auto !important;
+    right: max(16px, env(safe-area-inset-right)) !important;
+}
+
+@media (max-width: 980px) {
+    html.dir-ltr body :is(
+        .editorial-hero-shell,
+        .offer-hero-shell,
+        .room-preview-layout,
+        .testimonial-layout,
+        .offer-preview-panel,
+        .offer-reveal-shell,
+        .mystery-shell,
+        .offer-story-shell,
+        .site-lead,
+        .site-duo,
+        .site-quote,
+        .site-cta-band
+    ),
+    html[dir="ltr"] body :is(
+        .editorial-hero-shell,
+        .offer-hero-shell,
+        .room-preview-layout,
+        .testimonial-layout,
+        .offer-preview-panel,
+        .offer-reveal-shell,
+        .mystery-shell,
+        .offer-story-shell,
+        .site-lead,
+        .site-duo,
+        .site-quote,
+        .site-cta-band
+    ) {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+@media (max-width: 768px) {
+    html,
+    body {
+        overflow-x: hidden !important;
+    }
+
+    html.dir-ltr body .header .nav,
+    html[dir="ltr"] body .header .nav,
+    html.dir-rtl body .header .nav,
+    html[dir="rtl"] body .header .nav,
+    html.dir-ltr body .header.menu-open .nav,
+    html[dir="ltr"] body .header.menu-open .nav,
+    html.dir-rtl body .header.menu-open .nav,
+    html[dir="rtl"] body .header.menu-open .nav {
+        flex-direction: column !important;
+        direction: inherit !important;
+        max-width: calc(100vw - 32px) !important;
+    }
+
+    html.dir-ltr body .header .nav > *,
+    html[dir="ltr"] body .header .nav > * {
+        text-align: center !important;
+    }
+
+    html.dir-ltr body :is(.hero-actions, .editorial-hero-actions, .offer-hero-actions),
+    html[dir="ltr"] body :is(.hero-actions, .editorial-hero-actions, .offer-hero-actions) {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+
+    html.dir-ltr body :is(.hero-actions .btn, .editorial-hero-actions .btn, .offer-hero-actions .btn),
+    html[dir="ltr"] body :is(.hero-actions .btn, .editorial-hero-actions .btn, .offer-hero-actions .btn) {
+        width: 100% !important;
+        max-width: 360px !important;
+        margin-inline: auto !important;
+    }
+
+    body.login-page-body .toggle-float,
+    body.register-page-body .toggle-float {
+        top: max(12px, env(safe-area-inset-top)) !important;
+        right: max(12px, env(safe-area-inset-right)) !important;
+        gap: 8px !important;
+    }
+
+    body.login-page-body .toggle-float .icon-btn,
+    body.register-page-body .toggle-float .icon-btn {
+        width: 42px !important;
+        height: 42px !important;
+        min-width: 42px !important;
+    }
+
+    body.login-page-body .toggle-float .dir-toggle,
+    body.register-page-body .toggle-float .dir-toggle {
+        width: auto !important;
+        min-width: 54px !important;
+        padding-inline: 12px !important;
+    }
+}
+
+/* Final direction cascade: keep component layouts in sync with the toggle. */
+html[dir="rtl"] body {
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+html[dir="rtl"] body :is(
+    .header,
+    .footer-content,
+    .site-lead,
+    .site-duo,
+    .site-quote,
+    .site-cta-band,
+    .editorial-hero-shell,
+    .offer-hero-shell,
+    .offer-box-premium,
+    .offer-reveal-shell,
+    .mystery-shell,
+    .popular-shell,
+    .offer-preview-panel,
+    .offer-story-shell
+) {
+    direction: rtl !important;
+}
+
+html[dir="rtl"] body :is(.header .nav, .header .right-section) {
+    direction: rtl !important;
+    flex-direction: row-reverse !important;
+}
+
+html[dir="rtl"] body .dropdown {
+    left: auto !important;
+    right: 0 !important;
+    text-align: right !important;
+}
+
+html[dir="rtl"] body :is(
+    .editorial-hero-copy,
+    .offer-hero .hero-text,
+    .offer-hero-panel,
+    .offer-box-copy,
+    .offer-box-side,
+    .offer-campaign-card,
+    .offer-campaign-card div,
+    .offer-reveal-copy,
+    .mystery-copy,
+    .popular-copy,
+    .popular-stat,
+    .offer-preview-copy,
+    .offer-preview-card,
+    .offer-story-copy
+) {
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+html[dir="rtl"] body :is(.editorial-hero-shell, .offer-hero-shell) {
+    grid-template-columns: minmax(300px, 420px) minmax(0, 1fr) !important;
+}
+
+html[dir="rtl"] body :is(.editorial-hero-card, .offer-hero-panel) {
+    grid-column: 1 !important;
+    justify-self: start !important;
+}
+
+html[dir="rtl"] body :is(.editorial-hero-copy, .offer-hero .hero-text) {
+    grid-column: 2 !important;
+    justify-self: end !important;
+}
+
+html[dir="rtl"] body :is(
+    .editorial-hero-actions,
+    .hero-card-points,
+    .offer-hero-actions,
+    .offer-box-actions,
+    .offer-reveal-points,
+    .mystery-meta,
+    .offer-story-stats,
+    .offer-preview-points
+) {
+    direction: rtl !important;
+    flex-direction: row-reverse !important;
+    justify-content: flex-start !important;
+}
+
+html[dir="rtl"] body :is(.offer-box li, .offer-preview-card li) {
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+html[dir="rtl"] body .offer-box li {
+    flex-direction: row-reverse !important;
+}
+
+html[dir="rtl"] body :is(.campaign-tag, .offer-campaign-card span, .offer-badge, .achievement-step) {
+    align-self: flex-end !important;
+}
+
+html[dir="rtl"] body .offer-box.offer-box-premium {
+    grid-template-columns: minmax(280px, 0.7fr) minmax(0, 1.3fr) !important;
+    background-position: left center !important;
+}
+
+html[dir="rtl"] body .offer-box-side {
+    order: 1 !important;
+}
+
+html[dir="rtl"] body .offer-box-copy {
+    order: 2 !important;
+}
+
+html[dir="rtl"] body :is(.offer-reveal-visual, .mystery-visual, .popular-visual, .offer-preview-side, .offer-story-image) {
+    direction: ltr !important;
+}
+
+html[dir="ltr"] body {
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+html[dir="ltr"] body :is(
+    .editorial-hero-copy,
+    .offer-hero .hero-text,
+    .offer-hero-panel,
+    .offer-box-copy,
+    .offer-box-side,
+    .offer-campaign-card,
+    .offer-campaign-card div,
+    .offer-reveal-copy,
+    .mystery-copy,
+    .popular-copy,
+    .popular-stat,
+    .offer-preview-copy,
+    .offer-preview-card,
+    .offer-story-copy
+) {
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+html[dir="ltr"] body :is(.editorial-hero-shell, .offer-hero-shell) {
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr) !important;
+}
+
+html[dir="ltr"] body :is(.editorial-hero-copy, .offer-hero .hero-text) {
+    grid-column: 1 !important;
+    justify-self: start !important;
+}
+
+html[dir="ltr"] body :is(.editorial-hero-card, .offer-hero-panel) {
+    grid-column: 2 !important;
+    justify-self: end !important;
+}
+
+html[dir="ltr"] body :is(.campaign-tag, .offer-campaign-card span, .offer-badge, .achievement-step) {
+    align-self: flex-start !important;
+}
+
+@media (max-width: 980px) {
+    html[dir="rtl"] body :is(.editorial-hero-shell, .offer-hero-shell),
+    html[dir="ltr"] body :is(.editorial-hero-shell, .offer-hero-shell) {
+        grid-template-columns: 1fr !important;
+    }
+
+    html[dir="rtl"] body :is(.editorial-hero-copy, .editorial-hero-card, .offer-hero .hero-text, .offer-hero-panel),
+    html[dir="ltr"] body :is(.editorial-hero-copy, .editorial-hero-card, .offer-hero .hero-text, .offer-hero-panel) {
+        grid-column: 1 !important;
+        justify-self: center !important;
+        text-align: center !important;
+    }
+
+    html[dir="rtl"] body :is(.editorial-hero-actions, .hero-card-points, .offer-hero-actions),
+    html[dir="ltr"] body :is(.editorial-hero-actions, .hero-card-points, .offer-hero-actions) {
+        justify-content: center !important;
+    }
+}
+
+@media (max-width: 768px) {
+    html[dir="rtl"] body :is(.header .nav, .header.menu-open .nav),
+    html[dir="ltr"] body :is(.header .nav, .header.menu-open .nav) {
+        flex-direction: column !important;
+    }
 }
