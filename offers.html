@@ -10,8 +10,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="./img/logo1.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<link rel="stylesheet" href="css/style.css?v=rooms-news-offers-light-fix-1">
-<link rel="stylesheet" href="css/site-cyberpunk.css?v=rooms-news-offers-light-fix-1">
+<link rel="stylesheet" href="css/style.css?v=offers-light-readable-7">
+<link rel="stylesheet" href="css/site-cyberpunk.css?v=offers-light-readable-7">
 </head>
 
 <body class="has-custom-extras offers-page no-scroll-widget">
@@ -171,7 +171,7 @@
     </div>
     <div class="offer-action-panel offer-reveal-shell">
         <div class="offer-reveal-copy">
-            <span class="offer-badge">One-Tap Voucher</span>
+            <span class="offer-badge one-tap-voucher-badge">One-Tap Voucher</span>
             <h3>Tap once and unlock a code your team can use tonight.</h3>
             <p>Perfect for quick planners who want instant value without waiting for a support reply or seasonal promo email.</p>
             <div class="offer-reveal-points">
@@ -197,7 +197,7 @@
             <img src="./img/demo1-gallery-side.jpg" alt="Mystery reward reveal">
         </div>
         <div class="mystery-copy">
-            <span class="offer-badge">Limited Drop</span>
+            <span class="offer-badge limited-drop-badge">Limited Drop</span>
             <h3>Every unlock gives a different reward path.</h3>
             <p>Some teams get extra hint support, some get stronger group value, and some unlock priority add-ons for the next mission.</p>
             <div class="mystery-meta">
@@ -255,12 +255,12 @@
             <div class="popular-bar">
                 <div class="bar-fill" data-progress-target="75"></div>
             </div>
-            <div class="popular-copy">
+            <div class="popular-copy group-offers-popular-copy">
                 <h3>Group Offers lead the board every weekend.</h3>
                 <p>Friend groups keep choosing bundle-style pricing because it feels easier to plan, easier to split, and better for high-energy night bookings.</p>
             </div>
         </div>
-        <div class="popular-stat">
+        <div class="popular-stat group-offers-popular-stat">
             <strong data-countup="75" data-countup-format="percent">75%</strong>
             <span>players choose Group Offers</span>
         </div>
@@ -509,6 +509,62 @@
 
     applyHeroTextTheme();
     new MutationObserver(applyHeroTextTheme).observe(document.body, { attributes: true, attributeFilter: ["class"] });
+})();
+
+(() => {
+    const applyVoucherBadgeTheme = () => {
+        const badges = document.querySelectorAll(".one-tap-voucher-badge, .limited-drop-badge");
+        if (!badges.length) return;
+
+        const isLight = document.body.classList.contains("theme-light") || document.body.classList.contains("light-mode");
+        badges.forEach((badge) => {
+            if (isLight) {
+                badge.style.setProperty("color", "#050505", "important");
+                badge.style.setProperty("-webkit-text-fill-color", "#050505", "important");
+                badge.style.setProperty("text-shadow", "none", "important");
+                badge.style.setProperty("opacity", "1", "important");
+            } else {
+                badge.style.removeProperty("color");
+                badge.style.removeProperty("-webkit-text-fill-color");
+                badge.style.removeProperty("text-shadow");
+                badge.style.removeProperty("opacity");
+            }
+        });
+    };
+
+    applyVoucherBadgeTheme();
+    new MutationObserver(applyVoucherBadgeTheme).observe(document.body, { attributes: true, attributeFilter: ["class"] });
+})();
+
+(() => {
+    const applyPopularTextTheme = () => {
+        const targets = document.querySelectorAll(
+            ".group-offers-popular-copy h3, .group-offers-popular-copy p, .group-offers-popular-stat strong, .group-offers-popular-stat span"
+        );
+        if (!targets.length) return;
+
+        const isLight = document.body.classList.contains("theme-light") || document.body.classList.contains("light-mode");
+        targets.forEach((element) => {
+            if (isLight) {
+                element.style.setProperty("color", "#050505", "important");
+                element.style.setProperty("-webkit-text-fill-color", "#050505", "important");
+                element.style.setProperty("text-shadow", "none", "important");
+                element.style.setProperty("opacity", "1", "important");
+                element.style.setProperty("filter", "none", "important");
+                element.style.setProperty("mix-blend-mode", "normal", "important");
+            } else {
+                element.style.removeProperty("color");
+                element.style.removeProperty("-webkit-text-fill-color");
+                element.style.removeProperty("text-shadow");
+                element.style.removeProperty("opacity");
+                element.style.removeProperty("filter");
+                element.style.removeProperty("mix-blend-mode");
+            }
+        });
+    };
+
+    applyPopularTextTheme();
+    new MutationObserver(applyPopularTextTheme).observe(document.body, { attributes: true, attributeFilter: ["class"] });
 })();
 </script>
 </body>

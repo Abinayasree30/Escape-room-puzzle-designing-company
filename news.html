@@ -1,297 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>News - MystIQ Escape</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="./img/logo1.png">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<link rel="stylesheet" href="css/style.css?v=rooms-news-offers-light-fix-1">
-<link rel="stylesheet" href="css/site-cyberpunk.css?v=rooms-news-offers-light-fix-1">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News - MystIQ Escape</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="./img/logo1.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?v=rooms-news-offers-light-fix-1">
+    <link rel="stylesheet" href="css/site-cyberpunk.css?v=rooms-news-offers-light-fix-1">
 </head>
 
 <body class="has-custom-extras news-page no-scroll-widget">
 
-<header class="header">
-    <div class="logo">
-        <a href="index.html" class="logo-link">
-            <img src="./img/logo.png" alt="MystIQ Escape logo">
-        </a>
-    </div>
-
-    <nav class="nav">
-        <div class="nav-item">
-            <a href="#" data-menu="home">Home <i class="fas fa-chevron-down nav-chevron"></i></a>
-            <div class="dropdown">
-                <a href="index.html">Home 1</a>
-                <a href="demo2.html">Home 2</a>
-            </div>
-        </div>
-        <a href="about.html" data-menu="about">About</a>
-        <a href="rooms.html" data-menu="rooms">Rooms</a>
-        <a href="news.html" data-menu="news">News</a>
-        <a href="offers.html" data-menu="offers">Offers</a>
-        <a href="contact us.html" data-menu="contact">Contact Us</a>
-    </nav>
-
-    <div class="right-section">
-        <button class="icon-btn" id="mq-enable-btn" title="Toggle Enable Mode"><i class="fas fa-moon"></i></button>
-        <button class="icon-btn dir-toggle" id="mq-dir-btn" title="Switch LTR / RTL">LTR</button>
-        <a href="login.html" class="login-btn">Login</a>
-    </div>
-</header>
-
-<section class="editorial-hero blog-hero">
-    <img class="inner-hero-bg" src="./img/escape-showcase-side.jpg" alt="Escape room interior">
-    <div class="overlay"></div>
-    <div class="editorial-hero-shell">
-        <div class="editorial-hero-copy">
-            <p class="eyebrow">News & Updates</p>
-            <h1>Latest room drops, events, and escape room stories.</h1>
-            <p>
-                Follow new room launches, seasonal challenges, player highlights, and behind-the-scenes updates
-                from MystIQ Escape.
-            </p>
-            <div class="editorial-hero-actions">
-                <button class="btn" type="button" onclick="openBookingModal('News Booking')">Book Latest Room</button>
-                <a href="offers.html" class="btn secondary">See Current Offers</a>
-            </div>
-        </div>
-
-        <div class="editorial-hero-card">
-            <span class="hero-card-label">Featured Update</span>
-            <h2>Midnight Horror Route</h2>
-            <div class="hero-card-price">April 2026 <span>live now</span></div>
-            <p>A darker escape route with sharper clue pacing, cinematic sound cues, and stronger weekend demand.</p>
-            <div class="hero-card-points">
-                <span><i class="fas fa-fire"></i> Trending with weekend groups</span>
-                <span><i class="fas fa-bolt"></i> Faster booking demand</span>
-                <span><i class="fas fa-star"></i> Stronger cinematic finish</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="blog-hub">
-    <article class="blog-featured-story">
-        <img src="img/news1.jpg" alt="New horror room launch">
-        <div class="blog-featured-copy">
-            <span class="blog-tag">Featured Story</span>
-            <span class="blog-date">April 2026</span>
-            <h2>Midnight horror route opens with darker twists & team suspense.</h2>
-            <p>
-                The newest MystIQ update was designed to feel more cinematic from the opening briefing to the final reveal,
-                giving night-session players a sharper, richer escape-room journey.
-            </p>
-            <div class="blog-inline-meta">
-                <span><i class="fas fa-clock"></i> 4 min read</span>
-                <span><i class="fas fa-users"></i> Best for group nights</span>
-            </div>
-            <button class="btn" type="button" onclick="openBookingModal('Midnight Horror Route')">Reserve A Slot</button>
-        </div>
-    </article>
-
-    <aside class="blog-sidebar">
-        <div class="blog-sidebar-card">
-            <p class="eyebrow">Trending Now</p>
-            <h3>What players are asking for most</h3>
-            <ul>
-                <li>Late-evening horror sessions</li>
-                <li>Birthday group packages</li>
-                <li>Premium weekend bookings</li>
-                <li>Story-heavy room themes</li>
-            </ul>
-        </div>
-        <div class="blog-sidebar-card compact">
-            <p class="eyebrow">Quick Pulse</p>
-            <strong>86%</strong>
-            <span>Peak-slot occupancy across Fridays and Saturdays</span>
-        </div>
-    </aside>
-</section>
-
-<section class="blog-grid-section">
-    <div class="section-heading editorial-heading">
-        <p class="eyebrow">Latest Articles</p>
-        <h2>Fresh stories from inside MystIQ Escape</h2>
-        <p>Quick updates on new rooms, group packages, and player-favorite experiences.</p>
-    </div>
-
-    <div class="blog-grid">
-        <article class="blog-card">
-            <img src="img/news2.jpg" alt="Group discount update">
-            <div class="blog-card-copy">
-                <span class="blog-date">March 2026</span>
-                <h3>Group packages now support bigger team celebrations and office nights.</h3>
-                <p>More flexible offers now help birthday groups, college circles, and workplace teams book with less friction.</p>
-                <a href="offers.html">Explore offers</a>
-            </div>
-        </article>
-
-        <article class="blog-card">
-            <img src="img/news3.jpg" alt="Top rated escape room experience">
-            <div class="blog-card-copy">
-                <span class="blog-date">February 2026</span>
-                <h3>MystIQ continues to trend as a top-rated local escape-room experience.</h3>
-                <p>Visitors keep mentioning atmosphere, game-master support, and the stronger finish moments inside our premium rooms.</p>
-                <button class="btn" type="button" onclick="openBookingModal('Top Rated Experience')">Book Now</button>
-            </div>
-        </article>
-
-        <article class="blog-card">
-            <img src="img/demo2-gallery-main.jpg" alt="Dark room update">
-            <div class="blog-card-copy">
-                <span class="blog-date">January 2026</span>
-                <h3>Dark-room experiences now include tighter intros and more cinematic transitions.</h3>
-                <p>The newer flow is helping visitors feel the room story faster while still keeping the challenge intact.</p>
-                <a href="demo2.html">View Experience</a>
-            </div>
-        </article>
-    </div>
-</section>
-
-<section class="blog-editorial-strip">
-    <div class="blog-editorial-copy">
-        <p class="eyebrow">Inside MystIQ</p>
-        <h2>Behind every update is a better player journey.</h2>
-        <p>We use the blog to announce new routes, offer drops, event ideas, and room improvements that make the brand feel active and premium.</p>
-    </div>
-    <div class="blog-editorial-stats">
-        <article>
-            <strong>12+ Rooms</strong>
-            <span>major content drops this year including new rooms and themes</span>
-        </article>
-        <article>
-            <strong>Top Pick upgrade</strong>
-            <span>night horror route with finale upgrade to dark room</span>
-        </article>
-        <article>
-            <strong>Fast Rise</strong>
-            <span>group package demand from colleges and birthdays</span>
-        </article>
-    </div>
-</section>
-
-<section class="blog-list-section">
-    <div class="section-heading editorial-heading">
-        <p class="eyebrow">More From The Journal</p>
-        <h2>Short-form updates visitors can scan quickly</h2>
-    </div>
-
-    <div class="blog-list">
-        <article>
-            <span>1</span>
-            <div>
-                <h3>Weekend prime-time slots are filling faster than expected.</h3>
-                <p>Friday and Saturday sessions after 7 PM are now the first to close for premium routes.</p>
-            </div>
-        </article>
-        <article>
-            <span>2</span>
-            <div>
-                <h3>Birthday groups are choosing Pro packages for better balance.</h3>
-                <p>The mix of value, timing, and room quality is making Pro the easiest recommendation.</p>
-            </div>
-        </article>
-        <article>
-            <span>3</span>
-            <div>
-                <h3>Story-led rooms are outperforming standard puzzle-first formats.</h3>
-                <p>Visitors want stronger atmosphere and more memorable finale moments, not just clues alone.</p>
-            </div>
-        </article>
-    </div>
-</section>
-
-<section class="news-cta-pro blog-cta-pro">
-    <div>
-        <p class="eyebrow">Ready For The Next Update?</p>
-        <h2>Book a room while the newest slots are still open.</h2>
-    </div>
-    <div class="news-cta-actions">
-        <button class="btn" type="button" onclick="openBookingModal('News Booking')">Book Now</button>
-        <a href="offers.html" class="btn">View Offers</a>
-    </div>
-</section>
-
-<footer>
-    <div class="footer-content">
-        <div class="footer-left">
-            <a href="index.html" class="footer-logo">
+    <header class="header">
+        <div class="logo">
+            <a href="index.html" class="logo-link">
                 <img src="./img/logo.png" alt="MystIQ Escape logo">
             </a>
-            <h2>Ready to escape<br>the ordinary<br>tonight?</h2>
-            <div class="social-links">
-                <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+
+        <nav class="nav">
+            <div class="nav-item">
+                <a href="#" data-menu="home">Home <i class="fas fa-chevron-down nav-chevron"></i></a>
+                <div class="dropdown">
+                    <a href="index.html">Home 1</a>
+                    <a href="demo2.html">Home 2</a>
+                </div>
+            </div>
+            <a href="about.html" data-menu="about">About</a>
+            <a href="rooms.html" data-menu="rooms">Rooms</a>
+            <a href="news.html" data-menu="news">News</a>
+            <a href="offers.html" data-menu="offers">Offers</a>
+            <a href="contact us.html" data-menu="contact">Contact Us</a>
+        </nav>
+
+        <div class="right-section">
+            <button class="icon-btn" id="mq-enable-btn" title="Toggle Enable Mode"><i class="fas fa-moon"></i></button>
+            <button class="icon-btn dir-toggle" id="mq-dir-btn" title="Switch LTR / RTL">LTR</button>
+            <a href="login.html" class="login-btn">Login</a>
+        </div>
+    </header>
+
+    <section class="editorial-hero blog-hero">
+        <img class="inner-hero-bg" src="./img/escape-showcase-side.jpg" alt="Escape room interior">
+        <div class="overlay"></div>
+        <div class="editorial-hero-shell">
+            <div class="editorial-hero-copy">
+                <p class="eyebrow">News & Updates</p>
+                <h1>Latest room drops, events, and escape room stories.</h1>
+                <p>
+                    Follow new room launches, seasonal challenges, player highlights, and behind-the-scenes updates
+                    from MystIQ Escape.
+                </p>
+                <div class="editorial-hero-actions">
+                    <button class="btn" type="button" onclick="openBookingModal('News Booking')">Book Latest
+                        Room</button>
+                    <a href="offers.html" class="btn secondary">See Current Offers</a>
+                </div>
+            </div>
+
+            <div class="editorial-hero-card">
+                <span class="hero-card-label">Featured Update</span>
+                <h2>Midnight Horror Route</h2>
+                <div class="hero-card-price">April 2026 <span>live now</span></div>
+                <p>A darker escape route with sharper clue pacing, cinematic sound cues, and stronger weekend demand.
+                </p>
+                <div class="hero-card-points">
+                    <span><i class="fas fa-fire"></i> Trending with weekend groups</span>
+                    <span><i class="fas fa-bolt"></i> Faster booking demand</span>
+                    <span><i class="fas fa-star"></i> Stronger cinematic finish</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-hub">
+        <article class="blog-featured-story">
+            <img src="img/news1.jpg" alt="New horror room launch">
+            <div class="blog-featured-copy">
+                <span class="blog-tag">Featured Story</span>
+                <span class="blog-date">April 2026</span>
+                <h2>Midnight horror route opens with darker twists & team suspense.</h2>
+                <p>
+                    The newest MystIQ update was designed to feel more cinematic from the opening briefing to the final
+                    reveal,
+                    giving night-session players a sharper, richer escape-room journey.
+                </p>
+                <div class="blog-inline-meta">
+                    <span><i class="fas fa-clock"></i> 4 min read</span>
+                    <span><i class="fas fa-users"></i> Best for group nights</span>
+                </div>
+                <button class="btn" type="button" onclick="openBookingModal('Midnight Horror Route')">Reserve A
+                    Slot</button>
+            </div>
+        </article>
+
+        <aside class="blog-sidebar">
+            <div class="blog-sidebar-card">
+                <p class="eyebrow">Trending Now</p>
+                <h3>What players are asking for most</h3>
+                <ul>
+                    <li>Late-evening horror sessions</li>
+                    <li>Birthday group packages</li>
+                    <li>Premium weekend bookings</li>
+                    <li>Story-heavy room themes</li>
+                </ul>
+            </div>
+            <div class="blog-sidebar-card compact">
+                <p class="eyebrow">Quick Pulse</p>
+                <strong>86%</strong>
+                <span>Peak-slot occupancy across Fridays and Saturdays</span>
+            </div>
+        </aside>
+    </section>
+
+    <section class="blog-grid-section">
+        <div class="section-heading editorial-heading">
+            <p class="eyebrow">Latest Articles</p>
+            <h2>Fresh stories from inside MystIQ Escape</h2>
+            <p>Quick updates on new rooms, group packages, and player-favorite experiences.</p>
+        </div>
+
+        <div class="blog-grid">
+            <article class="blog-card">
+                <img src="img/news2.jpg" alt="Group discount update">
+                <div class="blog-card-copy">
+                    <span class="blog-date">March 2026</span>
+                    <h3>Group packages now support bigger team celebrations and office nights.</h3>
+                    <p>More flexible offers now help birthday groups, college circles, and workplace teams book with
+                        less friction.</p>
+                    <a href="offers.html">Explore offers</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="img/news3.jpg" alt="Top rated escape room experience">
+                <div class="blog-card-copy">
+                    <span class="blog-date">February 2026</span>
+                    <h3>MystIQ continues to trend as a top-rated local escape-room experience.</h3>
+                    <p>Visitors keep mentioning atmosphere, game-master support, and the stronger finish moments inside
+                        our premium rooms.</p>
+                    <button class="btn" type="button" onclick="openBookingModal('Top Rated Experience')">Book
+                        Now</button>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="img/demo2-gallery-main.jpg" alt="Dark room update">
+                <div class="blog-card-copy">
+                    <span class="blog-date">January 2026</span>
+                    <h3>Dark-room experiences now include tighter intros and more cinematic transitions.</h3>
+                    <p>The newer flow is helping visitors feel the room story faster while still keeping the challenge
+                        intact.</p>
+                    <a href="demo2.html">View Experience</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="blog-editorial-strip">
+        <div class="blog-editorial-copy">
+            <p class="eyebrow">Inside MystIQ</p>
+            <h2>Behind every update is a better player journey.</h2>
+            <p>We use the blog to announce new routes, offer drops, event ideas, and room improvements that make the
+                brand feel active and premium.</p>
+        </div>
+        <div class="blog-editorial-stats">
+            <article>
+                <strong>12+ Rooms</strong>
+                <span>major content drops this year including new rooms and themes</span>
+            </article>
+            <article>
+                <strong>Top Pick upgrade</strong>
+                <span>night horror route with finale upgrade to dark room themes</span>
+            </article>
+            <article>
+                <strong>Fast Rise Group</strong>
+                <span>group package demand from college teams, and birthdays</span>
+            </article>
+        </div>
+    </section>
+
+    <section class="blog-list-section">
+        <div class="section-heading editorial-heading">
+            <p class="eyebrow">More From The Journal</p>
+            <h2>Short-form updates visitors can scan quickly</h2>
+        </div>
+
+        <div class="blog-list">
+            <article>
+                <span>1</span>
+                <div>
+                    <h3>Weekend prime-time slots are filling faster than expected.</h3>
+                    <p>Friday and Saturday sessions after 7 PM are now the first to close for premium routes.</p>
+                </div>
+            </article>
+            <article>
+                <span>2</span>
+                <div>
+                    <h3>Birthday groups are choosing Pro packages for better balance.</h3>
+                    <p>The mix of value, timing, and room quality is making Pro the easiest recommendation.</p>
+                </div>
+            </article>
+            <article>
+                <span>3</span>
+                <div>
+                    <h3>Story-led rooms are outperforming standard puzzle-first formats.</h3>
+                    <p>Visitors want stronger atmosphere and more memorable finale moments, not just clues alone.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="news-cta-pro blog-cta-pro">
+        <div>
+            <p class="eyebrow">Ready For The Next Update?</p>
+            <h2>Book a room while the newest slots are still open.</h2>
+        </div>
+        <div class="news-cta-actions">
+            <button class="btn" type="button" onclick="openBookingModal('News Booking')">Book Now</button>
+            <a href="offers.html" class="btn">View Offers</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <a href="index.html" class="footer-logo">
+                    <img src="./img/logo.png" alt="MystIQ Escape logo">
+                </a>
+                <h2>Ready to escape<br>the ordinary<br>tonight?</h2>
+                <div class="social-links">
+                    <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Explore More</h3>
+                <ul>
+                    <li><a href="news.html">Latest News</a></li>
+                    <li><a href="offers.html">Current Offers</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Plan Your Visit</h3>
+                <ul>
+                    <li><a href="rooms.html">Rooms</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="contact us.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Visit Us</h3>
+                <ul>
+                    <li><a href="contact us.html">Madurai, Tamil Nadu</a></li>
+                    <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+                    <li><a href="mailto:support@mystiqescape.com">support@mystiqescape.com</a></li>
+                </ul>
             </div>
         </div>
 
-        <div class="footer-column">
-            <h3>Explore More</h3>
-            <ul>
-                <li><a href="news.html">Latest News</a></li>
-                <li><a href="offers.html">Current Offers</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-            </ul>
+        <div class="footer-bottom">
+            <p>Copyright &copy; 2026 MystIQ Escape. All rights reserved.</p>
         </div>
+    </footer>
 
-        <div class="footer-column">
-            <h3>Plan Your Visit</h3>
-            <ul>
-                <li><a href="rooms.html">Rooms</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="contact us.html">Contact Us</a></li>
-            </ul>
-        </div>
+    <script src="js/script.js"></script>
+    <script>
+        (() => {
+            const targets = ".editorial-hero.blog-hero .eyebrow, .editorial-hero.blog-hero .editorial-hero-copy h1, .editorial-hero.blog-hero .editorial-hero-copy p";
+            const applyHeroTextTheme = () => {
+                const isLight = document.body.classList.contains("light-mode");
+                document.querySelectorAll(targets).forEach((element) => {
+                    if (isLight) {
+                        element.style.setProperty("color", "#ffffff", "important");
+                        element.style.setProperty("-webkit-text-fill-color", "#ffffff", "important");
+                        element.style.setProperty("text-shadow", "0 0 24px rgba(139, 92, 246, 0.45), 0 8px 34px rgba(0, 0, 0, 0.45)", "important");
+                        element.style.setProperty("filter", "none", "important");
+                        element.style.setProperty("opacity", "1", "important");
+                    } else {
+                        element.style.removeProperty("color");
+                        element.style.removeProperty("-webkit-text-fill-color");
+                        element.style.removeProperty("text-shadow");
+                        element.style.removeProperty("filter");
+                        element.style.removeProperty("opacity");
+                    }
+                });
+            };
 
-        <div class="footer-column">
-            <h3>Visit Us</h3>
-            <ul>
-                <li><a href="contact us.html">Madurai, Tamil Nadu</a></li>
-                <li><a href="tel:+919876543210">+91 98765 43210</a></li>
-                <li><a href="mailto:support@mystiqescape.com">support@mystiqescape.com</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        <p>Copyright &copy; 2026 MystIQ Escape. All rights reserved.</p>
-    </div>
-</footer>
-
-<script src="js/script.js"></script>
-<script>
-(() => {
-    const targets = ".editorial-hero.blog-hero .eyebrow, .editorial-hero.blog-hero .editorial-hero-copy h1, .editorial-hero.blog-hero .editorial-hero-copy p";
-    const applyHeroTextTheme = () => {
-        const isLight = document.body.classList.contains("light-mode");
-        document.querySelectorAll(targets).forEach((element) => {
-            if (isLight) {
-                element.style.setProperty("color", "#ffffff", "important");
-                element.style.setProperty("-webkit-text-fill-color", "#ffffff", "important");
-                element.style.setProperty("text-shadow", "0 0 24px rgba(139, 92, 246, 0.45), 0 8px 34px rgba(0, 0, 0, 0.45)", "important");
-                element.style.setProperty("filter", "none", "important");
-                element.style.setProperty("opacity", "1", "important");
-            } else {
-                element.style.removeProperty("color");
-                element.style.removeProperty("-webkit-text-fill-color");
-                element.style.removeProperty("text-shadow");
-                element.style.removeProperty("filter");
-                element.style.removeProperty("opacity");
-            }
-        });
-    };
-
-    applyHeroTextTheme();
-    new MutationObserver(applyHeroTextTheme).observe(document.body, { attributes: true, attributeFilter: ["class"] });
-})();
-</script>
+            applyHeroTextTheme();
+            new MutationObserver(applyHeroTextTheme).observe(document.body, { attributes: true, attributeFilter: ["class"] });
+        })();
+    </script>
 </body>
+
 </html>
