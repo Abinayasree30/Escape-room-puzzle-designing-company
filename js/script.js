@@ -742,17 +742,60 @@ body.theme-light :is(p, li, label, span, small, em) {
     text-shadow: none !important;
 }
 
+body.theme-light .login-divider span {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
+
 body.theme-light :is(.hero, .hero-dark, .about-hero, .contact-hero, .faq-hero, .offer-hero, .rooms-hero, .room-hero, .booking-page-hero, .editorial-hero, .index-hero, #rooms-hero) :is(h1, h2, h3, p, span, .eyebrow, .about-kicker) {
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
 }
 
-body.theme-light :is(.news-card, .room-card, .exp-card, .why-card, .timeline-box, .offer-box, .home-feature-card, .demo-feature-card, .about-feature-card, .about-section-copy, .about-highlight-card, .about-highlight-stats, .story-block, .story-side-card, .faq-item, .faq-side-card, .testimonial-card, .testimonial-side-card, .testimonial-highlight-card, .pricing-card, .pricing-trust-item, .group-box, .discount-card, .member-card, .room-overview-card, .room-stat-card, .room-highlight-card, .room-video-card, .room-preview-copy, .room-custom-panel, .news-mini-panel, .feed-card, .pinned-card, .pinned-side-panel, .plan-fit-card, .review-card, .include-card, .trust-card, .difficulty-card, .tip-card, .video-card, .highlight-card, .logo-box, .stat-card, .theme-card, .top-room-card, .preview-box, .contact-info, .contact-form, .help-card, .trust-item, .booking-shell, .booking-modal, .search-panel, .login-panel, .newsletter-shell, .mode-card, .choose-card, .step, .team-card, .mission-box, .achieve-card, .fear-card, .benefit, .mystery-box, .timer-box, .popular-stat, .offer-preview-panel, .offer-preview-card, .offer-side-card) {
+body.theme-light :is(.news-card, .room-card, .exp-card, .why-card, .timeline-box, .offer-box, .home-feature-card, .demo-feature-card, .about-feature-card, .about-section-copy, .about-highlight-card, .about-highlight-stats, .story-block, .story-side-card, .faq-item, .faq-side-card, .testimonial-card, .testimonial-side-card, .testimonial-highlight-card, .pricing-card, .pricing-trust-item, .group-box, .discount-card, .member-card, .room-overview-card, .room-stat-card, .room-highlight-card, .room-video-card, .room-preview-copy, .room-custom-panel, .rooms-advisor-grid article, .news-mini-panel, .feed-card, .pinned-card, .pinned-side-panel, .plan-fit-card, .review-card, .include-card, .trust-card, .difficulty-card, .tip-card, .video-card, .highlight-card, .logo-box, .stat-card, .theme-card, .top-room-card, .preview-box, .contact-info, .contact-form, .help-card, .trust-item, .booking-shell, .booking-modal, .search-panel, .login-panel, .newsletter-shell, .mode-card, .choose-card, .step, .team-card, .mission-box, .achieve-card, .fear-card, .benefit, .mystery-box, .timer-box, .popular-stat, .offer-preview-panel, .offer-preview-card, .offer-side-card) {
     background: #ffffff !important;
     background-image: none !important;
     border-color: rgba(15, 23, 42, 0.1) !important;
     box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08) !important;
     color: #1e293b !important;
+}
+
+body.theme-light :is(.rooms-editorial-band, .rooms-editorial-shell, .rooms-editorial-visual) {
+    background-image: none !important;
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+body.theme-light.news-page :is(.blog-featured-copy .blog-tag, .blog-featured-copy .blog-date) {
+    padding: 0 !important;
+    background: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Offers page: in theme-light, keep the Featured Deal section unboxed (no outer card frame). */
+body.theme-light.offers-page .offer-box.offer-box-premium {
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+}
+
+body.theme-light.offers-page .offer-box.offer-box-premium::before {
+    content: none !important;
+}
+
+body.theme-light.offers-page .offer-section {
+    box-shadow: none !important;
+    border: 0 !important;
+    outline: 0 !important;
 }
 
 body.theme-light :is(.news-card, .room-card, .exp-card, .home-feature-card, .demo-feature-card, .about-feature-card, .story-block, .faq-item, .testimonial-card, .pricing-card, .contact-info, .contact-form, .booking-shell, .login-panel, .mode-card, .choose-card, .step) :is(h1, h2, h3, h4, h5, h6, strong) {
@@ -1115,6 +1158,12 @@ html body.theme-light.about-page .about-inline-points span {
     text-shadow: none !important;
 }
 
+html body.theme-light.about-page :is(.about-highlight-label, .feature-tag, .story-side-label) {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    opacity: 1 !important;
+}
+
 html body.theme-light.about-page :is(.feature-meta span, .story-side-points span) {
     background: #ffffff !important;
     background-image: none !important;
@@ -1240,7 +1289,13 @@ body.theme-light :is(.btn, .login-btn, .contact-btn, .booking-confirm, .search-s
     border-color: rgba(124, 58, 237, 0.28) !important;
 }
 
-body.theme-light :is(.icon-btn, .dir-toggle, .nav-toggle, .search, .social-links a, .social-icon) {
+body.theme-light.offers-page .offer-hero-actions .btn,
+body.theme-light.offers-page .offer-hero-actions .btn.secondary {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+body.theme-light :is(.icon-btn, .nav-toggle, .search, .social-links a, .social-icon) {
     background: rgba(15, 23, 42, 0.04) !important;
     color: #0f172a !important;
     border-color: rgba(15, 23, 42, 0.14) !important;
@@ -1335,6 +1390,29 @@ function updateDarkBtn() {
     btn.title = isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode';
 }
 
+function updateDirectionBtn() {
+    const btn = document.getElementById('directionToggle');
+    if (!btn) return;
+
+    const isRtl = document.body.classList.contains('rtl-mode');
+    btn.innerHTML = isRtl ? '<i class="fas fa-align-left"></i>' : '<i class="fas fa-align-right"></i>';
+    btn.title = isRtl ? 'Switch to LTR Direction' : 'Switch to RTL Direction';
+    btn.setAttribute('aria-label', btn.title);
+}
+
+function applyDirectionMode(direction) {
+    const isRtl = direction === 'rtl';
+    document.documentElement.setAttribute('dir', isRtl ? 'rtl' : 'ltr');
+    document.body.classList.toggle('rtl-mode', isRtl);
+    localStorage.setItem('mystiq-direction', isRtl ? 'rtl' : 'ltr');
+    updateDirectionBtn();
+    syncHeaderOffsetVar();
+}
+
+function toggleDirectionMode() {
+    applyDirectionMode(document.body.classList.contains('rtl-mode') ? 'ltr' : 'rtl');
+}
+
 function toggleDarkMode() {
     ensureThemeLightStyles();
     document.documentElement.classList.add('theme-switching');
@@ -1356,403 +1434,15 @@ function initDarkMode() {
     updateDarkBtn();
 }
 
-/* =============================================
-   LTR / RTL DIRECTION TOGGLE
-   ============================================= */
-function updateDirBtn() {
-    const btn = document.getElementById('dirToggle') || document.getElementById('mq-dir-btn');
-    if (!btn) return;
-    const currentDir = (
-        document.documentElement.getAttribute('dir') === 'rtl' ||
-        document.body?.getAttribute('dir') === 'rtl' ||
-        document.documentElement.classList.contains('dir-rtl') ||
-        document.body?.classList.contains('dir-rtl')
-    ) ? 'rtl' : 'ltr';
-    const label = btn.querySelector('.dir-label');
-    const buttonLabel = currentDir === 'rtl' ? 'LTR' : 'RTL';
-    if (label) {
-        label.textContent = buttonLabel;
-    } else {
-        btn.textContent = buttonLabel;
-    }
-    btn.dataset.direction = currentDir;
-    btn.setAttribute('aria-pressed', currentDir === 'rtl' ? 'true' : 'false');
-    btn.title = currentDir === 'rtl' ? 'Switch to Left-to-Right' : 'Switch to Right-to-Left';
+function initDirectionMode() {
+    applyDirectionMode(localStorage.getItem('mystiq-direction') === 'rtl' ? 'rtl' : 'ltr');
 }
-
-function setDirectionalStyle(selector, styles) {
-    document.querySelectorAll(selector).forEach((element) => {
-        Object.entries(styles).forEach(([property, value]) => {
-            element.style.setProperty(property, value, 'important');
-        });
-    });
-}
-
-function setDirectionalChildOrder(selector, dir) {
-    document.querySelectorAll(selector).forEach((element) => {
-        const children = Array.from(element.children);
-        children.forEach((child, index) => {
-            const order = dir === 'rtl' ? children.length - index : index + 1;
-            child.style.setProperty('order', String(order), 'important');
-        });
-    });
-}
-
-function setDirectionalDomOrder(selector, dir) {
-    document.querySelectorAll(selector).forEach((element) => {
-        Array.from(element.children).forEach((child, index) => {
-            if (!child.dataset.directionOriginalIndex) {
-                child.dataset.directionOriginalIndex = String(index);
-            }
-        });
-
-        const orderedChildren = Array.from(element.children).sort((first, second) => {
-            const firstIndex = Number(first.dataset.directionOriginalIndex || 0);
-            const secondIndex = Number(second.dataset.directionOriginalIndex || 0);
-            return dir === 'rtl' ? secondIndex - firstIndex : firstIndex - secondIndex;
-        });
-
-        orderedChildren.forEach((child) => element.appendChild(child));
-    });
-}
-
-function applyDirectionalComponents(dir) {
-    const isRtl = dir === 'rtl';
-    const textAlign = isRtl ? 'right' : 'left';
-    const inlineStart = isRtl ? 'flex-end' : 'flex-start';
-    const rowFlow = isRtl ? 'row-reverse' : 'row';
-
-    if (document.body) {
-        document.body.dataset.direction = dir;
-    }
-    document.documentElement.dataset.direction = dir;
-
-    setDirectionalStyle('html, body', {
-        direction: dir,
-        'text-align': textAlign
-    });
-
-    setDirectionalStyle('.header', {
-        direction: dir,
-        'flex-direction': window.matchMedia('(max-width: 768px)').matches ? 'row' : rowFlow
-    });
-
-    setDirectionalStyle('.header > .logo, .header > .logo > .logo-link', {
-        'justify-content': inlineStart
-    });
-
-    setDirectionalStyle('.header > .logo > .logo-link > img', {
-        'object-position': isRtl ? 'right center' : 'left center'
-    });
-
-    setDirectionalStyle([
-        '.nav',
-        '.right-section',
-        '.nav-mobile-actions',
-        '.hero-actions',
-        '.index-hero-actions',
-        '.editorial-hero-actions',
-        '.offer-hero-actions',
-        '.news-cta-actions',
-        '.site-cta-actions',
-        '.offer-box-actions',
-        '.offer-reveal-points',
-        '.room-tags',
-        '.feature-meta',
-        '.blog-inline-meta',
-        '.social-links'
-    ].join(','), {
-        direction: dir,
-        'flex-direction': rowFlow
-    });
-
-    if (window.matchMedia('(max-width: 768px)').matches) {
-        setDirectionalStyle([
-            '.header .nav',
-            '.header.menu-open .nav',
-            '.hero-actions',
-            '.index-hero-actions',
-            '.editorial-hero-actions',
-            '.offer-hero-actions',
-            '.news-cta-actions',
-            '.site-cta-actions'
-        ].join(','), {
-            'flex-direction': 'column'
-        });
-    }
-
-    setDirectionalStyle([
-        '.editorial-hero-shell',
-        '.offer-hero-shell',
-        '.blog-hub',
-        '.blog-featured-story',
-        '.blog-editorial-strip',
-        '.news-trending-shell',
-        '.news-cta-pro',
-        '.blog-cta-pro',
-        '.offer-box-premium',
-        '.offer-reveal-shell',
-        '.mystery-shell',
-        '.popular-shell',
-        '.offer-preview-panel',
-        '.offer-story-shell',
-        '.room-preview-layout',
-        '.rooms-editorial-shell',
-        '.contact-shell',
-        '.site-duo',
-        '.site-quote',
-        '.site-cta-band',
-        '.blog-grid',
-        '.offer-campaign-grid',
-        '.achievement-grid',
-        '.rooms-grid',
-        '.rooms-pro-grid'
-    ].join(','), {
-        direction: dir
-    });
-
-    setDirectionalStyle([
-        '.editorial-hero-copy',
-        '.editorial-hero-card',
-        '.offer-hero .hero-text',
-        '.offer-hero-panel',
-        '.section-heading',
-        '.editorial-heading',
-        '.offers-custom-head',
-        '.rooms-custom-head',
-        '.news-custom-head',
-        '.blog-featured-copy',
-        '.blog-sidebar-card',
-        '.blog-card-copy',
-        '.blog-editorial-copy',
-        '.blog-editorial-stats article',
-        '.blog-list article',
-        '.blog-list article div',
-        '.news-trending-copy',
-        '.news-trending-pulse article',
-        '.news-trending-list article',
-        '.news-cta-pro > div',
-        '.offer-box-copy',
-        '.offer-box-side',
-        '.offer-campaign-card',
-        '.offer-campaign-card div',
-        '.offer-reveal-copy',
-        '.mystery-copy',
-        '.achievement',
-        '.achievement-copy',
-        '.popular-copy',
-        '.popular-stat',
-        '.offer-preview-copy',
-        '.offer-preview-card',
-        '.offer-story-copy',
-        '.room-card',
-        '.rooms-pro-card',
-        '.contact-form',
-        '.contact-info',
-        '.footer-column'
-    ].join(','), {
-        direction: dir,
-        'text-align': textAlign
-    });
-
-    setDirectionalStyle('.blog-tag, .blog-date, .campaign-tag, .offer-campaign-card span, .offer-badge, .achievement-step', {
-        'align-self': inlineStart
-    });
-
-    setDirectionalStyle('.dropdown', {
-        left: isRtl ? 'auto' : '0',
-        right: isRtl ? '0' : 'auto',
-        'text-align': textAlign
-    });
-
-    if (window.matchMedia('(max-width: 980px)').matches) {
-        setDirectionalStyle('.editorial-hero-shell, .offer-hero-shell', {
-            'grid-template-columns': '1fr'
-        });
-
-        setDirectionalStyle('.editorial-hero-copy, .editorial-hero-card, .offer-hero .hero-text, .offer-hero-panel', {
-            'grid-column': '1',
-            'justify-self': 'center',
-            'text-align': 'center'
-        });
-    } else {
-        setDirectionalStyle('.editorial-hero-shell, .offer-hero-shell', {
-            'grid-template-columns': isRtl ? 'minmax(300px, 420px) minmax(0, 1fr)' : 'minmax(0, 1.15fr) minmax(280px, 0.85fr)'
-        });
-
-        setDirectionalStyle('.editorial-hero-card, .offer-hero-panel', {
-            'grid-column': isRtl ? '1' : '2',
-            'justify-self': isRtl ? 'start' : 'end'
-        });
-
-        setDirectionalStyle('.editorial-hero-copy, .offer-hero .hero-text', {
-            'grid-column': isRtl ? '2' : '1',
-            'justify-self': isRtl ? 'end' : 'start',
-            'text-align': textAlign
-        });
-    }
-
-    setDirectionalStyle('.blog-list article', {
-        'grid-template-columns': isRtl ? '1fr auto' : 'auto 1fr'
-    });
-
-    setDirectionalStyle('.blog-list article > span', {
-        'grid-column': isRtl ? '2' : '1'
-    });
-
-    setDirectionalStyle('.blog-list article > div', {
-        'grid-column': isRtl ? '1' : '2'
-    });
-
-    setDirectionalStyle('.offer-box li', {
-        direction: dir,
-        'text-align': textAlign,
-        'flex-direction': rowFlow
-    });
-
-    setDirectionalStyle('.offer-preview-card li, .news-trending li, .blog-sidebar-card li', {
-        direction: dir,
-        'text-align': textAlign
-    });
-
-    const componentOrderSelectors = [
-        '.header',
-        '.nav',
-        '.right-section',
-        '.editorial-hero-shell',
-        '.offer-hero-shell',
-        '.blog-hub',
-        '.blog-featured-story',
-        '.blog-editorial-strip',
-        '.blog-editorial-stats',
-        '.blog-list article',
-        '.blog-grid',
-        '.news-cta-pro',
-        '.offer-box-premium',
-        '.offer-campaign-grid',
-        '.offer-reveal-shell',
-        '.mystery-shell',
-        '.mystery-meta',
-        '.achievement-grid',
-        '.popular-shell',
-        '.offer-preview-panel',
-        '.offer-preview-points',
-        '.offer-preview-side',
-        '.offer-story-shell',
-        '.offer-story-stats',
-        '.footer-content'
-    ].join(',');
-
-    setDirectionalDomOrder(componentOrderSelectors, dir);
-    setDirectionalChildOrder(componentOrderSelectors, dir);
-
-    setDirectionalStyle([
-        '.editorial-hero-shell > *',
-        '.offer-hero-shell > *',
-        '.blog-hub > *',
-        '.blog-featured-story > *',
-        '.blog-editorial-strip > *',
-        '.news-cta-pro > *',
-        '.offer-box-premium > *',
-        '.offer-reveal-shell > *',
-        '.mystery-shell > *',
-        '.popular-shell > *',
-        '.offer-preview-panel > *',
-        '.offer-story-shell > *',
-        '.offer-campaign-grid > *',
-        '.achievement-grid > *',
-        '.blog-grid > *'
-    ].join(','), {
-        'grid-column': 'auto',
-        'grid-row': 'auto'
-    });
-
-    setDirectionalStyle('.editorial-hero-shell, .offer-hero-shell', {
-        'grid-template-areas': isRtl ? '"panel copy"' : '"copy panel"',
-        'align-items': 'center'
-    });
-
-    setDirectionalStyle('.editorial-hero-copy, .offer-hero .hero-text', {
-        position: 'relative',
-        top: 'auto',
-        left: 'auto',
-        right: 'auto',
-        width: '100%',
-        'grid-area': 'copy',
-        'grid-column': 'auto',
-        'grid-row': 'auto'
-    });
-
-    setDirectionalStyle('.editorial-hero-card, .offer-hero-panel', {
-        'grid-area': 'panel',
-        'grid-column': 'auto',
-        'grid-row': 'auto'
-    });
-
-    setDirectionalStyle('.offer-box-premium', {
-        'grid-template-areas': isRtl ? '"side copy"' : '"copy side"'
-    });
-
-    setDirectionalStyle('.offer-box-copy', {
-        'grid-area': 'copy',
-        'grid-column': 'auto',
-        'grid-row': 'auto'
-    });
-
-    setDirectionalStyle('.offer-box-side', {
-        'grid-area': 'side',
-        'grid-column': 'auto',
-        'grid-row': 'auto'
-    });
-}
-
-function applyDirection(dir) {
-    const nextDir = dir === 'rtl' ? 'rtl' : 'ltr';
-    document.documentElement.setAttribute('dir', nextDir);
-    document.documentElement.classList.toggle('dir-rtl', nextDir === 'rtl');
-    document.documentElement.classList.toggle('dir-ltr', nextDir === 'ltr');
-
-    if (document.body) {
-        document.body.setAttribute('dir', nextDir);
-        document.body.classList.toggle('dir-rtl', nextDir === 'rtl');
-        document.body.classList.toggle('dir-ltr', nextDir === 'ltr');
-        document.body.style.direction = nextDir;
-    }
-
-    document.documentElement.style.direction = nextDir;
-    applyDirectionalComponents(nextDir);
-}
-
-function toggleDirection() {
-    const currentDir = (
-        document.documentElement.getAttribute('dir') === 'rtl' ||
-        document.body?.getAttribute('dir') === 'rtl' ||
-        document.documentElement.classList.contains('dir-rtl') ||
-        document.body?.classList.contains('dir-rtl')
-    ) ? 'rtl' : 'ltr';
-    const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
-    applyDirection(newDir);
-    localStorage.setItem('mystiq-dir', newDir);
-    updateDirBtn();
-}
-
-function initDirection() {
-    const savedDir = localStorage.getItem('mystiq-dir') || 'ltr';
-    applyDirection(savedDir);
-    updateDirBtn();
-}
-
-window.addEventListener('resize', () => {
-    const currentDir = document.documentElement.getAttribute('dir') === 'rtl' ? 'rtl' : 'ltr';
-    applyDirectionalComponents(currentDir);
-});
 
 /* =============================================
    INJECT TOGGLE BUTTONS INTO ALL PAGES
    ============================================= */
 function injectToggles() {
     const existingDarkBtn = document.getElementById('darkModeToggle') || document.getElementById('mq-enable-btn');
-    const existingDirBtn = document.getElementById('dirToggle') || document.getElementById('mq-dir-btn');
 
     if (existingDarkBtn) {
         existingDarkBtn.id = 'darkModeToggle';
@@ -1760,22 +1450,7 @@ function injectToggles() {
         existingDarkBtn.setAttribute('aria-label', 'Toggle dark/light mode');
         existingDarkBtn.onclick = null;
         existingDarkBtn.addEventListener('click', toggleDarkMode);
-    }
-
-    if (existingDirBtn) {
-        existingDirBtn.id = 'dirToggle';
-        existingDirBtn.type = 'button';
-        existingDirBtn.setAttribute('aria-label', 'Toggle text direction');
-        if (!existingDirBtn.querySelector('.dir-label')) {
-            existingDirBtn.innerHTML = '<span class="dir-label"></span>';
-        }
-        existingDirBtn.onclick = null;
-        existingDirBtn.addEventListener('click', toggleDirection);
-    }
-
-    if (existingDarkBtn && existingDirBtn) {
         updateDarkBtn();
-        updateDirBtn();
         return;
     }
 
@@ -1786,42 +1461,64 @@ function injectToggles() {
     darkBtn.setAttribute('aria-label', 'Toggle dark/light mode');
     darkBtn.addEventListener('click', toggleDarkMode);
 
-    const dirBtn = document.createElement('button');
-    dirBtn.type = 'button';
-    dirBtn.className = 'icon-btn dir-toggle';
-    dirBtn.id = 'dirToggle';
-    dirBtn.setAttribute('aria-label', 'Toggle text direction');
-    dirBtn.innerHTML = '<span class="dir-label">RTL</span>';
-    dirBtn.addEventListener('click', toggleDirection);
-
     const rightSection = document.querySelector('.right-section');
     if (rightSection) {
         const loginBtn = rightSection.querySelector('.login-btn');
         if (loginBtn) {
-            rightSection.insertBefore(dirBtn, loginBtn);
-            rightSection.insertBefore(darkBtn, dirBtn);
+            rightSection.insertBefore(darkBtn, loginBtn);
         } else {
             rightSection.appendChild(darkBtn);
-            rightSection.appendChild(dirBtn);
         }
     } else {
         /* Pages without a header (e.g. login.html) — floating widget */
         const wrapper = document.createElement('div');
         wrapper.className = 'toggle-float';
         wrapper.appendChild(darkBtn);
-        wrapper.appendChild(dirBtn);
         document.body.appendChild(wrapper);
     }
 
     /* Sync button states after injection */
     updateDarkBtn();
-    updateDirBtn();
+}
+
+function injectDirectionToggle() {
+    if (document.getElementById('directionToggle')) {
+        updateDirectionBtn();
+        return;
+    }
+
+    const directionBtn = document.createElement('button');
+    directionBtn.type = 'button';
+    directionBtn.className = 'icon-btn direction-toggle';
+    directionBtn.id = 'directionToggle';
+    directionBtn.addEventListener('click', toggleDirectionMode);
+
+    const rightSection = document.querySelector('.right-section');
+    if (rightSection) {
+        const loginBtn = rightSection.querySelector('.login-btn');
+        if (loginBtn) {
+            rightSection.insertBefore(directionBtn, loginBtn);
+        } else {
+            rightSection.appendChild(directionBtn);
+        }
+    } else {
+        const wrapper = document.querySelector('.toggle-float') || document.createElement('div');
+        wrapper.className = 'toggle-float';
+        wrapper.appendChild(directionBtn);
+        if (!wrapper.parentElement) {
+            document.body.appendChild(wrapper);
+        }
+    }
+
+    updateDirectionBtn();
+    syncResponsiveHeaderControls();
 }
 
 /* Apply preferences immediately to avoid flash, then inject buttons */
 initDarkMode();
-initDirection();
+initDirectionMode();
 injectToggles();
+injectDirectionToggle();
 
 function initModeSelection() {
     const cards = document.querySelectorAll('.mode-card[data-mode]');
@@ -2662,10 +2359,6 @@ function initCyberpunkHeaderState() {
 }
 
 function initScrollTopButton() {
-    if (document.body.classList.contains("no-scroll-widget")) {
-        return;
-    }
-
     if (document.querySelector(".scroll-top-btn")) {
         return;
     }
