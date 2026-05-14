@@ -1395,7 +1395,7 @@ function updateDirectionBtn() {
     if (!btn) return;
 
     const isRtl = document.body.classList.contains('rtl-mode');
-    btn.innerHTML = isRtl ? '<i class="fas fa-align-left"></i>' : '<i class="fas fa-align-right"></i>';
+    btn.textContent = 'RTL';
     btn.title = isRtl ? 'Switch to LTR Direction' : 'Switch to RTL Direction';
     btn.setAttribute('aria-label', btn.title);
 }
