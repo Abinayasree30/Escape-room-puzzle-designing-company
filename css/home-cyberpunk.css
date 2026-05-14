@@ -1,11 +1,5 @@
 /* Homepage-only cyberpunk redesign loaded after the legacy stylesheet. */
 body.home-demo1 {
-    --primary: #8b5cf6;
-    --primary-dark: #6d28d9;
-    --accent-glow: rgba(139, 92, 246, 0.52);
-    --page-bg: #0f0f0f;
-    --glass: rgba(255, 255, 255, 0.055);
-    --line: rgba(139, 92, 246, 0.28);
     background: #0f0f0f !important;
     color: #ffffff;
     font-family: 'Poppins', sans-serif;
@@ -24,7 +18,7 @@ body.home-demo1 h2,
 body.home-demo1 h3,
 body.home-demo1 .nav a,
 body.home-demo1 .btn {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Poppins', sans-serif;
     letter-spacing: 0 !important;
 }
 
@@ -192,7 +186,7 @@ body.home-demo1 .hero-text {
 body.home-demo1 .hero-kicker,
 body.home-demo1 .eyebrow {
     color: #c4b5fd !important;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 13px !important;
     font-weight: 700 !important;
     letter-spacing: 0 !important;
@@ -278,7 +272,7 @@ body.home-demo1 .hero-countdown strong,
 body.home-demo1 .stats-section strong {
     display: block;
     color: #ffffff;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: clamp(1.6rem, 4vw, 3.1rem);
     line-height: 1;
 }
@@ -301,6 +295,7 @@ body.home-demo1 .offer-section {
 
 body.home-demo1 .about-modern {
     row-gap: 34px !important;
+    align-items: stretch !important;
 }
 
 body.home-demo1 .about-modern-eyebrow {
@@ -334,6 +329,19 @@ body.home-demo1 .offer-section figure {
 
 body.home-demo1 img {
     max-width: 100%;
+}
+
+/* Home 1: Mission Briefing section balance (match image height to copy) */
+body.home-demo1 .about-modern-image {
+    aspect-ratio: auto;
+    height: 100%;
+    min-height: 420px;
+    display: flex;
+}
+
+body.home-demo1 .about-modern-image img {
+    height: 100%;
+    flex: 1;
 }
 
 body.home-demo1 .about-modern-image img,
@@ -532,7 +540,7 @@ body.home-demo1 .step {
 
 body.home-demo1 .step span {
     color: #ffffff !important;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 34px;
     font-weight: 600;
     line-height: 1;
@@ -688,6 +696,7 @@ body.home-demo1 .home-faq-item.active i {
 
 body.home-demo1 .final-cta {
     margin: 0;
+    padding-bottom: 0 !important;
     text-align: center;
     background:
         radial-gradient(circle at center, rgba(139, 92, 246, 0.30), transparent 42%),
@@ -768,6 +777,11 @@ body.home-demo1 footer a:hover {
     body.home-demo1 .video-preview,
     body.home-demo1 .offer-section {
         grid-template-columns: 1fr !important;
+    }
+
+    body.home-demo1 .about-modern-image {
+        height: auto;
+        min-height: 260px;
     }
 }
 
@@ -916,7 +930,7 @@ body.home-demo1 footer {
     background: #0f0f0f !important;
     color: #d8d8e2 !important;
     padding: 70px 8% 28px !important;
-    margin-top: 80px !important;
+    margin-top: 0 !important;
     border-top: 1px solid rgba(139, 92, 246, 0.3) !important;
     box-shadow: 0 -5px 20px rgba(139, 92, 246, 0.15) !important;
     backdrop-filter: blur(8px);
@@ -964,7 +978,7 @@ body.home-demo1 .footer-logo:hover img {
 
 body.home-demo1 .footer-left h2,
 body.home-demo1 .footer-column h3 {
-    font-family: 'Orbitron', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
     letter-spacing: 0 !important;
@@ -1153,8 +1167,6 @@ body.home-demo1 :is(.hero-text h1, .home-section-head h2, .final-cta h2) {
 
 /* Home 1 final purple palette sweep */
 body.home-demo1 {
-    --primary: #8b5cf6 !important;
-    --primary-dark: #6d28d9 !important;
     --game-cyan: #8b5cf6 !important;
     --game-gold: #c4b5fd !important;
 }
@@ -1327,8 +1339,7 @@ body.light-mode.home-demo1 :is(
 body.light-mode.home-demo1 :is(
     .nav a,
     .dropdown a,
-    .icon-btn,
-    .dir-toggle
+    .icon-btn
 ) {
     color: #0f172a !important;
     -webkit-text-fill-color: #0f172a !important;
@@ -1490,25 +1501,6 @@ body.light-mode.home-demo1 :is(.home-section-head h2, .section-heading h2) {
     box-shadow: none !important;
 }
 
-body.light-mode.home-demo1 .footer-logo {
-    width: 260px !important;
-    height: 92px !important;
-    overflow: visible !important;
-}
-
-body.light-mode.home-demo1 .footer-logo img {
-    width: 220px !important;
-    height: auto !important;
-    max-height: 90px !important;
-    object-fit: contain !important;
-    transform: none !important;
-    filter: drop-shadow(0 8px 18px rgba(15, 23, 42, 0.12)) !important;
-}
-
-body.light-mode.home-demo1 .footer-logo:hover img {
-    transform: scale(1.03) !important;
-}
-
 /* Home 1 final light-mode hero consistency */
 body.light-mode.home-demo1 .hero {
     background: #0f0f0f !important;
@@ -1583,44 +1575,7 @@ body.home-demo1 .step > span {
     padding: 0 !important;
 }
 
-body.light-mode.home-demo1 .hero {
-    min-height: auto !important;
-    height: auto !important;
-    padding: 152px 5vw 76px !important;
-    align-items: center !important;
-    overflow: hidden !important;
-}
-
-body.light-mode.home-demo1 .hero-text {
-    margin: 0 auto !important;
-    max-width: 1120px !important;
-    transform: none !important;
-}
-
-body.light-mode.home-demo1 .hero-text h1 {
-    max-width: 1080px !important;
-    margin: 0 auto 24px !important;
-    font-size: clamp(2.8rem, 5vw, 5rem) !important;
-    line-height: 1.05 !important;
-    letter-spacing: 0 !important;
-}
-
-body.light-mode.home-demo1 .hero-text > p:not(.hero-kicker) {
-    max-width: 880px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    color: rgba(255, 255, 255, .9) !important;
-}
-
 @media (max-width: 768px) {
-    body.light-mode.home-demo1 .hero {
-        padding: 132px 6vw 58px !important;
-    }
-
-    body.light-mode.home-demo1 .hero-text h1 {
-        font-size: clamp(2.15rem, 11vw, 3.1rem) !important;
-    }
-
     body.home-demo1 .how-it-works .step > span,
     body.home-demo1 .step > span {
         width: 52px !important;
@@ -1726,6 +1681,16 @@ body.light-mode.home-demo1 .hero-countdown {
 }
 
 /* Home 1 video preview content spacing */
+body.home-demo1 .video-copy {
+    text-align: left;
+}
+
+body.home-demo1 .video-copy .eyebrow {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: left;
+}
+
 body.home-demo1 .video-copy > p:not(.eyebrow) {
     margin-bottom: 24px !important;
 }
@@ -1789,7 +1754,7 @@ html body.home-demo1 :is(
 }
 
 /* Home 1 light mode header utility icons use violet on hover. */
-html body.light-mode.home-demo1 :is(.icon-btn, .dir-toggle, .nav-toggle):is(:hover, :focus-visible) {
+html body.light-mode.home-demo1 :is(.icon-btn, .nav-toggle):is(:hover, :focus-visible) {
     color: #7c3aed !important;
     -webkit-text-fill-color: #7c3aed !important;
     border-color: rgba(124, 58, 237, 0.42) !important;
@@ -1797,7 +1762,7 @@ html body.light-mode.home-demo1 :is(.icon-btn, .dir-toggle, .nav-toggle):is(:hov
     box-shadow: 0 12px 28px rgba(124, 58, 237, 0.14) !important;
 }
 
-html body.light-mode.home-demo1 :is(.icon-btn, .dir-toggle, .nav-toggle):is(:hover, :focus-visible) i {
+html body.light-mode.home-demo1 :is(.icon-btn, .nav-toggle):is(:hover, :focus-visible) i {
     color: #7c3aed !important;
     -webkit-text-fill-color: #7c3aed !important;
 }
@@ -2104,188 +2069,12 @@ html body.light-mode.home-demo1 .feature-icon-grid i {
     text-shadow: none !important;
     line-height: 1 !important;
 }
-
-/* Home 1 RTL responsive navbar lock: 360px, 768px, and 1024px */
-@media (max-width: 1024px) {
-    html[dir="rtl"] body.home-demo1 .header,
-    html[dir="rtl"] body.light-mode.home-demo1 .header {
-        height: 76px !important;
-        min-height: 76px !important;
-        padding: 12px 20px !important;
-        display: flex !important;
-        flex-wrap: nowrap !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-        direction: rtl !important;
-        overflow: visible !important;
-    }
-
-    html[dir="rtl"] body.home-demo1 .header .logo {
-        order: 1 !important;
-        width: min(220px, 54vw) !important;
-        max-width: min(220px, 54vw) !important;
-        margin: 0 !important;
-        justify-content: flex-end !important;
-        overflow: hidden !important;
-    }
-
-    html[dir="rtl"] body.home-demo1 .header .logo-link {
-        justify-content: flex-end !important;
-    }
-
-    html[dir="rtl"] body.home-demo1 .header .logo img {
-        width: min(210px, 54vw) !important;
-        max-width: 100% !important;
-        height: auto !important;
-        transform: none !important;
-        object-fit: contain !important;
-    }
-
-    html[dir="rtl"] body.home-demo1 .header .nav-toggle {
-        order: 2 !important;
-        width: 44px !important;
-        min-width: 44px !important;
-        height: 44px !important;
-        margin: 0 !important;
-        display: inline-flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-
-    html[dir="rtl"] body.home-demo1 .header .right-section {
-        display: none !important;
-    }
-
-    html[dir="rtl"] body.home-demo1 .header .nav,
-    html[dir="rtl"] body.light-mode.home-demo1 .header .nav,
-    html[dir="rtl"] body.home-demo1 .header.menu-open .nav,
-    html[dir="rtl"] body.light-mode.home-demo1 .header.menu-open .nav {
-        position: absolute !important;
-        top: calc(100% + 10px) !important;
-        left: 16px !important;
-        right: 16px !important;
-        width: auto !important;
-        max-width: none !important;
-        max-height: calc(100vh - 100px) !important;
-        margin: 0 !important;
-        padding: 14px !important;
-        display: none !important;
-        grid-template-columns: 1fr !important;
-        flex-direction: column !important;
-        align-items: stretch !important;
-        gap: 10px !important;
-        direction: rtl !important;
-        overflow-y: auto !important;
-        overflow-x: hidden !important;
-        border-radius: 18px !important;
-        z-index: 1100 !important;
-    }
-
-    html[dir="rtl"] body.home-demo1 .header.menu-open .nav,
-    html[dir="rtl"] body.light-mode.home-demo1 .header.menu-open .nav {
-        display: flex !important;
-    }
-
-    html[dir="rtl"] body.home-demo1 .header .nav > a,
-    html[dir="rtl"] body.home-demo1 .header .nav-item > a,
-    html[dir="rtl"] body.light-mode.home-demo1 .header .nav > a,
-    html[dir="rtl"] body.light-mode.home-demo1 .header .nav-item > a,
-    html[dir="rtl"] body.light-mode.home-demo1 .header .nav .nav-item > a[data-menu="home"] {
-        width: 100% !important;
-        min-width: 0 !important;
-        min-height: 46px !important;
-        padding: 12px 14px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-        text-align: right !important;
-        white-space: normal !important;
-        border-radius: 12px !important;
-        background: rgba(255, 255, 255, 0.055) !important;
-        border: 1px solid rgba(139, 92, 246, 0.22) !important;
-    }
-
-    html[dir="rtl"] body.light-mode.home-demo1 .header .nav > a,
-    html[dir="rtl"] body.light-mode.home-demo1 .header .nav-item > a,
-    html[dir="rtl"] body.light-mode.home-demo1 .header .nav .nav-item > a[data-menu="home"] {
-        background: rgba(124, 58, 237, 0.08) !important;
-        border-color: rgba(124, 58, 237, 0.14) !important;
-    }
-
-    html[dir="rtl"] body.home-demo1 .header .nav-item {
-        width: 100% !important;
-        min-width: 0 !important;
-    }
-
-    html[dir="rtl"] body.home-demo1 .header .nav .dropdown {
-        position: static !important;
-        width: 100% !important;
-        min-width: 0 !important;
-        margin: 8px 0 0 !important;
-        padding: 8px !important;
-        display: none;
-        flex-direction: column !important;
-        text-align: right !important;
-    }
-
-    html[dir="rtl"] body.home-demo1 .header .nav-item.open .dropdown {
-        display: flex !important;
-    }
-
-    html[dir="rtl"] body.home-demo1 .header .nav-mobile-actions,
-    html[dir="rtl"] body.light-mode.home-demo1 .header .nav-mobile-actions {
-        width: 100% !important;
-        display: grid !important;
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        gap: 10px !important;
-        margin-top: 4px !important;
-        padding-top: 12px !important;
-    }
-}
-
-@media (max-width: 768px) {
-    html[dir="rtl"] body.home-demo1 .header,
-    html[dir="rtl"] body.light-mode.home-demo1 .header {
-        padding-inline: 16px !important;
-    }
-
-    html[dir="rtl"] body.home-demo1 .header .nav,
-    html[dir="rtl"] body.light-mode.home-demo1 .header .nav,
-    html[dir="rtl"] body.home-demo1 .header.menu-open .nav,
-    html[dir="rtl"] body.light-mode.home-demo1 .header.menu-open .nav {
-        left: 12px !important;
-        right: 12px !important;
-        padding: 12px !important;
-    }
-}
-
-@media (max-width: 360px) {
-    html[dir="rtl"] body.home-demo1 .header,
-    html[dir="rtl"] body.light-mode.home-demo1 .header {
-        padding-inline: 12px !important;
-    }
-
-    html[dir="rtl"] body.home-demo1 .header .logo {
-        width: min(170px, 52vw) !important;
-        max-width: min(170px, 52vw) !important;
-    }
-
-    html[dir="rtl"] body.home-demo1 .header .logo img {
-        width: min(165px, 52vw) !important;
-    }
-
-    html[dir="rtl"] body.home-demo1 .header .nav-mobile-actions,
-    html[dir="rtl"] body.light-mode.home-demo1 .header .nav-mobile-actions {
-        grid-template-columns: 1fr !important;
-    }
-}
-
 /* Header login typography matches the Home 1 navbar links */
 html body.home-demo1 .header .login-btn,
 html body.light-mode.home-demo1 .header .login-btn,
 html body.home-demo1 .header .nav-mobile-actions .login-btn,
 html body.light-mode.home-demo1 .header .nav-mobile-actions .login-btn {
-    font-family: 'Orbitron', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-size: 13px !important;
     font-weight: 600 !important;
     letter-spacing: 0 !important;
@@ -2361,7 +2150,7 @@ body.light-mode.home-demo1::-webkit-scrollbar {
 /* Home 1 mission briefing: keep badge and copy beside the image */
 body.home-demo1 .about-modern,
 body.light-mode.home-demo1 .about-modern {
-    grid-template-columns: minmax(320px, 0.92fr) minmax(360px, 1fr) !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
     grid-template-rows: auto 1fr !important;
     align-items: start !important;
     column-gap: 54px !important;
@@ -2381,14 +2170,14 @@ body.home-demo1 .about-modern-image,
 body.light-mode.home-demo1 .about-modern-image {
     grid-column: 1 !important;
     grid-row: 1 / span 2 !important;
-    align-self: start !important;
+    align-self: stretch !important;
 }
 
 body.home-demo1 .about-modern-copy,
 body.light-mode.home-demo1 .about-modern-copy {
     grid-column: 2 !important;
     grid-row: 2 !important;
-    align-self: start !important;
+    align-self: stretch !important;
 }
 
 body.home-demo1 .about-modern-copy h2,
@@ -2396,9 +2185,50 @@ body.light-mode.home-demo1 .about-modern-copy h2 {
     margin-top: 0 !important;
 }
 
+/* Home 1 limited offer: place badge above the copy (left-aligned) */
+body.home-demo1 .offer-section,
+body.light-mode.home-demo1 .offer-section {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    grid-template-rows: auto 1fr !important;
+    align-items: start !important;
+    column-gap: 54px !important;
+    row-gap: 22px !important;
+}
+
+body.home-demo1 .offer-section-eyebrow,
+body.light-mode.home-demo1 .offer-section-eyebrow {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    justify-self: start !important;
+    align-self: end !important;
+    text-align: left !important;
+    margin: 0 !important;
+}
+
+body.home-demo1 .offer-section > figure,
+body.light-mode.home-demo1 .offer-section > figure {
+    grid-column: 1 !important;
+    grid-row: 1 / span 2 !important;
+    align-self: stretch !important;
+}
+
+body.home-demo1 .offer-section > div,
+body.light-mode.home-demo1 .offer-section > div {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+    align-self: stretch !important;
+    text-align: left !important;
+}
+
 @media (max-width: 900px) {
     body.home-demo1 .about-modern,
     body.light-mode.home-demo1 .about-modern {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: auto !important;
+    }
+
+    body.home-demo1 .offer-section,
+    body.light-mode.home-demo1 .offer-section {
         grid-template-columns: 1fr !important;
         grid-template-rows: auto !important;
     }
@@ -2409,6 +2239,16 @@ body.light-mode.home-demo1 .about-modern-copy h2 {
     body.light-mode.home-demo1 .about-modern-image,
     body.home-demo1 .about-modern-copy,
     body.light-mode.home-demo1 .about-modern-copy {
+        grid-column: 1 !important;
+        grid-row: auto !important;
+    }
+
+    body.home-demo1 .offer-section-eyebrow,
+    body.light-mode.home-demo1 .offer-section-eyebrow,
+    body.home-demo1 .offer-section > figure,
+    body.light-mode.home-demo1 .offer-section > figure,
+    body.home-demo1 .offer-section > div,
+    body.light-mode.home-demo1 .offer-section > div {
         grid-column: 1 !important;
         grid-row: auto !important;
     }
@@ -2438,46 +2278,7 @@ html body.home-demo1,
 html body.light-mode.home-demo1 {
     --site-header-logo-width: 220px;
     --site-header-logo-height: 58px;
-}
-
-html body.home-demo1 .header .logo,
-html[dir="rtl"] body.home-demo1 .header .logo,
-html body.light-mode.home-demo1 .header .logo {
-    width: min(var(--site-header-logo-width), 42vw) !important;
-    max-width: min(var(--site-header-logo-width), 42vw) !important;
-    height: var(--site-header-logo-height) !important;
-    min-height: var(--site-header-logo-height) !important;
-    flex: 0 0 min(var(--site-header-logo-width), 42vw) !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    overflow: hidden !important;
-}
-
-html body.home-demo1 .header .logo-link,
-html[dir="rtl"] body.home-demo1 .header .logo-link,
-html body.light-mode.home-demo1 .header .logo-link {
-    width: 100% !important;
-    height: 100% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-}
-
-html body.home-demo1 .header .logo img,
-html[dir="rtl"] body.home-demo1 .header .logo img,
-html body.light-mode.home-demo1 .header .logo img {
-    width: 100% !important;
-    height: 100% !important;
-    max-width: 100% !important;
-    max-height: 100% !important;
-    display: block !important;
-    object-fit: contain !important;
-    object-position: left center !important;
-    transform: none !important;
-}
-
-@media (max-width: 480px) {
+}@media (max-width: 480px) {
     html body.home-demo1,
     html body.light-mode.home-demo1 {
         --site-header-logo-width: 170px;
@@ -2938,82 +2739,4 @@ html.theme-switching body.home-demo1 .hero * {
         font-size: clamp(2.35rem, 12vw, 3.6rem) !important;
         line-height: 1.08 !important;
     }
-}
-
-/* Home 1 gallery: keep English heading punctuation and moving image strip stable in RTL mode. */
-html[dir="rtl"] body.home-demo1 .gallery-slider,
-html[dir="rtl"] body.light-mode.home-demo1 .gallery-slider,
-html[dir="rtl"] body.theme-light.home-demo1 .gallery-slider {
-    direction: ltr !important;
-    text-align: center !important;
-}
-
-html[dir="rtl"] body.home-demo1 .gallery-slider .home-section-head,
-html[dir="rtl"] body.light-mode.home-demo1 .gallery-slider .home-section-head,
-html[dir="rtl"] body.theme-light.home-demo1 .gallery-slider .home-section-head {
-    direction: ltr !important;
-    text-align: center !important;
-}
-
-html[dir="rtl"] body.home-demo1 .gallery-slider .home-section-head :is(.eyebrow, h2),
-html[dir="rtl"] body.light-mode.home-demo1 .gallery-slider .home-section-head :is(.eyebrow, h2),
-html[dir="rtl"] body.theme-light.home-demo1 .gallery-slider .home-section-head :is(.eyebrow, h2) {
-    direction: ltr !important;
-    unicode-bidi: isolate !important;
-    text-align: center !important;
-}
-
-html[dir="rtl"] body.home-demo1 .gallery-track,
-html[dir="rtl"] body.light-mode.home-demo1 .gallery-track,
-html[dir="rtl"] body.theme-light.home-demo1 .gallery-track {
-    direction: ltr !important;
-    flex-direction: row !important;
-    justify-content: flex-start !important;
-    margin-inline-start: 0 !important;
-    margin-inline-end: auto !important;
-    animation-name: gallerySlide !important;
-    transform-origin: left center !important;
-}
-
-html[dir="rtl"] body.home-demo1 .gallery-track figure,
-html[dir="rtl"] body.light-mode.home-demo1 .gallery-track figure,
-html[dir="rtl"] body.theme-light.home-demo1 .gallery-track figure {
-    direction: ltr !important;
-    flex: 0 0 auto !important;
-}
-
-/* Home 1 testimonials: keep English review cards readable in RTL mode. */
-html[dir="rtl"] body.home-demo1 .testimonials,
-html[dir="rtl"] body.light-mode.home-demo1 .testimonials,
-html[dir="rtl"] body.theme-light.home-demo1 .testimonials {
-    direction: ltr !important;
-}
-
-html[dir="rtl"] body.home-demo1 .testimonial-container,
-html[dir="rtl"] body.light-mode.home-demo1 .testimonial-container,
-html[dir="rtl"] body.theme-light.home-demo1 .testimonial-container {
-    direction: ltr !important;
-}
-
-html[dir="rtl"] body.home-demo1 .testimonial-card,
-html[dir="rtl"] body.light-mode.home-demo1 .testimonial-card,
-html[dir="rtl"] body.theme-light.home-demo1 .testimonial-card {
-    direction: ltr !important;
-    text-align: left !important;
-}
-
-html[dir="rtl"] body.home-demo1 .testimonial-card :is(p, h4, span),
-html[dir="rtl"] body.light-mode.home-demo1 .testimonial-card :is(p, h4, span),
-html[dir="rtl"] body.theme-light.home-demo1 .testimonial-card :is(p, h4, span) {
-    direction: ltr !important;
-    unicode-bidi: isolate !important;
-    text-align: left !important;
-}
-
-html[dir="rtl"] body.home-demo1 .testimonial-rating-row,
-html[dir="rtl"] body.light-mode.home-demo1 .testimonial-rating-row,
-html[dir="rtl"] body.theme-light.home-demo1 .testimonial-rating-row {
-    direction: ltr !important;
-    flex-direction: row !important;
-    justify-content: flex-start !important;
 }

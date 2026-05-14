@@ -1,10 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 /* Site-wide dark gaming theme. Loaded after the legacy stylesheet. */
 :root {
-    --primary: #8b5cf6;
-    --primary-dark: #6d28d9;
-    --white: #ffffff;
     --text-light: #cbd5e1;
     --bg-dark: rgba(15, 15, 15, 0.94);
 }
@@ -25,8 +22,33 @@ body:not(.light-mode)::before {
 
 body:not(.light-mode) :is(h1, h2, h3, h4, h5, h6),
 body:not(.light-mode):not(.theme-light) :is(.btn, button, .nav a, .hero-card-label, .about-kicker, .eyebrow, .site-mini-label) {
-    font-family: 'Orbitron', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     letter-spacing: 0 !important;
+}
+
+/* Keep header typography identical in both dark + light mode (use dark-mode font styling). */
+html body:is(.light-mode, .theme-light) :is(
+    .header .nav a,
+    .header .nav-item > a,
+    .header .dropdown a,
+    .header .login-btn,
+    .header .nav-toggle,
+    .header .icon-btn,
+    .header button,
+    .header .btn
+) {
+    font-family: 'Poppins', sans-serif !important;
+    letter-spacing: 0 !important;
+    text-transform: uppercase !important;
+    font-weight: 500 !important;
+}
+
+html body:is(.light-mode, .theme-light) :is(.header .nav a, .header .nav-item > a) {
+    font-size: 13px !important;
+}
+
+html body:is(.light-mode, .theme-light) .header {
+    font-family: 'Poppins', sans-serif !important;
 }
 
 body:not(.light-mode) p,
@@ -397,7 +419,7 @@ body.light-mode .footer-address-card {
 .footer-column h3,
 body.light-mode .footer-left h2,
 body.light-mode .footer-column h3 {
-    font-family: 'Orbitron', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
 }
@@ -539,49 +561,292 @@ body.home-demo2 .briefing-visual {
     font-size: 20px !important;
 }
 
-body.home-demo2 .experience {
-    padding: 76px 8% !important;
+body.home-demo2:not(.theme-light):not(.light-mode) .experience {
+    position: relative !important;
+    isolation: isolate !important;
+    padding: 86px 8% !important;
+    text-align: left !important;
 }
 
-body.home-demo2 .experience h2 {
-    margin-bottom: 34px !important;
+body.home-demo2:not(.theme-light):not(.light-mode) .experience::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: -1 !important;
+    background:
+        radial-gradient(900px 260px at 50% 0%, rgba(139, 92, 246, 0.26), transparent 62%),
+        radial-gradient(520px 240px at 0% 15%, rgba(34, 211, 238, 0.18), transparent 60%),
+        radial-gradient(520px 240px at 100% 35%, rgba(236, 72, 153, 0.16), transparent 58%),
+        linear-gradient(180deg, rgba(2, 6, 15, 0.82), rgba(2, 6, 15, 0.62)) !important;
+    pointer-events: none !important;
+}
+
+body.home-demo2:not(.theme-light):not(.light-mode) .experience::after {
+    content: "" !important;
+    position: absolute !important;
+    inset: -1px !important;
+    z-index: -1 !important;
+    background: linear-gradient(90deg, rgba(34, 211, 238, 0.12), rgba(139, 92, 246, 0.12), rgba(236, 72, 153, 0.12)) !important;
+    opacity: 0.55 !important;
+    mask: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 18%, rgba(0, 0, 0, 1) 82%, rgba(0, 0, 0, 0)) !important;
+    pointer-events: none !important;
+}
+
+body.home-demo2:not(.theme-light):not(.light-mode) .experience h2 {
+    max-width: 980px !important;
+    margin: 0 auto 38px !important;
     font-weight: 600 !important;
+    text-align: center !important;
 }
 
-body.home-demo2 .exp-grid {
+body.home-demo2:not(.theme-light):not(.light-mode) .exp-grid {
     max-width: 1120px !important;
     margin: 0 auto !important;
     gap: 24px !important;
 }
 
-body.home-demo2 .exp-card {
-    min-height: 260px !important;
-    padding: 34px 30px !important;
+body.home-demo2:not(.theme-light):not(.light-mode) .exp-card {
+    min-height: 230px !important;
+    padding: 28px 26px !important;
+    display: grid !important;
+    grid-template-columns: 56px 1fr !important;
+    grid-template-areas:
+        "icon title"
+        "icon body"
+        "icon points" !important;
+    grid-auto-rows: min-content !important;
+    column-gap: 16px !important;
+    row-gap: 4px !important;
+    align-items: start !important;
+    align-content: start !important;
+    justify-content: start !important;
+    text-align: left !important;
+    position: relative !important;
+    isolation: isolate !important;
+    background:
+        linear-gradient(180deg, rgba(17, 24, 39, 0.96), rgba(2, 6, 15, 0.94)) padding-box,
+        linear-gradient(135deg, rgba(34, 211, 238, 0.38), rgba(139, 92, 246, 0.34), rgba(236, 72, 153, 0.24)) border-box !important;
+    border: 1px solid transparent !important;
+    border-radius: 14px !important;
     overflow: hidden !important;
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.45) !important;
+    transition: transform 180ms ease, box-shadow 180ms ease !important;
 }
 
-body.home-demo2 .exp-card .exp-icon {
-    margin-bottom: 18px !important;
+body.home-demo2:not(.theme-light):not(.light-mode) .exp-card::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: -1 !important;
+    background:
+        radial-gradient(220px 120px at 10% 0%, rgba(34, 211, 238, 0.12), transparent 65%),
+        radial-gradient(260px 140px at 100% 35%, rgba(139, 92, 246, 0.12), transparent 66%),
+        linear-gradient(transparent 0, transparent 22px, rgba(255, 255, 255, 0.045) 23px, transparent 24px),
+        linear-gradient(90deg, transparent 0, transparent 22px, rgba(255, 255, 255, 0.035) 23px, transparent 24px) !important;
+    background-size: auto, auto, 24px 24px, 24px 24px !important;
+    opacity: 0.9 !important;
+    pointer-events: none !important;
 }
 
-body.home-demo2 .exp-card h3 {
+body.home-demo2:not(.theme-light):not(.light-mode) .exp-card::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 14px !important;
+    right: 14px !important;
+    bottom: 14px !important;
+    height: 10px !important;
+    border-radius: 999px !important;
+    background:
+        radial-gradient(circle at 10% 50%, rgba(34, 211, 238, 0.9), rgba(34, 211, 238, 0) 55%),
+        radial-gradient(circle at 55% 50%, rgba(139, 92, 246, 0.9), rgba(139, 92, 246, 0) 55%),
+        radial-gradient(circle at 90% 50%, rgba(236, 72, 153, 0.75), rgba(236, 72, 153, 0) 55%),
+        linear-gradient(90deg, rgba(34, 211, 238, 0.18), rgba(139, 92, 246, 0.18), rgba(236, 72, 153, 0.14)) !important;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.10), 0 0 22px rgba(34, 211, 238, 0.22) !important;
+    opacity: 0.55 !important;
+    transform: translateZ(0) !important;
+    pointer-events: none !important;
+}
+
+body.home-demo2:not(.theme-light):not(.light-mode) .exp-card:hover::after {
+    opacity: 0.78 !important;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    body.home-demo2:not(.theme-light):not(.light-mode) .exp-card::after {
+        animation: demo2ExpPulse 2.6s ease-in-out infinite !important;
+    }
+}
+
+@keyframes demo2ExpPulse {
+    0% {
+        filter: saturate(1) blur(0px);
+    }
+
+    50% {
+        filter: saturate(1.25) blur(0.2px);
+    }
+
+    100% {
+        filter: saturate(1) blur(0px);
+    }
+}
+
+body.home-demo2:not(.theme-light):not(.light-mode) .exp-card .exp-icon {
+    grid-area: icon !important;
+    width: 56px !important;
+    height: 56px !important;
+    margin: 0 !important;
+    display: grid !important;
+    place-items: center !important;
+    border-radius: 14px !important;
+    background: linear-gradient(135deg, rgba(34, 211, 238, 0.22), rgba(139, 92, 246, 0.22), rgba(236, 72, 153, 0.16)) !important;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.10) !important;
+    color: #e9e7ff !important;
+    font-size: 22px !important;
+}
+
+body.home-demo2:not(.theme-light):not(.light-mode) .exp-card h3 {
+    grid-area: title !important;
     width: 100% !important;
     max-width: 100% !important;
-    margin: 0 0 14px !important;
+    margin: 0 !important;
     padding: 0 !important;
-    font-size: clamp(1.35rem, 2.1vw, 2rem) !important;
-    line-height: 1.18 !important;
+    font-size: clamp(1.25rem, 1.6vw, 1.7rem) !important;
+    line-height: 1.2 !important;
     font-weight: 600 !important;
-    text-align: center !important;
+    text-align: left !important;
+    display: block !important;
+    white-space: normal !important;
+    align-items: initial !important;
+    justify-content: initial !important;
     overflow-wrap: normal !important;
     word-break: normal !important;
 }
 
-body.home-demo2 .exp-card p {
-    max-width: 260px !important;
-    margin: 0 auto !important;
-    line-height: 1.65 !important;
+body.home-demo2:not(.theme-light):not(.light-mode) .exp-card p {
+    grid-area: body !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    line-height: 1.55 !important;
+    text-align: left !important;
+    color: rgba(215, 219, 231, 0.92) !important;
+    align-self: start !important;
+}
+
+body.home-demo2:not(.theme-light):not(.light-mode) .exp-card .exp-points {
+    grid-area: points !important;
+    margin: 10px 0 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    display: grid !important;
+    gap: 6px !important;
+}
+
+body.home-demo2:not(.theme-light):not(.light-mode) .exp-card .exp-points li {
+    position: relative !important;
+    padding-left: 12px !important;
+    color: rgba(233, 231, 255, 0.88) !important;
+    font-size: 0.98rem !important;
+    line-height: 1.35 !important;
+    text-shadow: 0 8px 20px rgba(0, 0, 0, 0.25) !important;
+}
+
+body.home-demo2:not(.theme-light):not(.light-mode) .exp-card .exp-points li::before {
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0.55em !important;
+    width: 6px !important;
+    height: 6px !important;
+    border-radius: 999px !important;
+    background: linear-gradient(135deg, rgba(34, 211, 238, 0.95), rgba(139, 92, 246, 0.95), rgba(236, 72, 153, 0.85)) !important;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 0 14px rgba(34, 211, 238, 0.25) !important;
+}
+
+body.home-demo2:not(.theme-light):not(.light-mode) .exp-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.55) !important;
+}
+
+@media (max-width: 720px) {
+    body.home-demo2:not(.theme-light):not(.light-mode) .experience {
+        padding: 72px 7% !important;
+    }
+
+    body.home-demo2:not(.theme-light):not(.light-mode) .exp-card {
+        grid-template-columns: 52px 1fr !important;
+        padding: 24px 20px !important;
+        min-height: 0 !important;
+    }
+
+    body.home-demo2:not(.theme-light):not(.light-mode) .exp-card .exp-icon {
+        width: 52px !important;
+        height: 52px !important;
+        border-radius: 12px !important;
+    }
+}
+
+/* Home 2 experience section: light mode visibility + clean white background */
+body.home-demo2:is(.theme-light, .light-mode) .experience {
+    background: #ffffff !important;
+    padding: 86px 8% !important;
+}
+
+body.home-demo2:is(.theme-light, .light-mode) .experience::before,
+body.home-demo2:is(.theme-light, .light-mode) .experience::after {
+    content: none !important;
+    display: none !important;
+}
+
+body.home-demo2:is(.theme-light, .light-mode) .experience h2 {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    text-shadow: none !important;
+}
+
+body.home-demo2:is(.theme-light, .light-mode) .exp-card {
+    background: #ffffff !important;
+    border: 1px solid rgba(15, 23, 42, 0.12) !important;
+    box-shadow: 0 18px 44px rgba(15, 23, 42, 0.08) !important;
+}
+
+body.home-demo2:is(.theme-light, .light-mode) .exp-card::before,
+body.home-demo2:is(.theme-light, .light-mode) .exp-card::after {
+    content: none !important;
+    display: none !important;
+}
+
+body.home-demo2:is(.theme-light, .light-mode) .exp-card .exp-icon {
+    background: rgba(109, 40, 217, 0.08) !important;
+    box-shadow: inset 0 0 0 1px rgba(109, 40, 217, 0.16) !important;
+    color: #4c1d95 !important;
+}
+
+body.home-demo2:is(.theme-light, .light-mode) .exp-card h3 {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
+
+body.home-demo2:is(.theme-light, .light-mode) .exp-card p {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
     text-align: center !important;
+}
+
+body.home-demo2:is(.theme-light, .light-mode) .exp-card .exp-points {
+    margin: 14px auto 0 !important;
+    padding: 0 !important;
+    width: fit-content !important;
+}
+
+body.home-demo2:is(.theme-light, .light-mode) .exp-card .exp-points li {
+    color: #334155 !important;
+    -webkit-text-fill-color: #334155 !important;
+    text-shadow: none !important;
+}
+
+body.home-demo2:is(.theme-light, .light-mode) .exp-card .exp-points li::before {
+    box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.12) !important;
 }
 
 body.home-demo2 .home2-testimonials {
@@ -668,527 +933,7 @@ body.light-mode.home-demo2 .exp-card p {
     body.home-demo2 .home2-testimonial-grid article {
         min-height: 0 !important;
     }
-}
-
-/* Direction toggle component layer: let LTR/RTL change layout, not only text flow. */
-html[dir="rtl"] body {
-    direction: rtl !important;
-    text-align: right !important;
-}
-
-html[dir="rtl"] body :is(
-    .header,
-    .footer-content,
-    .site-lead,
-    .site-duo,
-    .site-quote,
-    .site-cta-band,
-    .editorial-hero-shell,
-    .offer-hero-shell,
-    .offer-box-premium,
-    .offer-reveal-shell,
-    .mystery-shell,
-    .popular-shell,
-    .offer-preview-panel,
-    .offer-story-shell
-) {
-    direction: rtl !important;
-}
-
-html[dir="rtl"] body :is(.header .nav, .header .right-section) {
-    direction: rtl !important;
-    flex-direction: row-reverse !important;
-}
-
-html[dir="rtl"] body .dropdown {
-    left: auto !important;
-    right: 0 !important;
-    text-align: right !important;
-}
-
-html[dir="rtl"] body :is(
-    .editorial-hero-copy,
-    .offer-hero .hero-text,
-    .offer-hero-panel,
-    .offer-box-copy,
-    .offer-box-side,
-    .offer-campaign-card,
-    .offer-campaign-card div,
-    .offer-reveal-copy,
-    .mystery-copy,
-    .popular-copy,
-    .popular-stat,
-    .offer-preview-copy,
-    .offer-preview-card,
-    .offer-story-copy
-) {
-    direction: rtl !important;
-    text-align: right !important;
-}
-
-html[dir="rtl"] body :is(.editorial-hero-shell, .offer-hero-shell) {
-    grid-template-columns: minmax(300px, 420px) minmax(0, 1fr) !important;
-}
-
-html[dir="rtl"] body :is(.editorial-hero-card, .offer-hero-panel) {
-    grid-column: 1 !important;
-    justify-self: start !important;
-}
-
-html[dir="rtl"] body :is(.editorial-hero-copy, .offer-hero .hero-text) {
-    grid-column: 2 !important;
-    justify-self: end !important;
-}
-
-html[dir="rtl"] body :is(
-    .editorial-hero-actions,
-    .hero-card-points,
-    .offer-hero-actions,
-    .offer-box-actions,
-    .offer-reveal-points,
-    .mystery-meta,
-    .offer-story-stats,
-    .offer-preview-points
-) {
-    direction: rtl !important;
-    flex-direction: row-reverse !important;
-    justify-content: flex-start !important;
-}
-
-html[dir="rtl"] body :is(.offer-box li, .offer-preview-card li) {
-    direction: rtl !important;
-    text-align: right !important;
-}
-
-html[dir="rtl"] body .offer-box li {
-    flex-direction: row-reverse !important;
-}
-
-html[dir="rtl"] body :is(.campaign-tag, .offer-campaign-card span, .offer-badge, .achievement-step) {
-    align-self: flex-end !important;
-}
-
-html[dir="rtl"] body .offer-box.offer-box-premium {
-    grid-template-columns: minmax(280px, 0.7fr) minmax(0, 1.3fr) !important;
-    background-position: left center !important;
-}
-
-html[dir="rtl"] body .offer-box-side {
-    order: 1 !important;
-}
-
-html[dir="rtl"] body .offer-box-copy {
-    order: 2 !important;
-}
-
-html[dir="rtl"] body :is(.offer-reveal-visual, .mystery-visual, .popular-visual, .offer-preview-side, .offer-story-image) {
-    direction: ltr !important;
-}
-
-html[dir="ltr"] body {
-    direction: ltr !important;
-    text-align: left !important;
-}
-
-html[dir="ltr"] body :is(
-    .editorial-hero-copy,
-    .offer-hero .hero-text,
-    .offer-hero-panel,
-    .offer-box-copy,
-    .offer-box-side,
-    .offer-campaign-card,
-    .offer-campaign-card div,
-    .offer-reveal-copy,
-    .mystery-copy,
-    .popular-copy,
-    .popular-stat,
-    .offer-preview-copy,
-    .offer-preview-card,
-    .offer-story-copy
-) {
-    direction: ltr !important;
-    text-align: left !important;
-}
-
-html[dir="ltr"] body :is(.editorial-hero-shell, .offer-hero-shell) {
-    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr) !important;
-}
-
-html[dir="ltr"] body :is(.editorial-hero-copy, .offer-hero .hero-text) {
-    grid-column: 1 !important;
-    justify-self: start !important;
-}
-
-html[dir="ltr"] body :is(.editorial-hero-card, .offer-hero-panel) {
-    grid-column: 2 !important;
-    justify-self: end !important;
-}
-
-html[dir="ltr"] body :is(.campaign-tag, .offer-campaign-card span, .offer-badge, .achievement-step) {
-    align-self: flex-start !important;
-}
-
-@media (max-width: 980px) {
-    html[dir="rtl"] body :is(.editorial-hero-shell, .offer-hero-shell),
-    html[dir="ltr"] body :is(.editorial-hero-shell, .offer-hero-shell) {
-        grid-template-columns: 1fr !important;
-    }
-
-    html[dir="rtl"] body :is(.editorial-hero-copy, .editorial-hero-card, .offer-hero .hero-text, .offer-hero-panel),
-    html[dir="ltr"] body :is(.editorial-hero-copy, .editorial-hero-card, .offer-hero .hero-text, .offer-hero-panel) {
-        grid-column: 1 !important;
-        justify-self: center !important;
-        text-align: center !important;
-    }
-
-    html[dir="rtl"] body :is(.editorial-hero-actions, .hero-card-points, .offer-hero-actions),
-    html[dir="ltr"] body :is(.editorial-hero-actions, .hero-card-points, .offer-hero-actions) {
-        justify-content: center !important;
-    }
-}
-
-@media (max-width: 768px) {
-    html[dir="rtl"] body :is(.header .nav, .header.menu-open .nav),
-    html[dir="ltr"] body :is(.header .nav, .header.menu-open .nav) {
-        flex-direction: column !important;
-    }
-}
-
-/* Site-wide direction override: shared pages must mirror whole components. */
-html[dir="rtl"] body {
-    direction: rtl !important;
-    text-align: right !important;
-}
-
-html[dir="ltr"] body {
-    direction: ltr !important;
-    text-align: left !important;
-}
-
-html[dir="rtl"] body .header {
-    direction: rtl !important;
-    flex-direction: row-reverse !important;
-}
-
-html[dir="ltr"] body .header {
-    direction: ltr !important;
-    flex-direction: row !important;
-}
-
-html[dir="rtl"] body .header > .logo,
-html[dir="rtl"] body .header > .logo > .logo-link {
-    justify-content: flex-end !important;
-}
-
-html[dir="rtl"] body .header > .logo > .logo-link > img {
-    object-position: right center !important;
-}
-
-html[dir="rtl"] body :is(
-    .nav,
-    .right-section,
-    .nav-mobile-actions,
-    .hero-actions,
-    .index-hero-actions,
-    .editorial-hero-actions,
-    .offer-hero-actions,
-    .news-cta-actions,
-    .site-cta-actions,
-    .offer-box-actions,
-    .offer-reveal-points,
-    .room-tags,
-    .feature-meta,
-    .blog-inline-meta,
-    .social-links
-) {
-    direction: rtl !important;
-    flex-direction: row-reverse !important;
-}
-
-html[dir="ltr"] body :is(
-    .nav,
-    .right-section,
-    .nav-mobile-actions,
-    .hero-actions,
-    .index-hero-actions,
-    .editorial-hero-actions,
-    .offer-hero-actions,
-    .news-cta-actions,
-    .site-cta-actions,
-    .offer-box-actions,
-    .offer-reveal-points,
-    .room-tags,
-    .feature-meta,
-    .blog-inline-meta,
-    .social-links
-) {
-    direction: ltr !important;
-    flex-direction: row !important;
-}
-
-html[dir="rtl"] body :is(
-    .editorial-hero-shell,
-    .offer-hero-shell,
-    .blog-hub,
-    .blog-featured-story,
-    .blog-editorial-strip,
-    .news-trending-shell,
-    .news-cta-pro,
-    .blog-cta-pro,
-    .offer-box-premium,
-    .offer-reveal-shell,
-    .mystery-shell,
-    .popular-shell,
-    .offer-preview-panel,
-    .offer-story-shell,
-    .room-preview-layout,
-    .rooms-editorial-shell,
-    .contact-shell,
-    .site-duo,
-    .site-quote,
-    .site-cta-band
-) {
-    direction: rtl !important;
-}
-
-html[dir="ltr"] body :is(
-    .editorial-hero-shell,
-    .offer-hero-shell,
-    .blog-hub,
-    .blog-featured-story,
-    .blog-editorial-strip,
-    .news-trending-shell,
-    .news-cta-pro,
-    .blog-cta-pro,
-    .offer-box-premium,
-    .offer-reveal-shell,
-    .mystery-shell,
-    .popular-shell,
-    .offer-preview-panel,
-    .offer-story-shell,
-    .room-preview-layout,
-    .rooms-editorial-shell,
-    .contact-shell,
-    .site-duo,
-    .site-quote,
-    .site-cta-band
-) {
-    direction: ltr !important;
-}
-
-html[dir="rtl"] body :is(
-    .editorial-hero-copy,
-    .editorial-hero-card,
-    .offer-hero .hero-text,
-    .offer-hero-panel,
-    .section-heading,
-    .editorial-heading,
-    .offers-custom-head,
-    .rooms-custom-head,
-    .news-custom-head,
-    .blog-featured-copy,
-    .blog-sidebar-card,
-    .blog-card-copy,
-    .blog-editorial-copy,
-    .blog-editorial-stats article,
-    .blog-list article,
-    .blog-list article div,
-    .news-trending-copy,
-    .news-trending-pulse article,
-    .news-trending-list article,
-    .news-cta-pro > div,
-    .offer-box-copy,
-    .offer-box-side,
-    .offer-campaign-card,
-    .offer-campaign-card div,
-    .offer-reveal-copy,
-    .mystery-copy,
-    .achievement,
-    .achievement-copy,
-    .popular-copy,
-    .popular-stat,
-    .offer-preview-copy,
-    .offer-preview-card,
-    .offer-story-copy,
-    .room-card,
-    .rooms-pro-card,
-    .contact-form,
-    .contact-info,
-    .footer-column
-) {
-    direction: rtl !important;
-    text-align: right !important;
-}
-
-html[dir="ltr"] body :is(
-    .editorial-hero-copy,
-    .editorial-hero-card,
-    .offer-hero .hero-text,
-    .offer-hero-panel,
-    .section-heading,
-    .editorial-heading,
-    .offers-custom-head,
-    .rooms-custom-head,
-    .news-custom-head,
-    .blog-featured-copy,
-    .blog-sidebar-card,
-    .blog-card-copy,
-    .blog-editorial-copy,
-    .blog-editorial-stats article,
-    .blog-list article,
-    .blog-list article div,
-    .news-trending-copy,
-    .news-trending-pulse article,
-    .news-trending-list article,
-    .news-cta-pro > div,
-    .offer-box-copy,
-    .offer-box-side,
-    .offer-campaign-card,
-    .offer-campaign-card div,
-    .offer-reveal-copy,
-    .mystery-copy,
-    .achievement,
-    .achievement-copy,
-    .popular-copy,
-    .popular-stat,
-    .offer-preview-copy,
-    .offer-preview-card,
-    .offer-story-copy,
-    .room-card,
-    .rooms-pro-card,
-    .contact-form,
-    .contact-info,
-    .footer-column
-) {
-    direction: ltr !important;
-    text-align: left !important;
-}
-
-html[dir="rtl"] body :is(.blog-grid, .offer-campaign-grid, .achievement-grid, .rooms-grid, .rooms-pro-grid) {
-    direction: rtl !important;
-}
-
-html[dir="ltr"] body :is(.blog-grid, .offer-campaign-grid, .achievement-grid, .rooms-grid, .rooms-pro-grid) {
-    direction: ltr !important;
-}
-
-html[dir="rtl"] body :is(.blog-tag, .blog-date, .campaign-tag, .offer-campaign-card span, .offer-badge, .achievement-step) {
-    align-self: flex-end !important;
-}
-
-html[dir="ltr"] body :is(.blog-tag, .blog-date, .campaign-tag, .offer-campaign-card span, .offer-badge, .achievement-step) {
-    align-self: flex-start !important;
-}
-
-html[dir="rtl"] body .blog-list article {
-    grid-template-columns: 1fr auto !important;
-}
-
-html[dir="rtl"] body .blog-list article > span {
-    grid-column: 2 !important;
-}
-
-html[dir="rtl"] body .blog-list article > div {
-    grid-column: 1 !important;
-}
-
-html[dir="ltr"] body .blog-list article {
-    grid-template-columns: auto 1fr !important;
-}
-
-html[dir="ltr"] body .blog-list article > span {
-    grid-column: 1 !important;
-}
-
-html[dir="ltr"] body .blog-list article > div {
-    grid-column: 2 !important;
-}
-
-html[dir="rtl"] body :is(.editorial-hero-shell, .offer-hero-shell) {
-    grid-template-columns: minmax(300px, 420px) minmax(0, 1fr) !important;
-}
-
-html[dir="rtl"] body :is(.editorial-hero-card, .offer-hero-panel) {
-    grid-column: 1 !important;
-    justify-self: start !important;
-}
-
-html[dir="rtl"] body :is(.editorial-hero-copy, .offer-hero .hero-text) {
-    grid-column: 2 !important;
-    justify-self: end !important;
-}
-
-html[dir="ltr"] body :is(.editorial-hero-shell, .offer-hero-shell) {
-    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr) !important;
-}
-
-html[dir="ltr"] body :is(.editorial-hero-copy, .offer-hero .hero-text) {
-    grid-column: 1 !important;
-    justify-self: start !important;
-}
-
-html[dir="ltr"] body :is(.editorial-hero-card, .offer-hero-panel) {
-    grid-column: 2 !important;
-    justify-self: end !important;
-}
-
-html[dir="rtl"] body .dropdown {
-    left: auto !important;
-    right: 0 !important;
-    text-align: right !important;
-}
-
-html[dir="ltr"] body .dropdown {
-    left: 0 !important;
-    right: auto !important;
-    text-align: left !important;
-}
-
-html[dir="rtl"] body :is(.offer-box li, .offer-preview-card li, .news-trending li, .blog-sidebar-card li) {
-    direction: rtl !important;
-    text-align: right !important;
-}
-
-html[dir="rtl"] body .offer-box li {
-    flex-direction: row-reverse !important;
-}
-
-html[dir="rtl"] body :is(.offer-reveal-visual, .mystery-visual, .popular-visual, .offer-preview-side, .offer-story-image, .blog-featured-story img) {
-    direction: ltr !important;
-}
-
-@media (max-width: 980px) {
-    html[dir="rtl"] body :is(.editorial-hero-shell, .offer-hero-shell),
-    html[dir="ltr"] body :is(.editorial-hero-shell, .offer-hero-shell) {
-        grid-template-columns: 1fr !important;
-    }
-
-    html[dir="rtl"] body :is(.editorial-hero-copy, .editorial-hero-card, .offer-hero .hero-text, .offer-hero-panel),
-    html[dir="ltr"] body :is(.editorial-hero-copy, .editorial-hero-card, .offer-hero .hero-text, .offer-hero-panel) {
-        grid-column: 1 !important;
-        justify-self: center !important;
-        text-align: center !important;
-    }
-}
-
-@media (max-width: 768px) {
-    html[dir="rtl"] body .header,
-    html[dir="ltr"] body .header {
-        flex-direction: row !important;
-    }
-
-    html[dir="rtl"] body :is(.header .nav, .header.menu-open .nav),
-    html[dir="ltr"] body :is(.header .nav, .header.menu-open .nav) {
-        flex-direction: column !important;
-    }
-
-    html[dir="rtl"] body :is(.hero-actions, .index-hero-actions, .editorial-hero-actions, .offer-hero-actions, .news-cta-actions, .site-cta-actions),
-    html[dir="ltr"] body :is(.hero-actions, .index-hero-actions, .editorial-hero-actions, .offer-hero-actions, .news-cta-actions, .site-cta-actions) {
-        flex-direction: column !important;
-    }
-}
-
-/* About and pricing final light-mode cleanup */
+}/* About and pricing final light-mode cleanup */
 body.light-mode .about-features,
 body.light-mode .story-section,
 body.light-mode .plan-fit.pricing-premium-section,
@@ -1427,7 +1172,7 @@ body.light-mode .footer-address-card {
 .footer-column h3,
 body.light-mode .footer-left h2,
 body.light-mode .footer-column h3 {
-    font-family: 'Orbitron', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
 }
@@ -1553,7 +1298,7 @@ body:not(.light-mode) .footer-bottom {
     margin: 0 0 16px !important;
     color: #8b5cf6 !important;
     -webkit-text-fill-color: #8b5cf6 !important;
-    font-family: 'Orbitron', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-size: 13px !important;
     font-weight: 700 !important;
     letter-spacing: 0.14em !important;
@@ -1566,7 +1311,7 @@ body:not(.light-mode) .footer-bottom {
     margin: 0 0 18px !important;
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
-    font-family: 'Orbitron', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-size: clamp(2.75rem, 5.2vw, 5.4rem) !important;
     font-weight: 700 !important;
     line-height: 1.04 !important;
@@ -1608,7 +1353,7 @@ body:not(.light-mode) .footer-bottom {
 .offer-hero-panel span {
     color: #8b5cf6 !important;
     -webkit-text-fill-color: #8b5cf6 !important;
-    font-family: 'Orbitron', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-size: 12px !important;
     font-weight: 700 !important;
     letter-spacing: 0.14em !important;
@@ -1621,7 +1366,7 @@ body:not(.light-mode) .footer-bottom {
     margin: 12px 0 !important;
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
-    font-family: 'Orbitron', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-size: clamp(2rem, 3.4vw, 3.2rem) !important;
     line-height: 1 !important;
 }
@@ -1712,7 +1457,7 @@ body:not(.light-mode) .footer-bottom {
 .blog-grid-section .editorial-heading .eyebrow {
     color: #8b5cf6 !important;
     -webkit-text-fill-color: #8b5cf6 !important;
-    font-family: 'Orbitron', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     letter-spacing: 0.14em !important;
 }
 
@@ -1720,7 +1465,7 @@ body:not(.light-mode) .footer-bottom {
     margin: 8px 0 12px !important;
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
-    font-family: 'Orbitron', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-size: clamp(2rem, 3.8vw, 3.25rem) !important;
     line-height: 1.12 !important;
     letter-spacing: 0 !important;
@@ -1782,7 +1527,7 @@ body:not(.light-mode) .footer-bottom {
     width: fit-content !important;
     color: #8b5cf6 !important;
     -webkit-text-fill-color: #8b5cf6 !important;
-    font-family: 'Orbitron', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-size: 12px !important;
     font-weight: 700 !important;
     letter-spacing: 0.12em !important;
@@ -1792,7 +1537,7 @@ body:not(.light-mode) .footer-bottom {
     margin: 0 !important;
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
-    font-family: 'Orbitron', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-size: 1.22rem !important;
     line-height: 1.35 !important;
     letter-spacing: 0 !important;
@@ -2117,8 +1862,6 @@ footer.site-reveal.is-visible {
 
 /* Final purple theme sweep */
 :root {
-    --primary: #8b5cf6 !important;
-    --primary-dark: #6d28d9 !important;
     --site-accent: #8b5cf6 !important;
     --site-accent-soft: rgba(139, 92, 246, 0.16) !important;
     --game-cyan: #8b5cf6 !important;
@@ -2341,8 +2084,6 @@ body.light-mode :is(.btn, .login-btn, .contact-btn, .booking-confirm, .search-su
 
 /* Offers page purple theme lock */
 .offers-page {
-    --primary: #8b5cf6 !important;
-    --primary-dark: #6d28d9 !important;
     --offer-accent: #8b5cf6;
     --offer-accent-soft: rgba(139, 92, 246, 0.16);
     background: #0f0f0f !important;
@@ -2600,7 +2341,7 @@ body.light-mode .header.menu-open {
     -webkit-backdrop-filter: blur(14px) !important;
 }
 
-body.light-mode :is(.nav a, .dropdown a, .login-btn, .icon-btn, .dir-toggle, .nav-toggle) {
+body.light-mode :is(.nav a, .dropdown a, .login-btn, .icon-btn, .nav-toggle) {
     color: #0f172a !important;
     -webkit-text-fill-color: #0f172a !important;
 }
@@ -3871,12 +3612,12 @@ body.light-mode.offers-page .offer-campaigns {
     overflow: visible !important;
 }
 
-body.light-mode.offers-page .offer-section {
+body:is(.light-mode, .theme-light).offers-page .offer-section {
     padding-top: 86px !important;
     padding-bottom: 74px !important;
 }
 
-body.light-mode.offers-page .offer-box.offer-box-premium {
+body:is(.light-mode, .theme-light).offers-page .offer-box.offer-box-premium {
     max-width: 1180px !important;
     margin: 0 auto !important;
     padding: 0 !important;
@@ -3889,21 +3630,46 @@ body.light-mode.offers-page .offer-box.offer-box-premium {
     -webkit-backdrop-filter: none !important;
 }
 
-body.light-mode.offers-page .offer-box.offer-box-premium::before {
+body:is(.light-mode, .theme-light).offers-page .offer-box.offer-box-premium::before {
     content: none !important;
 }
 
-body.light-mode.offers-page .offer-box-copy {
-    padding: 0 !important;
+/* Offers page (light/theme-light): fully remove the outer frame around the Featured Deal block. */
+body:is(.light-mode, .theme-light).offers-page .offer-box-premium,
+body:is(.light-mode, .theme-light).offers-page .offer-box.offer-box-premium {
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    background-image: none !important;
 }
 
-body.light-mode.offers-page .offer-box-side {
-    background:
-        radial-gradient(circle at top right, rgba(139, 92, 246, 0.10), transparent 34%),
-        #f8f7ff !important;
-    border: 1px solid rgba(139, 92, 246, 0.16) !important;
-    border-radius: 8px !important;
-    padding: 26px !important;
+body:is(.light-mode, .theme-light).offers-page .offer-box-copy {
+    padding: 0 !important;
+    background: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+body:is(.light-mode, .theme-light).offers-page .offer-box-side {
+    background: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+body:is(.light-mode, .theme-light).offers-page .offer-section {
+    background: #ffffff !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
 }
 
 body.light-mode.offers-page .offer-campaigns {
@@ -4212,7 +3978,7 @@ body.light-mode {
 
 body.light-mode :is(h1, h2, h3, h4, h5, h6),
 body.light-mode :is(.btn, button, .nav a, .hero-card-label, .about-kicker, .eyebrow, .site-mini-label) {
-    font-family: 'Orbitron', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     letter-spacing: 0 !important;
 }
 
@@ -4222,7 +3988,7 @@ body.theme-light {
 
 body.theme-light :is(h1, h2, h3, h4, h5, h6),
 body.theme-light :is(.btn, button, .nav a, .hero-card-label, .about-kicker, .eyebrow, .site-mini-label) {
-    font-family: 'Orbitron', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     letter-spacing: 0 !important;
 }
 
@@ -5163,7 +4929,7 @@ html body.offers-page .offer-timer .timer-box::after {
     background: rgba(139, 92, 246, 0.14);
     color: #ffffff;
     -webkit-text-fill-color: #ffffff;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 18px;
     font-weight: 800;
     line-height: 1.35;
@@ -5315,8 +5081,6 @@ html body.theme-light.has-custom-extras.offers-page .offer-timer-note {
         display: none !important;
     }
 }
-
-/* Login/Register: no floating theme or direction buttons */
 body.login-page-body .toggle-float,
 body.register-page-body .toggle-float {
     display: none !important;
@@ -5403,7 +5167,7 @@ html body :is(
 }
 
 /* Light mode header utility icons: violet hover instead of blue */
-html body.light-mode :is(.icon-btn, .dir-toggle, .nav-toggle):is(:hover, :focus-visible) {
+html body.light-mode :is(.icon-btn, .nav-toggle):is(:hover, :focus-visible) {
     color: #7c3aed !important;
     -webkit-text-fill-color: #7c3aed !important;
     border-color: rgba(124, 58, 237, 0.42) !important;
@@ -5411,7 +5175,7 @@ html body.light-mode :is(.icon-btn, .dir-toggle, .nav-toggle):is(:hover, :focus-
     box-shadow: 0 12px 28px rgba(124, 58, 237, 0.14) !important;
 }
 
-html body.light-mode :is(.icon-btn, .dir-toggle, .nav-toggle):is(:hover, :focus-visible) i {
+html body.light-mode :is(.icon-btn, .nav-toggle):is(:hover, :focus-visible) i {
     color: #7c3aed !important;
     -webkit-text-fill-color: #7c3aed !important;
 }
@@ -5546,7 +5310,7 @@ html body .news-overlay span {
     margin-bottom: 18px;
     color: #c4b5fd !important;
     -webkit-text-fill-color: #c4b5fd !important;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 0;
@@ -5590,7 +5354,7 @@ html body .news-btn {
     background: linear-gradient(135deg, #8b5cf6, #a78bfa);
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
     box-shadow: 0 18px 42px rgba(139, 92, 246, 0.3);
 }
@@ -5871,22 +5635,7 @@ html body :is(
     .rooms-editorial-copy
 ) {
     text-align: left !important;
-}
-
-[dir="rtl"] body :is(
-    .editorial-hero-copy,
-    .blog-featured-copy,
-    .blog-card-copy,
-    .blog-editorial-copy,
-    .blog-list article div,
-    .rooms-pro-content,
-    .news-feature-copy,
-    .rooms-editorial-copy
-) {
-    text-align: right !important;
-}
-
-@media (min-width: 1025px) {
+}@media (min-width: 1025px) {
     html body .header .nav > a,
     html body .header .nav-item > a,
     html body .header .nav > a:hover,
@@ -6459,7 +6208,7 @@ html body.offers-page .discount-card::before {
     background: rgba(139, 92, 246, 0.14) !important;
     color: #c4b5fd !important;
     -webkit-text-fill-color: #c4b5fd !important;
-    font-family: 'Orbitron', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-size: 10px !important;
     font-weight: 700 !important;
     letter-spacing: 0.12em !important;
@@ -6607,7 +6356,7 @@ html body.light-mode.offers-page .discount-card.highlight:hover {
         box-shadow: none !important;
     }
 
-    html body.light-mode .header .nav-mobile-actions :is(.icon-btn, .dir-toggle) {
+    html body.light-mode .header .nav-mobile-actions :is(.icon-btn) {
         background: rgba(15, 23, 42, 0.05) !important;
         border-color: rgba(124, 58, 237, 0.14) !important;
         color: #171322 !important;
@@ -6658,173 +6407,6 @@ html body.light-mode footer .footer-left > .footer-logo:hover img,
 html body:not(.light-mode) footer .footer-left > .footer-logo:hover img {
     transform: scale(1.03) !important;
 }
-
-/* RTL responsive navbar lock: 360px, 768px, and 1024px */
-@media (max-width: 1024px) {
-    html[dir="rtl"] body .header,
-    html[dir="rtl"] body.light-mode .header {
-        height: 76px !important;
-        min-height: 76px !important;
-        padding: 12px 20px !important;
-        display: flex !important;
-        flex-wrap: nowrap !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-        direction: rtl !important;
-        overflow: visible !important;
-    }
-
-    html[dir="rtl"] body .header .logo {
-        order: 1 !important;
-        width: min(220px, 54vw) !important;
-        max-width: min(220px, 54vw) !important;
-        margin: 0 !important;
-        justify-content: flex-end !important;
-        overflow: hidden !important;
-    }
-
-    html[dir="rtl"] body .header .logo-link {
-        justify-content: flex-end !important;
-    }
-
-    html[dir="rtl"] body .header .logo img {
-        width: min(210px, 54vw) !important;
-        max-width: 100% !important;
-        height: auto !important;
-        transform: none !important;
-        object-fit: contain !important;
-    }
-
-    html[dir="rtl"] body .header .nav-toggle {
-        order: 2 !important;
-        width: 44px !important;
-        min-width: 44px !important;
-        height: 44px !important;
-        margin: 0 !important;
-        display: inline-flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-
-    html[dir="rtl"] body .header .right-section {
-        display: none !important;
-    }
-
-    html[dir="rtl"] body .header .nav,
-    html[dir="rtl"] body.light-mode .header .nav,
-    html[dir="rtl"] body .header.menu-open .nav,
-    html[dir="rtl"] body.light-mode .header.menu-open .nav {
-        position: absolute !important;
-        top: calc(100% + 10px) !important;
-        left: 16px !important;
-        right: 16px !important;
-        width: auto !important;
-        max-width: none !important;
-        max-height: calc(100vh - 100px) !important;
-        margin: 0 !important;
-        padding: 14px !important;
-        display: none !important;
-        grid-template-columns: 1fr !important;
-        flex-direction: column !important;
-        align-items: stretch !important;
-        gap: 10px !important;
-        direction: rtl !important;
-        overflow-y: auto !important;
-        overflow-x: hidden !important;
-        border-radius: 18px !important;
-        z-index: 1100 !important;
-    }
-
-    html[dir="rtl"] body .header.menu-open .nav,
-    html[dir="rtl"] body.light-mode .header.menu-open .nav {
-        display: flex !important;
-    }
-
-    html[dir="rtl"] body .header .nav > a,
-    html[dir="rtl"] body .header .nav-item > a,
-    html[dir="rtl"] body.light-mode .header .nav > a,
-    html[dir="rtl"] body.light-mode .header .nav-item > a,
-    html[dir="rtl"] body.light-mode .header .nav .nav-item > a[data-menu="home"] {
-        width: 100% !important;
-        min-width: 0 !important;
-        min-height: 46px !important;
-        padding: 12px 14px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-        text-align: right !important;
-        white-space: normal !important;
-        border-radius: 12px !important;
-    }
-
-    html[dir="rtl"] body .header .nav-item {
-        width: 100% !important;
-        min-width: 0 !important;
-    }
-
-    html[dir="rtl"] body .header .nav .dropdown {
-        position: static !important;
-        width: 100% !important;
-        min-width: 0 !important;
-        margin: 8px 0 0 !important;
-        padding: 8px !important;
-        display: none;
-        flex-direction: column !important;
-        text-align: right !important;
-    }
-
-    html[dir="rtl"] body .header .nav-item.open .dropdown {
-        display: flex !important;
-    }
-
-    html[dir="rtl"] body .header .nav-mobile-actions,
-    html[dir="rtl"] body.light-mode .header .nav-mobile-actions {
-        width: 100% !important;
-        display: grid !important;
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        gap: 10px !important;
-        margin-top: 4px !important;
-        padding-top: 12px !important;
-    }
-}
-
-@media (max-width: 768px) {
-    html[dir="rtl"] body .header,
-    html[dir="rtl"] body.light-mode .header {
-        padding-inline: 16px !important;
-    }
-
-    html[dir="rtl"] body .header .nav,
-    html[dir="rtl"] body.light-mode .header .nav,
-    html[dir="rtl"] body .header.menu-open .nav,
-    html[dir="rtl"] body.light-mode .header.menu-open .nav {
-        left: 12px !important;
-        right: 12px !important;
-        padding: 12px !important;
-    }
-}
-
-@media (max-width: 360px) {
-    html[dir="rtl"] body .header,
-    html[dir="rtl"] body.light-mode .header {
-        padding-inline: 12px !important;
-    }
-
-    html[dir="rtl"] body .header .logo {
-        width: min(170px, 52vw) !important;
-        max-width: min(170px, 52vw) !important;
-    }
-
-    html[dir="rtl"] body .header .logo img {
-        width: min(165px, 52vw) !important;
-    }
-
-    html[dir="rtl"] body .header .nav-mobile-actions,
-    html[dir="rtl"] body.light-mode .header .nav-mobile-actions {
-        grid-template-columns: 1fr !important;
-    }
-}
-
 /* Header login typography matches the navbar links */
 html body .header .login-btn,
 html body.light-mode .header .login-btn,
@@ -6832,7 +6414,7 @@ html body:not(.light-mode) .header .login-btn,
 html body .header .nav-mobile-actions .login-btn,
 html body.light-mode .header .nav-mobile-actions .login-btn,
 html body:not(.light-mode) .header .nav-mobile-actions .login-btn {
-    font-family: 'Orbitron', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-size: 13px !important;
     font-weight: 600 !important;
     letter-spacing: 0 !important;
@@ -6927,7 +6509,7 @@ html body.home-demo2 .story-text {
 html body.home-demo2 .story-text::before {
     content: "Case File 02" !important;
     position: absolute !important;
-    top: 22px !important;
+    top: clamp(22px, 3.2vw, 34px) !important;
     left: clamp(34px, 5vw, 58px) !important;
     padding: 7px 10px !important;
     border: 1px solid rgba(139, 92, 246, 0.32) !important;
@@ -6935,7 +6517,7 @@ html body.home-demo2 .story-text::before {
     background: rgba(139, 92, 246, 0.12) !important;
     color: #c4b5fd !important;
     -webkit-text-fill-color: #c4b5fd !important;
-    font-family: 'Orbitron', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-size: 11px !important;
     font-weight: 700 !important;
     line-height: 1 !important;
@@ -6950,7 +6532,7 @@ html body.home-demo2 .story-text::after {
 html body.home-demo2 .story-text h2 {
     grid-column: 1 !important;
     max-width: 560px !important;
-    margin: 28px 0 18px !important;
+    margin: 18px 0 12px !important;
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
     font-size: clamp(2.3rem, 5vw, 4.5rem) !important;
@@ -6965,7 +6547,7 @@ html body.home-demo2 .story-text p {
     color: #d7deea !important;
     -webkit-text-fill-color: #d7deea !important;
     font-size: clamp(1rem, 1.35vw, 1.13rem) !important;
-    line-height: 1.82 !important;
+    line-height: 1.7 !important;
     text-align: left !important;
 }
 
@@ -7018,7 +6600,7 @@ html body.home-demo2 .story-aside-list span {
     grid-row: span 2 !important;
     color: #a78bfa !important;
     -webkit-text-fill-color: #a78bfa !important;
-    font-family: 'Orbitron', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-size: 0.78rem !important;
     font-weight: 800 !important;
     line-height: 1.2 !important;
@@ -7411,7 +6993,7 @@ html body.light-mode .editorial-hero.blog-hero .editorial-hero-copy h1,
 html body.light-mode.has-custom-extras .editorial-hero.blog-hero .editorial-hero-copy h1 {
     font-size: clamp(2.75rem, 5.2vw, 5.4rem) !important;
     line-height: 1.04 !important;
-    font-family: 'Orbitron', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-weight: 700 !important;
     letter-spacing: 0 !important;
 }
@@ -7533,7 +7115,7 @@ html body.light-mode.offers-page .offer-hero .hero-text h1,
 html body.light-mode.has-custom-extras.offers-page .offer-hero .hero-text h1 {
     font-size: clamp(2.75rem, 5.2vw, 5.4rem) !important;
     line-height: 1.04 !important;
-    font-family: 'Orbitron', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-weight: 700 !important;
     letter-spacing: 0 !important;
 }
@@ -8181,49 +7763,7 @@ html body .header .logo img {
 html body {
     --site-header-logo-width: 220px;
     --site-header-logo-height: 58px;
-}
-
-html body .header .logo,
-html[dir="rtl"] body .header .logo,
-html body.light-mode .header .logo,
-html body:not(.light-mode) .header .logo {
-    width: min(var(--site-header-logo-width), 42vw) !important;
-    max-width: min(var(--site-header-logo-width), 42vw) !important;
-    height: var(--site-header-logo-height) !important;
-    min-height: var(--site-header-logo-height) !important;
-    flex: 0 0 min(var(--site-header-logo-width), 42vw) !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    overflow: hidden !important;
-}
-
-html body .header .logo-link,
-html[dir="rtl"] body .header .logo-link,
-html body.light-mode .header .logo-link,
-html body:not(.light-mode) .header .logo-link {
-    width: 100% !important;
-    height: 100% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-}
-
-html body .header .logo img,
-html[dir="rtl"] body .header .logo img,
-html body.light-mode .header .logo img,
-html body:not(.light-mode) .header .logo img {
-    width: 100% !important;
-    height: 100% !important;
-    max-width: 100% !important;
-    max-height: 100% !important;
-    display: block !important;
-    object-fit: contain !important;
-    object-position: left center !important;
-    transform: none !important;
-}
-
-@media (max-width: 480px) {
+}@media (max-width: 480px) {
     html body {
         --site-header-logo-width: 170px;
         --site-header-logo-height: 46px;
@@ -9402,138 +8942,14 @@ html body:is(.theme-light, .light-mode).home-demo1 .hero .hero-text .hero-kicker
     background: rgba(0, 224, 255, 0.1) !important;
     color: var(--game-cyan) !important;
     -webkit-text-fill-color: var(--game-cyan) !important;
-    font-family: 'Orbitron', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-size: 12px !important;
     font-weight: 800 !important;
     line-height: 1.2 !important;
     letter-spacing: 0.14em !important;
     text-transform: uppercase !important;
     text-shadow: none !important;
-}
-
-/* RTL mode: keep English editorial/offers hero layouts from mirroring into overlaps. */
-html[dir="rtl"] body.news-page .editorial-hero.blog-hero,
-html[dir="rtl"] body.offers-page .offer-hero {
-    direction: ltr !important;
-}
-
-html[dir="rtl"] body.news-page .editorial-hero.blog-hero .editorial-hero-shell,
-html[dir="rtl"] body.offers-page .offer-hero .offer-hero-shell {
-    direction: ltr !important;
-    grid-template-columns: minmax(0, 1fr) minmax(300px, 420px) !important;
-    align-items: center !important;
-    gap: clamp(32px, 6vw, 72px) !important;
-}
-
-html[dir="rtl"] body.news-page .editorial-hero.blog-hero .editorial-hero-copy,
-html[dir="rtl"] body.offers-page .offer-hero .hero-text {
-    direction: ltr !important;
-    text-align: left !important;
-    grid-column: 1 !important;
-    justify-self: start !important;
-    max-width: 760px !important;
-    z-index: 2 !important;
-}
-
-html[dir="rtl"] body.news-page .editorial-hero.blog-hero .editorial-hero-card,
-html[dir="rtl"] body.offers-page .offer-hero .offer-hero-panel {
-    direction: ltr !important;
-    text-align: left !important;
-    grid-column: 2 !important;
-    justify-self: end !important;
-    width: min(420px, 100%) !important;
-    max-width: 420px !important;
-    margin: 0 !important;
-    transform: none !important;
-    z-index: 3 !important;
-}
-
-html[dir="rtl"] body.news-page .editorial-hero.blog-hero :is(.eyebrow, h1, h2, p, span, strong, .hero-card-price),
-html[dir="rtl"] body.offers-page .offer-hero :is(.eyebrow, h1, p, span, strong) {
-    direction: ltr !important;
-    unicode-bidi: isolate !important;
-}
-
-html[dir="rtl"] body.news-page .editorial-hero.blog-hero :is(.editorial-hero-actions, .hero-card-points),
-html[dir="rtl"] body.offers-page .offer-hero .offer-hero-actions {
-    direction: ltr !important;
-    flex-direction: row !important;
-    justify-content: flex-start !important;
-}
-
-@media (max-width: 980px) {
-    html[dir="rtl"] body.news-page .editorial-hero.blog-hero .editorial-hero-shell,
-    html[dir="rtl"] body.offers-page .offer-hero .offer-hero-shell {
-        grid-template-columns: 1fr !important;
-    }
-
-    html[dir="rtl"] body.news-page .editorial-hero.blog-hero .editorial-hero-copy,
-    html[dir="rtl"] body.news-page .editorial-hero.blog-hero .editorial-hero-card,
-    html[dir="rtl"] body.offers-page .offer-hero .hero-text,
-    html[dir="rtl"] body.offers-page .offer-hero .offer-hero-panel {
-        grid-column: 1 !important;
-        justify-self: center !important;
-        text-align: center !important;
-    }
-
-    html[dir="rtl"] body.news-page .editorial-hero.blog-hero :is(.editorial-hero-actions, .hero-card-points),
-    html[dir="rtl"] body.offers-page .offer-hero .offer-hero-actions {
-        justify-content: center !important;
-    }
-}
-
-/* Direction toggle hard reset: when LTR is selected, remove any inherited RTL behavior. */
-html.dir-ltr,
-html.dir-ltr body,
-html[dir="ltr"],
-html[dir="ltr"] body {
-    direction: ltr !important;
-}
-
-html.dir-ltr body :is(
-    .header,
-    .nav,
-    .right-section,
-    .dropdown,
-    .hero-text,
-    .editorial-hero-shell,
-    .offer-hero-shell,
-    .footer-content,
-    .footer-left,
-    .site-lead,
-    .site-duo,
-    .site-quote,
-    .site-cta-band
-),
-html[dir="ltr"] body :is(
-    .header,
-    .nav,
-    .right-section,
-    .dropdown,
-    .hero-text,
-    .editorial-hero-shell,
-    .offer-hero-shell,
-    .footer-content,
-    .footer-left,
-    .site-lead,
-    .site-duo,
-    .site-quote,
-    .site-cta-band
-) {
-    direction: ltr !important;
-}
-
-html.dir-ltr body :is(.nav, .right-section, .hero-actions, .editorial-hero-actions, .offer-hero-actions),
-html[dir="ltr"] body :is(.nav, .right-section, .hero-actions, .editorial-hero-actions, .offer-hero-actions) {
-    flex-direction: row !important;
-}
-
-html.dir-ltr body :is(.hero-text, .editorial-hero-copy, .offer-hero .hero-text, .contact-form, .contact-info, .login-panel-content),
-html[dir="ltr"] body :is(.hero-text, .editorial-hero-copy, .offer-hero .hero-text, .contact-form, .contact-info, .login-panel-content) {
-    text-align: left !important;
-}
-
-/* Site-wide production stability layer: responsive direction, media, grids, and toggles. */
+}/* Site-wide production stability layer: responsive direction, media, grids, and toggles. */
 html,
 body {
     max-width: 100% !important;
@@ -9545,31 +8961,7 @@ video,
 canvas,
 svg {
     max-width: 100%;
-}
-
-html.dir-ltr body.home-demo1 .hero-text,
-html[dir="ltr"] body.home-demo1 .hero-text,
-html.dir-ltr body :is(.home-section-head, .offers-custom-head, .rooms-custom-head, .news-custom-head, .pricing-section-head, .testimonial-custom-head, .faq-custom-head),
-html[dir="ltr"] body :is(.home-section-head, .offers-custom-head, .rooms-custom-head, .news-custom-head, .pricing-section-head, .testimonial-custom-head, .faq-custom-head) {
-    text-align: center !important;
-}
-
-html.dir-ltr body :is(.header .nav, .header .right-section),
-html[dir="ltr"] body :is(.header .nav, .header .right-section) {
-    direction: ltr !important;
-}
-
-html.dir-ltr body .header .nav,
-html[dir="ltr"] body .header .nav {
-    flex-direction: row !important;
-}
-
-html.dir-ltr body .header .right-section,
-html[dir="ltr"] body .header .right-section {
-    flex-direction: row !important;
-}
-
-body.login-page-body .toggle-float,
+}body.login-page-body .toggle-float,
 body.register-page-body .toggle-float {
     position: fixed !important;
     top: max(16px, env(safe-area-inset-top)) !important;
@@ -9580,292 +8972,548 @@ body.register-page-body .toggle-float {
     gap: 10px !important;
 }
 
-html[dir="rtl"] body.login-page-body .toggle-float,
-html[dir="rtl"] body.register-page-body .toggle-float {
-    right: auto !important;
-    left: max(16px, env(safe-area-inset-left)) !important;
+/* RTL final overrides: this file loads after style.css, so these beat news locks. */
+html[dir="rtl"] body.rtl-mode .editorial-hero.blog-hero {
+    overflow: hidden !important;
 }
 
-html.dir-ltr body.login-page-body .toggle-float,
-html.dir-ltr body.register-page-body .toggle-float,
-html[dir="ltr"] body.login-page-body .toggle-float,
-html[dir="ltr"] body.register-page-body .toggle-float {
+html[dir="rtl"] body.rtl-mode :is(
+    .hero,
+    .hero-dark,
+    .about-hero,
+    .story-hero,
+    .faq-hero,
+    .testimonial-hero,
+    .pricing-hero,
+    .rooms-hero,
+    .room-hero,
+    .contact-hero,
+    .offer-hero,
+    .group-hero,
+    .member-hero,
+    .news-hero,
+    .editorial-hero,
+    .booking-page-hero
+) {
+    text-align: center !important;
+}
+
+html[dir="rtl"] body.rtl-mode :is(
+    .hero,
+    .hero-dark,
+    .about-hero,
+    .story-hero,
+    .faq-hero,
+    .testimonial-hero,
+    .pricing-hero,
+    .rooms-hero,
+    .room-hero,
+    .contact-hero,
+    .offer-hero,
+    .group-hero,
+    .member-hero,
+    .news-hero,
+    .editorial-hero,
+    .booking-page-hero
+) :is(.hero-text, .hero-content, .rooms-hero-copy, .editorial-hero-copy, .booking-page-hero-copy) {
+    text-align: center !important;
+}
+
+html[dir="rtl"] body.rtl-mode :is(
+    .hero,
+    .hero-dark,
+    .about-hero,
+    .story-hero,
+    .faq-hero,
+    .testimonial-hero,
+    .pricing-hero,
+    .rooms-hero,
+    .room-hero,
+    .contact-hero,
+    .offer-hero,
+    .group-hero,
+    .member-hero,
+    .news-hero,
+    .editorial-hero,
+    .booking-page-hero
+) :is(h1, h2, h3, p, .eyebrow) {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+html[dir="rtl"] body.rtl-mode :is(.rooms-hero-actions, .editorial-hero-actions, .offer-hero-actions) {
+    justify-content: center !important;
+}
+
+html body:is(.news-page, .offers-page) :is(.editorial-hero-copy, .offer-hero .hero-text),
+html[dir="rtl"] body.rtl-mode:is(.news-page, .offers-page) :is(.editorial-hero-copy, .offer-hero .hero-text) {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    justify-self: center !important;
+}
+
+html body.news-page .editorial-hero.blog-hero .editorial-hero-shell,
+html body.offers-page .offer-hero-shell {
+    grid-template-columns: 1fr !important;
+    justify-items: center !important;
+    align-items: center !important;
+}
+
+/* Override the "pinned top-left" hero copy layout for these pages. */
+html body.news-page .editorial-hero.blog-hero .editorial-hero-copy {
+    position: relative !important;
+    top: auto !important;
     left: auto !important;
-    right: max(16px, env(safe-area-inset-right)) !important;
+    width: 100% !important;
+    max-width: min(980px, 100%) !important;
+    justify-self: center !important;
+    align-self: center !important;
 }
 
-@media (max-width: 980px) {
-    html.dir-ltr body :is(
-        .editorial-hero-shell,
-        .offer-hero-shell,
-        .room-preview-layout,
-        .testimonial-layout,
-        .offer-preview-panel,
-        .offer-reveal-shell,
-        .mystery-shell,
-        .offer-story-shell,
-        .site-lead,
-        .site-duo,
-        .site-quote,
-        .site-cta-band
-    ),
-    html[dir="ltr"] body :is(
-        .editorial-hero-shell,
-        .offer-hero-shell,
-        .room-preview-layout,
-        .testimonial-layout,
-        .offer-preview-panel,
-        .offer-reveal-shell,
-        .mystery-shell,
-        .offer-story-shell,
-        .site-lead,
-        .site-duo,
-        .site-quote,
-        .site-cta-band
-    ) {
-        grid-template-columns: 1fr !important;
-    }
+html body.offers-page .offer-hero .hero-text {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    max-width: min(980px, 100%) !important;
+    justify-self: center !important;
+    align-self: center !important;
+}
+
+html body.news-page .editorial-hero.blog-hero .editorial-hero-copy,
+html body.offers-page .offer-hero .hero-text {
+    max-width: min(980px, 100%) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+html body.news-page .editorial-hero.blog-hero .editorial-hero-actions,
+html body.offers-page .offer-hero-actions {
+    width: 100% !important;
+    justify-content: center !important;
+}
+
+/* News page: remove the dark panel behind the "More From The Journal" heading. */
+html body.news-page .blog-list-section,
+html body.news-page .blog-list-section .section-heading.editorial-heading {
+    background: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+/* Make both hero buttons look identical on News + Offers. */
+html body.news-page .editorial-hero.blog-hero .editorial-hero-actions .btn,
+html body.offers-page .offer-hero .offer-hero-actions .btn {
+    min-width: 220px !important;
+    padding: 14px 24px !important;
+    border-radius: 999px !important;
+    font-size: 15px !important;
+    line-height: 1 !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 52px !important;
+    border: 1px solid rgba(139, 92, 246, 0.55) !important;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.98), rgba(168, 85, 247, 0.92)) !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.34), 0 0 24px rgba(139, 92, 246, 0.18) !important;
+}
+
+html body.news-page .editorial-hero.blog-hero .editorial-hero-actions .btn.secondary,
+html body.offers-page .offer-hero .offer-hero-actions .btn.secondary {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.98), rgba(168, 85, 247, 0.92)) !important;
+    border-color: rgba(139, 92, 246, 0.55) !important;
+}
+
+html body:is(.news-page, .offers-page) :is(.editorial-hero-copy, .offer-hero .hero-text) :is(.eyebrow, h1, h2, h3, p),
+html[dir="rtl"] body.rtl-mode:is(.news-page, .offers-page) :is(.editorial-hero-copy, .offer-hero .hero-text) :is(.eyebrow, h1, h2, h3, p) {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+html body:is(.news-page, .offers-page) :is(.editorial-hero-actions, .offer-hero-actions),
+html[dir="rtl"] body.rtl-mode:is(.news-page, .offers-page) :is(.editorial-hero-actions, .offer-hero-actions) {
+    justify-content: center !important;
+}
+
+html body:is(.news-page, .offers-page) :is(.editorial-hero-card, .offer-hero-panel),
+html[dir="rtl"] body.rtl-mode:is(.news-page, .offers-page) :is(.editorial-hero-card, .offer-hero-panel) {
+    text-align: center !important;
+}
+
+html body:is(.news-page, .offers-page) :is(.editorial-hero-card, .offer-hero-panel) :is(span, h2, strong, p),
+html[dir="rtl"] body.rtl-mode:is(.news-page, .offers-page) :is(.editorial-hero-card, .offer-hero-panel) :is(span, h2, strong, p) {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Offers split panels: keep written content on the left and visual media on the right. */
+html body.offers-page :is(.offer-story-shell, .offer-preview-panel, .offer-box.offer-box-premium, .mystery-shell, .mystery-layout, .offer-reveal-shell, .offer-preview-shell) {
+    direction: ltr !important;
+    align-items: stretch !important;
+}
+
+/* Offers page: Featured Deal copy should not get any "highlight box" background behind text. */
+html body.offers-page .offer-box-copy :is(.eyebrow, h2, .offer-lead) {
+    background: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+}
+
+html body.offers-page :is(.mystery-shell, .offer-reveal-shell) {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-auto-flow: column !important;
 }
 
 @media (max-width: 768px) {
-    html,
-    body {
-        overflow-x: hidden !important;
+    html body.offers-page :is(.mystery-shell, .offer-reveal-shell) {
+        grid-template-columns: 1fr !important;
+        grid-auto-flow: row !important;
     }
 
-    html.dir-ltr body .header .nav,
-    html[dir="ltr"] body .header .nav,
-    html.dir-rtl body .header .nav,
-    html[dir="rtl"] body .header .nav,
-    html.dir-ltr body .header.menu-open .nav,
-    html[dir="ltr"] body .header.menu-open .nav,
-    html.dir-rtl body .header.menu-open .nav,
-    html[dir="rtl"] body .header.menu-open .nav {
-        flex-direction: column !important;
-        direction: inherit !important;
-        max-width: calc(100vw - 32px) !important;
+    /* Mobile: remove the stray right-edge stroke seen on these stacked panels. */
+    html body.offers-page :is(.offer-action-panel, .mystery-box, .offer-reveal-shell, .mystery-shell) {
+        border-right: 0 !important;
     }
 
-    html.dir-ltr body .header .nav > *,
-    html[dir="ltr"] body .header .nav > * {
-        text-align: center !important;
+    html body.offers-page .offer-reveal-copy,
+    html body.offers-page .mystery-copy {
+        order: 1 !important;
     }
 
-    html.dir-ltr body :is(.hero-actions, .editorial-hero-actions, .offer-hero-actions),
-    html[dir="ltr"] body :is(.hero-actions, .editorial-hero-actions, .offer-hero-actions) {
+    html body.offers-page .offer-reveal-visual,
+    html body.offers-page .mystery-visual {
+        order: 2 !important;
+        grid-column: auto !important;
+        grid-row: auto !important;
+        height: auto !important;
+        min-height: 260px !important;
+    }
+}
+
+/* Offers page: refresh the "Most Chosen" (offer-popular) section layout. */
+html body.offers-page .offer-popular .popular-layout {
+    width: min(1180px, 100%) !important;
+    margin: 0 auto !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    gap: 22px !important;
+    align-items: stretch !important;
+}
+
+html body.offers-page .offer-popular .popular-copy-block {
+    border-radius: 28px !important;
+    border: 1px solid rgba(139, 92, 246, 0.28) !important;
+    background:
+        radial-gradient(circle at 10% 0%, rgba(34, 211, 238, 0.14), transparent 55%),
+        linear-gradient(160deg, rgba(139, 92, 246, 0.06), rgba(255, 255, 255, 0.02)),
+        rgba(8, 14, 24, 0.92) !important;
+    box-shadow: 0 26px 62px rgba(0, 0, 0, 0.28), 0 0 22px rgba(139, 92, 246, 0.08) !important;
+    padding: clamp(22px, 3vw, 30px) !important;
+    display: grid !important;
+    gap: 14px !important;
+    align-content: start !important;
+    text-align: left !important;
+}
+
+/* Offers page (light mode): the refreshed popular copy block needs its own light background. */
+html body.offers-page:is(.theme-light, .light-mode) .offer-popular .popular-copy-block {
+    border-color: rgba(15, 23, 42, 0.12) !important;
+    background:
+        radial-gradient(circle at 12% 10%, rgba(139, 92, 246, 0.12), transparent 52%),
+        linear-gradient(160deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.9)) !important;
+    box-shadow: 0 18px 44px rgba(15, 23, 42, 0.08) !important;
+}
+
+html body.offers-page:is(.theme-light, .light-mode) .offer-popular .popular-copy-block :is(h3, p, strong, span) {
+    text-shadow: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+    mix-blend-mode: normal !important;
+}
+
+html body.offers-page:is(.theme-light, .light-mode) .offer-popular .popular-copy-block h3,
+html body.offers-page:is(.theme-light, .light-mode) .offer-popular .popular-stat-inline strong {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
+
+html body.offers-page:is(.theme-light, .light-mode) .offer-popular .popular-copy-block p,
+html body.offers-page:is(.theme-light, .light-mode) .offer-popular .popular-stat-inline span {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+}
+
+html body.offers-page .offer-popular .popular-copy-block .offer-badge {
+    margin: 0 0 6px !important;
+    width: max-content !important;
+}
+
+html body.offers-page .offer-popular .popular-copy-block h3 {
+    margin: 0 !important;
+}
+
+html body.offers-page .offer-popular .popular-copy-block p {
+    margin: 0 !important;
+    max-width: 60ch !important;
+}
+
+html body.offers-page .offer-popular .popular-meter {
+    margin-top: 6px !important;
+    display: grid !important;
+    gap: 12px !important;
+}
+
+html body.offers-page .offer-popular .popular-stat-inline {
+    display: flex !important;
+    align-items: baseline !important;
+    gap: 12px !important;
+    flex-wrap: wrap !important;
+}
+
+html body.offers-page .offer-popular .popular-stat-inline strong {
+    font-size: clamp(2rem, 4vw, 3.1rem) !important;
+    line-height: 1 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+html body.offers-page .offer-popular .popular-stat-inline span {
+    color: rgba(232, 229, 245, 0.88) !important;
+    -webkit-text-fill-color: rgba(232, 229, 245, 0.88) !important;
+}
+
+html body.offers-page .offer-popular .popular-bar {
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+html body.offers-page .offer-popular .popular-media {
+    position: relative !important;
+    overflow: hidden !important;
+    border-radius: 28px !important;
+    border: 1px solid rgba(139, 92, 246, 0.28) !important;
+    box-shadow: 0 26px 62px rgba(0, 0, 0, 0.28) !important;
+    min-height: 340px !important;
+}
+
+html body.offers-page .offer-popular .popular-media img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    filter: brightness(0.86) contrast(1.05) saturate(1.06) !important;
+}
+
+@media (max-width: 900px) {
+    html body.offers-page .offer-popular .popular-layout {
+        grid-template-columns: 1fr !important;
+    }
+
+    html body.offers-page .offer-popular .popular-media {
+        min-height: 260px !important;
+        order: 2 !important;
+    }
+}
+
+/* Offers page: mobile/tablet alignment fixes */
+@media (max-width: 1024px) {
+    html body.offers-page :is(.offer-box-premium, .offer-box.offer-box-premium) {
+        display: flex !important;
         flex-direction: column !important;
         align-items: stretch !important;
     }
 
-    html.dir-ltr body :is(.hero-actions .btn, .editorial-hero-actions .btn, .offer-hero-actions .btn),
-    html[dir="ltr"] body :is(.hero-actions .btn, .editorial-hero-actions .btn, .offer-hero-actions .btn) {
-        width: 100% !important;
-        max-width: 360px !important;
-        margin-inline: auto !important;
+    html body.offers-page :is(.offer-box-premium, .offer-box.offer-box-premium) {
+        grid-template-columns: 1fr !important;
+        min-width: 0 !important;
     }
 
-    body.login-page-body .toggle-float,
-    body.register-page-body .toggle-float {
-        top: max(12px, env(safe-area-inset-top)) !important;
-        right: max(12px, env(safe-area-inset-right)) !important;
-        gap: 8px !important;
+    html body.offers-page .offer-box-copy,
+    html body.offers-page .offer-box-side {
+        min-width: 0 !important;
     }
 
-    body.login-page-body .toggle-float .icon-btn,
-    body.register-page-body .toggle-float .icon-btn {
-        width: 42px !important;
-        height: 42px !important;
-        min-width: 42px !important;
+    html body.offers-page .offer-box-actions {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
     }
 
-    body.login-page-body .toggle-float .dir-toggle,
-    body.register-page-body .toggle-float .dir-toggle {
+    html body.offers-page .offer-box-actions .btn {
         width: auto !important;
-        min-width: 54px !important;
-        padding-inline: 12px !important;
+        max-width: 100% !important;
+        align-self: flex-start !important;
+    }
+
+    html body.offers-page .offer-box-side {
+        width: 100% !important;
+        justify-items: stretch !important;
+    }
+
+    html body.offers-page .offer-box-side .offer-badge {
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
 }
 
-/* Final direction cascade: keep component layouts in sync with the toggle. */
-html[dir="rtl"] body {
-    direction: rtl !important;
-    text-align: right !important;
+@media (max-width: 680px) {
+    html body.offers-page :is(.offer-box-premium, .offer-box.offer-box-premium) {
+        padding: 22px 18px !important;
+        border-radius: 22px !important;
+    }
+
+    html body.offers-page .offer-box-side {
+        gap: 14px !important;
+    }
+
+    html body.offers-page .offer-side-card {
+        padding: 18px !important;
+    }
 }
 
-html[dir="rtl"] body :is(
-    .header,
-    .footer-content,
-    .site-lead,
-    .site-duo,
-    .site-quote,
-    .site-cta-band,
-    .editorial-hero-shell,
-    .offer-hero-shell,
-    .offer-box-premium,
-    .offer-reveal-shell,
-    .mystery-shell,
-    .popular-shell,
-    .offer-preview-panel,
-    .offer-story-shell
-) {
-    direction: rtl !important;
-}
-
-html[dir="rtl"] body :is(.header .nav, .header .right-section) {
-    direction: rtl !important;
-    flex-direction: row-reverse !important;
-}
-
-html[dir="rtl"] body .dropdown {
-    left: auto !important;
-    right: 0 !important;
-    text-align: right !important;
-}
-
-html[dir="rtl"] body :is(
-    .editorial-hero-copy,
-    .offer-hero .hero-text,
-    .offer-hero-panel,
-    .offer-box-copy,
-    .offer-box-side,
-    .offer-campaign-card,
-    .offer-campaign-card div,
-    .offer-reveal-copy,
-    .mystery-copy,
-    .popular-copy,
-    .popular-stat,
-    .offer-preview-copy,
-    .offer-preview-card,
-    .offer-story-copy
-) {
-    direction: rtl !important;
-    text-align: right !important;
-}
-
-html[dir="rtl"] body :is(.editorial-hero-shell, .offer-hero-shell) {
-    grid-template-columns: minmax(300px, 420px) minmax(0, 1fr) !important;
-}
-
-html[dir="rtl"] body :is(.editorial-hero-card, .offer-hero-panel) {
+html body.offers-page :is(.offer-story-copy, .offer-preview-copy, .offer-box-copy, .mystery-copy, .offer-reveal-copy, .popular-copy) {
+    direction: ltr !important;
+    text-align: left !important;
     grid-column: 1 !important;
+    grid-row: 1 !important;
     justify-self: start !important;
 }
 
-html[dir="rtl"] body :is(.editorial-hero-copy, .offer-hero .hero-text) {
-    grid-column: 2 !important;
-    justify-self: end !important;
+html body.offers-page :is(.offer-story-copy, .offer-preview-copy, .offer-box-copy, .mystery-copy, .offer-reveal-copy, .popular-copy) :is(.eyebrow, .offer-badge, h1, h2, h3, p, span, strong, li) {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
 }
 
-html[dir="rtl"] body :is(
-    .editorial-hero-actions,
-    .hero-card-points,
-    .offer-hero-actions,
-    .offer-box-actions,
-    .offer-reveal-points,
-    .mystery-meta,
-    .offer-story-stats,
-    .offer-preview-points
-) {
-    direction: rtl !important;
-    flex-direction: row-reverse !important;
+html body.offers-page :is(.offer-story-image, .offer-preview-side, .offer-box-side, .mystery-visual, .offer-reveal-visual, .popular-stat) {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    justify-self: stretch !important;
+    align-self: stretch !important;
+}
+
+/* Offers split panels: keep copy + visual vertically aligned (no forced vertical centering). */
+html body.offers-page :is(.mystery-copy, .offer-reveal-copy) {
+    justify-content: flex-start !important;
+    padding-top: 8px !important;
+    gap: 14px !important;
+}
+
+html body.offers-page :is(.mystery-visual, .offer-reveal-visual) {
+    height: 100% !important;
+    min-height: 360px !important;
+    margin-top: 0 !important;
+}
+
+html body.offers-page :is(.offer-box-actions, .offer-story-actions, .offer-reveal-actions) {
     justify-content: flex-start !important;
 }
 
-html[dir="rtl"] body :is(.offer-box li, .offer-preview-card li) {
-    direction: rtl !important;
-    text-align: right !important;
+@media (max-width: 900px) {
+    html body.offers-page :is(.offer-story-copy, .offer-preview-copy, .offer-box-copy, .mystery-copy, .offer-reveal-copy, .popular-copy),
+    html body.offers-page :is(.offer-story-image, .offer-preview-side, .offer-box-side, .mystery-visual, .offer-reveal-visual, .popular-stat) {
+        grid-column: auto !important;
+        grid-row: auto !important;
+    }
 }
 
-html[dir="rtl"] body .offer-box li {
+html[dir="rtl"] body.rtl-mode .editorial-hero.blog-hero .editorial-hero-shell {
+    position: relative !important;
+    height: auto !important;
+    min-height: 520px !important;
+    display: grid !important;
+    grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1.08fr) !important;
+    grid-template-rows: auto !important;
+    align-items: center !important;
+    gap: clamp(28px, 4vw, 48px) !important;
+    direction: rtl !important;
+}
+
+html[dir="rtl"] body.rtl-mode .editorial-hero.blog-hero .editorial-hero-copy {
+    position: relative !important;
+    inset: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    width: 100% !important;
+    max-width: 720px !important;
+    justify-self: end !important;
+    align-self: center !important;
+    text-align: right !important;
+    direction: rtl !important;
+}
+
+html[dir="rtl"] body.rtl-mode .editorial-hero.blog-hero .editorial-hero-copy :is(h1, p) {
+    text-align: right !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+html[dir="rtl"] body.rtl-mode .editorial-hero.blog-hero .editorial-hero-actions {
+    justify-content: flex-end !important;
     flex-direction: row-reverse !important;
 }
 
-html[dir="rtl"] body :is(.campaign-tag, .offer-campaign-card span, .offer-badge, .achievement-step) {
-    align-self: flex-end !important;
-}
-
-html[dir="rtl"] body .offer-box.offer-box-premium {
-    grid-template-columns: minmax(280px, 0.7fr) minmax(0, 1.3fr) !important;
-    background-position: left center !important;
-}
-
-html[dir="rtl"] body .offer-box-side {
-    order: 1 !important;
-}
-
-html[dir="rtl"] body .offer-box-copy {
-    order: 2 !important;
-}
-
-html[dir="rtl"] body :is(.offer-reveal-visual, .mystery-visual, .popular-visual, .offer-preview-side, .offer-story-image) {
-    direction: ltr !important;
-}
-
-html[dir="ltr"] body {
-    direction: ltr !important;
-    text-align: left !important;
-}
-
-html[dir="ltr"] body :is(
-    .editorial-hero-copy,
-    .offer-hero .hero-text,
-    .offer-hero-panel,
-    .offer-box-copy,
-    .offer-box-side,
-    .offer-campaign-card,
-    .offer-campaign-card div,
-    .offer-reveal-copy,
-    .mystery-copy,
-    .popular-copy,
-    .popular-stat,
-    .offer-preview-copy,
-    .offer-preview-card,
-    .offer-story-copy
-) {
-    direction: ltr !important;
-    text-align: left !important;
-}
-
-html[dir="ltr"] body :is(.editorial-hero-shell, .offer-hero-shell) {
-    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr) !important;
-}
-
-html[dir="ltr"] body :is(.editorial-hero-copy, .offer-hero .hero-text) {
+html[dir="rtl"] body.rtl-mode .editorial-hero.blog-hero .editorial-hero-card {
     grid-column: 1 !important;
+    grid-row: 1 !important;
+    width: 100% !important;
+    max-width: 380px !important;
     justify-self: start !important;
+    align-self: center !important;
+    text-align: right !important;
+    direction: rtl !important;
 }
 
-html[dir="ltr"] body :is(.editorial-hero-card, .offer-hero-panel) {
-    grid-column: 2 !important;
-    justify-self: end !important;
-}
-
-html[dir="ltr"] body :is(.campaign-tag, .offer-campaign-card span, .offer-badge, .achievement-step) {
-    align-self: flex-start !important;
-}
-
-@media (max-width: 980px) {
-    html[dir="rtl"] body :is(.editorial-hero-shell, .offer-hero-shell),
-    html[dir="ltr"] body :is(.editorial-hero-shell, .offer-hero-shell) {
+@media (max-width: 900px) {
+    html[dir="rtl"] body.rtl-mode .editorial-hero.blog-hero .editorial-hero-shell {
         grid-template-columns: 1fr !important;
-    }
-
-    html[dir="rtl"] body :is(.editorial-hero-copy, .editorial-hero-card, .offer-hero .hero-text, .offer-hero-panel),
-    html[dir="ltr"] body :is(.editorial-hero-copy, .editorial-hero-card, .offer-hero .hero-text, .offer-hero-panel) {
-        grid-column: 1 !important;
-        justify-self: center !important;
+        min-height: 0 !important;
         text-align: center !important;
     }
 
-    html[dir="rtl"] body :is(.editorial-hero-actions, .hero-card-points, .offer-hero-actions),
-    html[dir="ltr"] body :is(.editorial-hero-actions, .hero-card-points, .offer-hero-actions) {
-        justify-content: center !important;
+    html[dir="rtl"] body.rtl-mode .editorial-hero.blog-hero .editorial-hero-copy,
+    html[dir="rtl"] body.rtl-mode .editorial-hero.blog-hero .editorial-hero-card {
+        grid-column: auto !important;
+        grid-row: auto !important;
+        justify-self: center !important;
+        max-width: 720px !important;
+        text-align: center !important;
     }
-}
 
-@media (max-width: 768px) {
-    html[dir="rtl"] body :is(.header .nav, .header.menu-open .nav),
-    html[dir="ltr"] body :is(.header .nav, .header.menu-open .nav) {
-        flex-direction: column !important;
+    html[dir="rtl"] body.rtl-mode .editorial-hero.blog-hero .editorial-hero-copy :is(h1, p),
+    html[dir="rtl"] body.rtl-mode .editorial-hero.blog-hero .editorial-hero-card :is(h2, p, span, strong) {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    html[dir="rtl"] body.rtl-mode .editorial-hero.blog-hero .editorial-hero-actions {
+        justify-content: center !important;
     }
 }
