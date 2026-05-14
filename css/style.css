@@ -894,7 +894,7 @@ button {
 
 .login-btn {
     padding: 10px 25px;
-    border-radius: 30px;
+    border-radius: 6px;
     border: none;
     background: var(--primary);
     color: black;
@@ -9506,6 +9506,12 @@ body.light-mode .footer-address-card p {
 .icon-btn i {
     font-size: 15px;
     line-height: 1;
+}
+
+.direction-toggle {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
 }
 
 .icon-btn:hover {
@@ -22695,4 +22701,14 @@ body.light-mode.about-page :is(.about-highlight-label, .feature-tag, .story-side
 body.theme-light.about-page :is(.about-highlight-label, .feature-tag, .story-side-label) {
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
+}
+
+.login-btn,
+body.light-mode .login-btn,
+body.theme-light .login-btn {
+    border-radius: 6px !important;
+}
+
+body.home-demo1 :is(.login-btn, .btn, .hero-primary, .hero-secondary, .room-link, .quick-booking-form button, .booking-panel button, .cta .btn) {
+    border-radius: 18px !important;
 }
