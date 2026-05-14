@@ -10,9 +10,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="./img/logo1.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<link rel="stylesheet" href="css/style.css?v=direction-components-fix-6">
-<link rel="stylesheet" href="css/site-cyberpunk.css?v=direction-components-fix-6">
-<link rel="stylesheet" href="css/direction-overrides.css?v=direction-components-fix-6">
+<link rel="stylesheet" href="css/style.css?v=scroll-top-1">
+<link rel="stylesheet" href="css/site-cyberpunk.css?v=scroll-top-1">
 </head>
 
 <body class="has-custom-extras offers-page no-scroll-widget">
@@ -41,8 +40,7 @@
 
     <div class="right-section">
         <button class="icon-btn" id="mq-enable-btn" title="Toggle Enable Mode"><i class="fas fa-moon"></i></button>
-        <button class="icon-btn dir-toggle" id="mq-dir-btn" title="Switch LTR / RTL">LTR</button>
-        <a href="login.html" class="login-btn">Login</a>
+<a href="login.html" class="login-btn">Login</a>
     </div>
 </header>
 
@@ -57,45 +55,6 @@
             <div class="offer-hero-actions">
                 <button class="btn" type="button" onclick="openBookingModal('Offers Booking')">Claim An Offer</button>
                 <a href="pricing.html" class="btn secondary">Compare Pricing</a>
-            </div>
-        </div>
-        <div class="offer-hero-panel">
-            <span>Best Value</span>
-            <strong>20% OFF</strong>
-            <p>Selected weekday slots for teams that book early.</p>
-        </div>
-    </div>
-</section>
-
-<section class="offer-section">
-    <div class="offer-box offer-box-premium">
-        <div class="offer-box-copy">
-            <p class="eyebrow">Featured Deal</p>
-            <h2>Early Bird Deal</h2>
-            <p class="offer-lead">Book at least 24 hours early and step into a premium-priced slot with stronger savings, smoother check-in, and earlier room access windows.</p>
-            <ul>
-                <li><i class="fas fa-check-circle"></i><span>20% off on selected weekday slots</span></li>
-                <li><i class="fas fa-check-circle"></i><span>Priority-ready for planners and office teams</span></li>
-                <li><i class="fas fa-check-circle"></i><span>Works best with advance group bookings</span></li>
-            </ul>
-            <div class="offer-box-actions">
-                <h3 class="price">Starting from Rs 399</h3>
-                <button class="btn" onclick="openBookingModal('Early Bird Offer')">Reserve Early</button>
-            </div>
-        </div>
-        <div class="offer-box-side">
-            <span class="offer-badge">Best Value This Week</span>
-            <div class="offer-side-card">
-                <strong data-countup="20" data-countup-format="percent">20%</strong>
-                <span>Instant saving on premium time slots</span>
-            </div>
-            <div class="offer-side-card">
-                <strong data-countup="24" data-countup-format="hours">24 Hrs</strong>
-                <span>Advance window to unlock this deal</span>
-            </div>
-            <div class="offer-side-card">
-                <strong data-countup="6" data-countup-format="plus">6+</strong>
-                <span>Player teams get strongest value spread</span>
             </div>
         </div>
     </div>
@@ -246,27 +205,29 @@
 <section class="offer-popular offers-custom-section">
     <div class="offers-custom-head">
         <p class="eyebrow">Most Chosen</p>
-        <h2>Most Chosen</h2>
+        <h2>The crowd favorite</h2>
     </div>
-    <div class="popular-shell popular-shell-rich">
-        <div class="popular-visual">
+    <div class="popular-layout">
+        <div class="popular-copy-block">
+            <span class="offer-badge limited-drop-badge">Limited Drop</span>
+            <h3>Group Offers lead the board every weekend.</h3>
+            <p>Friend groups keep choosing bundle-style pricing because it feels easier to plan, easier to split, and better for high-energy night bookings.</p>
+
+            <div class="popular-meter">
+                <div class="popular-stat-inline">
+                    <strong data-countup="75" data-countup-format="percent">75%</strong>
+                    <span>players choose Group Offers</span>
+                </div>
+                <div class="popular-bar" aria-label="Popularity meter">
+                    <div class="bar-fill" data-progress-target="75"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="popular-media">
             <img src="./img/haunted-house-room.jpg" alt="Group offer chosen by players">
         </div>
-        <div class="popular-main">
-            <div class="popular-bar">
-                <div class="bar-fill" data-progress-target="75"></div>
-            </div>
-            <div class="popular-copy group-offers-popular-copy">
-                <h3>Group Offers lead the board every weekend.</h3>
-                <p>Friend groups keep choosing bundle-style pricing because it feels easier to plan, easier to split, and better for high-energy night bookings.</p>
-            </div>
-        </div>
-        <div class="popular-stat group-offers-popular-stat">
-            <strong data-countup="75" data-countup-format="percent">75%</strong>
-            <span>players choose Group Offers</span>
-        </div>
     </div>
-    <p class="offer-popular-note">75% players choose Group Offers</p>
 </section>
 
 <section class="offer-preview offers-custom-section">
@@ -485,12 +446,12 @@
     </div>
 </footer>
 
-<script src="js/script.js?v=direction-components-fix-6"></script>
+<script src="js/script.js?v=scroll-top-1"></script>
 <script>
 (() => {
-    const targets = ".offer-hero .eyebrow, .offer-hero .hero-text h1, .offer-hero .hero-text > p";
+    const targets = ".offer-hero .eyebrow, .offer-hero .hero-text h1, .offer-hero .hero-text > p, .offer-hero-actions .btn, .offer-hero-actions .btn.secondary";
     const applyHeroTextTheme = () => {
-        const isLight = document.body.classList.contains("light-mode");
+        const isLight = document.body.classList.contains("light-mode") || document.body.classList.contains("theme-light");
         document.querySelectorAll(targets).forEach((element) => {
             if (isLight) {
                 element.style.setProperty("color", "#ffffff", "important");
