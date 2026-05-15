@@ -5106,7 +5106,7 @@ body:not(.light-mode) footer .footer-left {
 footer .footer-logo,
 body.light-mode footer .footer-logo,
 body:not(.light-mode) footer .footer-logo {
-    width: 312px !important;
+    width: 150px !important;
     max-width: 100% !important;
     height: auto !important;
     margin: 0 0 22px 0 !important;
@@ -5118,9 +5118,9 @@ body:not(.light-mode) footer .footer-logo {
 footer .footer-logo img,
 body.light-mode footer .footer-logo img,
 body:not(.light-mode) footer .footer-logo img {
-    width: 312px !important;
+    width: 150px !important;
     max-width: 100% !important;
-    max-height: 96px !important;
+    max-height: 60px !important;
     height: auto !important;
     object-fit: contain !important;
     object-position: center !important;
@@ -7590,6 +7590,23 @@ html body.light-mode.has-custom-extras.offers-page .offer-box-side {
 }
 
 /* Offers mobile spacing cleanup */
+html body.offers-page .member-section {
+    padding-bottom: 0 !important;
+}
+
+html body.offers-page .group-benefits {
+    padding-top: 0 !important;
+}
+
+html body.offers-page .group-benefits .offers-custom-head {
+    display: none !important;
+    margin: 0 !important;
+}
+
+html body.offers-page .group-benefits .benefit-grid-rich {
+    margin-top: 0 !important;
+}
+
 @media (max-width: 768px) {
     html body.offers-page .offer-hero {
         min-height: auto !important;
@@ -7620,6 +7637,30 @@ html body.light-mode.has-custom-extras.offers-page .offer-box-side {
 
     html body.offers-page .offers-custom-head {
         margin-bottom: 22px !important;
+    }
+
+    html body.offers-page .member-section {
+        padding-bottom: 14px !important;
+    }
+
+    html body.offers-page .group-benefits {
+        padding-top: 14px !important;
+    }
+
+    html body.offers-page .group-benefits .offers-custom-head {
+        margin-bottom: 16px !important;
+    }
+
+    html body.offers-page .group-benefits .benefit-grid-rich {
+        margin-top: 0 !important;
+        gap: 16px !important;
+    }
+
+    html body:is(.light-mode, .theme-light).offers-page .group-benefits .offers-custom-head :is(.eyebrow, h2, p) {
+        color: #0f172a !important;
+        -webkit-text-fill-color: #0f172a !important;
+        opacity: 1 !important;
+        text-shadow: none !important;
     }
 }
 
@@ -7659,7 +7700,7 @@ html body.light-mode.has-custom-extras.offers-page .offer-box-side {
     }
 }
 
-/* Tablet grids: center a single orphan card/image in the last row. */
+/* Tablet grids: keep the last card equal to the others. */
 @media (min-width: 721px) and (max-width: 1024px) {
     html body :is(
         .team-grid .team-card,
@@ -7676,10 +7717,10 @@ html body.light-mode.has-custom-extras.offers-page .offer-box-side {
         .offer-campaign-grid > *,
         .blog-grid > *
     ):last-child:nth-child(odd) {
-        grid-column: 1 / -1 !important;
-        width: calc((100% - 24px) / 2) !important;
-        max-width: 100% !important;
-        justify-self: center !important;
+        grid-column: auto !important;
+        width: 100% !important;
+        max-width: none !important;
+        justify-self: stretch !important;
     }
 }
 
@@ -9172,11 +9213,14 @@ html body.offers-page :is(.offer-story-shell, .offer-preview-panel, .offer-box.o
     align-items: stretch !important;
 }
 
-/* Offers page: Featured Deal copy should not get any "highlight box" background behind text. */
-html body.offers-page .offer-box-copy :is(.eyebrow, h2, .offer-lead) {
-    background: transparent !important;
-    background-image: none !important;
-    box-shadow: none !important;
+html body.offers-page .offer-preview-panel {
+    grid-template-columns: 1fr !important;
+}
+
+html body.offers-page .offer-preview-copy {
+    max-width: 760px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
 html body.offers-page :is(.mystery-shell, .offer-reveal-shell) {
@@ -9393,7 +9437,7 @@ html body.offers-page .offer-popular .popular-media img {
     }
 }
 
-html body.offers-page :is(.offer-story-copy, .offer-preview-copy, .offer-box-copy, .mystery-copy, .offer-reveal-copy, .popular-copy) {
+html body.offers-page :is(.offer-box-copy, .mystery-copy, .offer-reveal-copy, .popular-copy) {
     direction: ltr !important;
     text-align: left !important;
     grid-column: 1 !important;
@@ -9407,7 +9451,7 @@ html body.offers-page :is(.offer-story-copy, .offer-preview-copy, .offer-box-cop
     margin-right: auto !important;
 }
 
-html body.offers-page :is(.offer-story-image, .offer-preview-side, .offer-box-side, .mystery-visual, .offer-reveal-visual, .popular-stat) {
+html body.offers-page :is(.offer-box-side, .mystery-visual, .offer-reveal-visual, .popular-stat) {
     grid-column: 2 !important;
     grid-row: 1 !important;
     justify-self: stretch !important;
@@ -9431,11 +9475,248 @@ html body.offers-page :is(.offer-box-actions, .offer-story-actions, .offer-revea
     justify-content: flex-start !important;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
     html body.offers-page :is(.offer-story-copy, .offer-preview-copy, .offer-box-copy, .mystery-copy, .offer-reveal-copy, .popular-copy),
     html body.offers-page :is(.offer-story-image, .offer-preview-side, .offer-box-side, .mystery-visual, .offer-reveal-visual, .popular-stat) {
         grid-column: auto !important;
         grid-row: auto !important;
+    }
+
+    html body.offers-page :is(.offer-preview-panel, .offer-story-shell) {
+        grid-template-columns: 1fr !important;
+    }
+
+    html body.offers-page :is(.offer-preview-copy, .offer-preview-side, .offer-story-copy, .offer-story-image) {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        justify-self: stretch !important;
+    }
+}
+
+@media (max-width: 768px) {
+    html body.offers-page :is(.offer-preview-panel, .offer-story-shell) {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+        overflow: hidden !important;
+    }
+
+    html body.offers-page .offer-preview-copy {
+        order: 1 !important;
+    }
+
+    html body.offers-page .offer-preview-side {
+        order: 2 !important;
+    }
+
+    html body.offers-page .offer-story-copy {
+        order: 1 !important;
+        padding: 22px 18px !important;
+    }
+
+    html body.offers-page .offer-story-image {
+        order: 2 !important;
+    }
+
+    html body.offers-page :is(.offer-preview-points, .offer-preview-side, .offer-story-stats) {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+
+    html body.offers-page :is(.offer-preview-card, .offer-preview-points article, .offer-story-stats article) {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    html body.offers-page .offer-story-image img {
+        width: 100% !important;
+        min-height: 260px !important;
+        max-height: 340px !important;
+        object-fit: cover !important;
+        display: block !important;
+    }
+}
+
+/* Offers page: iPad Pro/tablet fix for the premium upgrade panel. */
+@media (max-width: 1024px) {
+    html body.offers-page .offer-preview {
+        padding-left: clamp(18px, 4vw, 34px) !important;
+        padding-right: clamp(18px, 4vw, 34px) !important;
+    }
+
+    html body.offers-page .offer-preview-panel {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+        width: 100% !important;
+        max-width: 720px !important;
+        padding: clamp(20px, 3.2vw, 28px) !important;
+        overflow: hidden !important;
+        align-items: start !important;
+    }
+
+    html body.offers-page .offer-preview-copy,
+    html body.offers-page .offer-preview-side {
+        position: relative !important;
+        grid-column: 1 !important;
+        grid-row: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        justify-self: stretch !important;
+        align-self: start !important;
+        transform: none !important;
+    }
+
+    html body.offers-page .offer-preview-side {
+        margin-top: 0 !important;
+        place-self: stretch !important;
+    }
+
+    html body.offers-page .offer-preview-copy {
+        padding: 0 !important;
+        gap: 12px !important;
+    }
+
+    html body.offers-page .offer-preview-copy h3 {
+        max-width: 24ch !important;
+        font-size: clamp(1.6rem, 3.4vw, 2.15rem) !important;
+        line-height: 1.16 !important;
+    }
+
+    html body.offers-page .offer-preview-points,
+    html body.offers-page .offer-preview-side {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+
+    html body.offers-page .offer-preview-card,
+    html body.offers-page .offer-preview-points article {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        padding: 16px !important;
+        box-sizing: border-box !important;
+    }
+
+    html body.offers-page .offer-preview-card strong {
+        font-size: clamp(1.65rem, 4vw, 2.15rem) !important;
+    }
+}
+
+/* Offers page: keep the Offer Strategy story block balanced on iPad/tablet. */
+@media (min-width: 769px) and (max-width: 1024px) {
+    html body.offers-page .offer-story-panel {
+        padding-left: clamp(28px, 5vw, 56px) !important;
+        padding-right: clamp(28px, 5vw, 56px) !important;
+    }
+
+    html body.offers-page .offer-story-shell {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+        width: min(100%, 680px) !important;
+        max-width: 680px !important;
+        align-items: stretch !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        overflow: visible !important;
+    }
+
+    html body.offers-page .offer-story-copy {
+        grid-column: 1 !important;
+        grid-row: 2 !important;
+        order: 2 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        padding: 28px 24px !important;
+        justify-content: flex-start !important;
+        align-self: stretch !important;
+    }
+
+    html body.offers-page .offer-story-image {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        order: 1 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        justify-self: stretch !important;
+        align-self: stretch !important;
+    }
+
+    html body.offers-page .offer-story-image img {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 260px !important;
+        max-height: 340px !important;
+        object-fit: cover !important;
+        display: block !important;
+    }
+
+    html body.offers-page .offer-story-copy h2 {
+        font-size: clamp(1.7rem, 3vw, 2.15rem) !important;
+        line-height: 1.16 !important;
+        max-width: 22ch !important;
+    }
+
+    html body.offers-page .offer-story-copy p:not(.eyebrow) {
+        font-size: 14px !important;
+        line-height: 1.65 !important;
+    }
+
+    html body.offers-page .offer-story-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px !important;
+        margin: 18px 0 !important;
+    }
+
+    html body.offers-page .offer-story-stats article {
+        padding: 14px 12px !important;
+        min-width: 0 !important;
+    }
+
+    html body.offers-page .offer-story-stats strong {
+        font-size: clamp(1.35rem, 2.8vw, 1.65rem) !important;
+    }
+
+    html body.offers-page .offer-story-stats span {
+        font-size: 12px !important;
+        line-height: 1.45 !important;
+    }
+
+    html body.offers-page .offer-story-copy .btn {
+        align-self: flex-start !important;
+        min-height: 42px !important;
+        padding: 0 18px !important;
+        font-size: 12px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    html body.offers-page .offer-story-shell {
+        max-width: 520px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    html body.offers-page .offer-story-image {
+        order: 1 !important;
+        grid-row: 1 !important;
+    }
+
+    html body.offers-page .offer-story-copy {
+        order: 2 !important;
+        grid-row: 2 !important;
+    }
+
+    html body.offers-page .offer-story-image img {
+        min-height: 220px !important;
+        max-height: 300px !important;
     }
 }
 
@@ -9516,4 +9797,2814 @@ html[dir="rtl"] body.rtl-mode .editorial-hero.blog-hero .editorial-hero-card {
     html[dir="rtl"] body.rtl-mode .editorial-hero.blog-hero .editorial-hero-actions {
         justify-content: center !important;
     }
+}
+
+/* Footer logo: match Home 1 final footer logo size on every page. */
+html body footer .footer-left > .footer-logo,
+html body.light-mode footer .footer-left > .footer-logo,
+html body.theme-light footer .footer-left > .footer-logo,
+html body:not(.light-mode) footer .footer-left > .footer-logo {
+    width: min(190px, 42vw) !important;
+    max-width: 100% !important;
+    min-height: 0 !important;
+    height: auto !important;
+    margin: 0 0 14px !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    line-height: 0 !important;
+}
+
+html body footer .footer-left > .footer-logo img,
+html body.light-mode footer .footer-left > .footer-logo img,
+html body.theme-light footer .footer-left > .footer-logo img,
+html body:not(.light-mode) footer .footer-left > .footer-logo img {
+    width: min(190px, 42vw) !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    display: block !important;
+    object-fit: contain !important;
+    transform: none !important;
+}
+
+html body footer .footer-left > .footer-logo:hover img,
+html body.light-mode footer .footer-left > .footer-logo:hover img,
+html body.theme-light footer .footer-left > .footer-logo:hover img,
+html body:not(.light-mode) footer .footer-left > .footer-logo:hover img {
+    transform: scale(1.03) !important;
+}
+
+/* Header Login button: match the Home 1 final button style on every page. */
+html body .header .right-section > .login-btn,
+html body.light-mode .header .right-section > .login-btn,
+html body.theme-light .header .right-section > .login-btn,
+html body:not(.light-mode) .header .right-section > .login-btn,
+html body .header .nav-mobile-actions .login-btn,
+html body.light-mode .header .nav-mobile-actions .login-btn,
+html body.theme-light .header .nav-mobile-actions .login-btn,
+html body:not(.light-mode) .header .nav-mobile-actions .login-btn {
+    min-height: 42px !important;
+    padding: 10px 25px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    border-radius: 30px !important;
+    background: linear-gradient(135deg, #8b5cf6, #c084fc) !important;
+    background-image: linear-gradient(135deg, #8b5cf6, #c084fc) !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.35) !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    letter-spacing: 0 !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease, background 0.4s ease !important;
+}
+
+html body .header .right-section > .login-btn:is(:hover, :focus-visible),
+html body.light-mode .header .right-section > .login-btn:is(:hover, :focus-visible),
+html body.theme-light .header .right-section > .login-btn:is(:hover, :focus-visible),
+html body:not(.light-mode) .header .right-section > .login-btn:is(:hover, :focus-visible),
+html body .header .nav-mobile-actions .login-btn:is(:hover, :focus-visible),
+html body.light-mode .header .nav-mobile-actions .login-btn:is(:hover, :focus-visible),
+html body.theme-light .header .nav-mobile-actions .login-btn:is(:hover, :focus-visible),
+html body:not(.light-mode) .header .nav-mobile-actions .login-btn:is(:hover, :focus-visible) {
+    background: #050505 !important;
+    background-image: none !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border-color: #8b5cf6 !important;
+    box-shadow: 0 0 28px rgba(139, 92, 246, 0.52) !important;
+    transform: translateY(-3px) !important;
+}
+
+/* Final global footer logo lock: every page matches Home 1 footer sizing. */
+html body footer .footer-content .footer-left > a.footer-logo,
+html body footer .footer-left > a.footer-logo,
+html body.light-mode footer .footer-content .footer-left > a.footer-logo,
+html body.theme-light footer .footer-content .footer-left > a.footer-logo,
+html body:not(.light-mode) footer .footer-content .footer-left > a.footer-logo {
+    display: block !important;
+    width: 190px !important;
+    max-width: min(190px, 42vw) !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 0 14px !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    line-height: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+html body footer .footer-content .footer-left > a.footer-logo > img,
+html body footer .footer-left > a.footer-logo > img,
+html body.light-mode footer .footer-content .footer-left > a.footer-logo > img,
+html body.theme-light footer .footer-content .footer-left > a.footer-logo > img,
+html body:not(.light-mode) footer .footer-content .footer-left > a.footer-logo > img {
+    display: block !important;
+    width: 190px !important;
+    max-width: min(190px, 42vw) !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: left center !important;
+    transform: none !important;
+}
+
+html body footer .footer-content .footer-left > a.footer-logo:hover > img,
+html body footer .footer-left > a.footer-logo:hover > img,
+html body.light-mode footer .footer-content .footer-left > a.footer-logo:hover > img,
+html body.theme-light footer .footer-content .footer-left > a.footer-logo:hover > img,
+html body:not(.light-mode) footer .footer-content .footer-left > a.footer-logo:hover > img {
+    transform: scale(1.03) !important;
+}
+
+/* Final header lock: match the provided light navbar across every page. */
+@media (min-width: 901px) {
+    html body .header,
+    html body .header.scrolled,
+    html body .header.menu-open,
+    html body.light-mode .header,
+    html body.theme-light .header,
+    html body:not(.light-mode) .header {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 1000 !important;
+        min-height: 96px !important;
+        height: 96px !important;
+        padding: 18px 38px !important;
+        display: grid !important;
+        grid-template-columns: minmax(230px, 0.8fr) minmax(520px, 1.4fr) minmax(230px, 0.8fr) !important;
+        align-items: center !important;
+        gap: 24px !important;
+        background:
+            linear-gradient(90deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.88)),
+            rgba(255, 255, 255, 0.94) !important;
+        border-bottom: 1px solid rgba(139, 92, 246, 0.18) !important;
+        box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08) !important;
+        backdrop-filter: blur(14px) !important;
+        -webkit-backdrop-filter: blur(14px) !important;
+    }
+
+    html body .header .logo,
+    html body .header > .logo {
+        grid-column: 1 !important;
+        width: 210px !important;
+        max-width: 210px !important;
+        height: 68px !important;
+        margin: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        overflow: visible !important;
+    }
+
+    html body .header .logo-link {
+        width: 210px !important;
+        height: 68px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        overflow: visible !important;
+    }
+
+    html body .header .logo img {
+        width: 210px !important;
+        max-width: 210px !important;
+        height: auto !important;
+        max-height: 68px !important;
+        object-fit: contain !important;
+        object-position: left center !important;
+        transform: none !important;
+        filter: drop-shadow(0 8px 18px rgba(139, 92, 246, 0.18)) !important;
+    }
+
+    html body .header .nav {
+        grid-column: 2 !important;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 28px !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        overflow: visible !important;
+    }
+
+    html body .header .nav > a,
+    html body .header .nav-item > a {
+        position: relative !important;
+        min-height: 42px !important;
+        padding: 0 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 5px !important;
+        color: #0f172a !important;
+        -webkit-text-fill-color: #0f172a !important;
+        background: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.02em !important;
+        line-height: 1 !important;
+        text-transform: uppercase !important;
+        text-decoration: none !important;
+        white-space: nowrap !important;
+    }
+
+    html body .header .nav > a::after,
+    html body .header .nav-item > a::after {
+        content: "" !important;
+        position: absolute !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        height: 2px !important;
+        border-radius: 999px !important;
+        background: #8b5cf6 !important;
+        transform: scaleX(0) !important;
+        transform-origin: center !important;
+        transition: transform 0.25s ease !important;
+    }
+
+    html body .header .nav > a:hover,
+    html body .header .nav > a.active,
+    html body .header .nav-item:hover > a,
+    html body .header .nav-item > a.active {
+        color: #8b5cf6 !important;
+        -webkit-text-fill-color: #8b5cf6 !important;
+        text-shadow: none !important;
+    }
+
+    html body .header .nav > a:hover::after,
+    html body .header .nav > a.active::after,
+    html body .header .nav-item:hover > a::after,
+    html body .header .nav-item > a.active::after {
+        transform: scaleX(1) !important;
+    }
+
+    html body .header .right-section {
+        grid-column: 3 !important;
+        width: auto !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        gap: 18px !important;
+        background: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+    }
+
+    html body .header .icon-btn,
+    html body .header .direction-toggle,
+    html body.light-mode .header .icon-btn,
+    html body.theme-light .header .icon-btn {
+        width: 46px !important;
+        height: 46px !important;
+        min-width: 46px !important;
+        min-height: 46px !important;
+        padding: 0 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 50% !important;
+        border: 1px solid rgba(15, 23, 42, 0.16) !important;
+        background: rgba(255, 255, 255, 0.72) !important;
+        color: #0f172a !important;
+        -webkit-text-fill-color: #0f172a !important;
+        box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08) !important;
+    }
+
+    html body .header .icon-btn:hover,
+    html body .header .direction-toggle:hover {
+        color: #8b5cf6 !important;
+        -webkit-text-fill-color: #8b5cf6 !important;
+        border-color: rgba(139, 92, 246, 0.42) !important;
+        transform: translateY(-2px) !important;
+    }
+
+    html body .header .right-section > .login-btn,
+    html body.light-mode .header .right-section > .login-btn,
+    html body.theme-light .header .right-section > .login-btn {
+        min-width: 92px !important;
+        min-height: 46px !important;
+        padding: 0 26px !important;
+        border-radius: 18px !important;
+        background: linear-gradient(135deg, #8b5cf6, #9b5cf6) !important;
+        background-image: linear-gradient(135deg, #8b5cf6, #9b5cf6) !important;
+        border: 1px solid rgba(139, 92, 246, 0.32) !important;
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+        box-shadow: 0 12px 28px rgba(139, 92, 246, 0.28) !important;
+    }
+
+    html body .header .nav-toggle {
+        display: none !important;
+    }
+
+    html body .header .nav-mobile-actions {
+        display: none !important;
+    }
+}
+
+/* Final light-mode header contrast: keep navbar text/buttons readable after every header lock. */
+html body:is(.light-mode, .theme-light) .header,
+html body:is(.light-mode, .theme-light) .header.scrolled,
+html body:is(.light-mode, .theme-light) .header.menu-open {
+    background: rgba(255, 255, 255, 0.96) !important;
+    border-bottom: 1px solid rgba(109, 40, 217, 0.18) !important;
+    box-shadow: 0 12px 34px rgba(15, 23, 42, 0.1) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+}
+
+html body:is(.light-mode, .theme-light) .header .nav,
+html body:is(.light-mode, .theme-light) .header.menu-open .nav,
+html body:is(.light-mode, .theme-light) .header .dropdown,
+html body:is(.light-mode, .theme-light) .header .nav-mobile-actions {
+    background: rgba(255, 255, 255, 0.98) !important;
+    border-color: rgba(109, 40, 217, 0.16) !important;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.1) !important;
+}
+
+html body:is(.light-mode, .theme-light) .header .nav > a,
+html body:is(.light-mode, .theme-light) .header .nav-item > a,
+html body:is(.light-mode, .theme-light) .header.menu-open .nav > a,
+html body:is(.light-mode, .theme-light) .header.menu-open .nav-item > a,
+html body:is(.light-mode, .theme-light) .header .dropdown a {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body:is(.light-mode, .theme-light) .header .nav > a:hover,
+html body:is(.light-mode, .theme-light) .header .nav > a.active,
+html body:is(.light-mode, .theme-light) .header .nav-item:hover > a,
+html body:is(.light-mode, .theme-light) .header .nav-item > a.active,
+html body:is(.light-mode, .theme-light) .header .dropdown a:hover,
+html body:is(.light-mode, .theme-light) .header .dropdown a.is-current-page {
+    color: #6d28d9 !important;
+    -webkit-text-fill-color: #6d28d9 !important;
+    text-shadow: none !important;
+}
+
+html body:is(.light-mode, .theme-light) .header .icon-btn,
+html body:is(.light-mode, .theme-light) .header .direction-toggle,
+html body:is(.light-mode, .theme-light) .header .nav-toggle {
+    background: #ffffff !important;
+    border: 1px solid rgba(15, 23, 42, 0.18) !important;
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    box-shadow: 0 10px 22px rgba(15, 23, 42, 0.1) !important;
+}
+
+html body:is(.light-mode, .theme-light) .header :is(.icon-btn, .direction-toggle, .nav-toggle):hover {
+    border-color: rgba(109, 40, 217, 0.42) !important;
+    color: #6d28d9 !important;
+    -webkit-text-fill-color: #6d28d9 !important;
+}
+
+/* Last button cascade lock: keep CTAs identical across every page. */
+html body :is(.btn, .login-btn, .contact-btn, .booking-confirm, .search-submit, .mode-select-btn, .quick-booking-form button, button[type="submit"], .room-link, .hero-secondary):not(.icon-btn):not(.nav-toggle):not(.direction-toggle) {
+    min-height: 54px !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    padding: 0 30px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    background: linear-gradient(135deg, #8b5cf6, #a855f7) !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    font: 700 16px/1 'Poppins', sans-serif !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    box-shadow: 0 18px 34px rgba(139, 92, 246, 0.24) !important;
+    text-shadow: none !important;
+    cursor: pointer !important;
+}
+
+html body :is(.btn, .login-btn, .contact-btn, .booking-confirm, .search-submit, .mode-select-btn, .quick-booking-form button, button[type="submit"], .room-link, .hero-secondary):not(.icon-btn):not(.nav-toggle):not(.direction-toggle):is(:hover, :focus-visible) {
+    transform: translateY(-3px) !important;
+    border-color: #8b5cf6 !important;
+    background: #050505 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    box-shadow: 0 20px 42px rgba(139, 92, 246, 0.42) !important;
+}
+
+/* Final desktop card rows: keep three-box sections in one horizontal line. */
+@media (min-width: 1025px) {
+    html body :is(
+        .steps,
+        .how-it-works .steps,
+        .testimonial-container,
+        .home2-night-grid,
+        .home2-testimonial-grid,
+        .rooms-flow-grid,
+        .news-digest-grid,
+        .benefit-grid-rich,
+        .blog-list
+    ) {
+        width: min(100%, 1180px) !important;
+        max-width: 1180px !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 24px !important;
+        align-items: stretch !important;
+        justify-items: stretch !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    html body :is(
+        .steps,
+        .how-it-works .steps,
+        .testimonial-container,
+        .home2-night-grid,
+        .home2-testimonial-grid,
+        .rooms-flow-grid,
+        .news-digest-grid,
+        .benefit-grid-rich,
+        .blog-list
+    ) > * {
+        grid-column: auto !important;
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        justify-self: stretch !important;
+    }
+
+    html body.offers-page .benefit-grid-rich {
+        max-width: 1240px !important;
+    }
+
+    html body .blog-list article {
+        grid-template-columns: auto minmax(0, 1fr) !important;
+    }
+}
+
+/* Absolute last CTA lock: compact purple pill buttons everywhere. */
+html body :is(.btn, .login-btn, .contact-btn, .booking-confirm, .search-submit, .mode-select-btn, .quick-booking-form button, button[type="submit"], .room-link, .hero-secondary):not(.icon-btn):not(.nav-toggle):not(.direction-toggle) {
+    min-height: 38px !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    padding: 0 30px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: 0 !important;
+    border-radius: 999px !important;
+    background: #8b5cf6 !important;
+    background-image: none !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    font: 800 11px/1 'Poppins', sans-serif !important;
+    letter-spacing: 0 !important;
+    text-transform: uppercase !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+html body :is(.btn, .login-btn, .contact-btn, .booking-confirm, .search-submit, .mode-select-btn, .quick-booking-form button, button[type="submit"], .room-link, .hero-secondary):not(.icon-btn):not(.nav-toggle):not(.direction-toggle):is(:hover, :focus-visible) {
+    transform: translateY(-1px) !important;
+    background: #7c3aed !important;
+    background-image: none !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    box-shadow: 0 8px 18px rgba(139, 92, 246, 0.22) !important;
+}
+
+/* Absolute final CTA style. */
+html body :is(.btn, .login-btn, .contact-btn, .booking-confirm, .search-submit, .mode-select-btn, .quick-booking-form button, button[type="submit"], .room-link, .hero-secondary):not(.icon-btn):not(.nav-toggle):not(.direction-toggle) {
+    min-height: 44px !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    padding: 0 30px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 999px !important;
+    border: 0 !important;
+    background: #8b5cf6 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    font: 800 13px/1 'Poppins', sans-serif !important;
+    letter-spacing: 0 !important;
+    text-transform: uppercase !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    cursor: pointer !important;
+}
+
+html body :is(.btn, .login-btn, .contact-btn, .booking-confirm, .search-submit, .mode-select-btn, .quick-booking-form button, button[type="submit"], .room-link, .hero-secondary):not(.icon-btn):not(.nav-toggle):not(.direction-toggle):is(:hover, :focus-visible) {
+    transform: translateY(-1px) !important;
+    border-color: transparent !important;
+    background: #7c3aed !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    box-shadow: 0 8px 18px rgba(139, 92, 246, 0.22) !important;
+}
+
+/* Final site-wide button style: one visual system for every CTA. */
+html body :is(
+    .btn,
+    .login-btn,
+    .contact-btn,
+    .booking-confirm,
+    .search-submit,
+    .mode-select-btn,
+    .quick-booking-form button,
+    button[type="submit"],
+    .room-link,
+    .hero-secondary
+):not(.icon-btn):not(.nav-toggle):not(.direction-toggle) {
+    min-height: 54px !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    padding: 0 30px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    background: linear-gradient(135deg, #8b5cf6, #a855f7) !important;
+    background-image: linear-gradient(135deg, #8b5cf6, #a855f7) !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    box-shadow: 0 18px 34px rgba(139, 92, 246, 0.24) !important;
+    text-shadow: none !important;
+    cursor: pointer !important;
+    transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+html body :is(
+    .btn,
+    .login-btn,
+    .contact-btn,
+    .booking-confirm,
+    .search-submit,
+    .mode-select-btn,
+    .quick-booking-form button,
+    button[type="submit"],
+    .room-link,
+    .hero-secondary
+):not(.icon-btn):not(.nav-toggle):not(.direction-toggle):is(:hover, :focus-visible) {
+    transform: translateY(-3px) !important;
+    border-color: #8b5cf6 !important;
+    background: #050505 !important;
+    background-image: none !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    box-shadow: 0 20px 42px rgba(139, 92, 246, 0.42) !important;
+}
+
+html body :is(
+    .btn,
+    .login-btn,
+    .contact-btn,
+    .booking-confirm,
+    .search-submit,
+    .mode-select-btn,
+    .quick-booking-form button,
+    button[type="submit"],
+    .room-link,
+    .hero-secondary
+):not(.icon-btn):not(.nav-toggle):not(.direction-toggle)::before {
+    border-radius: inherit !important;
+}
+
+@media (max-width: 520px) {
+    html body :is(.btn, .login-btn, .contact-btn, .booking-confirm, .search-submit, .mode-select-btn, .quick-booking-form button, button[type="submit"], .room-link, .hero-secondary):not(.icon-btn):not(.nav-toggle):not(.direction-toggle) {
+        width: 100% !important;
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+        white-space: normal !important;
+    }
+}
+
+/* Desktop card rows: keep three-box sections in one horizontal line. */
+@media (min-width: 1025px) {
+    html body :is(
+        .steps,
+        .how-it-works .steps,
+        .testimonial-container,
+        .home2-night-grid,
+        .home2-testimonial-grid,
+        .rooms-flow-grid,
+        .news-digest-grid,
+        .benefit-grid-rich,
+        .blog-list
+    ) {
+        width: min(100%, 1180px) !important;
+        max-width: 1180px !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 24px !important;
+        align-items: stretch !important;
+        justify-items: stretch !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    html body :is(
+        .steps,
+        .how-it-works .steps,
+        .testimonial-container,
+        .home2-night-grid,
+        .home2-testimonial-grid,
+        .rooms-flow-grid,
+        .news-digest-grid,
+        .benefit-grid-rich,
+        .blog-list
+    ) > * {
+        grid-column: auto !important;
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        justify-self: stretch !important;
+    }
+
+    html body.offers-page .benefit-grid-rich {
+        max-width: 1240px !important;
+    }
+
+    html body .blog-list article {
+        grid-template-columns: auto minmax(0, 1fr) !important;
+    }
+}
+
+/* Final desktop nav cleanup: remove the white box behind menu links. */
+@media (min-width: 1025px) {
+    html body .header .nav,
+    html body .header:not(.menu-open) .nav,
+    html body .header.menu-open .nav,
+    html body:is(.light-mode, .theme-light) .header .nav,
+    html body:is(.light-mode, .theme-light) .header:not(.menu-open) .nav,
+    html body:is(.light-mode, .theme-light) .header.menu-open .nav {
+        background: transparent !important;
+        background-image: none !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        outline: 0 !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+}
+
+html body .direction-toggle .direction-label,
+html body.light-mode .direction-toggle .direction-label,
+html body.theme-light .direction-toggle .direction-label {
+    color: currentColor !important;
+    -webkit-text-fill-color: currentColor !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+    letter-spacing: 0 !important;
+    text-transform: uppercase !important;
+    text-shadow: none !important;
+}
+
+/* Final light-mode header contrast: keep navbar text/buttons readable after every header lock. */
+html body:is(.light-mode, .theme-light) .header,
+html body:is(.light-mode, .theme-light) .header.scrolled,
+html body:is(.light-mode, .theme-light) .header.menu-open {
+    background: rgba(255, 255, 255, 0.96) !important;
+    border-bottom: 1px solid rgba(109, 40, 217, 0.18) !important;
+    box-shadow: 0 12px 34px rgba(15, 23, 42, 0.1) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+}
+
+html body:is(.light-mode, .theme-light) .header .nav,
+html body:is(.light-mode, .theme-light) .header.menu-open .nav,
+html body:is(.light-mode, .theme-light) .header .dropdown,
+html body:is(.light-mode, .theme-light) .header .nav-mobile-actions {
+    background: rgba(255, 255, 255, 0.98) !important;
+    border-color: rgba(109, 40, 217, 0.16) !important;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.1) !important;
+}
+
+html body:is(.light-mode, .theme-light) .header .nav > a,
+html body:is(.light-mode, .theme-light) .header .nav-item > a,
+html body:is(.light-mode, .theme-light) .header.menu-open .nav > a,
+html body:is(.light-mode, .theme-light) .header.menu-open .nav-item > a,
+html body:is(.light-mode, .theme-light) .header .dropdown a {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body:is(.light-mode, .theme-light) .header .nav > a:hover,
+html body:is(.light-mode, .theme-light) .header .nav > a.active,
+html body:is(.light-mode, .theme-light) .header .nav-item:hover > a,
+html body:is(.light-mode, .theme-light) .header .nav-item > a.active,
+html body:is(.light-mode, .theme-light) .header .dropdown a:hover,
+html body:is(.light-mode, .theme-light) .header .dropdown a.is-current-page {
+    color: #6d28d9 !important;
+    -webkit-text-fill-color: #6d28d9 !important;
+    text-shadow: none !important;
+}
+
+html body:is(.light-mode, .theme-light) .header .icon-btn,
+html body:is(.light-mode, .theme-light) .header .direction-toggle,
+html body:is(.light-mode, .theme-light) .header .nav-toggle {
+    background: #ffffff !important;
+    border: 1px solid rgba(15, 23, 42, 0.18) !important;
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    box-shadow: 0 10px 22px rgba(15, 23, 42, 0.1) !important;
+}
+
+html body:is(.light-mode, .theme-light) .header :is(.icon-btn, .direction-toggle, .nav-toggle):hover {
+    border-color: rgba(109, 40, 217, 0.42) !important;
+    color: #6d28d9 !important;
+    -webkit-text-fill-color: #6d28d9 !important;
+}
+
+/* Last header override: all desktop headers use the clear Home 2 dark menu style. */
+@media (min-width: 1025px) {
+    html body .header,
+    html body .header.scrolled,
+    html body .header.menu-open {
+        height: 82px !important;
+        min-height: 82px !important;
+        padding: 12px clamp(28px, 4.4vw, 52px) !important;
+        display: grid !important;
+        grid-template-columns: minmax(172px, 210px) minmax(0, 1fr) auto !important;
+        align-items: center !important;
+        gap: clamp(12px, 1.8vw, 22px) !important;
+        background: linear-gradient(180deg, rgba(8, 6, 14, 0.98), rgba(15, 9, 24, 0.96)) !important;
+        border-bottom: 1px solid rgba(139, 92, 246, 0.55) !important;
+        box-shadow: 0 12px 34px rgba(0, 0, 0, 0.48), 0 0 20px rgba(139, 92, 246, 0.18) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+    }
+
+    html body .header .nav-toggle {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+
+    html body .header .logo,
+    html body .header .logo-link,
+    html body .header .logo img {
+        width: clamp(172px, 17vw, 210px) !important;
+        max-width: clamp(172px, 17vw, 210px) !important;
+        height: auto !important;
+        transform: none !important;
+    }
+
+    html body .header .nav,
+    html body .header:not(.menu-open) .nav,
+    html body .header.menu-open .nav {
+        position: static !important;
+        grid-column: 2 !important;
+        justify-self: center !important;
+        width: auto !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: clamp(14px, 1.55vw, 24px) !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        border: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+
+    html body .header .nav > a,
+    html body .header .nav-item > a,
+    html body .header.menu-open .nav > a,
+    html body .header.menu-open .nav-item > a {
+        width: auto !important;
+        min-height: 0 !important;
+        padding: 0 !important;
+        display: inline-flex !important;
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        font-size: clamp(11px, 1vw, 13px) !important;
+        font-weight: 700 !important;
+        line-height: 1 !important;
+        text-transform: uppercase !important;
+        white-space: nowrap !important;
+        border: 0 !important;
+        background: transparent !important;
+        text-shadow: none !important;
+    }
+
+    html body .header .nav > a:hover,
+    html body .header .nav > a.active,
+    html body .header .nav-item:hover > a,
+    html body .header .nav-item > a.active {
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+        text-shadow: 0 0 14px rgba(139, 92, 246, 0.75) !important;
+    }
+}
+
+/* Final desktop header match: use the clear Home 2 style across all pages. */
+@media (min-width: 1025px) {
+    html body .header,
+    html body .header.scrolled,
+    html body .header.menu-open,
+    html body:not(.light-mode):not(.theme-light) .header,
+    html body:not(.light-mode):not(.theme-light) .header.scrolled,
+    html body:not(.light-mode):not(.theme-light) .header.menu-open {
+        height: 82px !important;
+        min-height: 82px !important;
+        padding: 12px clamp(28px, 4.4vw, 52px) !important;
+        display: grid !important;
+        grid-template-columns: minmax(172px, 210px) minmax(0, 1fr) auto !important;
+        align-items: center !important;
+        gap: clamp(12px, 1.8vw, 22px) !important;
+        background: linear-gradient(180deg, rgba(8, 6, 14, 0.98), rgba(15, 9, 24, 0.96)) !important;
+        border-bottom: 1px solid rgba(139, 92, 246, 0.55) !important;
+        box-shadow: 0 12px 34px rgba(0, 0, 0, 0.48), 0 0 20px rgba(139, 92, 246, 0.18) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+    }
+
+    html body .header .logo,
+    html body .header .logo-link,
+    html body .header .logo img {
+        width: clamp(172px, 17vw, 210px) !important;
+        max-width: clamp(172px, 17vw, 210px) !important;
+        height: auto !important;
+        transform: none !important;
+    }
+
+    html body .header .nav,
+    html body .header:not(.menu-open) .nav,
+    html body .header.menu-open .nav {
+        grid-column: 2 !important;
+        justify-self: center !important;
+        gap: clamp(14px, 1.55vw, 24px) !important;
+        min-width: 0 !important;
+    }
+
+    html body .header .nav > a,
+    html body .header .nav-item > a,
+    html body .header.menu-open .nav > a,
+    html body .header.menu-open .nav-item > a {
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        font-size: clamp(11px, 1vw, 13px) !important;
+        font-weight: 700 !important;
+        line-height: 1 !important;
+        text-transform: uppercase !important;
+        white-space: nowrap !important;
+        text-shadow: none !important;
+    }
+
+    html body .header .nav > a:hover,
+    html body .header .nav > a.active,
+    html body .header .nav-item:hover > a,
+    html body .header .nav-item > a.active {
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+        text-shadow: 0 0 14px rgba(139, 92, 246, 0.75) !important;
+    }
+
+    html body .header .nav > a::after,
+    html body .header .nav-item > a::after {
+        bottom: -9px !important;
+        background: #8b5cf6 !important;
+        box-shadow: 0 0 12px #8b5cf6 !important;
+    }
+
+    html body .header .dropdown {
+        background: rgba(12, 10, 18, 0.98) !important;
+        border: 1px solid rgba(139, 92, 246, 0.55) !important;
+        box-shadow: 0 16px 44px rgba(0, 0, 0, 0.45), 0 0 24px rgba(139, 92, 246, 0.16) !important;
+    }
+
+    html body .header .dropdown a {
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+    }
+}
+
+/* Final desktop header lock: keep all pages matching Home 2 after every override. */
+@media (min-width: 1025px) {
+    html body .header,
+    html body .header.scrolled,
+    html body .header.menu-open,
+    html body:not(.light-mode):not(.theme-light) .header,
+    html body:not(.light-mode):not(.theme-light) .header.scrolled,
+    html body:not(.light-mode):not(.theme-light) .header.menu-open {
+        height: 82px !important;
+        min-height: 82px !important;
+        padding: 12px clamp(28px, 4.4vw, 52px) !important;
+        display: grid !important;
+        grid-template-columns: minmax(172px, 210px) minmax(0, 1fr) auto !important;
+        align-items: center !important;
+        gap: clamp(12px, 1.8vw, 22px) !important;
+        background: linear-gradient(180deg, rgba(8, 6, 14, 0.98), rgba(15, 9, 24, 0.96)) !important;
+        border-bottom: 1px solid rgba(139, 92, 246, 0.55) !important;
+        box-shadow: 0 12px 34px rgba(0, 0, 0, 0.48), 0 0 20px rgba(139, 92, 246, 0.18) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+    }
+
+    html body .header .nav-toggle {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+
+    html body .header .logo,
+    html body .header .logo-link,
+    html body .header .logo img {
+        width: clamp(172px, 17vw, 210px) !important;
+        max-width: clamp(172px, 17vw, 210px) !important;
+        height: auto !important;
+        transform: none !important;
+    }
+
+    html body .header .nav,
+    html body .header:not(.menu-open) .nav,
+    html body .header.menu-open .nav {
+        position: static !important;
+        grid-column: 2 !important;
+        justify-self: center !important;
+        width: auto !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: clamp(14px, 1.55vw, 24px) !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        border: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+
+    html body .header .nav > a,
+    html body .header .nav-item > a,
+    html body .header.menu-open .nav > a,
+    html body .header.menu-open .nav-item > a {
+        width: auto !important;
+        min-height: 0 !important;
+        padding: 0 !important;
+        display: inline-flex !important;
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        font-size: clamp(11px, 1vw, 13px) !important;
+        font-weight: 700 !important;
+        line-height: 1 !important;
+        text-transform: uppercase !important;
+        white-space: nowrap !important;
+        border: 0 !important;
+        background: transparent !important;
+        text-shadow: none !important;
+    }
+
+    html body .header .nav > a:hover,
+    html body .header .nav > a.active,
+    html body .header .nav-item:hover > a,
+    html body .header .nav-item > a.active {
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+        text-shadow: 0 0 14px rgba(139, 92, 246, 0.75) !important;
+    }
+
+    html body .header .right-section {
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    html body .header .nav-mobile-actions {
+        display: none !important;
+    }
+}
+
+/* Final light-mode header contrast: keep navbar text/buttons readable after desktop locks. */
+html body:is(.light-mode, .theme-light) .header,
+html body:is(.light-mode, .theme-light) .header.scrolled,
+html body:is(.light-mode, .theme-light) .header.menu-open {
+    background: rgba(255, 255, 255, 0.96) !important;
+    border-bottom: 1px solid rgba(109, 40, 217, 0.18) !important;
+    box-shadow: 0 12px 34px rgba(15, 23, 42, 0.1) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+}
+
+html body:is(.light-mode, .theme-light) .header .nav,
+html body:is(.light-mode, .theme-light) .header.menu-open .nav,
+html body:is(.light-mode, .theme-light) .header .dropdown,
+html body:is(.light-mode, .theme-light) .header .nav-mobile-actions {
+    background: rgba(255, 255, 255, 0.98) !important;
+    border-color: rgba(109, 40, 217, 0.16) !important;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.1) !important;
+}
+
+html body:is(.light-mode, .theme-light) .header .nav > a,
+html body:is(.light-mode, .theme-light) .header .nav-item > a,
+html body:is(.light-mode, .theme-light) .header.menu-open .nav > a,
+html body:is(.light-mode, .theme-light) .header.menu-open .nav-item > a,
+html body:is(.light-mode, .theme-light) .header .dropdown a {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body:is(.light-mode, .theme-light) .header .nav > a:hover,
+html body:is(.light-mode, .theme-light) .header .nav > a.active,
+html body:is(.light-mode, .theme-light) .header .nav-item:hover > a,
+html body:is(.light-mode, .theme-light) .header .nav-item > a.active,
+html body:is(.light-mode, .theme-light) .header .dropdown a:hover,
+html body:is(.light-mode, .theme-light) .header .dropdown a.is-current-page {
+    color: #6d28d9 !important;
+    -webkit-text-fill-color: #6d28d9 !important;
+    text-shadow: none !important;
+}
+
+html body:is(.light-mode, .theme-light) .header .icon-btn,
+html body:is(.light-mode, .theme-light) .header .direction-toggle,
+html body:is(.light-mode, .theme-light) .header .nav-toggle {
+    background: #ffffff !important;
+    border: 1px solid rgba(15, 23, 42, 0.18) !important;
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    box-shadow: 0 10px 22px rgba(15, 23, 42, 0.1) !important;
+}
+
+html body:is(.light-mode, .theme-light) .header :is(.icon-btn, .direction-toggle, .nav-toggle):hover {
+    border-color: rgba(109, 40, 217, 0.42) !important;
+    color: #6d28d9 !important;
+    -webkit-text-fill-color: #6d28d9 !important;
+}
+
+/* Final footer layout: match the provided white footer on every page. */
+html body footer,
+html body.light-mode footer,
+html body.theme-light footer,
+html body:not(.light-mode) footer {
+    margin-top: 0 !important;
+    padding: 52px 8% 18px !important;
+    background: #ffffff !important;
+    background-image: none !important;
+    color: #111827 !important;
+    border-top: 1px solid rgba(15, 23, 42, 0.08) !important;
+    box-shadow: none !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+html body footer .footer-content,
+html body.light-mode footer .footer-content,
+html body.theme-light footer .footer-content,
+html body:not(.light-mode) footer .footer-content {
+    width: min(100%, 1148px) !important;
+    max-width: 1148px !important;
+    margin: 0 auto 22px !important;
+    padding: 0 0 40px !important;
+    display: grid !important;
+    grid-template-columns: minmax(320px, 1.45fr) minmax(180px, 0.75fr) minmax(270px, 1fr) !important;
+    gap: clamp(48px, 8vw, 128px) !important;
+    align-items: start !important;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.22) !important;
+}
+
+html body footer :is(.footer-left, .footer-column, .footer-bottom),
+html body.light-mode footer :is(.footer-left, .footer-column, .footer-bottom),
+html body.theme-light footer :is(.footer-left, .footer-column, .footer-bottom) {
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+html body footer .footer-content .footer-left > a.footer-logo,
+html body footer .footer-left > a.footer-logo {
+    width: 220px !important;
+    max-width: min(220px, 52vw) !important;
+    height: auto !important;
+    margin: 0 0 18px !important;
+}
+
+html body footer .footer-content .footer-left > a.footer-logo > img,
+html body footer .footer-left > a.footer-logo > img {
+    width: 220px !important;
+    max-width: min(220px, 52vw) !important;
+    height: auto !important;
+    filter: drop-shadow(0 10px 28px rgba(139, 92, 246, 0.2)) !important;
+}
+
+html body footer .footer-left h2,
+html body.light-mode footer .footer-left h2,
+html body.theme-light footer .footer-left h2,
+html body footer .footer-column h3,
+html body.light-mode footer .footer-column h3,
+html body.theme-light footer .footer-column h3 {
+    margin: 0 0 16px !important;
+    color: #111827 !important;
+    -webkit-text-fill-color: #111827 !important;
+    font-size: 23px !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    letter-spacing: 0 !important;
+    text-shadow: none !important;
+}
+
+html body footer .footer-column h3,
+html body.light-mode footer .footer-column h3,
+html body.theme-light footer .footer-column h3 {
+    font-size: 18px !important;
+}
+
+html body footer .footer-note,
+html body footer p,
+html body.light-mode footer .footer-note,
+html body.theme-light footer .footer-note {
+    max-width: 460px !important;
+    margin: 0 0 8px !important;
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    font-size: 15px !important;
+    line-height: 1.75 !important;
+    text-shadow: none !important;
+}
+
+html body footer .social-links {
+    margin-top: 26px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 14px !important;
+}
+
+html body footer .social-links a,
+html body footer .social-icon,
+html body.light-mode footer .social-links a,
+html body.theme-light footer .social-links a {
+    width: 42px !important;
+    height: 42px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 50% !important;
+    border: 1px solid rgba(139, 92, 246, 0.2) !important;
+    background: #ffffff !important;
+    color: #7c3aed !important;
+    -webkit-text-fill-color: #7c3aed !important;
+    box-shadow: 0 14px 30px rgba(139, 92, 246, 0.08) !important;
+    font-size: 17px !important;
+    text-decoration: none !important;
+}
+
+html body footer .footer-column ul {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    display: grid !important;
+    gap: 14px !important;
+}
+
+html body footer .footer-column ul li,
+html body.light-mode footer .footer-column ul li,
+html body.theme-light footer .footer-column ul li {
+    margin: 0 !important;
+}
+
+html body footer .footer-column ul li a,
+html body.light-mode footer .footer-column ul li a,
+html body.theme-light footer .footer-column ul li a {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+    text-decoration: none !important;
+    transform: none !important;
+    text-shadow: none !important;
+}
+
+html body footer .footer-column ul li a:hover,
+html body.light-mode footer .footer-column ul li a:hover,
+html body.theme-light footer .footer-column ul li a:hover {
+    color: #7c3aed !important;
+    -webkit-text-fill-color: #7c3aed !important;
+    transform: translateX(4px) !important;
+}
+
+html body footer .footer-contact i,
+html body.light-mode footer .footer-contact i,
+html body.theme-light footer .footer-contact i {
+    width: 16px !important;
+    min-width: 16px !important;
+    color: #7c3aed !important;
+    -webkit-text-fill-color: #7c3aed !important;
+    font-size: 15px !important;
+    text-align: center !important;
+}
+
+html body footer .footer-bottom,
+html body.light-mode footer .footer-bottom,
+html body.theme-light footer .footer-bottom {
+    width: min(100%, 1148px) !important;
+    max-width: 1148px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    border: 0 !important;
+    text-align: center !important;
+}
+
+html body footer .footer-bottom p,
+html body.light-mode footer .footer-bottom p,
+html body.theme-light footer .footer-bottom p {
+    margin: 0 !important;
+    max-width: none !important;
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+}
+
+@media (max-width: 900px) {
+    html body footer .footer-content {
+        grid-template-columns: 1fr !important;
+        gap: 34px !important;
+    }
+}
+
+/* Final mobile/tablet nav lock: the menu panel opens only after the hamburger toggles .menu-open. */
+@media (max-width: 1024px) {
+    html body .header .nav-toggle {
+        display: inline-flex !important;
+    }
+
+    html body .header:not(.menu-open) .nav {
+        display: none !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+    }
+
+    html body .header.menu-open .nav {
+        display: flex !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+    }
+
+    html body .header.menu-open .nav {
+        width: 100% !important;
+        gap: 8px !important;
+        padding: 14px !important;
+        border: 1px solid rgba(139, 92, 246, 0.45) !important;
+        border-radius: 18px !important;
+        background: rgba(6, 6, 8, 0.98) !important;
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.42) !important;
+        backdrop-filter: blur(14px) !important;
+        -webkit-backdrop-filter: blur(14px) !important;
+    }
+
+    html body .header.menu-open .nav > a,
+    html body .header.menu-open .nav-item > a {
+        width: 100% !important;
+        min-height: 46px !important;
+        padding: 0 14px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        border: 1px solid rgba(255, 255, 255, 0.05) !important;
+        border-radius: 12px !important;
+        background: rgba(255, 255, 255, 0.06) !important;
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        font-size: 12px !important;
+        font-weight: 800 !important;
+        line-height: 1 !important;
+        letter-spacing: 0 !important;
+        text-shadow: none !important;
+    }
+
+    html body .header.menu-open .nav > a.active,
+    html body .header.menu-open .nav-item > a.active,
+    html body .header.menu-open .nav > a:hover,
+    html body .header.menu-open .nav-item > a:hover,
+    html body .header.menu-open .nav-item.open > a {
+        border-color: rgba(139, 92, 246, 0.48) !important;
+        background: rgba(139, 92, 246, 0.1) !important;
+        color: #a855f7 !important;
+        -webkit-text-fill-color: #a855f7 !important;
+        box-shadow: inset 0 -2px 0 #8b5cf6 !important;
+    }
+
+    html body .header.menu-open .dropdown {
+        width: 100% !important;
+        min-width: 100% !important;
+        margin-top: 8px !important;
+        padding: 8px !important;
+        border-radius: 12px !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        border: 1px solid rgba(139, 92, 246, 0.22) !important;
+        box-shadow: none !important;
+    }
+
+    html body .header.menu-open .dropdown a {
+        min-height: 38px !important;
+        padding: 0 12px !important;
+        display: flex !important;
+        align-items: center !important;
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+        opacity: 1 !important;
+        font-size: 11px !important;
+        font-weight: 700 !important;
+    }
+
+    html body .header.menu-open .nav-mobile-actions {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+        margin-top: 8px !important;
+        padding-top: 10px !important;
+        border-top: 1px solid rgba(139, 92, 246, 0.28) !important;
+    }
+}
+
+/* iPad Pro portrait/tablet alignment pass. */
+@media (min-width: 769px) and (max-width: 1024px) {
+    html body .header,
+    html body .header.scrolled,
+    html body .header.menu-open,
+    html body.light-mode .header,
+    html body.theme-light .header {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 1000 !important;
+        min-height: 82px !important;
+        height: 82px !important;
+        padding: 12px clamp(28px, 5vw, 54px) !important;
+        display: grid !important;
+        grid-template-columns: minmax(180px, 240px) 1fr auto !important;
+        align-items: center !important;
+        gap: 18px !important;
+    }
+
+    html body .header > .logo,
+    html body .header .logo,
+    html body .header .logo-link {
+        width: 190px !important;
+        max-width: 190px !important;
+        height: 54px !important;
+        min-height: 54px !important;
+        flex: 0 0 190px !important;
+    }
+
+    html body .header .logo img {
+        width: 190px !important;
+        max-width: 190px !important;
+        max-height: 54px !important;
+        object-fit: contain !important;
+    }
+
+    html body .header .nav-toggle {
+        grid-column: 3 !important;
+        justify-self: end !important;
+        margin: 0 !important;
+        width: 42px !important;
+        height: 42px !important;
+        min-width: 42px !important;
+        min-height: 42px !important;
+        border-radius: 12px !important;
+    }
+
+    html body .header .right-section {
+        display: none !important;
+    }
+
+    html body .header.menu-open .nav {
+        position: absolute !important;
+        top: calc(100% + 8px) !important;
+        left: clamp(28px, 5vw, 54px) !important;
+        right: clamp(28px, 5vw, 54px) !important;
+        width: auto !important;
+        max-width: 760px !important;
+        margin: 0 auto !important;
+        max-height: calc(100vh - 112px) !important;
+        overflow-y: auto !important;
+    }
+
+    html body :is(
+        .hero,
+        .hero-dark,
+        .about-hero,
+        .story-hero,
+        .faq-hero,
+        .testimonial-hero,
+        .pricing-hero,
+        .rooms-hero,
+        .room-hero,
+        .contact-hero,
+        .offer-hero,
+        .group-hero,
+        .member-hero,
+        .news-hero,
+        .editorial-hero.blog-hero,
+        .booking-page-hero
+    ) {
+        min-height: 620px !important;
+        padding: 132px clamp(34px, 6vw, 72px) 72px !important;
+        margin-top: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+
+    html body :is(.editorial-hero.blog-hero .editorial-hero-shell, .offer-hero-shell) {
+        width: min(100%, 880px) !important;
+        grid-template-columns: 1fr !important;
+        justify-items: center !important;
+        align-items: center !important;
+        gap: 28px !important;
+        margin: 0 auto !important;
+    }
+
+    html body :is(.hero-text, .hero-content, .rooms-hero-copy, .editorial-hero-copy, .offer-hero .hero-text, .booking-page-hero-copy) {
+        width: min(100%, 780px) !important;
+        max-width: 780px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+
+    html body :is(.hero-text, .hero-content, .rooms-hero-copy, .editorial-hero-copy, .offer-hero .hero-text, .booking-page-hero-copy) :is(h1, h2, p, .eyebrow) {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    html body :is(.editorial-hero-actions, .offer-hero-actions, .rooms-hero-actions, .hero-btns, .site-cta-actions) {
+        justify-content: center !important;
+    }
+
+    html body :is(
+        .blog-hub,
+        .blog-featured-story,
+        .rooms-overview-grid,
+        .rooms-editorial-shell,
+        .rooms-pro-grid,
+        .offer-story-shell,
+        .offer-preview-panel,
+        .contact-shell,
+        .booking-shell,
+        .footer-content
+    ) {
+        width: min(100%, 900px) !important;
+        max-width: 900px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        grid-template-columns: 1fr !important;
+    }
+
+    html body.offers-page .benefit-grid-rich {
+        width: min(100%, 900px) !important;
+        max-width: 900px !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 24px !important;
+        justify-content: center !important;
+        justify-items: stretch !important;
+    }
+
+    html body.offers-page .benefit-grid-rich > .benefit-feature {
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        height: 100% !important;
+        grid-template-rows: 200px 1fr !important;
+        justify-self: stretch !important;
+    }
+
+    html body.offers-page .benefit-grid-rich > .benefit-feature:last-child:nth-child(odd) {
+        grid-column: auto !important;
+        width: 100% !important;
+        max-width: none !important;
+        justify-self: stretch !important;
+    }
+
+    html body.offers-page .benefit-grid-rich > .benefit-feature img {
+        width: 100% !important;
+        height: 200px !important;
+        aspect-ratio: auto !important;
+        object-fit: cover !important;
+    }
+
+    html body.rooms-page .rooms-pro-grid > .rooms-pro-card:last-child:nth-child(odd),
+    html body.rooms-page .rooms-overview-grid > article:last-child:nth-child(odd) {
+        grid-column: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        justify-self: stretch !important;
+    }
+}
+
+/* Equal orphan cards on tablet: no special last-card sizing. */
+@media (min-width: 721px) and (max-width: 1024px) {
+    html body.home-demo2 :is(
+        .home2-evidence-grid,
+        .home2-role-list,
+        .home2-testimonial-grid,
+        .room-grid
+    ) {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 24px !important;
+        justify-items: stretch !important;
+    }
+
+    html body.home-demo2 :is(
+        .home2-evidence-grid > *,
+        .home2-role-list > *,
+        .home2-testimonial-grid > *,
+        .room-grid > *
+    ) {
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        justify-self: stretch !important;
+    }
+
+    html body.home-demo2 :is(
+        .home2-evidence-grid > *,
+        .home2-role-list > *,
+        .home2-testimonial-grid > *,
+        .room-grid > *
+    ):last-child:nth-child(odd) {
+        grid-column: auto !important;
+        width: 100% !important;
+        max-width: none !important;
+        justify-self: stretch !important;
+    }
+}
+
+@media (max-width: 720px) {
+    html body :is(
+        .rooms-pro-grid > *,
+        .rooms-overview-grid > *,
+        .home2-evidence-grid > *,
+        .home2-role-list > *,
+        .home2-testimonial-grid > *,
+        .room-grid > *,
+        .benefit-grid-rich > *
+    ):last-child:nth-child(odd) {
+        grid-column: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        justify-self: stretch !important;
+    }
+}
+
+/* iPad mini/tablet footer: prevent the contact column from clipping off-screen. */
+@media (min-width: 721px) and (max-width: 1024px) {
+    html body footer,
+    html body.light-mode footer,
+    html body.theme-light footer,
+    html body:not(.light-mode) footer {
+        padding: 44px clamp(28px, 6vw, 56px) 18px !important;
+        overflow-x: hidden !important;
+    }
+
+    html body footer .footer-content,
+    html body.light-mode footer .footer-content,
+    html body.theme-light footer .footer-content,
+    html body:not(.light-mode) footer .footer-content {
+        width: 100% !important;
+        max-width: 820px !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 34px 44px !important;
+        align-items: start !important;
+        margin: 0 auto 22px !important;
+        padding: 0 0 34px !important;
+        box-sizing: border-box !important;
+    }
+
+    html body footer .footer-left {
+        grid-column: 1 / -1 !important;
+        max-width: 560px !important;
+    }
+
+    html body footer .footer-column,
+    html body footer .footer-left,
+    html body footer .footer-bottom {
+        min-width: 0 !important;
+    }
+
+    html body footer .footer-column ul li a {
+        width: 100% !important;
+        min-width: 0 !important;
+        align-items: flex-start !important;
+        white-space: normal !important;
+        overflow-wrap: anywhere !important;
+        word-break: normal !important;
+    }
+
+    html body footer .footer-contact span {
+        min-width: 0 !important;
+        overflow-wrap: anywhere !important;
+    }
+}
+
+@media (max-width: 720px) {
+    html body footer .footer-content,
+    html body.light-mode footer .footer-content,
+    html body.theme-light footer .footer-content,
+    html body:not(.light-mode) footer .footer-content {
+        grid-template-columns: 1fr !important;
+        max-width: 100% !important;
+        gap: 30px !important;
+    }
+
+    html body footer .footer-left {
+        grid-column: auto !important;
+    }
+}
+
+/* iPad Pro final pass for Home 2 and shared home sections. */
+@media (min-width: 769px) and (max-width: 1366px) {
+    html body.home-demo2 {
+        overflow-x: hidden !important;
+    }
+
+    html body.home-demo2 .header {
+        height: 82px !important;
+        min-height: 82px !important;
+        padding: 12px clamp(28px, 4.4vw, 52px) !important;
+        gap: clamp(12px, 1.8vw, 22px) !important;
+    }
+
+    html body.home-demo2 .header .logo,
+    html body.home-demo2 .header .logo-link,
+    html body.home-demo2 .header .logo img {
+        width: clamp(172px, 17vw, 210px) !important;
+        max-width: clamp(172px, 17vw, 210px) !important;
+    }
+
+    html body.home-demo2 .header .nav {
+        gap: clamp(14px, 1.55vw, 24px) !important;
+        min-width: 0 !important;
+    }
+
+    html body.home-demo2 .header .nav a,
+    html body.home-demo2 .header .nav-item > a {
+        font-size: clamp(11px, 1vw, 13px) !important;
+        white-space: nowrap !important;
+    }
+
+    html body.home-demo2 .hero-dark {
+        min-height: clamp(680px, 70vh, 820px) !important;
+        padding: 132px clamp(38px, 6vw, 82px) 74px !important;
+    }
+
+    html body.home-demo2 .hero-dark .hero-content {
+        width: min(100%, 820px) !important;
+        max-width: 820px !important;
+        margin: 0 auto !important;
+        text-align: center !important;
+    }
+
+    html body.home-demo2 .hero-dark .hero-content h1 {
+        font-size: clamp(3.2rem, 7vw, 5.8rem) !important;
+        line-height: 0.98 !important;
+    }
+
+    html body.home-demo2 :is(
+        .page-gallery,
+        .home2-briefing,
+        .experience,
+        .home2-evidence,
+        .story,
+        .home2-team,
+        .home2-pressure,
+        .home2-night-rules,
+        .rooms-preview,
+        .fear-level,
+        .live-actors,
+        .demo2-countdown,
+        .home2-testimonials,
+        .cta
+    ) {
+        padding-left: clamp(34px, 5.6vw, 76px) !important;
+        padding-right: clamp(34px, 5.6vw, 76px) !important;
+    }
+
+    html body.home-demo2 :is(
+        .page-gallery-grid,
+        .home2-briefing,
+        .exp-grid,
+        .home2-evidence-grid,
+        .story-text,
+        .home2-team-shell,
+        .home2-pressure-shell,
+        .home2-night-grid,
+        .room-grid,
+        .fear-grid,
+        .actors-content,
+        .demo2-countdown,
+        .home2-testimonial-grid
+    ) {
+        width: min(100%, 1040px) !important;
+        max-width: 1040px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    html body.home-demo2 :is(
+        .home2-briefing-panel,
+        .exp-grid,
+        .home2-evidence-grid,
+        .home2-role-list,
+        .home2-night-grid,
+        .room-grid,
+        .fear-grid,
+        .home2-testimonial-grid
+    ) {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 24px !important;
+        justify-items: stretch !important;
+    }
+
+    html body.home-demo2 :is(
+        .home2-briefing-panel > *,
+        .exp-grid > *,
+        .home2-evidence-grid > *,
+        .home2-role-list > *,
+        .home2-night-grid > *,
+        .room-grid > *,
+        .fear-grid > *,
+        .home2-testimonial-grid > *
+    ) {
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        justify-self: stretch !important;
+    }
+
+    html body.home-demo2 :is(
+        .home2-briefing-panel > *,
+        .exp-grid > *,
+        .home2-evidence-grid > *,
+        .home2-role-list > *,
+        .home2-night-grid > *,
+        .room-grid > *,
+        .fear-grid > *,
+        .home2-testimonial-grid > *
+    ):last-child:nth-child(odd) {
+        grid-column: auto !important;
+        width: 100% !important;
+        max-width: none !important;
+        justify-self: stretch !important;
+    }
+
+    html body.home-demo2 .home2-briefing {
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr) !important;
+        gap: clamp(30px, 4vw, 46px) !important;
+        align-items: start !important;
+    }
+
+    html body.home-demo2 .home2-briefing-panel article {
+        min-width: 0 !important;
+    }
+
+    html body.home-demo2 .home2-briefing-panel {
+        grid-template-columns: 1fr !important;
+    }
+
+    html body.home-demo2 .page-gallery-grid {
+        grid-template-columns: 1.2fr 0.8fr !important;
+        gap: 22px !important;
+    }
+
+    html body.home-demo2 .page-gallery-grid .gallery-tile-main {
+        grid-row: span 2 !important;
+    }
+
+    html body.home-demo2 .home2-team-shell,
+    html body.home-demo2 .home2-pressure-shell,
+    html body.home-demo2 .actors-content,
+    html body.home-demo2 .demo2-countdown {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+        gap: clamp(30px, 4vw, 46px) !important;
+        align-items: center !important;
+    }
+
+    html body.home-demo2 .home2-pressure-stats {
+        grid-template-columns: 1fr !important;
+    }
+
+    html body.home-demo2 .room-card img {
+        height: 220px !important;
+        object-fit: cover !important;
+    }
+
+    html body.home-demo2 footer .footer-content {
+        width: min(100%, 1040px) !important;
+        max-width: 1040px !important;
+        gap: clamp(34px, 5vw, 64px) !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    html body.home-demo2 .header .right-section {
+        display: none !important;
+    }
+
+    html body.home-demo2 .home2-briefing,
+    html body.home-demo2 .home2-team-shell,
+    html body.home-demo2 .home2-pressure-shell,
+    html body.home-demo2 .actors-content,
+    html body.home-demo2 .demo2-countdown {
+        grid-template-columns: 1fr !important;
+    }
+
+    html body.home-demo2 .home2-briefing-panel {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    html body.home-demo2 .page-gallery-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+}
+
+/* iPad mini portrait: repeated cards should stay equal full-width, not centered half-width. */
+@media (min-width: 721px) and (max-width: 820px) {
+    html body :is(
+        .steps,
+        .rooms-overview-grid,
+        .rooms-pro-grid,
+        .benefit-grid-rich,
+        .news-digest-grid,
+        .news-insider-grid,
+        .news-trending-pulse,
+        .news-trending-list,
+        .blog-list,
+        .room-grid,
+        .fear-grid,
+        .exp-grid,
+        .home2-briefing-panel,
+        .home2-evidence-grid,
+        .home2-role-list,
+        .home2-night-grid,
+        .home2-testimonial-grid
+    ) {
+        width: min(100%, 640px) !important;
+        max-width: 640px !important;
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 22px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        justify-items: stretch !important;
+    }
+
+    html body :is(
+        .steps > *,
+        .rooms-overview-grid > *,
+        .rooms-pro-grid > *,
+        .benefit-grid-rich > *,
+        .news-digest-grid > *,
+        .news-insider-grid > *,
+        .news-trending-pulse > *,
+        .news-trending-list > *,
+        .blog-list > *,
+        .room-grid > *,
+        .fear-grid > *,
+        .exp-grid > *,
+        .home2-briefing-panel > *,
+        .home2-evidence-grid > *,
+        .home2-role-list > *,
+        .home2-night-grid > *,
+        .home2-testimonial-grid > *
+    ),
+    html body :is(
+        .steps > *,
+        .rooms-overview-grid > *,
+        .rooms-pro-grid > *,
+        .benefit-grid-rich > *,
+        .news-digest-grid > *,
+        .news-insider-grid > *,
+        .news-trending-pulse > *,
+        .news-trending-list > *,
+        .blog-list > *,
+        .room-grid > *,
+        .fear-grid > *,
+        .exp-grid > *,
+        .home2-briefing-panel > *,
+        .home2-evidence-grid > *,
+        .home2-role-list > *,
+        .home2-night-grid > *,
+        .home2-testimonial-grid > *
+    ):last-child:nth-child(odd) {
+        grid-column: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        justify-self: stretch !important;
+    }
+
+    html body.offers-page .benefit-grid-rich > .benefit-feature:last-child:nth-child(odd) {
+        grid-column: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        justify-self: stretch !important;
+    }
+
+    html body :is(.room-card img, .rooms-pro-card img, .news-digest-grid img, .benefit-grid-rich img) {
+        width: 100% !important;
+        max-width: 100% !important;
+        object-fit: cover !important;
+    }
+}
+
+/* iPad Pro navigation: use hamburger across all pages up to iPad Pro landscape width. */
+@media (min-width: 769px) and (max-width: 1366px) {
+    html body .header,
+    html body .header.scrolled,
+    html body .header.menu-open,
+    html body.light-mode .header,
+    html body.theme-light .header {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 1000 !important;
+        height: 82px !important;
+        min-height: 82px !important;
+        padding: 12px clamp(28px, 4.4vw, 56px) !important;
+        display: grid !important;
+        grid-template-columns: minmax(170px, 230px) 1fr auto !important;
+        align-items: center !important;
+        gap: 18px !important;
+    }
+
+    html body .header .logo,
+    html body .header .logo-link,
+    html body .header .logo img {
+        width: clamp(172px, 17vw, 220px) !important;
+        max-width: clamp(172px, 17vw, 220px) !important;
+        height: auto !important;
+        transform: none !important;
+    }
+
+    html body .header .nav-toggle {
+        grid-column: 3 !important;
+        justify-self: end !important;
+        margin: 0 !important;
+        width: 44px !important;
+        height: 44px !important;
+        min-width: 44px !important;
+        min-height: 44px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 12px !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+    }
+
+    html body .header .right-section {
+        display: none !important;
+    }
+
+    html body .header:not(.menu-open) .nav {
+        display: none !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+    }
+
+    html body .header.menu-open .nav {
+        position: absolute !important;
+        top: calc(100% + 10px) !important;
+        left: clamp(28px, 4.4vw, 56px) !important;
+        right: clamp(28px, 4.4vw, 56px) !important;
+        width: auto !important;
+        max-width: min(760px, calc(100vw - 56px)) !important;
+        max-height: calc(100vh - 112px) !important;
+        margin: 0 auto !important;
+        padding: 14px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+        overflow-y: auto !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        border: 1px solid rgba(139, 92, 246, 0.45) !important;
+        border-radius: 18px !important;
+        background: rgba(6, 6, 8, 0.98) !important;
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.42) !important;
+        backdrop-filter: blur(14px) !important;
+        -webkit-backdrop-filter: blur(14px) !important;
+    }
+
+    html body .header.menu-open .nav > a,
+    html body .header.menu-open .nav-item > a {
+        width: 100% !important;
+        min-height: 46px !important;
+        padding: 0 14px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        border: 1px solid rgba(255, 255, 255, 0.05) !important;
+        border-radius: 12px !important;
+        background: rgba(255, 255, 255, 0.06) !important;
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        font-size: 12px !important;
+        font-weight: 800 !important;
+        line-height: 1 !important;
+        text-shadow: none !important;
+    }
+
+    html body .header.menu-open .nav > a::after,
+    html body .header.menu-open .nav-item > a::after {
+        display: none !important;
+    }
+
+    html body .header.menu-open .dropdown {
+        position: static !important;
+        width: 100% !important;
+        min-width: 100% !important;
+        margin-top: 8px !important;
+        padding: 8px !important;
+        border-radius: 12px !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        border: 1px solid rgba(139, 92, 246, 0.22) !important;
+        box-shadow: none !important;
+    }
+
+    html body .header.menu-open .dropdown a {
+        min-height: 38px !important;
+        padding: 0 12px !important;
+        display: flex !important;
+        align-items: center !important;
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+        opacity: 1 !important;
+        font-size: 11px !important;
+        font-weight: 700 !important;
+    }
+
+    html body .header.menu-open .nav-mobile-actions {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+        margin-top: 8px !important;
+        padding-top: 10px !important;
+        border-top: 1px solid rgba(139, 92, 246, 0.28) !important;
+    }
+}
+
+/* Final dark-mode header contrast: keep the tablet hamburger bar visible. */
+html body:not(.light-mode):not(.theme-light) .header,
+html body:not(.light-mode):not(.theme-light) .header.scrolled,
+html body:not(.light-mode):not(.theme-light) .header.menu-open {
+    background: linear-gradient(180deg, rgba(8, 6, 14, 0.98), rgba(15, 9, 24, 0.96)) !important;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.55) !important;
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.48), 0 0 20px rgba(139, 92, 246, 0.18) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+}
+
+html body:not(.light-mode):not(.theme-light) .header .logo img {
+    filter: drop-shadow(0 0 14px rgba(139, 92, 246, 0.45)) brightness(1.08) !important;
+}
+
+html body:not(.light-mode):not(.theme-light) .header .nav-toggle,
+html body:not(.light-mode):not(.theme-light) .header .icon-btn {
+    border: 1px solid rgba(196, 181, 253, 0.58) !important;
+    background: rgba(139, 92, 246, 0.18) !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    box-shadow: 0 0 18px rgba(139, 92, 246, 0.28) !important;
+}
+
+html body:not(.light-mode):not(.theme-light) .header .nav-toggle i,
+html body:not(.light-mode):not(.theme-light) .header .icon-btn i {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+html body:not(.light-mode):not(.theme-light) .header.menu-open .nav {
+    background: linear-gradient(180deg, rgba(8, 6, 14, 0.99), rgba(16, 10, 26, 0.99)) !important;
+    border-color: rgba(196, 181, 253, 0.5) !important;
+    box-shadow: 0 26px 70px rgba(0, 0, 0, 0.58), 0 0 30px rgba(139, 92, 246, 0.2) !important;
+}
+
+/* Dark mode at page top: visible before the scroll class is added. */
+html body:not(.light-mode):not(.theme-light) .header:not(.scrolled):not(.menu-open) {
+    background: #0b0612 !important;
+    background-image: linear-gradient(180deg, #10091a, #08060d) !important;
+    border-bottom: 1px solid rgba(196, 181, 253, 0.62) !important;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5), 0 0 18px rgba(139, 92, 246, 0.22) !important;
+    opacity: 1 !important;
+}
+
+html body:not(.light-mode):not(.theme-light) .header:not(.scrolled):not(.menu-open) .nav-toggle {
+    background: #8b5cf6 !important;
+    border-color: rgba(255, 255, 255, 0.34) !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.45) !important;
+}
+
+html body:not(.light-mode):not(.theme-light) .header:not(.scrolled):not(.menu-open) .nav-toggle i,
+html body:not(.light-mode):not(.theme-light) .header:not(.scrolled):not(.menu-open) .nav-toggle .fa-bars {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+/* iPad/tablet: pin hamburger to viewport right so it never slides or clips. */
+@media (min-width: 721px) and (max-width: 1366px) {
+    html body .header,
+    html body .header.scrolled,
+    html body .header.menu-open {
+        padding-right: clamp(82px, 9vw, 112px) !important;
+    }
+
+    html body .header .nav-toggle {
+        position: fixed !important;
+        top: 19px !important;
+        right: max(18px, env(safe-area-inset-right)) !important;
+        z-index: 1400 !important;
+        margin: 0 !important;
+        transform: none !important;
+        flex: 0 0 auto !important;
+    }
+
+    html body .header.menu-open .nav {
+        right: clamp(18px, 4vw, 56px) !important;
+    }
+}
+
+/* Tablet card equality: never shrink the third/odd card. */
+@media (min-width: 721px) and (max-width: 1366px) {
+    html body :is(
+        .steps,
+        .room-grid,
+        .rooms-pro-grid,
+        .rooms-overview-grid,
+        .benefit-grid-rich,
+        .news-digest-grid,
+        .news-insider-grid,
+        .home2-briefing-panel,
+        .home2-evidence-grid,
+        .home2-role-list,
+        .home2-night-grid,
+        .home2-testimonial-grid,
+        .exp-grid,
+        .fear-grid,
+        .testimonial-container
+    ) > *:last-child:nth-child(odd),
+    html body.offers-page .benefit-grid-rich > .benefit-feature:last-child:nth-child(odd),
+    html body.rooms-page .rooms-pro-grid > .rooms-pro-card:last-child:nth-child(odd),
+    html body.rooms-page .rooms-overview-grid > article:last-child:nth-child(odd) {
+        grid-column: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        justify-self: stretch !important;
+    }
+
+    html body :is(
+        .steps,
+        .room-grid,
+        .rooms-pro-grid,
+        .rooms-overview-grid,
+        .benefit-grid-rich,
+        .news-digest-grid,
+        .news-insider-grid,
+        .home2-briefing-panel,
+        .home2-evidence-grid,
+        .home2-role-list,
+        .home2-night-grid,
+        .home2-testimonial-grid,
+        .exp-grid,
+        .fear-grid,
+        .testimonial-container
+    ) > * {
+        min-width: 0 !important;
+        justify-self: stretch !important;
+    }
+}
+
+/* Final footer theme: dark mode uses dark footer, light/theme-light keeps white footer. */
+html body:not(.theme-light):not(.light-mode) footer {
+    margin-top: 0 !important;
+    padding: 52px 8% 18px !important;
+    background: #0b0612 !important;
+    background-image:
+        radial-gradient(circle at 18% 0%, rgba(139, 92, 246, 0.18), transparent 34%),
+        linear-gradient(180deg, #0f0918 0%, #07060b 100%) !important;
+    color: #e5e7eb !important;
+    border-top: 1px solid rgba(139, 92, 246, 0.42) !important;
+    box-shadow: 0 -10px 34px rgba(0, 0, 0, 0.48), 0 0 24px rgba(139, 92, 246, 0.14) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+}
+
+html body:not(.theme-light):not(.light-mode) footer .footer-content {
+    width: min(100%, 1148px) !important;
+    max-width: 1148px !important;
+    margin: 0 auto 22px !important;
+    padding: 0 0 40px !important;
+    display: grid !important;
+    grid-template-columns: minmax(320px, 1.45fr) minmax(180px, 0.75fr) minmax(270px, 1fr) !important;
+    gap: clamp(48px, 8vw, 128px) !important;
+    align-items: start !important;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.28) !important;
+}
+
+html body:not(.theme-light):not(.light-mode) footer :is(.footer-left, .footer-column, .footer-bottom) {
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+html body:not(.theme-light):not(.light-mode) footer :is(.footer-left h2, .footer-column h3) {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+html body:not(.theme-light):not(.light-mode) footer :is(.footer-note, p, a, li, span) {
+    color: #d8d8e2 !important;
+    -webkit-text-fill-color: #d8d8e2 !important;
+    text-shadow: none !important;
+}
+
+html body:not(.theme-light):not(.light-mode) footer .footer-column ul li a {
+    color: #d8d8e2 !important;
+    -webkit-text-fill-color: #d8d8e2 !important;
+}
+
+html body:not(.theme-light):not(.light-mode) footer :is(a:hover, .footer-contact i, .social-links a:hover, .social-icon:hover) {
+    color: #c4b5fd !important;
+    -webkit-text-fill-color: #c4b5fd !important;
+}
+
+html body:not(.theme-light):not(.light-mode) footer :is(.social-links a, .social-icon) {
+    border-color: rgba(139, 92, 246, 0.4) !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+    color: #c4b5fd !important;
+    -webkit-text-fill-color: #c4b5fd !important;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.24) !important;
+}
+
+html body:not(.theme-light):not(.light-mode) footer .footer-bottom {
+    width: min(100%, 1148px) !important;
+    max-width: 1148px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    border: 0 !important;
+    text-align: center !important;
+}
+
+@media (min-width: 721px) and (max-width: 1024px) {
+    html body:not(.theme-light):not(.light-mode) footer {
+        padding: 44px clamp(28px, 6vw, 56px) 18px !important;
+        overflow-x: hidden !important;
+    }
+
+    html body:not(.theme-light):not(.light-mode) footer .footer-content {
+        width: 100% !important;
+        max-width: 820px !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 34px 44px !important;
+        padding-bottom: 34px !important;
+    }
+
+    html body:not(.theme-light):not(.light-mode) footer .footer-left {
+        grid-column: 1 / -1 !important;
+        max-width: 560px !important;
+    }
+}
+
+@media (max-width: 720px) {
+    html body:not(.theme-light):not(.light-mode) footer .footer-content {
+        grid-template-columns: 1fr !important;
+        max-width: 100% !important;
+        gap: 30px !important;
+    }
+}
+
+/* iPad mini final alignment: remove per-card max-width so all 3-card sections match. */
+@media (min-width: 721px) and (max-width: 820px) {
+    html body :is(
+        .steps,
+        .how-it-works .steps,
+        .home2-night-grid,
+        .fear-grid,
+        .exp-grid,
+        .room-grid,
+        .home2-evidence-grid,
+        .home2-role-list,
+        .home2-testimonial-grid,
+        .rooms-pro-grid,
+        .rooms-overview-grid,
+        .benefit-grid-rich,
+        .news-digest-grid,
+        .news-insider-grid
+    ) {
+        width: min(100%, 640px) !important;
+        max-width: 640px !important;
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        justify-items: stretch !important;
+        align-items: stretch !important;
+        gap: 22px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    html body :is(
+        .step,
+        .how-it-works .step,
+        .home2-night-grid article,
+        .fear-card,
+        .exp-card,
+        .room-card,
+        .home2-evidence-card,
+        .home2-role-list article,
+        .home2-testimonial-grid article,
+        .rooms-pro-card,
+        .rooms-overview-grid article,
+        .benefit,
+        .benefit-feature,
+        .news-digest-grid article,
+        .news-insider-grid article
+    ) {
+        grid-column: auto !important;
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        justify-self: stretch !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    html body :is(
+        .step,
+        .how-it-works .step,
+        .home2-night-grid article,
+        .fear-card,
+        .exp-card,
+        .room-card,
+        .home2-evidence-card,
+        .home2-role-list article,
+        .home2-testimonial-grid article,
+        .rooms-pro-card,
+        .rooms-overview-grid article,
+        .benefit,
+        .benefit-feature,
+        .news-digest-grid article,
+        .news-insider-grid article
+    ):last-child:nth-child(odd) {
+        grid-column: auto !important;
+        width: 100% !important;
+        max-width: none !important;
+        justify-self: stretch !important;
+    }
+}
+
+/* Final card equality pass: every repeated mobile/tablet card uses the same width. */
+@media (max-width: 1024px) {
+    html body :is(
+        .steps,
+        .how-it-works .steps,
+        .feature-icon-grid,
+        .mode-grid,
+        .choose-grid,
+        .rooms-flow-grid,
+        .rooms-overview-grid,
+        .rooms-pro-grid,
+        .rooms-compare-grid,
+        .blog-grid,
+        .blog-list,
+        .blog-editorial-stats,
+        .offer-campaign-grid,
+        .achievement-grid,
+        .benefit-grid-rich,
+        .discount-grid,
+        .member-grid,
+        .offer-preview-points,
+        .offer-story-stats,
+        .news-digest-grid,
+        .news-insider-grid,
+        .news-trending-pulse,
+        .news-trending-list,
+        .room-grid,
+        .fear-grid,
+        .exp-grid,
+        .home2-briefing-panel,
+        .home2-evidence-grid,
+        .home2-role-list,
+        .home2-night-grid,
+        .home2-testimonial-grid,
+        .testimonial-container
+    ) {
+        width: min(100%, 640px) !important;
+        max-width: 640px !important;
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        justify-items: stretch !important;
+        align-items: stretch !important;
+        gap: 22px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    html body :is(
+        .steps > *,
+        .how-it-works .steps > *,
+        .feature-icon-grid > *,
+        .mode-grid > *,
+        .choose-grid > *,
+        .rooms-flow-grid > *,
+        .rooms-overview-grid > *,
+        .rooms-pro-grid > *,
+        .rooms-compare-grid > *,
+        .blog-grid > *,
+        .blog-list > *,
+        .blog-editorial-stats > *,
+        .offer-campaign-grid > *,
+        .achievement-grid > *,
+        .benefit-grid-rich > *,
+        .discount-grid > *,
+        .member-grid > *,
+        .offer-preview-points > *,
+        .offer-story-stats > *,
+        .news-digest-grid > *,
+        .news-insider-grid > *,
+        .news-trending-pulse > *,
+        .news-trending-list > *,
+        .room-grid > *,
+        .fear-grid > *,
+        .exp-grid > *,
+        .home2-briefing-panel > *,
+        .home2-evidence-grid > *,
+        .home2-role-list > *,
+        .home2-night-grid > *,
+        .home2-testimonial-grid > *,
+        .testimonial-container > *
+    ) {
+        grid-column: auto !important;
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        justify-self: stretch !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    html body :is(
+        .rooms-pro-card img,
+        .blog-card img,
+        .offer-campaign-card img,
+        .achievement img,
+        .benefit-grid-rich img,
+        .room-card img,
+        .news-digest-grid img,
+        .news-insider-grid img
+    ) {
+        width: 100% !important;
+        max-width: 100% !important;
+        object-fit: cover !important;
+    }
+}
+
+/* About page team section: center only the final team card in a two-column row. */
+@media (min-width: 721px) and (max-width: 1024px) {
+    html body.about-page .team-grid > .team-card:last-child:nth-child(odd) {
+        grid-column: 1 / -1 !important;
+        width: calc((100% - 24px) / 2) !important;
+        max-width: calc((100% - 24px) / 2) !important;
+        justify-self: center !important;
+    }
+}
+
+/* Desktop header: show normal menu links; keep hamburger only for responsive nav. */
+@media (min-width: 1025px) {
+    html body .header,
+    html body .header.scrolled,
+    html body .header.menu-open {
+        height: 82px !important;
+        min-height: 82px !important;
+        padding: 12px clamp(28px, 4.4vw, 52px) !important;
+        display: grid !important;
+        grid-template-columns: minmax(172px, 210px) minmax(0, 1fr) auto !important;
+        align-items: center !important;
+        gap: clamp(12px, 1.8vw, 22px) !important;
+        background: linear-gradient(180deg, rgba(8, 6, 14, 0.98), rgba(15, 9, 24, 0.96)) !important;
+        border-bottom: 1px solid rgba(139, 92, 246, 0.55) !important;
+        box-shadow: 0 12px 34px rgba(0, 0, 0, 0.48), 0 0 20px rgba(139, 92, 246, 0.18) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+    }
+
+    html body .header .nav-toggle {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+
+    html body .header .logo,
+    html body .header .logo-link,
+    html body .header .logo img {
+        width: clamp(172px, 17vw, 210px) !important;
+        max-width: clamp(172px, 17vw, 210px) !important;
+        height: auto !important;
+        transform: none !important;
+    }
+
+    html body .header .nav,
+    html body .header:not(.menu-open) .nav,
+    html body .header.menu-open .nav {
+        position: static !important;
+        grid-column: 2 !important;
+        justify-self: center !important;
+        width: auto !important;
+        max-width: none !important;
+        max-height: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: clamp(14px, 1.55vw, 24px) !important;
+        overflow: visible !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+
+    html body .header .nav > a,
+    html body .header .nav-item > a,
+    html body .header.menu-open .nav > a,
+    html body .header.menu-open .nav-item > a {
+        width: auto !important;
+        min-height: 0 !important;
+        padding: 0 !important;
+        display: inline-flex !important;
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        font-size: clamp(11px, 1vw, 13px) !important;
+        font-weight: 700 !important;
+        line-height: 1 !important;
+        text-transform: uppercase !important;
+        white-space: nowrap !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        text-shadow: none !important;
+    }
+
+    html body .header .nav > a:hover,
+    html body .header .nav > a.active,
+    html body .header .nav-item:hover > a,
+    html body .header .nav-item > a.active {
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+        text-shadow: 0 0 14px rgba(139, 92, 246, 0.75) !important;
+    }
+
+    html body .header .right-section {
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    html body .header .nav-mobile-actions {
+        display: none !important;
+    }
+}
+
+/* Final light-mode header contrast: keep navbar text/buttons readable after every header lock. */
+html body:is(.light-mode, .theme-light) .header,
+html body:is(.light-mode, .theme-light) .header.scrolled,
+html body:is(.light-mode, .theme-light) .header.menu-open {
+    background: rgba(255, 255, 255, 0.96) !important;
+    border-bottom: 1px solid rgba(109, 40, 217, 0.18) !important;
+    box-shadow: 0 12px 34px rgba(15, 23, 42, 0.1) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+}
+
+html body:is(.light-mode, .theme-light) .header .nav,
+html body:is(.light-mode, .theme-light) .header.menu-open .nav,
+html body:is(.light-mode, .theme-light) .header .dropdown,
+html body:is(.light-mode, .theme-light) .header .nav-mobile-actions {
+    background: rgba(255, 255, 255, 0.98) !important;
+    border-color: rgba(109, 40, 217, 0.16) !important;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.1) !important;
+}
+
+html body:is(.light-mode, .theme-light) .header .nav > a,
+html body:is(.light-mode, .theme-light) .header .nav-item > a,
+html body:is(.light-mode, .theme-light) .header.menu-open .nav > a,
+html body:is(.light-mode, .theme-light) .header.menu-open .nav-item > a,
+html body:is(.light-mode, .theme-light) .header .dropdown a {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body:is(.light-mode, .theme-light) .header .nav > a:hover,
+html body:is(.light-mode, .theme-light) .header .nav > a.active,
+html body:is(.light-mode, .theme-light) .header .nav-item:hover > a,
+html body:is(.light-mode, .theme-light) .header .nav-item > a.active,
+html body:is(.light-mode, .theme-light) .header .dropdown a:hover,
+html body:is(.light-mode, .theme-light) .header .dropdown a.is-current-page {
+    color: #6d28d9 !important;
+    -webkit-text-fill-color: #6d28d9 !important;
+    text-shadow: none !important;
+}
+
+html body:is(.light-mode, .theme-light) .header .icon-btn,
+html body:is(.light-mode, .theme-light) .header .direction-toggle,
+html body:is(.light-mode, .theme-light) .header .nav-toggle {
+    background: #ffffff !important;
+    border: 1px solid rgba(15, 23, 42, 0.18) !important;
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    box-shadow: 0 10px 22px rgba(15, 23, 42, 0.1) !important;
+}
+
+html body:is(.light-mode, .theme-light) .header :is(.icon-btn, .direction-toggle, .nav-toggle):hover {
+    border-color: rgba(109, 40, 217, 0.42) !important;
+    color: #6d28d9 !important;
+    -webkit-text-fill-color: #6d28d9 !important;
+}
+
+/* Last cascade pass: desktop card groups stay in one horizontal row. */
+@media (min-width: 1025px) {
+    html body :is(
+        .steps,
+        .how-it-works .steps,
+        .testimonial-container,
+        .home2-night-grid,
+        .home2-testimonial-grid,
+        .rooms-flow-grid,
+        .news-digest-grid,
+        .benefit-grid-rich,
+        .blog-list
+    ) {
+        width: min(100%, 1180px) !important;
+        max-width: 1180px !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 24px !important;
+        align-items: stretch !important;
+        justify-items: stretch !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    html body :is(
+        .steps,
+        .how-it-works .steps,
+        .testimonial-container,
+        .home2-night-grid,
+        .home2-testimonial-grid,
+        .rooms-flow-grid,
+        .news-digest-grid,
+        .benefit-grid-rich,
+        .blog-list
+    ) > * {
+        grid-column: auto !important;
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        justify-self: stretch !important;
+    }
+
+    html body.offers-page .benefit-grid-rich {
+        max-width: 1240px !important;
+    }
+
+    html body .blog-list article {
+        grid-template-columns: auto minmax(0, 1fr) !important;
+    }
+}
+/* True final CTA lock: compact purple pill buttons everywhere. */
+html body :is(.btn, .login-btn, .contact-btn, .booking-confirm, .search-submit, .mode-select-btn, .quick-booking-form button, button[type="submit"], .room-link, .hero-secondary):not(.icon-btn):not(.nav-toggle):not(.direction-toggle) {
+    min-height: 44px !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    padding: 0 30px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: 0 !important;
+    border-radius: 999px !important;
+    background: #8b5cf6 !important;
+    background-image: none !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    font: 800 13px/1 'Poppins', sans-serif !important;
+    letter-spacing: 0 !important;
+    text-transform: uppercase !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+html body :is(.btn, .login-btn, .contact-btn, .booking-confirm, .search-submit, .mode-select-btn, .quick-booking-form button, button[type="submit"], .room-link, .hero-secondary):not(.icon-btn):not(.nav-toggle):not(.direction-toggle):is(:hover, :focus-visible) {
+    transform: translateY(-1px) !important;
+    background: #7c3aed !important;
+    background-image: none !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    box-shadow: 0 8px 18px rgba(139, 92, 246, 0.22) !important;
 }
