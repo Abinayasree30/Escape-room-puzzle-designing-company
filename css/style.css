@@ -460,7 +460,8 @@ body.light-mode.home-demo2 .exp-card p {
 /* Final homepage priority layer: keep the cyberpunk redesign above legacy homepage patches. */
 body.home-demo1 { background: #0f0f0f !important; color: #ffffff !important; }
 body.home-demo1 .header { background: rgba(15,15,15,.28) !important; border-bottom: 1px solid rgba(139,92,246,.12) !important; backdrop-filter: blur(0) !important; }
-body.home-demo1 .header.scrolled { background: rgba(15,15,15,.84) !important; backdrop-filter: blur(10px) !important; border-bottom-color: #8b5cf6 !important; box-shadow: 0 0 22px rgba(139,92,246,.22) !important; }
+body.home-demo1 .header.scrolled,
+body.home-demo1 .header.menu-open { background: rgba(15,15,15,.84) !important; backdrop-filter: blur(10px) !important; border-bottom-color: #8b5cf6 !important; box-shadow: 0 0 22px rgba(139,92,246,.22) !important; }
 body.home-demo1 .hero { min-height: 100vh !important; padding: 140px 8% 80px !important; background: #0f0f0f !important; }
 body.home-demo1 .hero-bg,
 body.home-demo1 .hero .room { display: none !important; }
@@ -893,7 +894,7 @@ button {
 
 .login-btn {
     padding: 10px 25px;
-    border-radius: 30px;
+    border-radius: 6px;
     border: none;
     background: var(--primary);
     color: black;
@@ -1031,9 +1032,9 @@ button {
 /* CENTER GRID */
 .steps {
     display: grid;
-    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
-    max-width: 1180px;
+    max-width: 1000px;
     margin: auto;
 }
 
@@ -1085,20 +1086,6 @@ button {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
-}
-
-@media (max-width: 1180px) {
-    .steps,
-    .testimonial-container {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 720px) {
-    .steps,
-    .testimonial-container {
-        grid-template-columns: 1fr;
-    }
 }
 
 .testimonials .testimonial-card {
@@ -2230,66 +2217,6 @@ button {
     object-fit: cover;
     display: block;
 }
-
-/* RTL support for login page */
-.login-page-body:dir(rtl),
-.login-page-body[dir="rtl"] {
-    direction: rtl;
-    text-align: right;
-}
-
-.login-page-body:dir(rtl) .login-top-logo {
-    left: auto;
-    right: 0;
-}
-
-.login-page-body:dir(rtl) .login-top-logo img {
-    transform: translate(8px, -26px);
-}
-
-.login-page-body:dir(rtl) .password-toggle {
-    right: auto;
-    left: 16px;
-}
-
-.login-page-body:dir(rtl) .password-field input {
-    padding-right: 14px;
-    padding-left: 52px;
-}
-
-.login-page-body:dir(rtl) .login-form input:not([type="checkbox"]) {
-    text-align: right;
-}
-
-.login-page-body:dir(rtl) .login-form input:not([type="checkbox"])::placeholder {
-    text-align: right;
-}
-
-.login-page-body:dir(rtl) .remember-me {
-    flex-direction: row-reverse;
-}
-
-.login-page-body:dir(rtl) .login-socials {
-    flex-direction: row-reverse;
-}
-
-.login-page-body:dir(rtl) .login-panel {
-    direction: rtl;
-}
-
-.login-page-body:dir(rtl) .login-panel-content {
-    order: 2;
-}
-
-.login-page-body:dir(rtl) .login-side-visual {
-    order: 1;
-}
-
-.login-page-body:dir(rtl) .toggle-float {
-    right: auto;
-    left: 24px;
-}
-
 /* =============================================
    INDEX PAGE 
    ============================================= */
@@ -9581,6 +9508,12 @@ body.light-mode .footer-address-card p {
     line-height: 1;
 }
 
+.direction-toggle {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+}
+
 .icon-btn:hover {
     transform: translateY(-2px);
     border-color: rgba(0, 224, 255, 0.45);
@@ -10635,6 +10568,14 @@ body.light-mode button:not(.icon-btn):not(.password-toggle):not(.search-close):n
     color: inherit !important;
 }
 
+body.light-mode.offers-page .offer-hero-actions .btn,
+body.light-mode.offers-page .offer-hero-actions .btn.secondary,
+body.theme-light.offers-page .offer-hero-actions .btn,
+body.theme-light.offers-page .offer-hero-actions .btn.secondary {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
 /* Spans that have explicit white/light colors in dark theme */
 body.light-mode .room-stat-card span,
 body.light-mode .vision-stat span,
@@ -11259,7 +11200,8 @@ body.home-demo1 .header {
     transition: background 0.35s ease, border-color 0.35s ease, backdrop-filter 0.35s ease, box-shadow 0.35s ease;
 }
 
-body.home-demo1 .header.scrolled {
+body.home-demo1 .header.scrolled,
+body.home-demo1 .header.menu-open {
     background: rgba(15, 15, 15, 0.82) !important;
     backdrop-filter: blur(10px) !important;
     border-bottom: 1px solid #8b5cf6 !important;
@@ -11927,6 +11869,12 @@ body.home-demo1 footer a:hover {
         background: rgba(15, 15, 15, 0.96) !important;
         border: 1px solid rgba(139, 92, 246, 0.35) !important;
         backdrop-filter: blur(14px);
+    }
+
+    body.home-demo1 .nav-toggle {
+        border-color: rgba(139, 92, 246, 0.45) !important;
+        color: #ffffff !important;
+        box-shadow: 0 0 16px rgba(139, 92, 246, 0.28);
     }
 
     body.home-demo1 .about-modern,
@@ -15243,6 +15191,18 @@ body.light-mode .blog-editorial-stats span,
 body.light-mode .blog-list p,
 body.light-mode .blog-inline-meta {
     color: #425567;
+}
+
+body.news-page :is(.blog-featured-copy .blog-tag, .blog-featured-copy .blog-date),
+body.light-mode.news-page :is(.blog-featured-copy .blog-tag, .blog-featured-copy .blog-date),
+body.theme-light.news-page :is(.blog-featured-copy .blog-tag, .blog-featured-copy .blog-date) {
+    padding: 0 !important;
+    background: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
 }
 
 body.light-mode .package-price,
@@ -18967,11 +18927,11 @@ body.light-mode .news-cta-pro {
 
 body.light-mode :is(
     .rooms-overview-grid article,
-    .rooms-editorial-visual,
     .rooms-editorial-copy,
     .rooms-compare-card,
     .rooms-cta-shell,
     .rooms-pro-card,
+    .rooms-advisor-grid article,
     .news-digest-grid article,
     .news-feature,
     .news-briefing,
@@ -19066,6 +19026,24 @@ body.light-mode .rooms-advisor-grid strong {
 body.light-mode .rooms-advisor-grid span {
     color: #475569 !important;
     -webkit-text-fill-color: #475569 !important;
+}
+
+body.light-mode .rooms-editorial-visual,
+body.theme-light .rooms-editorial-visual {
+    background: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+body.light-mode .rooms-editorial-band,
+body.theme-light .rooms-editorial-band,
+body.light-mode .rooms-editorial-shell,
+body.theme-light .rooms-editorial-shell {
+    background-image: none !important;
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
 }
 
 body.light-mode .rooms-compare-meta article {
@@ -19874,218 +19852,6 @@ body.light-mode .benefit-label {
     background: rgba(0, 184, 213, 0.08) !important;
     color: #007f98 !important;
     -webkit-text-fill-color: #007f98 !important;
-}
-
-/* About page promo spotlight */
-.about-promo-spotlight {
-    padding: 82px 40px;
-    background:
-        radial-gradient(circle at 15% 15%, rgba(139, 92, 246, 0.14), transparent 32%),
-        linear-gradient(180deg, #050713 0%, #070913 100%);
-}
-
-.about-promo-shell {
-    width: min(1180px, 100%);
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
-    gap: clamp(34px, 5vw, 58px);
-    align-items: stretch;
-}
-
-.about-promo-image {
-    overflow: hidden;
-    min-height: 420px;
-    border-radius: 8px;
-    border: 1px solid rgba(139, 92, 246, 0.26);
-    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.35);
-}
-
-.about-promo-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.about-promo-copy {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 18px 0;
-    max-width: 520px;
-}
-
-.about-promo-badge {
-    display: inline-flex;
-    width: fit-content;
-    max-width: 100%;
-    padding: 8px 16px;
-    border-radius: 999px;
-    border: 1px solid rgba(0, 224, 255, 0.36);
-    background: rgba(139, 92, 246, 0.18);
-    color: var(--primary);
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    line-height: 1;
-    text-transform: uppercase;
-}
-
-.about-promo-copy h2 {
-    margin: 0;
-    max-width: 11ch;
-    color: #ffffff;
-    font-size: clamp(3.05rem, 6vw, 4.7rem);
-    line-height: 0.98;
-    letter-spacing: 0;
-}
-
-.about-promo-copy p {
-    margin: 0;
-    max-width: 46ch;
-    color: #cfd5e2;
-    font-size: 16px;
-    line-height: 1.65;
-    font-weight: 500;
-}
-
-.about-promo-copy .btn {
-    margin-top: 4px;
-}
-
-.about-promo-details {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
-    margin-top: 4px;
-}
-
-.about-promo-details article {
-    display: grid;
-    grid-template-columns: 118px 1fr;
-    gap: 16px;
-    align-items: start;
-    padding: 14px 16px;
-    border: 1px solid rgba(139, 92, 246, 0.2);
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.045);
-}
-
-.about-promo-details strong {
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 800;
-    line-height: 1.35;
-}
-
-.about-promo-details span {
-    color: #b7c0d2;
-    font-size: 13px;
-    font-weight: 500;
-    line-height: 1.55;
-}
-
-.about-promo-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    align-items: center;
-    margin-top: 2px;
-}
-
-.about-promo-actions .btn {
-    min-width: 140px;
-    justify-content: center;
-    text-align: center;
-}
-
-body.light-mode .about-promo-spotlight {
-    background: #ffffff !important;
-}
-
-body.light-mode .about-promo-copy h2 {
-    color: #0f172a !important;
-    -webkit-text-fill-color: #0f172a !important;
-}
-
-body.light-mode .about-promo-copy p {
-    color: #475569 !important;
-    -webkit-text-fill-color: #475569 !important;
-}
-
-body.light-mode .about-promo-details article {
-    background: #f8fafc !important;
-    border-color: rgba(15, 23, 42, 0.08) !important;
-}
-
-body.light-mode .about-promo-details strong {
-    color: #0f172a !important;
-    -webkit-text-fill-color: #0f172a !important;
-}
-
-body.light-mode .about-promo-details span {
-    color: #475569 !important;
-    -webkit-text-fill-color: #475569 !important;
-}
-
-@media (max-width: 991px) {
-    .about-promo-shell {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .about-promo-copy {
-        align-items: center;
-        text-align: center;
-        max-width: 100%;
-    }
-
-    .about-promo-copy h2,
-    .about-promo-copy p {
-        max-width: 100%;
-    }
-
-    .about-promo-details article {
-        grid-template-columns: 1fr;
-        gap: 6px;
-        text-align: center;
-    }
-
-    .about-promo-actions {
-        justify-content: center;
-    }
-}
-
-@media (max-width: 680px) {
-    .about-promo-spotlight {
-        padding: 56px 16px;
-    }
-
-    .about-promo-shell {
-        gap: 24px;
-    }
-
-    .about-promo-image {
-        min-height: 280px;
-    }
-
-    .about-promo-copy h2 {
-        font-size: clamp(2.35rem, 13vw, 3.4rem);
-        line-height: 1.02;
-    }
-
-    .about-promo-copy p {
-        font-size: 15px;
-    }
-
-    .about-promo-actions,
-    .about-promo-actions .btn {
-        width: 100%;
-    }
 }
 
 @media (max-width: 1024px) {
@@ -21301,6 +21067,14 @@ body.light-mode .footer-bottom {
     overflow: hidden;
 }
 
+.footer-logo img {
+    width: 300px !important;
+    height: auto !important;
+    object-fit: contain;
+    transform: translate(-46px, -64px) !important;
+    filter: drop-shadow(0 0 15px rgba(139, 92, 246, 0.34));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
 
 .footer-logo:hover img {
     transform: translate(-46px, -64px) scale(1.04) !important;
@@ -22593,6 +22367,14 @@ html body.theme-light .rooms-pro-card.featured {
     box-shadow: 0 18px 46px rgba(15, 23, 42, 0.08) !important;
 }
 
+html body.light-mode .rooms-advisor-grid article,
+html body.theme-light .rooms-advisor-grid article {
+    background: #ffffff !important;
+    background-image: none !important;
+    border: 1px solid rgba(15, 23, 42, 0.14) !important;
+    box-shadow: 0 18px 46px rgba(15, 23, 42, 0.08) !important;
+}
+
 html body.light-mode .rooms-pro-content h3,
 html body.theme-light .rooms-pro-content h3 {
     color: #0f172a !important;
@@ -22905,4 +22687,28 @@ body.rtl-mode .toggle-float {
     body.rtl-mode :is(.editorial-hero-actions, .offer-hero-actions) {
         justify-content: center !important;
     }
+}
+
+body.offers-page .offer-hero .offer-hero-actions :is(.btn, .btn.secondary),
+body.offers-page .offer-hero .offer-hero-actions :is(.btn, .btn.secondary):hover,
+body.offers-page .offer-hero .offer-hero-actions :is(.btn, .btn.secondary):focus-visible {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+body.about-page :is(.about-highlight-label, .feature-tag, .story-side-label),
+body.light-mode.about-page :is(.about-highlight-label, .feature-tag, .story-side-label),
+body.theme-light.about-page :is(.about-highlight-label, .feature-tag, .story-side-label) {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+.login-btn,
+body.light-mode .login-btn,
+body.theme-light .login-btn {
+    border-radius: 18px !important;
+}
+
+body.home-demo1 :is(.login-btn, .btn, .hero-primary, .hero-secondary, .room-link, .quick-booking-form button, .booking-panel button, .cta .btn) {
+    border-radius: 18px !important;
 }
