@@ -10302,6 +10302,26 @@ html body :is(.btn, .login-btn, .contact-btn, .booking-confirm, .search-submit, 
     box-shadow: 0 8px 18px rgba(139, 92, 246, 0.22) !important;
 }
 
+/* Offers hero: keep the Compare Pricing button text readable on the purple pill. */
+html body.offers-page .offer-hero .offer-hero-actions .btn.secondary,
+html body.offers-page .offer-hero .offer-hero-actions .btn.secondary:visited,
+html body.offers-page.light-mode .offer-hero .offer-hero-actions .btn.secondary,
+html body.offers-page.theme-light .offer-hero .offer-hero-actions .btn.secondary {
+    background: #8b5cf6 !important;
+    background-image: none !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border: 0 !important;
+    text-shadow: none !important;
+}
+
+html body.offers-page .offer-hero .offer-hero-actions .btn.secondary :is(span, i),
+html body.offers-page.light-mode .offer-hero .offer-hero-actions .btn.secondary :is(span, i),
+html body.offers-page.theme-light .offer-hero .offer-hero-actions .btn.secondary :is(span, i) {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
 /* True final Home 2 alignment lock. */
 html body.home-demo2 section:not(.hero-dark) {
     padding-left: clamp(28px, 6vw, 86px) !important;
@@ -10514,6 +10534,51 @@ html body.home-demo2 .home2-role-list article:last-child:nth-child(odd) {
     html body.home-demo2 .home2-briefing-panel article {
         min-height: 0 !important;
     }
+}
+
+/* About promo final readability pass: keep every line visible in light/theme-light mode. */
+html body.about-page .about-promo-spotlight {
+    overflow: visible !important;
+}
+
+html body.about-page .about-promo-copy {
+    max-width: 620px !important;
+    padding-top: clamp(24px, 3vw, 36px) !important;
+    padding-bottom: clamp(24px, 3vw, 36px) !important;
+}
+
+html body.about-page .about-promo-copy h2 {
+    max-width: 13ch !important;
+    font-size: clamp(2.75rem, 5vw, 4.15rem) !important;
+    line-height: 1.08 !important;
+}
+
+html body:is(.light-mode, .theme-light).about-page .about-promo-spotlight {
+    background: #ffffff !important;
+    background-image: none !important;
+}
+
+html body:is(.light-mode, .theme-light).about-page .about-promo-copy h2,
+html body:is(.light-mode, .theme-light).about-page .about-promo-details strong {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body:is(.light-mode, .theme-light).about-page .about-promo-copy p,
+html body:is(.light-mode, .theme-light).about-page .about-promo-details span {
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+html body:is(.light-mode, .theme-light).about-page .about-promo-details article {
+    background: #ffffff !important;
+    background-image: none !important;
+    border-color: rgba(139, 92, 246, 0.22) !important;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06) !important;
 }
 
 /* Home 2 light/layout final polish: full-width bands with centered content. */
