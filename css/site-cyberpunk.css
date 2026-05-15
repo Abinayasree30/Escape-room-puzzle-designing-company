@@ -10302,6 +10302,523 @@ html body :is(.btn, .login-btn, .contact-btn, .booking-confirm, .search-submit, 
     box-shadow: 0 8px 18px rgba(139, 92, 246, 0.22) !important;
 }
 
+/* True final Home 2 alignment lock. */
+html body.home-demo2 section:not(.hero-dark) {
+    padding-left: clamp(28px, 6vw, 86px) !important;
+    padding-right: clamp(28px, 6vw, 86px) !important;
+}
+
+html body.home-demo2 :is(
+    .page-gallery-header,
+    .page-gallery-grid,
+    .home2-briefing,
+    .experience > h2,
+    .exp-grid,
+    .demo2-section-head,
+    .home2-evidence-grid,
+    .story-text,
+    .home2-team-shell,
+    .home2-pressure-shell,
+    .home2-night-grid,
+    .rooms-preview > h2,
+    .room-grid,
+    .fear-grid,
+    .actors-content,
+    .demo2-countdown,
+    .home2-testimonial-grid,
+    .cta > *
+) {
+    width: min(100%, 1180px) !important;
+    max-width: 1180px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+html body.home-demo2 :is(.home2-briefing, .home2-team-shell, .home2-pressure-shell, .actors-content, .demo2-countdown) {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: clamp(30px, 4vw, 52px) !important;
+    align-items: center !important;
+}
+
+html body.home-demo2 :is(.exp-grid, .home2-briefing-panel, .home2-evidence-grid, .home2-night-grid, .room-grid, .fear-grid, .home2-testimonial-grid) {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 24px !important;
+    align-items: stretch !important;
+    justify-items: stretch !important;
+}
+
+html body.home-demo2 .page-gallery-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.75fr) !important;
+    grid-template-rows: repeat(2, minmax(220px, 1fr)) !important;
+    gap: 24px !important;
+}
+
+html body.home-demo2 .page-gallery-grid .gallery-tile-main {
+    grid-row: 1 / span 2 !important;
+}
+
+html body.home-demo2 .home2-briefing-panel {
+    border-left: 0 !important;
+}
+
+html body.home-demo2 .home2-briefing-panel article {
+    padding: 28px 24px !important;
+    border: 1px solid rgba(139, 92, 246, 0.28) !important;
+    border-radius: 8px !important;
+    background: rgba(255, 255, 255, 0.055) !important;
+}
+
+html body.home-demo2 :is(.exp-grid > *, .home2-briefing-panel > *, .home2-evidence-grid > *, .home2-night-grid > *, .room-grid > *, .fear-grid > *, .home2-testimonial-grid > *) {
+    grid-column: auto !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    justify-self: stretch !important;
+}
+
+@media (max-width: 1180px) {
+    html body.home-demo2 :is(.exp-grid, .home2-briefing-panel, .home2-evidence-grid, .home2-night-grid, .room-grid, .fear-grid, .home2-testimonial-grid) {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        max-width: 900px !important;
+    }
+}
+
+@media (max-width: 900px) {
+    html body.home-demo2 :is(.page-gallery-grid, .home2-briefing, .home2-team-shell, .home2-pressure-shell, .actors-content, .demo2-countdown) {
+        grid-template-columns: 1fr !important;
+        max-width: 720px !important;
+    }
+
+    html body.home-demo2 .page-gallery-grid .gallery-tile-main {
+        grid-row: auto !important;
+    }
+}
+
+@media (max-width: 720px) {
+    html body.home-demo2 section:not(.hero-dark) {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    html body.home-demo2 :is(.exp-grid, .home2-briefing-panel, .home2-evidence-grid, .home2-night-grid, .room-grid, .fear-grid, .home2-testimonial-grid) {
+        grid-template-columns: 1fr !important;
+        max-width: 640px !important;
+    }
+}
+
+/* Last Home 2 light alignment correction. */
+html body.home-demo2:is(.light-mode, .theme-light),
+html:has(body.home-demo2:is(.light-mode, .theme-light)) {
+    background: #f8fafc !important;
+    overflow-x: hidden !important;
+}
+
+html body.home-demo2:is(.light-mode, .theme-light) section:not(.hero-dark) {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    padding-left: clamp(42px, 7vw, 96px) !important;
+    padding-right: clamp(42px, 7vw, 96px) !important;
+    box-sizing: border-box !important;
+    background: #ffffff !important;
+}
+
+html body.home-demo2 .home2-briefing,
+html body.home-demo2 .home2-team-shell {
+    width: min(100%, 1180px) !important;
+    max-width: 1180px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr) !important;
+    gap: clamp(44px, 5vw, 72px) !important;
+    align-items: center !important;
+}
+
+html body.home-demo2 .home2-briefing-panel {
+    width: 100% !important;
+    max-width: none !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(150px, 1fr)) !important;
+    gap: 18px !important;
+    border-left: 0 !important;
+}
+
+html body.home-demo2 .home2-briefing-panel article {
+    min-height: 360px !important;
+    padding: 28px 22px !important;
+    border: 1px solid rgba(139, 92, 246, 0.28) !important;
+    border-radius: 8px !important;
+    background: rgba(255, 255, 255, 0.055) !important;
+}
+
+html body.home-demo2 .home2-role-list {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(220px, 1fr)) !important;
+    gap: 24px !important;
+    align-items: stretch !important;
+}
+
+html body.home-demo2 .home2-role-list article {
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 160px !important;
+    margin: 0 !important;
+    display: grid !important;
+    grid-template-columns: 64px minmax(0, 1fr) !important;
+    gap: 22px !important;
+    align-items: center !important;
+}
+
+html body.home-demo2 .home2-role-list article:last-child:nth-child(odd) {
+    grid-column: 1 / -1 !important;
+    width: calc((100% - 24px) / 2) !important;
+    justify-self: center !important;
+}
+
+@media (max-width: 1180px) {
+    html body.home-demo2 .home2-briefing,
+    html body.home-demo2 .home2-team-shell {
+        grid-template-columns: 1fr !important;
+        max-width: 860px !important;
+    }
+
+    html body.home-demo2 .home2-briefing-panel,
+    html body.home-demo2 .home2-role-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    html body.home-demo2 .home2-role-list article:last-child:nth-child(odd) {
+        grid-column: auto !important;
+        width: 100% !important;
+        justify-self: stretch !important;
+    }
+}
+
+@media (max-width: 720px) {
+    html body.home-demo2:is(.light-mode, .theme-light) section:not(.hero-dark) {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    html body.home-demo2 .home2-briefing-panel,
+    html body.home-demo2 .home2-role-list {
+        grid-template-columns: 1fr !important;
+    }
+
+    html body.home-demo2 .home2-briefing-panel article {
+        min-height: 0 !important;
+    }
+}
+
+/* Home 2 light/layout final polish: full-width bands with centered content. */
+html body.home-demo2:is(.light-mode, .theme-light),
+html:has(body.home-demo2:is(.light-mode, .theme-light)) {
+    background: #f8fafc !important;
+    overflow-x: hidden !important;
+}
+
+html body.home-demo2:is(.light-mode, .theme-light) main,
+html body.home-demo2:is(.light-mode, .theme-light) {
+    max-width: none !important;
+}
+
+html body.home-demo2:is(.light-mode, .theme-light) section:not(.hero-dark) {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    padding-left: clamp(42px, 7vw, 96px) !important;
+    padding-right: clamp(42px, 7vw, 96px) !important;
+    box-sizing: border-box !important;
+    background: #ffffff !important;
+}
+
+html body.home-demo2 :is(.home2-briefing, .home2-team-shell, .home2-pressure-shell, .actors-content, .demo2-countdown) {
+    width: min(100%, 1180px) !important;
+    max-width: 1180px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr) !important;
+    gap: clamp(44px, 5vw, 72px) !important;
+    align-items: center !important;
+}
+
+html body.home-demo2 .home2-briefing {
+    padding-top: 96px !important;
+    padding-bottom: 96px !important;
+}
+
+html body.home-demo2 .home2-briefing-panel {
+    width: 100% !important;
+    max-width: none !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(150px, 1fr)) !important;
+    gap: 18px !important;
+    align-items: stretch !important;
+}
+
+html body.home-demo2 .home2-briefing-panel article {
+    min-height: 360px !important;
+    padding: 28px 22px !important;
+}
+
+html body.home-demo2 .home2-team-shell {
+    align-items: start !important;
+}
+
+html body.home-demo2 .home2-role-list {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(220px, 1fr)) !important;
+    gap: 24px !important;
+    align-items: stretch !important;
+}
+
+html body.home-demo2 .home2-role-list article {
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 160px !important;
+    margin: 0 !important;
+    display: grid !important;
+    grid-template-columns: 64px minmax(0, 1fr) !important;
+    gap: 22px !important;
+    align-items: center !important;
+}
+
+html body.home-demo2 .home2-role-list article:last-child:nth-child(odd) {
+    grid-column: 1 / -1 !important;
+    width: calc((100% - 24px) / 2) !important;
+    justify-self: center !important;
+}
+
+@media (max-width: 1180px) {
+    html body.home-demo2 :is(.home2-briefing, .home2-team-shell, .home2-pressure-shell, .actors-content, .demo2-countdown) {
+        grid-template-columns: 1fr !important;
+        max-width: 860px !important;
+    }
+
+    html body.home-demo2 .home2-briefing-panel,
+    html body.home-demo2 .home2-role-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    html body.home-demo2 .home2-role-list article:last-child:nth-child(odd) {
+        grid-column: auto !important;
+        width: 100% !important;
+        justify-self: stretch !important;
+    }
+}
+
+@media (max-width: 720px) {
+    html body.home-demo2:is(.light-mode, .theme-light) section:not(.hero-dark) {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    html body.home-demo2 .home2-briefing-panel,
+    html body.home-demo2 .home2-role-list {
+        grid-template-columns: 1fr !important;
+    }
+
+    html body.home-demo2 .home2-briefing-panel article {
+        min-height: 0 !important;
+    }
+}
+
+/* Final Home 2 alignment pass. */
+html body.home-demo2 {
+    overflow-x: hidden !important;
+}
+
+html body.home-demo2 section:not(.hero-dark) {
+    padding-left: clamp(28px, 6vw, 86px) !important;
+    padding-right: clamp(28px, 6vw, 86px) !important;
+}
+
+html body.home-demo2 :is(
+    .page-gallery-header,
+    .page-gallery-grid,
+    .home2-briefing,
+    .experience > h2,
+    .exp-grid,
+    .demo2-section-head,
+    .home2-evidence-grid,
+    .story-text,
+    .home2-team-shell,
+    .home2-pressure-shell,
+    .home2-night-grid,
+    .rooms-preview > h2,
+    .room-grid,
+    .fear-grid,
+    .actors-content,
+    .demo2-countdown,
+    .home2-testimonial-grid,
+    .cta > *
+) {
+    width: min(100%, 1180px) !important;
+    max-width: 1180px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+html body.home-demo2 .hero-dark {
+    min-height: clamp(620px, 76vh, 860px) !important;
+    padding: 132px clamp(28px, 6vw, 86px) 82px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+html body.home-demo2 .hero-dark .hero-content {
+    width: min(100%, 860px) !important;
+    max-width: 860px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+}
+
+html body.home-demo2 .page-gallery-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.75fr) !important;
+    grid-template-rows: repeat(2, minmax(220px, 1fr)) !important;
+    gap: 24px !important;
+    align-items: stretch !important;
+}
+
+html body.home-demo2 .page-gallery-grid .gallery-tile-main {
+    grid-row: 1 / span 2 !important;
+}
+
+html body.home-demo2 :is(.home2-briefing, .home2-team-shell, .home2-pressure-shell, .actors-content, .demo2-countdown) {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    gap: clamp(30px, 4vw, 52px) !important;
+    align-items: center !important;
+}
+
+html body.home-demo2 .home2-briefing-panel {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 22px !important;
+    border-left: 0 !important;
+}
+
+html body.home-demo2 .home2-briefing-panel article {
+    min-height: 100% !important;
+    padding: 28px 24px !important;
+    border: 1px solid rgba(139, 92, 246, 0.28) !important;
+    border-radius: 8px !important;
+    background: rgba(255, 255, 255, 0.055) !important;
+}
+
+html body.home-demo2 :is(
+    .exp-grid,
+    .home2-evidence-grid,
+    .home2-night-grid,
+    .room-grid,
+    .fear-grid,
+    .home2-testimonial-grid
+) {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 24px !important;
+    align-items: stretch !important;
+    justify-items: stretch !important;
+}
+
+html body.home-demo2 .home2-role-list,
+html body.home-demo2 .home2-pressure-stats,
+html body.home-demo2 .actor-cues,
+html body.home-demo2 .countdown-signals {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+}
+
+html body.home-demo2 :is(
+    .exp-grid > *,
+    .home2-evidence-grid > *,
+    .home2-night-grid > *,
+    .room-grid > *,
+    .fear-grid > *,
+    .home2-testimonial-grid > *,
+    .home2-briefing-panel > *
+) {
+    grid-column: auto !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    justify-self: stretch !important;
+}
+
+html body.home-demo2 :is(.home2-pressure-visual, .actors-image, .countdown-panel) {
+    min-width: 0 !important;
+}
+
+html body.home-demo2 :is(.home2-pressure-visual img, .actors-image img, .room-card img, .gallery-tile img) {
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+@media (max-width: 1180px) {
+    html body.home-demo2 :is(
+        .exp-grid,
+        .home2-evidence-grid,
+        .home2-briefing-panel,
+        .home2-night-grid,
+        .room-grid,
+        .fear-grid,
+        .home2-testimonial-grid
+    ) {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        max-width: 900px !important;
+    }
+}
+
+@media (max-width: 900px) {
+    html body.home-demo2 :is(
+        .page-gallery-grid,
+        .home2-briefing,
+        .home2-team-shell,
+        .home2-pressure-shell,
+        .actors-content,
+        .demo2-countdown
+    ) {
+        grid-template-columns: 1fr !important;
+        max-width: 720px !important;
+    }
+
+    html body.home-demo2 .page-gallery-grid .gallery-tile-main {
+        grid-row: auto !important;
+    }
+}
+
+@media (max-width: 720px) {
+    html body.home-demo2 section:not(.hero-dark) {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    html body.home-demo2 :is(
+        .exp-grid,
+        .home2-evidence-grid,
+        .home2-briefing-panel,
+        .home2-night-grid,
+        .room-grid,
+        .fear-grid,
+        .home2-testimonial-grid
+    ) {
+        grid-template-columns: 1fr !important;
+        max-width: 640px !important;
+    }
+}
+
 /* Absolute final CTA style. */
 html body :is(.btn, .login-btn, .contact-btn, .booking-confirm, .search-submit, .mode-select-btn, .quick-booking-form button, button[type="submit"], .room-link, .hero-secondary):not(.icon-btn):not(.nav-toggle):not(.direction-toggle) {
     min-height: 44px !important;
@@ -12607,4 +13124,195 @@ html body :is(.btn, .login-btn, .contact-btn, .booking-confirm, .search-submit, 
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
     box-shadow: 0 8px 18px rgba(139, 92, 246, 0.22) !important;
+}
+
+/* Final-final Home 2 alignment lock. */
+html body.home-demo2 section:not(.hero-dark) {
+    padding-left: clamp(28px, 6vw, 86px) !important;
+    padding-right: clamp(28px, 6vw, 86px) !important;
+}
+
+html body.home-demo2 :is(.page-gallery-header, .page-gallery-grid, .home2-briefing, .experience > h2, .exp-grid, .demo2-section-head, .home2-evidence-grid, .story-text, .home2-team-shell, .home2-pressure-shell, .home2-night-grid, .rooms-preview > h2, .room-grid, .fear-grid, .actors-content, .demo2-countdown, .home2-testimonial-grid, .cta > *) {
+    width: min(100%, 1180px) !important;
+    max-width: 1180px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+html body.home-demo2 :is(.home2-briefing, .home2-team-shell, .home2-pressure-shell, .actors-content, .demo2-countdown) {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: clamp(30px, 4vw, 52px) !important;
+    align-items: center !important;
+}
+
+html body.home-demo2 :is(.exp-grid, .home2-briefing-panel, .home2-evidence-grid, .home2-night-grid, .room-grid, .fear-grid, .home2-testimonial-grid) {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 24px !important;
+    align-items: stretch !important;
+    justify-items: stretch !important;
+}
+
+html body.home-demo2 .page-gallery-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.75fr) !important;
+    grid-template-rows: repeat(2, minmax(220px, 1fr)) !important;
+    gap: 24px !important;
+}
+
+html body.home-demo2 .page-gallery-grid .gallery-tile-main {
+    grid-row: 1 / span 2 !important;
+}
+
+html body.home-demo2 .home2-briefing-panel {
+    border-left: 0 !important;
+}
+
+html body.home-demo2 .home2-briefing-panel article {
+    padding: 28px 24px !important;
+    border: 1px solid rgba(139, 92, 246, 0.28) !important;
+    border-radius: 8px !important;
+    background: rgba(255, 255, 255, 0.055) !important;
+}
+
+html body.home-demo2 :is(.exp-grid > *, .home2-briefing-panel > *, .home2-evidence-grid > *, .home2-night-grid > *, .room-grid > *, .fear-grid > *, .home2-testimonial-grid > *) {
+    grid-column: auto !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    justify-self: stretch !important;
+}
+
+@media (max-width: 1180px) {
+    html body.home-demo2 :is(.exp-grid, .home2-briefing-panel, .home2-evidence-grid, .home2-night-grid, .room-grid, .fear-grid, .home2-testimonial-grid) {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        max-width: 900px !important;
+    }
+}
+
+@media (max-width: 900px) {
+    html body.home-demo2 :is(.page-gallery-grid, .home2-briefing, .home2-team-shell, .home2-pressure-shell, .actors-content, .demo2-countdown) {
+        grid-template-columns: 1fr !important;
+        max-width: 720px !important;
+    }
+
+    html body.home-demo2 .page-gallery-grid .gallery-tile-main {
+        grid-row: auto !important;
+    }
+}
+
+@media (max-width: 720px) {
+    html body.home-demo2 section:not(.hero-dark) {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    html body.home-demo2 :is(.exp-grid, .home2-briefing-panel, .home2-evidence-grid, .home2-night-grid, .room-grid, .fear-grid, .home2-testimonial-grid) {
+        grid-template-columns: 1fr !important;
+        max-width: 640px !important;
+    }
+}
+
+/* Last Home 2 light alignment correction. */
+html body.home-demo2:is(.light-mode, .theme-light),
+html:has(body.home-demo2:is(.light-mode, .theme-light)) {
+    background: #f8fafc !important;
+    overflow-x: hidden !important;
+}
+
+html body.home-demo2:is(.light-mode, .theme-light) section:not(.hero-dark) {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    padding-left: clamp(42px, 7vw, 96px) !important;
+    padding-right: clamp(42px, 7vw, 96px) !important;
+    box-sizing: border-box !important;
+    background: #ffffff !important;
+}
+
+html body.home-demo2 .home2-briefing,
+html body.home-demo2 .home2-team-shell {
+    width: min(100%, 1180px) !important;
+    max-width: 1180px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr) !important;
+    gap: clamp(44px, 5vw, 72px) !important;
+    align-items: center !important;
+}
+
+html body.home-demo2 .home2-briefing-panel {
+    width: 100% !important;
+    max-width: none !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(150px, 1fr)) !important;
+    gap: 18px !important;
+    border-left: 0 !important;
+}
+
+html body.home-demo2 .home2-briefing-panel article {
+    min-height: 360px !important;
+    padding: 28px 22px !important;
+}
+
+html body.home-demo2 .home2-role-list {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(220px, 1fr)) !important;
+    gap: 24px !important;
+}
+
+html body.home-demo2 .home2-role-list article {
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 160px !important;
+    margin: 0 !important;
+    display: grid !important;
+    grid-template-columns: 64px minmax(0, 1fr) !important;
+    gap: 22px !important;
+    align-items: center !important;
+}
+
+html body.home-demo2 .home2-role-list article:last-child:nth-child(odd) {
+    grid-column: 1 / -1 !important;
+    width: calc((100% - 24px) / 2) !important;
+    justify-self: center !important;
+}
+
+@media (max-width: 1180px) {
+    html body.home-demo2 .home2-briefing,
+    html body.home-demo2 .home2-team-shell {
+        grid-template-columns: 1fr !important;
+        max-width: 860px !important;
+    }
+
+    html body.home-demo2 .home2-briefing-panel,
+    html body.home-demo2 .home2-role-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    html body.home-demo2 .home2-role-list article:last-child:nth-child(odd) {
+        grid-column: auto !important;
+        width: 100% !important;
+        justify-self: stretch !important;
+    }
+}
+
+@media (max-width: 720px) {
+    html body.home-demo2:is(.light-mode, .theme-light) section:not(.hero-dark) {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    html body.home-demo2 .home2-briefing-panel,
+    html body.home-demo2 .home2-role-list {
+        grid-template-columns: 1fr !important;
+    }
+
+    html body.home-demo2 .home2-briefing-panel article {
+        min-height: 0 !important;
+    }
 }
