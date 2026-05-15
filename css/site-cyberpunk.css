@@ -9002,7 +9002,7 @@ svg {
     max-width: 100%;
 }body.login-page-body .toggle-float,
 body.register-page-body .toggle-float {
-    position: fixed !important;
+    position: absolute !important;
     top: max(16px, env(safe-area-inset-top)) !important;
     right: max(16px, env(safe-area-inset-right)) !important;
     left: auto !important;
@@ -9832,10 +9832,10 @@ html body:not(.light-mode) footer .footer-left > .footer-logo:hover img {
     transform: scale(1.03) !important;
 }
 
-/* Login/Register RTL + floating toggle lock */
+/* Login/Register RTL + top toggle lock */
 html body:is(.login-page-body, .register-page-body) .toggle-float,
 html[dir="rtl"] body.rtl-mode:is(.login-page-body, .register-page-body) .toggle-float {
-    position: fixed !important;
+    position: absolute !important;
     top: max(16px, env(safe-area-inset-top)) !important;
     right: max(16px, env(safe-area-inset-right)) !important;
     left: auto !important;
@@ -10186,5 +10186,333 @@ html body.offers-page .offer-campaign-card .btn {
         width: 100% !important;
         max-width: none !important;
         justify-self: stretch !important;
+    }
+}
+
+/* Home 2 mobile team strategy: align the copy to the left edge. */
+@media (max-width: 768px) {
+    html body.home-demo2 .home2-team-shell {
+        width: 100% !important;
+        margin: 0 !important;
+        justify-items: stretch !important;
+    }
+
+    html body.home-demo2 .home2-team-copy {
+        width: 100% !important;
+        padding: 0 !important;
+        justify-self: stretch !important;
+        text-align: left !important;
+    }
+
+    html body.home-demo2 .home2-team-copy :is(.eyebrow, h2, p) {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+        text-align: left !important;
+    }
+
+    html body.home-demo2 .home2-team-copy .eyebrow {
+        justify-content: flex-start !important;
+    }
+}
+
+/* About mobile timeline: keep dots clear of the story card edge. */
+@media (max-width: 768px) {
+    html body.about-page .story-timeline::before {
+        left: 9px !important;
+    }
+
+    html body.about-page .story-block {
+        margin-left: 38px !important;
+    }
+
+    html body.about-page .story-block::before {
+        left: -36px !important;
+    }
+}
+
+/* Offers mobile: remove the tall empty gap above the membership image/cards. */
+@media (max-width: 768px) {
+    html body.offers-page .offer-story-panel {
+        padding-top: 28px !important;
+        padding-bottom: 18px !important;
+    }
+
+    html body.offers-page .offer-story-shell {
+        gap: 12px !important;
+    }
+
+    html body.offers-page .offer-story-shell > .offer-story-image {
+        min-height: 0 !important;
+    }
+
+    html body.offers-page .offer-story-image img {
+        height: 190px !important;
+        min-height: 190px !important;
+        object-fit: cover !important;
+    }
+
+    html body.offers-page .member-section {
+        padding-top: 28px !important;
+    }
+}
+
+/* Mobile menu: center the Login button text in its full-width box. */
+@media (max-width: 900px) {
+    html body .header .nav-mobile-actions .login-btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        width: 100% !important;
+        min-height: 48px !important;
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+    }
+}
+
+/* Home 2 banner title: keep it visible over the dark hero image in every theme. */
+html body.home-demo2 .hero-dark .hero-content h1 {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    text-shadow: 0 0 24px rgba(139, 92, 246, 0.72), 0 12px 36px rgba(0, 0, 0, 0.72) !important;
+}
+
+/* Final shared section title style: match Home 1 light section titles across pages. */
+html body :is(.eyebrow, .about-kicker, .site-mini-label, .offer-badge, .blog-tag, .blog-date, .contact-panel-label) {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    min-height: 38px !important;
+    padding: 9px 16px !important;
+    border: 1px solid rgba(34, 211, 238, 0.55) !important;
+    border-radius: 999px !important;
+    background: rgba(34, 211, 238, 0.06) !important;
+    box-shadow: none !important;
+    color: #7c3aed !important;
+    -webkit-text-fill-color: #7c3aed !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 13px !important;
+    line-height: 1 !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+    text-transform: uppercase !important;
+    text-shadow: none !important;
+}
+
+html body :is(
+    main section > h1,
+    main section > h2,
+    main section > h3,
+    main section > div > h1,
+    main section > div > h2,
+    main section > div > h3,
+    .hero-text h1,
+    .hero-content h1,
+    .index-hero-content h1,
+    .rooms-hero-copy h1,
+    .editorial-hero-copy h1,
+    .offer-hero .hero-text h1,
+    .about-modern-copy h2,
+    .home-section-head h2,
+    .demo2-section-head h2,
+    .section-heading h2,
+    .section-title h2,
+    .pricing-section-head h2,
+    .rooms-pro-intro h2,
+    .rooms-advisor-shell h2,
+    .rooms-flow-pro h2,
+    .rooms-editorial-copy h2,
+    .rooms-cta-shell h2,
+    .rooms-custom-head h2,
+    .room-custom-head h2,
+    .news-custom-head h2,
+    .news-custom-head h3,
+    .news-custom-head-left h2,
+    .news-custom-head-left h3,
+    .news-feature-copy h2,
+    .news-digest-head h2,
+    .news-insider-copy h2,
+    .news-trending-copy h2,
+    .news-trending h2,
+    .news-cta-pro h2,
+    .blog-featured-copy h2,
+    .blog-grid-section .editorial-heading h2,
+    .blog-editorial-copy h2,
+    .offers-custom-head h2,
+    .offer-box h2,
+    .offer-story-copy h2,
+    .offer-preview-copy h2,
+    .mystery-copy h2,
+    .offer-reveal-copy h2,
+    .popular-copy h2,
+    .group-box h2,
+    .member-section > h2,
+    .contact-intro h2,
+    .contact-addon-head h2,
+    .contact-form h2,
+    .contact-info h2,
+    .faq-custom-head h2,
+    .testimonial-custom-head h2,
+    .vision-copy h2,
+    .story-intro h2,
+    .experience-bar-intro h2,
+    .cta h2,
+    .site-cta-band h2,
+    .final-cta h2
+) {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600 !important;
+    letter-spacing: 0 !important;
+    text-shadow: none !important;
+}
+
+html body.light-mode :is(
+    main section > h1,
+    main section > h2,
+    main section > h3,
+    main section > div > h1,
+    main section > div > h2,
+    main section > div > h3,
+    .hero-text h1,
+    .hero-content h1,
+    .index-hero-content h1,
+    .rooms-hero-copy h1,
+    .editorial-hero-copy h1,
+    .offer-hero .hero-text h1,
+    .about-modern-copy h2,
+    .home-section-head h2,
+    .demo2-section-head h2,
+    .section-heading h2,
+    .section-title h2,
+    .pricing-section-head h2,
+    .rooms-pro-intro h2,
+    .rooms-advisor-shell h2,
+    .rooms-flow-pro h2,
+    .rooms-editorial-copy h2,
+    .rooms-cta-shell h2,
+    .rooms-custom-head h2,
+    .room-custom-head h2,
+    .news-custom-head h2,
+    .news-custom-head h3,
+    .news-custom-head-left h2,
+    .news-custom-head-left h3,
+    .news-feature-copy h2,
+    .news-digest-head h2,
+    .news-insider-copy h2,
+    .news-trending-copy h2,
+    .news-trending h2,
+    .news-cta-pro h2,
+    .blog-featured-copy h2,
+    .blog-grid-section .editorial-heading h2,
+    .blog-editorial-copy h2,
+    .offers-custom-head h2,
+    .offer-box h2,
+    .offer-story-copy h2,
+    .offer-preview-copy h2,
+    .mystery-copy h2,
+    .offer-reveal-copy h2,
+    .popular-copy h2,
+    .group-box h2,
+    .member-section > h2,
+    .contact-intro h2,
+    .contact-addon-head h2,
+    .contact-form h2,
+    .contact-info h2,
+    .faq-custom-head h2,
+    .testimonial-custom-head h2,
+    .vision-copy h2,
+    .story-intro h2,
+    .experience-bar-intro h2,
+    .cta h2,
+    .site-cta-band h2,
+    .final-cta h2
+),
+html body.theme-light :is(
+    main section > h1,
+    main section > h2,
+    main section > h3,
+    main section > div > h1,
+    main section > div > h2,
+    main section > div > h3,
+    .hero-text h1,
+    .hero-content h1,
+    .index-hero-content h1,
+    .rooms-hero-copy h1,
+    .editorial-hero-copy h1,
+    .offer-hero .hero-text h1,
+    .about-modern-copy h2,
+    .home-section-head h2,
+    .demo2-section-head h2,
+    .section-heading h2,
+    .section-title h2,
+    .pricing-section-head h2,
+    .rooms-pro-intro h2,
+    .rooms-advisor-shell h2,
+    .rooms-flow-pro h2,
+    .rooms-editorial-copy h2,
+    .rooms-cta-shell h2,
+    .rooms-custom-head h2,
+    .room-custom-head h2,
+    .news-custom-head h2,
+    .news-custom-head h3,
+    .news-custom-head-left h2,
+    .news-custom-head-left h3,
+    .news-feature-copy h2,
+    .news-digest-head h2,
+    .news-insider-copy h2,
+    .news-trending-copy h2,
+    .news-trending h2,
+    .news-cta-pro h2,
+    .blog-featured-copy h2,
+    .blog-grid-section .editorial-heading h2,
+    .blog-editorial-copy h2,
+    .offers-custom-head h2,
+    .offer-box h2,
+    .offer-story-copy h2,
+    .offer-preview-copy h2,
+    .mystery-copy h2,
+    .offer-reveal-copy h2,
+    .popular-copy h2,
+    .group-box h2,
+    .member-section > h2,
+    .contact-intro h2,
+    .contact-addon-head h2,
+    .contact-form h2,
+    .contact-info h2,
+    .faq-custom-head h2,
+    .testimonial-custom-head h2,
+    .vision-copy h2,
+    .story-intro h2,
+    .experience-bar-intro h2,
+    .cta h2,
+    .site-cta-band h2,
+    .final-cta h2
+) {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
+
+/* Rooms booking-flow cards: force equal full-width boxes on tablet/mobile. */
+@media (max-width: 1024px) {
+    html body.rooms-page .rooms-flow-pro .rooms-flow-grid {
+        grid-template-columns: 1fr !important;
+        justify-items: stretch !important;
+        align-items: stretch !important;
+        width: 100% !important;
+        gap: 16px !important;
+    }
+
+    html body.rooms-page .rooms-flow-pro .rooms-flow-grid > article,
+    html body.rooms-page .rooms-flow-pro .rooms-flow-grid > article:last-child:nth-child(odd) {
+        grid-column: auto !important;
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        justify-self: stretch !important;
+        align-self: stretch !important;
     }
 }
