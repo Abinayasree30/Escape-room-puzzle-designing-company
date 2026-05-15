@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css?v=scroll-top-2">
     <link rel="stylesheet" href="css/site-cyberpunk.css?v=scroll-top-2">
-    <link rel="stylesheet" href="css/home-cyberpunk.css?v=tablet-testimonial-row-2">
+    <link rel="stylesheet" href="css/home-cyberpunk.css?v=final-cta-light-text">
 <style>
         body.light-mode.home-demo1 #homeStats strong,
         body.theme-light.home-demo1 #homeStats strong {
@@ -56,6 +56,13 @@
                 font-size: 12px !important;
                 line-height: 1.45 !important;
             }
+        }
+
+        body.home-demo1:is(.light-mode, .theme-light) .final-cta :is(h2, p),
+        body:is(.light-mode, .theme-light).home-demo1 .final-cta :is(h2, p) {
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+            text-shadow: 0 2px 18px rgba(0, 0, 0, 0.82) !important;
         }
     </style>
 </head>
@@ -346,8 +353,8 @@
         </section>
 
         <section class="final-cta reveal-section">
-            <h2>Ready To Test Your Intelligence?</h2>
-            <p>Gather your team, choose the mission, and beat the clock before the final lock seals.</p>
+            <h2 style="color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; text-shadow: 0 2px 18px rgba(0, 0, 0, 0.85) !important;">Ready To Test Your Intelligence?</h2>
+            <p style="color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; text-shadow: 0 2px 16px rgba(0, 0, 0, 0.8) !important;">Gather your team, choose the mission, and beat the clock before the final lock seals.</p>
             <a href="booking.html?item=MystIQ%20Escape%20Room" class="btn">Book Now</a>
         </section>
     </main>
