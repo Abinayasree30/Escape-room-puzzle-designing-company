@@ -12,7 +12,43 @@
     <link rel="icon" type="image/png" href="./img/logo1.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css?v=scroll-top-1">
-    <link rel="stylesheet" href="css/site-cyberpunk.css?v=scroll-top-1">
+    <link rel="stylesheet" href="css/site-cyberpunk.css?v=home2-team-left">
+<style>
+        body.light-mode.home-demo2 .cta h1,
+        body.light-mode.home-demo2 .cta h2,
+        body.light-mode.home-demo2 .cta h3,
+        body.light-mode.home-demo2 .site-cta-band h1,
+        body.light-mode.home-demo2 .site-cta-band h2,
+        body.light-mode.home-demo2 .site-cta-band h3,
+        body.light-mode.home-demo2 section[class*="cta"] h1,
+        body.light-mode.home-demo2 section[class*="cta"] h2,
+        body.light-mode.home-demo2 section[class*="cta"] h3 {
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+            background: transparent !important;
+            background-image: none !important;
+            -webkit-background-clip: border-box !important;
+            background-clip: border-box !important;
+            mix-blend-mode: normal !important;
+            filter: none !important;
+            opacity: 1 !important;
+            text-shadow: 0 12px 34px rgba(0, 0, 0, 0.9), 0 0 30px rgba(139, 92, 246, 0.5) !important;
+        }
+
+        body.light-mode.home-demo2 .cta::after,
+        body.light-mode.home-demo2 .site-cta-band::after,
+        body.light-mode.home-demo2 section[class*="cta"]::after {
+            background: linear-gradient(135deg, rgba(2, 6, 15, 0.9), rgba(50, 20, 96, 0.75)) !important;
+            z-index: 1 !important;
+        }
+
+        body.light-mode.home-demo2 .cta>*,
+        body.light-mode.home-demo2 .site-cta-band>*,
+        body.light-mode.home-demo2 section[class*="cta"]>* {
+            position: relative !important;
+            z-index: 2 !important;
+        }
+    </style>
 </head>
 
 <body class="has-custom-extras home-demo2 no-scroll-widget">
@@ -52,6 +88,7 @@
         <div class="overlay"></div>
 
         <div class="hero-content">
+            <h1>MystIQ Dark Escape</h1>
             <p>Can you survive the unknown and escape before time runs out?</p>
             <button class="btn"
                 onclick="document.querySelector('.rooms-preview').scrollIntoView({ behavior: 'smooth', block: 'start' })">Start

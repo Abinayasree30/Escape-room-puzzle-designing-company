@@ -11,7 +11,7 @@
 <link rel="icon" type="image/png" href="./img/logo1.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="css/style.css?v=scroll-top-2">
-<link rel="stylesheet" href="css/site-cyberpunk.css?v=scroll-top-2">
+<link rel="stylesheet" href="css/site-cyberpunk.css?v=rooms-flow-equal">
 <style>
 @media (max-width: 768px) {
     .rooms-editorial-band {
@@ -32,8 +32,18 @@
     }
 
     .rooms-flow-pro .rooms-flow-grid {
+        grid-template-columns: 1fr !important;
+        justify-items: stretch !important;
         margin-top: 0 !important;
         gap: 16px !important;
+    }
+
+    .rooms-flow-pro .rooms-flow-grid > article,
+    .rooms-flow-pro .rooms-flow-grid > article:last-child:nth-child(odd) {
+        grid-column: auto !important;
+        width: 100% !important;
+        max-width: none !important;
+        justify-self: stretch !important;
     }
 }
 </style>

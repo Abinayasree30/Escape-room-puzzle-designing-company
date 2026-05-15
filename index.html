@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css?v=scroll-top-2">
     <link rel="stylesheet" href="css/site-cyberpunk.css?v=scroll-top-2">
-    <link rel="stylesheet" href="css/home-cyberpunk.css?v=scroll-top-2">
+    <link rel="stylesheet" href="css/home-cyberpunk.css?v=tablet-testimonial-row-2">
 <style>
         body.light-mode.home-demo1 #homeStats strong,
         body.theme-light.home-demo1 #homeStats strong {
@@ -30,6 +30,32 @@
         body.theme-light.home-demo1 #homeStats span {
             color: #334155 !important;
             -webkit-text-fill-color: #334155 !important;
+        }
+
+        @media (min-width: 721px) and (max-width: 1180px) {
+            body.home-demo1 main .testimonials .testimonial-container {
+                display: grid !important;
+                grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+                gap: 14px !important;
+                align-items: stretch !important;
+                width: 100% !important;
+                max-width: 1180px !important;
+            }
+
+            body.home-demo1 main .testimonials .testimonial-container > .testimonial-card,
+            body.home-demo1 main .testimonials .testimonial-container > .testimonial-card:last-child:nth-child(odd) {
+                grid-column: auto !important;
+                width: 100% !important;
+                max-width: none !important;
+                min-width: 0 !important;
+                justify-self: stretch !important;
+                padding: 18px !important;
+            }
+
+            body.home-demo1 main .testimonials .testimonial-card p {
+                font-size: 12px !important;
+                line-height: 1.45 !important;
+            }
         }
     </style>
 </head>
