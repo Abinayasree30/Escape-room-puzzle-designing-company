@@ -10496,6 +10496,14 @@ html body.theme-light :is(
     -webkit-text-fill-color: #0f172a !important;
 }
 
+/* Home 2 final CTA text must stay white over the image in light mode. */
+html body.light-mode.home-demo2 .cta :is(h2, p),
+html body.theme-light.home-demo2 .cta :is(h2, p) {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.82), 0 0 28px rgba(139, 92, 246, 0.42) !important;
+}
+
 /* Rooms booking-flow cards: force equal full-width boxes on tablet/mobile. */
 @media (max-width: 1024px) {
     html body.rooms-page .rooms-flow-pro .rooms-flow-grid {
