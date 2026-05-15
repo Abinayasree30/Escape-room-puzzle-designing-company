@@ -2,7 +2,6 @@ const dropdownTriggers = document.querySelectorAll(".nav-item > a");
 const dropdownMenus = document.querySelectorAll(".dropdown");
 const currentPage = window.location.pathname.split("/").pop() || "index.html";
 const normalizedCurrentPage = decodeURIComponent(currentPage).trim().toLowerCase();
-const isHomeDemoPage = document.body.classList.contains("home-demo1");
 const searchTargets = [
     { label: "Home", url: "index.html", selector: ".index-hero", keywords: ["home", "index", "main"] },
     { label: "Demo 1", url: "index.html", selector: ".hero", keywords: ["demo 1", "demo1", "hospital", "detective", "puzzles"] },
@@ -754,12 +753,29 @@ body.theme-light :is(.hero, .hero-dark, .about-hero, .contact-hero, .faq-hero, .
     -webkit-text-fill-color: #ffffff !important;
 }
 
-body.theme-light :is(.news-card, .room-card, .exp-card, .why-card, .timeline-box, .offer-box, .home-feature-card, .demo-feature-card, .about-feature-card, .about-section-copy, .about-highlight-card, .about-highlight-stats, .story-block, .story-side-card, .faq-item, .faq-side-card, .testimonial-card, .testimonial-side-card, .testimonial-highlight-card, .pricing-card, .pricing-trust-item, .group-box, .discount-card, .member-card, .room-overview-card, .room-stat-card, .room-highlight-card, .room-video-card, .room-preview-copy, .room-custom-panel, .news-mini-panel, .feed-card, .pinned-card, .pinned-side-panel, .plan-fit-card, .review-card, .include-card, .trust-card, .difficulty-card, .tip-card, .video-card, .highlight-card, .logo-box, .stat-card, .theme-card, .top-room-card, .preview-box, .contact-info, .contact-form, .help-card, .trust-item, .booking-shell, .booking-modal, .search-panel, .login-panel, .newsletter-shell, .mode-card, .choose-card, .step, .team-card, .mission-box, .achieve-card, .fear-card, .benefit, .mystery-box, .timer-box, .popular-stat, .offer-preview-panel, .offer-preview-card, .offer-side-card) {
+body.theme-light :is(.news-card, .room-card, .exp-card, .why-card, .timeline-box, .offer-box, .home-feature-card, .demo-feature-card, .about-feature-card, .about-section-copy, .about-highlight-card, .about-highlight-stats, .story-block, .story-side-card, .faq-item, .faq-side-card, .testimonial-card, .testimonial-side-card, .testimonial-highlight-card, .pricing-card, .pricing-trust-item, .group-box, .discount-card, .member-card, .room-overview-card, .room-stat-card, .room-highlight-card, .room-video-card, .room-preview-copy, .room-custom-panel, .rooms-advisor-grid article, .news-mini-panel, .feed-card, .pinned-card, .pinned-side-panel, .plan-fit-card, .review-card, .include-card, .trust-card, .difficulty-card, .tip-card, .video-card, .highlight-card, .logo-box, .stat-card, .theme-card, .top-room-card, .preview-box, .contact-info, .contact-form, .help-card, .trust-item, .booking-shell, .booking-modal, .search-panel, .login-panel, .newsletter-shell, .mode-card, .choose-card, .step, .team-card, .mission-box, .achieve-card, .fear-card, .benefit, .mystery-box, .timer-box, .popular-stat, .offer-preview-panel, .offer-preview-card, .offer-side-card) {
     background: #ffffff !important;
     background-image: none !important;
     border-color: rgba(15, 23, 42, 0.1) !important;
     box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08) !important;
     color: #1e293b !important;
+}
+
+body.theme-light :is(.rooms-editorial-band, .rooms-editorial-shell, .rooms-editorial-visual) {
+    background-image: none !important;
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+body.theme-light.news-page :is(.blog-featured-copy .blog-tag, .blog-featured-copy .blog-date) {
+    padding: 0 !important;
+    background: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
 }
 
 /* Offers page: in theme-light, keep the Featured Deal section unboxed (no outer card frame). */
@@ -1142,6 +1158,12 @@ html body.theme-light.about-page .about-inline-points span {
     text-shadow: none !important;
 }
 
+html body.theme-light.about-page :is(.about-highlight-label, .feature-tag, .story-side-label) {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    opacity: 1 !important;
+}
+
 html body.theme-light.about-page :is(.feature-meta span, .story-side-points span) {
     background: #ffffff !important;
     background-image: none !important;
@@ -1267,94 +1289,16 @@ body.theme-light :is(.btn, .login-btn, .contact-btn, .booking-confirm, .search-s
     border-color: rgba(124, 58, 237, 0.28) !important;
 }
 
+body.theme-light.offers-page .offer-hero-actions .btn,
+body.theme-light.offers-page .offer-hero-actions .btn.secondary {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
 body.theme-light :is(.icon-btn, .nav-toggle, .search, .social-links a, .social-icon) {
     background: rgba(15, 23, 42, 0.04) !important;
     color: #0f172a !important;
     border-color: rgba(15, 23, 42, 0.14) !important;
-}
-
-body.theme-light .header,
-body.theme-light .header.scrolled,
-body.theme-light .header.menu-open {
-    background: rgba(255, 255, 255, 0.96) !important;
-    border-bottom: 1px solid rgba(109, 40, 217, 0.18) !important;
-    box-shadow: 0 12px 34px rgba(15, 23, 42, 0.1) !important;
-}
-
-body.theme-light .header .nav,
-body.theme-light .header.menu-open .nav,
-body.theme-light .header .dropdown,
-body.theme-light .header .nav-mobile-actions {
-    background: rgba(255, 255, 255, 0.98) !important;
-    border-color: rgba(109, 40, 217, 0.16) !important;
-    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.1) !important;
-}
-
-body.theme-light .header .nav > a,
-body.theme-light .header .nav-item > a,
-body.theme-light .header.menu-open .nav > a,
-body.theme-light .header.menu-open .nav-item > a,
-body.theme-light .header .dropdown a,
-body.theme-light .header .nav a i {
-    color: #0f172a !important;
-    -webkit-text-fill-color: #0f172a !important;
-    opacity: 1 !important;
-    text-shadow: none !important;
-}
-
-body.theme-light .header .nav > a:hover,
-body.theme-light .header .nav > a.active,
-body.theme-light .header .nav-item:hover > a,
-body.theme-light .header .nav-item:hover > a i,
-body.theme-light .header .nav-item > a.active,
-body.theme-light .header .nav-item > a.active i,
-body.theme-light .header .dropdown a:hover,
-body.theme-light .header .dropdown a.is-current-page {
-    color: #6d28d9 !important;
-    -webkit-text-fill-color: #6d28d9 !important;
-    text-shadow: none !important;
-}
-
-body.theme-light .header :is(.icon-btn, .direction-toggle, .nav-toggle) {
-    background: #ffffff !important;
-    border: 1px solid rgba(15, 23, 42, 0.18) !important;
-    color: #0f172a !important;
-    -webkit-text-fill-color: #0f172a !important;
-    box-shadow: 0 10px 22px rgba(15, 23, 42, 0.1) !important;
-}
-
-body.theme-light .header :is(.icon-btn, .direction-toggle, .nav-toggle):hover {
-    border-color: rgba(109, 40, 217, 0.42) !important;
-    color: #6d28d9 !important;
-    -webkit-text-fill-color: #6d28d9 !important;
-}
-
-body.theme-light .direction-toggle .direction-label {
-    color: currentColor !important;
-    -webkit-text-fill-color: currentColor !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 100% !important;
-    height: 100% !important;
-    font-size: 11px !important;
-    font-weight: 800 !important;
-    line-height: 1 !important;
-    letter-spacing: 0 !important;
-    text-transform: uppercase !important;
-}
-
-@media (min-width: 1025px) {
-    body.theme-light .header .nav,
-    body.theme-light .header.menu-open .nav {
-        background: transparent !important;
-        background-image: none !important;
-        border: 0 !important;
-        box-shadow: none !important;
-        outline: 0 !important;
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
-    }
 }
 
 body.theme-light .dropdown {
@@ -1451,7 +1395,7 @@ function updateDirectionBtn() {
     if (!btn) return;
 
     const isRtl = document.body.classList.contains('rtl-mode');
-    btn.innerHTML = `<span class="direction-label">${isRtl ? 'LTR' : 'RTL'}</span>`;
+    btn.textContent = 'RTL';
     btn.title = isRtl ? 'Switch to LTR Direction' : 'Switch to RTL Direction';
     btn.setAttribute('aria-label', btn.title);
 }
@@ -1537,19 +1481,6 @@ function injectToggles() {
     updateDarkBtn();
 }
 
-function ensureHeaderLoginButton() {
-    const rightSection = document.querySelector('.header .right-section');
-    if (!rightSection || rightSection.querySelector('.login-btn')) {
-        return;
-    }
-
-    const loginBtn = document.createElement('a');
-    loginBtn.href = 'login.html';
-    loginBtn.className = 'login-btn';
-    loginBtn.textContent = 'Login';
-    rightSection.appendChild(loginBtn);
-}
-
 function injectDirectionToggle() {
     if (document.getElementById('directionToggle')) {
         updateDirectionBtn();
@@ -1586,7 +1517,6 @@ function injectDirectionToggle() {
 /* Apply preferences immediately to avoid flash, then inject buttons */
 initDarkMode();
 initDirectionMode();
-ensureHeaderLoginButton();
 injectToggles();
 injectDirectionToggle();
 
