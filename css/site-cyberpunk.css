@@ -10733,3 +10733,8 @@ html body.offers-page .offer-timer .timer-unit small {
     margin-left: auto !important;
     margin-right: auto !important;
 }
+
+/* News journal heading: add a little space above the eyebrow/title. */
+html body.news-page .blog-list-section .section-heading.editorial-heading {
+    padding-top: 22px !important;
+}
