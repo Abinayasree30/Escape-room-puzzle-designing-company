@@ -5084,8 +5084,9 @@ html body.theme-light.has-custom-extras.offers-page .offer-timer-note {
     -webkit-text-fill-color: #0f172a !important;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
     html body.offers-page .offer-timer .timer-box {
+        max-width: 640px !important;
         padding: 22px !important;
         gap: 12px !important;
     }
@@ -5095,15 +5096,58 @@ html body.theme-light.has-custom-extras.offers-page .offer-timer-note {
         min-width: 100% !important;
         min-height: auto !important;
         padding: 16px !important;
+        flex: 1 0 100% !important;
+    }
+
+    html body.offers-page .offer-timer .timer-box::before {
+        order: 1 !important;
+    }
+
+    html body.offers-page .offer-timer .timer-unit,
+    html body.offers-page .offer-timer .timer-box em {
+        order: 2 !important;
+    }
+
+    html body.offers-page .offer-timer .timer-box::after {
+        order: 3 !important;
+    }
+
+    html body.offers-page .offer-timer .timer-unit {
+        min-width: 100px !important;
+        flex: 0 1 118px !important;
+    }
+}
+
+@media (max-width: 760px) {
+    html body.offers-page .offer-timer .timer-box em {
+        display: none !important;
     }
 
     html body.offers-page .offer-timer .timer-unit {
         min-width: 86px !important;
         flex: 1 1 86px !important;
     }
+}
 
-    html body.offers-page .offer-timer .timer-box em {
-        display: none !important;
+/* Offers Flash Window: remove the excess tablet/mobile gap after the countdown. */
+@media (max-width: 900px) {
+    html body.offers-page .offer-timer {
+        padding-top: 28px !important;
+        padding-bottom: 12px !important;
+        min-height: 0 !important;
+    }
+
+    html body.offers-page .offer-timer .offers-custom-head {
+        margin-bottom: 16px !important;
+    }
+
+    html body.offers-page .offer-timer-note {
+        margin-top: 14px !important;
+        margin-bottom: 0 !important;
+    }
+
+    html body.offers-page .offer-timer + .promo-reveal {
+        padding-top: 12px !important;
     }
 }
 body.login-page-body .toggle-float,
@@ -10522,5 +10566,114 @@ html body.theme-light.home-demo2 .cta :is(h2, p) {
         min-width: 0 !important;
         justify-self: stretch !important;
         align-self: stretch !important;
+    }
+}
+
+/* Rooms page dark-mode hero/header contrast. */
+html body.rooms-page:not(.light-mode):not(.theme-light) .header {
+    background: rgba(5, 5, 9, 0.88) !important;
+    border-bottom-color: rgba(139, 92, 246, 0.32) !important;
+    backdrop-filter: blur(12px) !important;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.34) !important;
+}
+
+html body.rooms-page:not(.light-mode):not(.theme-light) .header .logo {
+    box-sizing: border-box !important;
+    padding: 4px 10px !important;
+    background: rgba(5, 5, 9, 0.62) !important;
+    border: 1px solid rgba(139, 92, 246, 0.24) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 0 22px rgba(139, 92, 246, 0.24) !important;
+}
+
+html body.rooms-page:not(.light-mode):not(.theme-light) .header .logo img {
+    filter: drop-shadow(0 0 12px rgba(192, 132, 252, 0.72)) contrast(1.1) brightness(1.12) !important;
+}
+
+html body.rooms-page:not(.light-mode):not(.theme-light) .rooms-hero {
+    background-color: #050509 !important;
+}
+
+html body.rooms-page:not(.light-mode):not(.theme-light) .rooms-hero .inner-hero-bg {
+    opacity: 0.46 !important;
+    filter: saturate(0.9) contrast(1.12) brightness(0.62) !important;
+}
+
+html body.rooms-page:not(.light-mode):not(.theme-light) .rooms-hero .overlay {
+    background:
+        linear-gradient(90deg, rgba(5, 5, 9, 0.92), rgba(5, 5, 9, 0.64) 45%, rgba(5, 5, 9, 0.82)),
+        rgba(0, 0, 0, 0.66) !important;
+}
+
+/* Dark/light + RTL toggles: keep hover bold and readable. */
+html body :is(#darkModeToggle, #mq-enable-btn, #directionToggle, .direction-toggle):is(:hover, :focus-visible) {
+    background: linear-gradient(135deg, #5b21b6, #8b5cf6) !important;
+    border-color: rgba(216, 180, 254, 0.82) !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    font-weight: 900 !important;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.16), 0 0 24px rgba(139, 92, 246, 0.62) !important;
+    transform: translateY(-2px) scale(1.04) !important;
+}
+
+html body :is(#darkModeToggle, #mq-enable-btn, #directionToggle, .direction-toggle):is(:hover, :focus-visible) i {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    font-weight: 900 !important;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.55) !important;
+}
+
+html body :is(#directionToggle, .direction-toggle):is(:hover, :focus-visible) {
+    letter-spacing: 0.05em !important;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5) !important;
+}
+
+/* About page: align the two intro containers directly below the hero. */
+html body.about-page .about-hero + .about-section .about-section-shell {
+    align-items: stretch !important;
+}
+
+html body.about-page .about-hero + .about-section :is(.about-section-copy, .about-highlight-card) {
+    height: 100% !important;
+    padding: 54px 58px !important;
+}
+
+html body.about-page .about-hero + .about-section .about-highlight-card {
+    justify-content: flex-start !important;
+}
+
+@media (max-width: 1024px) {
+    html body.about-page .about-hero + .about-section :is(.about-section-copy, .about-highlight-card) {
+        padding: 40px 32px !important;
+    }
+}
+
+@media (max-width: 640px) {
+    html body.about-page .about-hero + .about-section :is(.about-section-copy, .about-highlight-card) {
+        padding: 30px 24px !important;
+    }
+}
+
+/* Offers membership: remove the empty gap before the benefits cards. */
+html body.offers-page .member-section {
+    padding-bottom: 8px !important;
+}
+
+html body.offers-page .member-section + .group-benefits {
+    padding-top: 8px !important;
+    margin-top: 0 !important;
+}
+
+html body.offers-page .member-section + .group-benefits .offers-custom-head {
+    margin-bottom: 18px !important;
+}
+
+@media (max-width: 768px) {
+    html body.offers-page .member-section {
+        padding-bottom: 4px !important;
+    }
+
+    html body.offers-page .member-section + .group-benefits {
+        padding-top: 4px !important;
     }
 }
