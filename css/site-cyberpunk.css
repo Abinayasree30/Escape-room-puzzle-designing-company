@@ -10715,3 +10715,21 @@ html body.offers-page .member-section + .group-benefits .offers-custom-head {
         padding-top: 4px !important;
     }
 }
+
+/* Offers countdown: keep numbers perfectly centered in every viewport. */
+html body.offers-page .offer-timer .timer-unit {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+}
+
+html body.offers-page .offer-timer .timer-box span,
+html body.offers-page .offer-timer .timer-unit small {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
